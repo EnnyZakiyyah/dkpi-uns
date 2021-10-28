@@ -1,0 +1,20 @@
+<nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto  " href="/">Home</a></li>
+          <li><a class="nav-link scrollto  " href="#about">About</a></li>
+          <li><a class="nav-link scrollto " href="#services">Data PDLN</a></li>
+          <li><a class="nav-link  scrollto " href="#portfolio">Mitra</a></li>
+          <li><a class="nav-link  scrollto " href="#faq">FAQ</a></li>
+          <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Berita</a></li>
+              <li><a href="#">Galeri</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#team">Pengumuman</a></li>
+          <li><a class="getstarted scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="/login">Login</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      
