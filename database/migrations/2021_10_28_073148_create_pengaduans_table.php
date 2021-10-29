@@ -15,6 +15,10 @@ class CreatePengaduansTable extends Migration
     {
         Schema::create('pengaduans', function (Blueprint $table) {
             $table->id();
+            $table->name();
+            $table->email();
+            $table->subject();
+            $table->message();
             $table->timestamps();
         });
     }
