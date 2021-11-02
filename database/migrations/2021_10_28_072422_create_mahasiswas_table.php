@@ -33,6 +33,7 @@ class CreateMahasiswasTable extends Migration
             $table->string('file_ktln');
             $table->string('status_hidden');
             $table->string('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

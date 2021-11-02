@@ -3,16 +3,16 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Mahasiswa;
+use App\Models\JasaKeuangan;
 
-class MahasiswaFactory extends Factory
+class JasaKeuanganFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Mahasiswa::class;
+    protected $model = JasaKeuangan::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,7 @@ class MahasiswaFactory extends Factory
     public function definition()
     {
         return [
-            'nama_mhs' => $this->faker->name(),
-            'jumlah_orang' => $this->faker->randomDigit()
-
+            //
         ];
     }
 }
