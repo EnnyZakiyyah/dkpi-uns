@@ -185,10 +185,9 @@ h2 {
   font-family: Poppins;
   font-size: 36px; }
 
-.main {
-  background: #f8f8f8;
-  padding: 150px 0; }
-
+.main2 {
+  background: #37517e;
+}
 .clear {
   clear: both; }
 
@@ -200,7 +199,7 @@ body {
   font-weight: 400;
   font-family: Poppins; }
 
-.container {
+.container2 {
   width: 900px;
   background: #fff;
   margin: 0 auto;

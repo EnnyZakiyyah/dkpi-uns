@@ -26,6 +26,13 @@ Route::get('/about', function () {
         "title" => "About",
     ]);
 });
+
+Route::get('/layanan', function () {
+    return view('layanan',[
+        "title" => "Layanan",
+    ]);
+});
+
 Route::get('/data-pdln', function () {
     return view('data-pdln');
 });

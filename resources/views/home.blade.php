@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('container')
-
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
@@ -254,6 +255,99 @@
       </div>
     </section><!-- End Team Section -->
 
+    <!-- ======= Informasi Section ======= -->
+    <section id="berita" class="berita section-bg">
+      <div class="container" data-aos="fade-up">
+
+      
+    <!-- Card Slider -->
+    <div id="carouselId" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselId" data-slide-to="1"></li>
+            <li data-target="#carouselId" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner row w-100 mx-auto">
+            <div class="carousel-item active col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{asset('assets3/images/signin-image.jpg')}}" alt="" >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{asset('assets3/images/signup-image.jpg')}}" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/slide3.png" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/slide1.png" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/slide3.png" alt="" width="100px" height="100px">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/slide1.png" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/slide2.png" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- End Card Slider -->
+
+          
+
+      </div>
+    </section><!-- End Team Section -->
+
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq section-bg">
@@ -315,4 +409,6 @@
         </div>
 
       </div>
+      </section><!-- End Frequently Asked Questions Section -->
+ 
 @endsection
