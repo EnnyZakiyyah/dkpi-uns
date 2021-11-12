@@ -153,7 +153,7 @@
     </section><!-- End Skills Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <section id="data-pdln" class="services section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -211,34 +211,7 @@
       </div>
     </section><!-- End Cta Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Mitra Kerja Sama</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter=".filter-app">CV/PT</li>
-          <li data-filter=".filter-card">Sekolah/Yayasan</li>
-          <li data-filter=".filter-inter">Internasional</li>
-          <li data-filter=".filter-web"><center>Jasa Keuangan</center></li>
-          <li data-filter=".filter-web">Pemerintah</li>
-        </ul>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-           
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
+  
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">

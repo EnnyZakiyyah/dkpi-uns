@@ -2,8 +2,8 @@
         <ul>
           <li><a class="nav-link scrollto  " href="/">Home</a></li>
           <li><a class="nav-link scrollto" href="/layanan">Layanan</a></li>
-          <li><a class="nav-link scrollto " href="#services">Data PDLN</a></li>
-          <li><a class="nav-link  scrollto " href="#portfolio">Mitra</a></li>
+          <li><a class="nav-link scrollto " href="#data-pdln">Data PDLN</a></li>
+          <li><a class="nav-link  scrollto " href="/mitra">Mitra</a></li>
           <li><a class="nav-link  scrollto " href="#faq">FAQ</a></li>
           <li class="dropdown"><a href="#informasi"><span>Informasi</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

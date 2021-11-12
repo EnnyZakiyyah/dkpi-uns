@@ -21,11 +21,6 @@ Route::get('/', function () {
         "title" => "DKPI - UNS",
     ]);
 });
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "About",
-    ]);
-});
 
 Route::get('/layanan', function () {
     return view('layanan',[
@@ -33,8 +28,16 @@ Route::get('/layanan', function () {
     ]);
 });
 
-Route::get('/data-pdln', function () {
-    return view('data-pdln');
+Route::get('/peringkat', function () {
+    return view('peringkat',[
+        "title" => "Peringkat",
+    ]);
+});
+
+Route::get('/mitra', function () {
+    return view('mitra',[
+        "title" => "Mitra",
+    ]);
 });
 
 Route::get('/login', [LoginController::class, 'index']);
