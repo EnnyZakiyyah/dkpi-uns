@@ -38,7 +38,7 @@
 </head>
 
 <body>
-  
+
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner">
@@ -54,27 +54,27 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('/dbRuang')}}">
+                        <a class="nav-link active" href="{{url('/pdln')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
-                            <span class="nav-link-text">Data Ruang</span>
+                            <span class="nav-link-text">Data PDLN</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('/dbAlat')}}">
+                        <a class="nav-link active" href="{{url('/mitra')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
-                            <span class="nav-link-text">Data Alat</span>
+                            <span class="nav-link-text">Data mitra</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{{url('/dbPeminjamanAlat')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
-                            <span class="nav-link-text">Data Peminjaman Alat</span>
+                            <span class="nav-link-text">pengumuman</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{{url('/dbPeminjamanRuang')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
-                            <span class="nav-link-text">Data Peminjaman Ruang</span>
+                            <span class="nav-link-text">berita</span>
                         </a>
                     </li>
                 </ul>
