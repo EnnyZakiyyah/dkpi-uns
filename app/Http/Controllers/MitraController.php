@@ -15,6 +15,19 @@ class MitraController extends Controller
     public function index()
     {
         return view('mitra.index');
+        // $yayasan = Mitra::where('jenis', 'yayasan')->latest()->get();
+        // $cv = Mitra::where('jenis', 'cv')->latest()->get();
+        // $internasional = Mitra::where('jenis', 'internasional')->latest()->get();
+        // $jasa_keuangan = Mitra::where('jenis', 'jasa_keuangan')->latest()->get();
+        // $pemerintah = Mitra::where('jenis', 'pemerintah')->latest()->get();
+
+        // return view('mitra.index',[
+        //     'yayasan' => $yayasan,
+        //     'cv' => $cv,
+        //     'internasional' => $internasional,
+        //     'jasa_keuangan' => $jasa_keuangan,
+        //     'pemerintah' => $pemerintah
+        // ]);
     }
 
     /**
@@ -25,6 +38,8 @@ class MitraController extends Controller
     public function create()
     {
         //
+        return view('mitra.create');
+
     }
 
     /**
@@ -36,6 +51,27 @@ class MitraController extends Controller
     public function store(Request $request)
     {
         //
+        $file_mou = $request->file('file_mou')->store('file_mou');
+
+        $validatedData = $request->validate([
+        'instansi' => 'required',
+        'nama_instansi' =>'required',
+        'no_mou_uns' =>'required',
+        'no_mou_mitra' =>'required',
+        'ruang_lingkup' =>'required',
+        'jangka_waktu_awal' =>'required',
+        'jangka_waktu_akhir' =>'required',
+        'pejabat_penandatangan' =>'required',
+        'file_mou' =>'required',
+        'status_hidden' =>'required'
+        ]);
+        $validatedData['file_mou'] = $file_mou;
+
+        Mitra::create($validatedData);
+
+        return redirect('/mitra')->with('success', 'Data berhasil ditambah!');
+
+
     }
 
     /**
@@ -47,6 +83,9 @@ class MitraController extends Controller
     public function show(Mitra $mitra)
     {
         //
+        return view('mitra.show',[
+            'mitra' =>  $mitra
+        ]);
     }
 
     /**
@@ -58,6 +97,9 @@ class MitraController extends Controller
     public function edit(Mitra $mitra)
     {
         //
+        return view('mitra.edit',[
+            'mitra' => $mitra
+        ]);
     }
 
     /**
@@ -81,5 +123,8 @@ class MitraController extends Controller
     public function destroy(Mitra $mitra)
     {
         //
+        Mitra::destroy($mitra);
+        return redirect('/mitra')->with('status', 'data berhasil dihapus');
+
     }
 }

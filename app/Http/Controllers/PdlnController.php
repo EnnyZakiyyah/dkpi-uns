@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pdln;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PdlnController extends Controller
 {
@@ -14,7 +15,16 @@ class PdlnController extends Controller
      */
     public function index()
     {
-        //
+        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->get();
+        $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
+        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
+
+        return view('pdln.index',[
+            'title' => 'Data Pdln',
+            'mahasiswa' => $mahasiswa,
+            'dosen' => $dosen,
+            'pimpinan' => $pimpinan
+        ]);
     }
 
     /**
@@ -24,7 +34,7 @@ class PdlnController extends Controller
      */
     public function create()
     {
-        //
+        return view('pdln.create');
     }
 
     /**
@@ -35,7 +45,37 @@ class PdlnController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file_surat_uns = $request->file('file_surat_uns')->store('file_surat_uns');
+        $file_belmawa = $request->file('file_belmawa')->store('file_belmawa');
+        $file_ktln = $request->file('file_ktln')->store('file_ktln');
+
+        $validatedData = $request->validate([
+            'jenis' => 'required',
+            'nama' => 'required',
+            'jumlah_orang'=> 'required',
+            'unit_kerja'=> 'required' ,
+            'jangka_waktu_awal'=> 'required',
+            'jangka_waktu_akhir'=> 'required',
+            'tujuan'=> 'required',
+            'negara'=> 'required',
+            'surat_uns'=> 'required',
+            'catatan_uns'=> 'required',
+            'belmawa'=> 'required',
+            'catatan_belmawa'=> 'required',
+            'ktln_kemensetneg'=> 'required',
+            'catatan_setneg'=> 'required',
+            'status_hidden'=> 'required',
+            'status'=> 'required'
+        ]);
+
+        $validatedData['file_surat_uns'] = $file_surat_uns;
+        $validatedData['file_belmawa'] = $file_belmawa;
+        $validatedData['file_ktln'] = $file_ktln;
+
+        Pdln::create($validatedData);
+
+        return redirect('/Pdln')->with('success', 'Data berhasil ditambah!');
+
     }
 
     /**
@@ -46,7 +86,9 @@ class PdlnController extends Controller
      */
     public function show(Pdln $pdln)
     {
-        //
+        return view('pdln.show', [
+            'pdln' => $pdln
+        ]);
     }
 
     /**
@@ -58,6 +100,9 @@ class PdlnController extends Controller
     public function edit(Pdln $pdln)
     {
         //
+        return view('pdln.edit', [
+            'pdln' => $pdln
+        ]);
     }
 
     /**
@@ -69,7 +114,7 @@ class PdlnController extends Controller
      */
     public function update(Request $request, Pdln $pdln)
     {
-        //
+
     }
 
     /**
@@ -80,6 +125,7 @@ class PdlnController extends Controller
      */
     public function destroy(Pdln $pdln)
     {
-        //
+        Pdln::destroy($pdln);
+        return redirect('/pdln')->with('status', 'data berhasil dihapus');
     }
 }

@@ -15,6 +15,10 @@ class BeritaController extends Controller
     public function index()
     {
         //
+        $berita = Berita::get();
+        return view('berita.index', [
+            'berita' => $berita
+        ]);
     }
 
     /**
@@ -25,6 +29,8 @@ class BeritaController extends Controller
     public function create()
     {
         //
+        return view('berita.create');
+
     }
 
     /**
@@ -36,6 +42,7 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -47,6 +54,9 @@ class BeritaController extends Controller
     public function show(Berita $berita)
     {
         //
+        return view('berita.show', [
+            'berita' => $berita
+        ]);
     }
 
     /**
@@ -58,6 +68,10 @@ class BeritaController extends Controller
     public function edit(Berita $berita)
     {
         //
+        return view('berita.edit',[
+            'berita' => $berita
+        ]);
+
     }
 
     /**
@@ -81,5 +95,9 @@ class BeritaController extends Controller
     public function destroy(Berita $berita)
     {
         //
+        Berita::destroy($berita);
+
+        return redirect('/berita')
+        ->with('success', 'data berhasil dihapus');
     }
 }
