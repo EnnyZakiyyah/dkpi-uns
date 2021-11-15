@@ -24,19 +24,19 @@ use App\Http\Controllers\PeringkatController;
 */
 
 Route::get('/', function () {
-    return view('home', [
+    return view('home.index', [
         "title" => "DKPI - UNS",
     ]);
 });
 
 Route::get('/layanan', function () {
-    return view('layanan',[
+    return view('home.layanan',[
         "title" => "Layanan",
     ]);
 });
 
 Route::get('/peringkat', function () {
-    return view('peringkat',[
+    return view('home.peringkat',[
         "title" => "Peringkat",
     ]);
 });

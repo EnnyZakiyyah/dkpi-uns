@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Pengaduan;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\returnSelf;
+
 class PengaduanController extends Controller
 {
     /**
@@ -15,6 +17,10 @@ class PengaduanController extends Controller
     public function index()
     {
         //
+        $pengaduan = Pengaduan::get();
+        return view('pengaduan.index',[
+            'pengaduan' => $pengaduan
+        ]);
     }
 
     /**
@@ -25,6 +31,8 @@ class PengaduanController extends Controller
     public function create()
     {
         //
+        return view('pengaduan.create');
+
     }
 
     /**
@@ -36,6 +44,7 @@ class PengaduanController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -47,6 +56,9 @@ class PengaduanController extends Controller
     public function show(Pengaduan $pengaduan)
     {
         //
+        return view('pengaduan.show', [
+            'pengaduan' => $pengaduan
+        ]);
     }
 
     /**
@@ -58,6 +70,9 @@ class PengaduanController extends Controller
     public function edit(Pengaduan $pengaduan)
     {
         //
+        return view('pengaduan.edit', [
+            'pengaduan' => $pengaduan
+        ]);
     }
 
     /**
@@ -81,5 +96,9 @@ class PengaduanController extends Controller
     public function destroy(Pengaduan $pengaduan)
     {
         //
+        Pengaduan::destroy($pengaduan);
+
+        return redirect('/pengaduan')
+        ->with('success', 'data berhasil dihapus');
     }
 }
