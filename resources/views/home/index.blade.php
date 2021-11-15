@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <h1>Direktorat dan Kerjasama, Pengembangan dan Internasionalisasi</h1>
+          <h1>Direktorat Kerjasama, Pengembangan dan Internasionalisasi</h1>
           <h2>Universitas Sebelas Maret</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
@@ -211,7 +211,7 @@
       </div>
     </section><!-- End Cta Section -->
 
-  
+
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
@@ -223,7 +223,7 @@
 
         <div class="row">
 
-          
+
 
       </div>
     </section><!-- End Team Section -->
@@ -232,7 +232,7 @@
     <section id="berita" class="berita section-bg">
       <div class="container" data-aos="fade-up">
 
-      
+
     <!-- Card Slider -->
     <div id="carouselId" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -316,7 +316,7 @@
     </div>
     <!-- End Card Slider -->
 
-          
+
 
       </div>
     </section><!-- End Team Section -->
@@ -383,5 +383,5 @@
 
       </div>
       </section><!-- End Frequently Asked Questions Section -->
- 
+
 @endsection
