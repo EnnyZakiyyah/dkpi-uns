@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pdln extends Model
+class Pengumuman extends Model
 {
     use HasFactory;
 
-    protected $table = 'pdlns';
+    protected $table = 'pengumumen';
     protected $guarded =  ['id'];
 }
