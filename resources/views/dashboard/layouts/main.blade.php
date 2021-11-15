@@ -66,15 +66,39 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('/dbPeminjamanAlat')}}">
+                        <a class="nav-link active" href="{{url('/pengumuman')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">pengumuman</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('/dbPeminjamanRuang')}}">
+                        <a class="nav-link active" href="{{url('/berita')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">berita</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url('/galeri')}}">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">galeri</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url('/peringkat')}}">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">peringkat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url('/pengaduan')}}">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">pengaduan</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url('/faq')}}">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">FAQ</span>
                         </a>
                     </li>
                 </ul>
