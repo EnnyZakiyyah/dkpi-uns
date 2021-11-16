@@ -30,19 +30,25 @@ Route::get('/', function () {
 });
 
 Route::get('/layanan', function () {
-    return view('home.layanan',[
+    return view('home.layanan', [
         "title" => "Layanan",
     ]);
 });
 
-Route::get('/peringkat', function () {
-    return view('home.peringkat',[
+Route::get('/home/pdln', function () {
+    return view('home.pdln', [
+        "title" => "PDLN",
+    ]);
+});
+
+Route::get('/home/peringkat', function () {
+    return view('home.peringkat', [
         "title" => "Peringkat",
     ]);
 });
 
-Route::get('/mitra', function () {
-    return view('mitra',[
+Route::get('hmmitra', function () {
+    return view('home.mitra', [
         "title" => "Mitra",
     ]);
 });
@@ -55,13 +61,13 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::resources([
-    'mitra' => MitraController::class,
-    'pdln' => PdlnController::class,
-    'berita' => BeritaController::class,
-    'galeri' => GalleryController::class,
-    'pengumuman' => PengumumanController::class,
-    'pengaduan' => PengumumanController::class,
-    'faq' => FaqController::class,
-    'peringkat' => PeringkatController::class
-]);
+// Route::resources([
+//     'mitra' => MitraController::class,
+//     'pdln' => PdlnController::class,
+//     'berita' => BeritaController::class,
+//     'galeri' => GalleryController::class,
+//     'pengumuman' => PengumumanController::class,
+//     'pengaduan' => PengumumanController::class,
+//     'faq' => FaqController::class,
+//     'peringkat' => PeringkatController::class
+// ]);
