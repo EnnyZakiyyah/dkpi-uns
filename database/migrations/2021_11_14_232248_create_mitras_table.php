@@ -24,8 +24,8 @@ class CreateMitrasTable extends Migration
             $table->string('jangka_waktu_awal');
             $table->string('jangka_waktu_akhir');
             $table->string('pejabat_penandatangan');
-            // $table->string('file_mou');
-            // $table->string('status_hidden');
+            $table->string('file_mou')->default('ada');
+            $table->string('status_hidden')->default(True);
             $table->timestamps();
         });
     }

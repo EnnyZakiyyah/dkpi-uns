@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use App\Models\Mitra;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
 
 class MitraFactory extends Factory
 {
@@ -25,8 +27,8 @@ class MitraFactory extends Factory
         return [
             'instansi' => $instansi[rand(0,2)],
             'nama_instansi' => $this->faker->name(),
-            'no_mou_uns' => $this->faker->name(),
-            'no_mou_mitra' => $this->faker->name(),
+            'no_mou_uns' => Str::random(10),
+            'no_mou_mitra' => Str::random(10),
             'ruang_lingkup' => $this->faker->name(),
             'jangka_waktu_awal' => now(),
             'jangka_waktu_akhir' => now(),
