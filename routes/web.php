@@ -61,13 +61,13 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-// Route::resources([
-//     'mitra' => MitraController::class,
-//     'pdln' => PdlnController::class,
-//     'berita' => BeritaController::class,
-//     'galeri' => GalleryController::class,
-//     'pengumuman' => PengumumanController::class,
-//     'pengaduan' => PengumumanController::class,
-//     'faq' => FaqController::class,
-//     'peringkat' => PeringkatController::class
-// ]);
+Route::resources([
+    'mitra' => MitraController::class,
+    'pdln' => PdlnController::class,
+    'berita' => BeritaController::class,
+    'galeri' => GalleryController::class,
+    'pengumuman' => PengumumanController::class,
+    'pengaduan' => PengumumanController::class,
+    'faq' => FaqController::class,
+    'peringkat' => PeringkatController::class
+]);

@@ -1,0 +1,250 @@
+@extends('dashboard/layouts/main')
+
+@section('title', 'Tambah Data PDLN')
+
+@section('container')
+
+<!-- Main content -->
+<div class="main-content" id="panel">
+    <!-- Topnav -->
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navbar links -->
+            </div>
+        </div>
+    </nav>
+    <!-- Header -->
+    <!-- Header -->
+    <div class="header bg-primary pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah Data PDLN</h6>
+                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="#"> PDLN</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    {{-- <div class="col-lg-6 col-5 text-right">
+                        <a href="#" class="btn btn-sm btn-neutral">New</a>
+                        <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header border-0">
+                        <h3 class="mb-0">Tambah Data PDLN</h3>
+                    </div>
+
+                    <!-- body card -->
+                    <form method="POST" action="/PDLN">
+                        @csrf
+                        <div class="form-group ml-5 mr-5">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control  @error('nama') is-invalid @enderror" id="nama" placeholder="Nama jenis" name="nama" value="{{ old('nama') }}">
+                            @error('nama')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="jenis">kategori</label>
+                            <input type="radio" class="form-control @error('jenis') is-invalid @enderror" id="jenis" placeholder="jenis jenis" name="jenis" value="{{ old('jenis') }}">
+                            <label for="jenis">HTML</label><br>
+                            <label for="jenis">HTML</label><br>
+
+
+                            @error('jenis')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="jumlah_orang"></label>
+                            <input type="text" class="form-control @error('jumlah_orang') is-invalid @enderror" id="jumlah_orang" placeholder="nomor surat" name="jumlah_orang" value="{{ old('kapaitas_ruang') }}">
+                            @error('jumlah_orang')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="unit_kerja"></label>
+                            <input type="text" class="form-control @error('unit_kerja') is-invalid @enderror" id="unit_kerja" placeholder="nomor surat" name="unit_kerja" value="{{ old('kapaitas_ruang') }}">
+                            @error('unit_kerja')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="jangka_waktu_awal">Awal</label>
+                            <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal') }}">
+                            @error('jangka_waktu_awal')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="jangka_waktu_akhir">Akhir</label>
+                            <input type="date" class="form-control @error('jangka_waktu_akhir') is-invalid @enderror" id="jangka_waktu_akhir" placeholder="Jangka Waktu Akhir" name="jangka_waktu_akhir" value="{{ old('jangka_waktu_akhir') }}">
+                            @error('jangka_waktu_akhir')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="tujuan">tujuan</label>
+                            <input type="text"
+                            class="form-control @error('tujuan') is-invalid @enderror"
+                            id="tujuan"
+                            placeholder="tujuan keberangkatan"
+                            name="tujuan"
+                            value="{{ old('tujuan') }}">
+                            @error('tujuan')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="negara">negara</label>
+                            <input type="text"
+                            class="form-control @error('negara') is-invalid @enderror"
+                            id="negara"
+                            placeholder="negara tujuan"
+                            name="negara"
+                            value="{{ old('negara') }}">
+                            @error('negara')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="surat_uns">surat UNS</label>
+                            <input type="text"
+                            class="form-control @error('surat_uns') is-invalid @enderror"
+                            id="surat_uns"
+                            placeholder="nomor surat"
+                            name="surat_uns"
+                            value="{{ old('surat_uns') }}">
+                            @error('surat_uns')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="catatan_uns">catatan UNS</label>
+                            <input type="textarea"
+                            class="form-control @error('catatan_uns') is-invalid @enderror"
+                            id="catatan_uns"
+                            placeholder="catatan"
+                            name="catatan_uns"
+                            value="{{ old('catatan_uns') }}">
+                            @error('catatan_uns')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="belmawa">nomor belmawa</label>
+                            <input type="text"
+                            class="form-control @error('belmawa') is-invalid @enderror"
+                            id="belmawa"
+                            placeholder="nomor surat"
+                            name="belmawa"
+                            value="{{ old('belmawa') }}">
+                            @error('belmawa')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="catatan_belmawa">catatan Belmawa</label>
+                            <input type="text"
+                            class="form-control @error('catatan_belmawa') is-invalid @enderror"
+                            id="catatan_belmawa"
+                            placeholder="catatan"
+                            name="catatan_belmawa"
+                            value="{{ old('catatan_belmawa') }}">
+                            @error('catatan_belmawa')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
+
+                        <div class="form-group ml-5 mr-5">
+                            <label for="ktln_kemensetneg">ktln kemensetneg</label>
+                            <input type="text" class="form-control @error('ktln_kemensetneg') is-invalid @enderror" id="ktln_kemensetneg" placeholder="nomor surat kemensetneg" name="ktln_kemensetneg" value="{{ old('kapaitas_ruang') }}">
+                            @error('ktln_kemensetneg')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="catatan_setneg">catatan setneg</label>
+                            <input type="textarea" class="form-control @error('catatan_setneg') is-invalid @enderror" id="catatan_setneg" placeholder="catatan" name="catatan_setneg" value="{{ old('kapaitas_ruang') }}">
+                            @error('catatan_setneg')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                    </form>
+
+                    <!-- Card footer -->
+                    {{-- <div class="card-footer py-4">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-end mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">
+                                        <i class="fas fa-angle-left"></i>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="fas fa-angle-right"></i>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main content -->
+    @endsection
