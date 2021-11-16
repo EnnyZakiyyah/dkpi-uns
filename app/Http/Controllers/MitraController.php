@@ -14,7 +14,11 @@ class MitraController extends Controller
      */
     public function index()
     {
-        return view('mitra.index');
+        $mitra = Mitra::latest()->get();
+
+        return view('mitra.index', [
+            'mitra' => $mitra
+        ]);
         // $yayasan = Mitra::where('jenis', 'yayasan')->latest()->get();
         // $cv = Mitra::where('jenis', 'cv')->latest()->get();
         // $internasional = Mitra::where('jenis', 'internasional')->latest()->get();

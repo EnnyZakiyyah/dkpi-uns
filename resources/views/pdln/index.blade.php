@@ -53,21 +53,21 @@
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
-              <tbody class="list">
-                {{-- @foreach($peminjaman_ruang as $rng)
+              {{-- <tbody class="list">
+                @foreach($mitra as $mit)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $rng->nama_ruang }}</td>
-                  <td>{{ $rng->tipe_ruang }}</td>
-                  <td>{{ $rng->kapasitas_ruang}}</td>
-                  <td>{{ $rng->letak_ruang }}</td>
-                  <td>{{ $rng->fungsi_ruang }}</td>
+                  <td>{{ $mit->nama }}</td>
+                  <td>{{ $mit->instansi }}</td>
+                  <td>{{ $mit->kapasitas_ruang}}</td>
+                  <td>{{ $mit->letak_ruang }}</td>
+                  <td>{{ $mit->fungsi_ruang }}</td>
                   <td>
                     <a href="/detail-ruang/{{ $rng->id }}" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
-                @endforeach --}}
-              </tbody>
+                @endforeach
+              </tbody> --}}
             </table>
           </div>
           <!-- Card footer -->
