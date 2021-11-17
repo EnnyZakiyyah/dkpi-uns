@@ -16,7 +16,7 @@ class CreateMitrasTable extends Migration
         Schema::create('mitras', function (Blueprint $table) {
             $table->id();
 
-            $table->enum('instansi', ['yayasan', 'cv', 'internasional', 'jasaKeuangan','pemerintah']);
+            $table->enum('instansi', ['yayasan', 'cv', 'internasional', 'jasaKeuangan','pemerintah'])->default('cv');
             $table->string('nama_instansi');
             $table->string('no_mou_uns');
             $table->string('no_mou_mitra');
