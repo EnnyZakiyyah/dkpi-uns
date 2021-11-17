@@ -15,15 +15,18 @@ class PdlnController extends Controller
      */
     public function index()
     {
-        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->get();
-        $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
-        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
+        // $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->get();
+        // $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
+        // $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
+        $pdln = Pdln::latest()->get();
+
 
         return view('pdln.index',[
             'title' => 'Data Pdln',
-            'mahasiswa' => $mahasiswa,
-            'dosen' => $dosen,
-            'pimpinan' => $pimpinan
+            'pdlns' => $pdln
+            // 'mahasiswa' => $mahasiswa,
+            // 'dosen' => $dosen,
+            // 'pimpinan' => $pimpinan
         ]);
     }
 

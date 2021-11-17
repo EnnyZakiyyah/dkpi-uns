@@ -14,7 +14,11 @@ class FaqController extends Controller
      */
     public function index()
     {
-        //
+        $faq = Faq::get();
+        return view('faq.index',[
+            'faqs' => $faq
+        ]);
+
     }
 
     /**

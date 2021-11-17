@@ -14,7 +14,10 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        //
+        $pengumuman = Pengumuman::get();
+        return view('pengumuman.index',[
+            'pengumumans' => $pengumuman
+        ]);
     }
 
     /**

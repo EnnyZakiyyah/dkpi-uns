@@ -17,7 +17,7 @@ class BeritaController extends Controller
         //
         $berita = Berita::get();
         return view('berita.index', [
-            'berita' => $berita
+            'beritas' => $berita
         ]);
     }
 

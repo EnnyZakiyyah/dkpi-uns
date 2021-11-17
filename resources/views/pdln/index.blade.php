@@ -42,38 +42,40 @@
               <thead class="thead-light">
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
-                  <th scope="col" class="sort" data-sort="nama">kategori</th>
                   <th scope="col" class="sort" data-sort="nim">Nama</th>
-                  <th scope="col" class="sort" data-sort="nim">jumlah</th>
+                  <th scope="col" class="sort" data-sort="nama">kategori</th>
+                  {{-- <th scope="col" class="sort" data-sort="nim">jumlah</th> --}}
                   <th scope="col" class="sort" data-sort="nama">unit</th>
-                  <th scope="col" class="sort" data-sort="nama">tujuan</th>
+                  {{-- <th scope="col" class="sort" data-sort="nama">tujuan</th> --}}
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
-              {{-- <tbody class="list">
-                @foreach($mitra as $mit)
+              <tbody class="list">
+                @foreach($pdlns as $pdln)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $mit->nama }}</td>
-                  <td>{{ $mit->instansi }}</td>
-                  <td>{{ $mit->kapasitas_ruang}}</td>
-                  <td>{{ $mit->letak_ruang }}</td>
-                  <td>{{ $mit->fungsi_ruang }}</td>
+                  <td>{{ $pdln->nama }}</td>
+                  <td>{{ $pdln->jenis }}</td>
+                  {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}
+                  <td>{{ $pdln->unit_kerja }}</td>
+                  <td>{{ $pdln->negara }}</td>
+                  <td>{{ $pdln->jangka_waktu_awal }}</td>
+                  <td>{{ $pdln->jangka_waktu_akhir }}</td>
                   <td>
-                    <a href="/detail-ruang/{{ $rng->id }}" class="badge badge-info">Detail</a>
+                    <a href="/pdln/{{ $pdln->id }}" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
                 @endforeach
-              </tbody> --}}
+              </tbody>
             </table>
           </div>
           <!-- Card footer -->
           <div class="card-footer py-4">
             <nav aria-label="...">
-              <a href="{{'/mitra/create'}}" class="btn btn-primary">Tambah Data</a>
+              <a href="{{'/pdln/create'}}" class="btn btn-primary">Tambah Data</a>
               <ul class="pagination justify-content-end mb-0">
                 <li class="page-item disabled">
                   <a class="page-link" href="#" tabindex="-1">

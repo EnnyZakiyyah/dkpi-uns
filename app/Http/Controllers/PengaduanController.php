@@ -18,8 +18,9 @@ class PengaduanController extends Controller
     {
         //
         $pengaduan = Pengaduan::get();
+        
         return view('pengaduan.index',[
-            'pengaduan' => $pengaduan
+            'pengaduans' => $pengaduan
         ]);
     }
 
