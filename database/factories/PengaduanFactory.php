@@ -22,7 +22,11 @@ class PengaduanFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nama'=> $this->faker->name(),
+            'subject'=> $this->faker->name(),
+            'message'=> $this->faker->sentence(3),
+            'email'=> $this->faker->unique()->safeEmail(),
+            'isRead'=> 0
         ];
     }
 }

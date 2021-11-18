@@ -21,8 +21,13 @@ class PeringkatFactory extends Factory
      */
     public function definition()
     {
+        $jenis = ['THES', 'QSstar'];
         return [
-            //
+            'jenis'=> $jenis[rand(0,1)],
+            'peringkat'=> rand(30,100),
+            'judul'=> $this->faker->sentence(2),
+            'berita'=> $this->faker->paragraph(1),
+            'link'=> $this->faker->domainName()
         ];
     }
 }

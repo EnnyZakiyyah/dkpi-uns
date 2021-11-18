@@ -46,27 +46,30 @@
                   <th scope="col" class="sort" data-sort="nama">instansi</th>
                   <th scope="col" class="sort" data-sort="nama">MoU UNS</th>
                   <th scope="col" class="sort" data-sort="nama">MoU Mitra</th>
-                  <th scope="col" class="sort" data-sort="tanggalpeminjaman">Ruang lingkup</th>
+                  {{-- <th scope="col" class="sort" data-sort="tanggalpeminjaman">Ruang lingkup</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th> --}}
                   <th scope="col" class="sort" data-sort="namaruang">pejabat</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
-                {{-- @foreach($peminjaman_ruang as $rng)
+                @foreach($mitra as $mit)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $rng->nama_ruang }}</td>
-                  <td>{{ $rng->tipe_ruang }}</td>
-                  <td>{{ $rng->kapasitas_ruang}}</td>
-                  <td>{{ $rng->letak_ruang }}</td>
-                  <td>{{ $rng->fungsi_ruang }}</td>
+                  <td>{{ $mit->nama_instansi }}</td>
+                  <td>{{ $mit->instansi }}</td>
+                  <td>{{ $mit->no_mou_uns }}</td>
+                  <td>{{ $mit->no_mou_mitra }}</td>
+                  {{-- <td>{{ $mit->nama_instansi }}</td>
+                  <td>{{ $mit->nama_instansi }}</td> --}}
+                  <td>{{ $mit->pejabat_penandatangan}}</td>
+
                   <td>
-                    <a href="/detail-ruang/{{ $rng->id }}" class="badge badge-info">Detail</a>
+                    <a href="/mitra/{{ $mit->id }}" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
-                @endforeach --}}
+                @endforeach
               </tbody>
             </table>
           </div>

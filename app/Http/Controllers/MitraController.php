@@ -14,7 +14,11 @@ class MitraController extends Controller
      */
     public function index()
     {
-        return view('mitra.index');
+        $mitra = Mitra::latest()->get();
+
+        return view('mitra.index', [
+            'mitra' => $mitra
+        ]);
         // $yayasan = Mitra::where('jenis', 'yayasan')->latest()->get();
         // $cv = Mitra::where('jenis', 'cv')->latest()->get();
         // $internasional = Mitra::where('jenis', 'internasional')->latest()->get();
@@ -51,10 +55,10 @@ class MitraController extends Controller
     public function store(Request $request)
     {
         //
-        $file_mou = $request->file('file_mou')->store('file_mou');
+        // $file_mou = $request->file('file_mou')->store('file_mou');
 
         $validatedData = $request->validate([
-        'instansi' => 'required',
+        'instansi' => '',
         'nama_instansi' =>'required',
         'no_mou_uns' =>'required',
         'no_mou_mitra' =>'required',
@@ -62,10 +66,11 @@ class MitraController extends Controller
         'jangka_waktu_awal' =>'required',
         'jangka_waktu_akhir' =>'required',
         'pejabat_penandatangan' =>'required',
-        'file_mou' =>'required',
-        'status_hidden' =>'required'
+        'file_mou' =>'',
+        'status_hidden' =>''
         ]);
-        $validatedData['file_mou'] = $file_mou;
+
+
 
         Mitra::create($validatedData);
 

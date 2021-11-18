@@ -22,7 +22,10 @@ class BeritaFactory extends Factory
     public function definition()
     {
         return [
-            //
+
+            'judul'=> $this->faker->sentence(2),
+            'slug'=> $this->faker->sentence(3),
+            'berita'=> $this->faker->paragraph(2)
         ];
     }
 }

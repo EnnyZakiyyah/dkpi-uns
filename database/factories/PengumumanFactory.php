@@ -22,7 +22,10 @@ class PengumumanFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'judul'=> $this->faker->sentence(2),
+            'berlaku'=> $this->faker->date(),
+            'pengumuman'=> $this->faker->sentence(4),
+            'link'=> $this->faker->domainName(),
         ];
     }
 }

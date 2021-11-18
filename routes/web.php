@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\PdlnController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MitraController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FaqController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\PdlnController;
-use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PeringkatController;
+use App\Http\Controllers\PengumumanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,13 +62,13 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-// Route::resources([
-//     'mitra' => MitraController::class,
-//     'pdln' => PdlnController::class,
-//     'berita' => BeritaController::class,
-//     'galeri' => GalleryController::class,
-//     'pengumuman' => PengumumanController::class,
-//     'pengaduan' => PengumumanController::class,
-//     'faq' => FaqController::class,
-//     'peringkat' => PeringkatController::class
-// ]);
+Route::resources([
+    'mitra' => MitraController::class,
+    'pdln' => PdlnController::class,
+    'berita' => BeritaController::class,
+    'galeri' => GalleryController::class,
+    'pengumuman' => PengumumanController::class,
+    'pengaduan' => PengaduanController::class,
+    'faq' => FaqController::class,
+    'peringkat' => PeringkatController::class
+]);
