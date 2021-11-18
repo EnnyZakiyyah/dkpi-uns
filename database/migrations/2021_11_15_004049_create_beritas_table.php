@@ -19,6 +19,8 @@ class CreateBeritasTable extends Migration
             $table->string('judul');
             $table->string('slug');
             $table->text('isi');
+            $table->string('link');
+
 
             $table->timestamps();
         });

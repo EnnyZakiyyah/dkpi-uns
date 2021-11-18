@@ -1,7 +1,7 @@
 
 @extends('dashboard/layouts/main')
 
-@section('title', 'Tambah Data Mitra')
+@section('title', 'Tambah Pengumuman')
 
 @section('container')
 
@@ -22,11 +22,11 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah Data Peminjaman Ruang</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah pengumuman</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#"> Mitra</a></li>
+                                <li class="breadcrumb-item"><a href="/oengumuman"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="/pengumuman"> Pengumuman</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
                             </ol>
                         </nav>
@@ -46,88 +46,35 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah Data Mitra Kerjasama</h3>
+                        <h3 class="mb-0">Tambah Pengumuman</h3>
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/mitra">
+                    <form method="POST" action="/pengumuman">
                         @csrf
-                        <div class="form-group ml-5 mr-5">
-                            <label for="nama_instansi">Nama Instansi</label>
-                            <input type="text" class="form-control  @error('nama_instansi') is-invalid @enderror" id="nama_instansi" placeholder="Nama Instansi" name="nama_instansi" value="{{ old('nama_instansi') }}">
-                            @error('nama_instansi')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                        <div class="form-group ml-5 mr-5">
-                            <label for="instansi" class="form-select" >Jenis Instansi</label>
-                            {{-- <select class="form-select  @error('instansi') is-invalid @enderror" id="instansi" placeholder="jenis instansi" name="instansi" value="{{ old('instansi') }}">
-                            <option value="yayasan">yayasan</option>
-                            <option value="cv">cv</option>
-                            <option value="internasional">internasional</option>
-                            <option value="pemerintah">pemerintah</option>
-                            <option value="jasa_keuangan">jasa_keuangan</option>
 
-
-                            @error('instansi')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div> --}}
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              Default radio
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                              Default checked radio
-                            </label>
-                          </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="no_mou_uns">Nomor MoU UNS</label>
-                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ old('kapaitas_ruang') }}">
-                            @error('no_mou_uns')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>                        <div class="form-group ml-5 mr-5">
-                            <label for="no_mou_mitra">Nomor MoU Mitra</label>
-                            <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="nomor surat" name="no_mou_mitra" value="{{ old('kapaitas_ruang') }}">
-                            @error('no_mou_mitra')
+                            <label for="pengumuman">Isi Pengumuman</label>
+                            <input type="textarea" class="form-control  @error('pengumuman') is-invalid @enderror" id="pengumuman" placeholder="Isi Pengumuman" name="pengumuman" value="{{ old('pengumuman') }}">
+                            @error('pengumuman')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_awal">Awal</label>
-                            <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal') }}">
-                            @error('jangka_waktu_awal')
+                            <label for="berlaku">berlaku hingga</label>
+                            <input type="date" class="form-control  @error('berlaku') is-invalid @enderror" id="berlaku" placeholder="berlaku hingga" name="berlaku" value="{{ old('berlaku') }}">
+                            @error('berlaku')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_akhir">Akhir</label>
-                            <input type="date" class="form-control @error('jangka_waktu_akhir') is-invalid @enderror" id="jangka_waktu_akhir" placeholder="Jangka Waktu Akhir" name="jangka_waktu_akhir" value="{{ old('jangka_waktu_akhir') }}">
-                            @error('jangka_waktu_akhir')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                        <div class="form-group ml-5 mr-5">
-                            <label for="pejabat_penandatangan">pejabat penandatangan</label>
-                            <input type="text" class="form-control @error('pejabat_penandatangan') is-invalid @enderror" id="pejabat_penandatangan" placeholder="nama pejabat pendandatangan" name="pejabat_penandatangan" value="{{ old('kapaitas_ruang') }}">
-                            @error('pejabat_penandatangan')
+                            <label for="link"> link</label>
+                            <input type="text" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link" name="link" value="{{ old('link') }}">
+                            @error('link')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

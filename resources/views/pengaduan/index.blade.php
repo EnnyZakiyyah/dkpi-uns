@@ -67,7 +67,7 @@
           <!-- Card footer -->
           <div class="card-footer py-4">
             <nav aria-label="...">
-              <a href="{{'/mitra/create'}}" class="btn btn-primary">Tambah Data</a>
+              {{-- <a href="{{'/mitra/create'}}" class="btn btn-primary">Tambah Data</a> --}}
               <ul class="pagination justify-content-end mb-0">
                 <li class="page-item disabled">
                   <a class="page-link" href="#" tabindex="-1">

@@ -13,14 +13,14 @@
             <h6 class="h2 text-white d-inline-block mb-0">Berita</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                <li class="breadcrumb-item"><a href="#"> Berita</a></li>
+                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="/berita"> Berita</a></li>
                 <li class="breadcrumb-item active" aria-current="page"> index</li>
               </ol>
             </nav>
           </div>
           <div class="col-lg-6 col-5 text-right">
-            <a href="#" class="btn btn-sm btn-neutral">New</a>
+            <a href="/berita/create" class="btn btn-sm btn-neutral">New</a>
             <a href="#" class="btn btn-sm btn-neutral">Filters</a>
           </div>
         </div>
@@ -63,7 +63,7 @@
           <!-- Card footer -->
           <div class="card-footer py-4">
             <nav aria-label="...">
-              <a href="{{'/mitra/create'}}" class="btn btn-primary">Tambah Data</a>
+              <a href="{{'/berita/create'}}" class="btn btn-primary">Tambah Data</a>
               <ul class="pagination justify-content-end mb-0">
                 <li class="page-item disabled">
                   <a class="page-link" href="#" tabindex="-1">

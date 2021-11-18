@@ -24,16 +24,17 @@
                         <h6 class="h2 text-white d-inline-block mb-0">Detail PDLN</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#"> PDLN</a></li>
+                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="/pdln"> PDLN</a></li>
+                                <li class="breadcrumb-item"><a href="/pdln"> {{ $pdln->jenis }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ $pdln->nama }}</li>
                             </ol>
                         </nav>
                     </div>
-                    <div class="col-lg-6 col-5 text-right">
+                    {{-- <div class="col-lg-6 col-5 text-right">
                         <a href="#" class="btn btn-sm btn-neutral">New</a>
                         <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -45,7 +46,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail Peminjaman Ruang</h3>
+                        <h3 class="mb-0">Detail Data Pdln</h3>
                     </div>
 
                     <!-- body card -->
@@ -74,7 +75,7 @@
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
-                            <a href="/dbAlat" class="card-link ml-5">Kembali</a>
+                            <a href="/pdln" class="card-link ml-5">Kembali</a>
                         </div>
                     </div>
 
