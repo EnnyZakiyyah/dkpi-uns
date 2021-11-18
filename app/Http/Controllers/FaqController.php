@@ -50,7 +50,9 @@ class FaqController extends Controller
      */
     public function show(Faq $faq)
     {
-        //
+        return view('faq.show', [
+            'faq' => $faq
+        ]);
     }
 
     /**
@@ -62,6 +64,9 @@ class FaqController extends Controller
     public function edit(Faq $faq)
     {
         //
+         return view('faq.edit', [
+            'faq' => $faq
+        ]);
     }
 
     /**
@@ -85,5 +90,9 @@ class FaqController extends Controller
     public function destroy(Faq $faq)
     {
         //
+        Faq::destroy($faq);
+
+        return redirect('/faq')
+        ->with('success', 'data berhasil dihapus');
     }
 }

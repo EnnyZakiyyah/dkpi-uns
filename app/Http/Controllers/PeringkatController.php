@@ -25,6 +25,7 @@ class PeringkatController extends Controller
     public function create()
     {
         //
+        return view('peringkat.create');
     }
 
     /**
@@ -47,6 +48,9 @@ class PeringkatController extends Controller
     public function show(Peringkat $peringkat)
     {
         //
+        return view('peringkat.show', [
+            'peringkat' => $peringkat
+        ]);
     }
 
     /**
@@ -58,6 +62,10 @@ class PeringkatController extends Controller
     public function edit(Peringkat $peringkat)
     {
         //
+
+        return view('peringkat.edit', [
+            'peringkat' => $peringkat
+        ]);
     }
 
     /**
@@ -81,5 +89,9 @@ class PeringkatController extends Controller
     public function destroy(Peringkat $peringkat)
     {
         //
+        Peringkat::destroy($peringkat);
+
+        return redirect('/peri$peringkat')
+        ->with('success', 'data berhasil dihapus');
     }
 }

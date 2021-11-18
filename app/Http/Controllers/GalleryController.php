@@ -25,7 +25,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
