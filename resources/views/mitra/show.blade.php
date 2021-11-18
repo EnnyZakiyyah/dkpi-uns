@@ -25,8 +25,8 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#"> Ruang</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Ruang</li>
+                                <li class="breadcrumb-item"><a href="#"> Mitra</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"> {{ $mitra->nama_instansi }}</li>
                             </ol>
                         </nav>
                     </div>

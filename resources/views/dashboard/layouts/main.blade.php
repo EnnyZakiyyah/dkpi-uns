@@ -54,6 +54,12 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link active" href="{{url('/dashboard')}}">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="{{url('/pdln')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Data PDLN</span>
@@ -356,7 +362,7 @@
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
             <div class="copyright text-center  text-lg-left  text-muted">
-              &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+              &copy; 2021 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
             </div>
           </div>
           <div class="col-lg-6">
