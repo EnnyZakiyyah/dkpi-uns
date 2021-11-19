@@ -54,6 +54,7 @@ class BeritaController extends Controller
     public function show(Berita $berita)
     {
         //
+
         return view('berita.show', [
             'berita' => $berita
         ]);

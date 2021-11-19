@@ -25,7 +25,8 @@ class BeritaFactory extends Factory
 
             'judul'=> $this->faker->sentence(2),
             'slug'=> $this->faker->sentence(3),
-            'berita'=> $this->faker->paragraph(2)
+            'isi'=> $this->faker->paragraph(2),
+            'link'=> $this->faker->domainName()
         ];
     }
 }

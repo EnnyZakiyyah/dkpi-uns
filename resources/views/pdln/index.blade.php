@@ -13,14 +13,14 @@
             <h6 class="h2 text-white d-inline-block mb-0">Data PDLN</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                <li class="breadcrumb-item"><a href="#"> PDLN</a></li>
+                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="/pdln"> PDLN</a></li>
                 <li class="breadcrumb-item active" aria-current="page"> Index</li>
               </ol>
             </nav>
           </div>
           <div class="col-lg-6 col-5 text-right">
-            <a href="#" class="btn btn-sm btn-neutral">New</a>
+            <a href="/pdln" class="btn btn-sm btn-neutral">New</a>
             <a href="#" class="btn btn-sm btn-neutral">Filters</a>
           </div>
         </div>
@@ -57,8 +57,8 @@
                 @foreach($pdlns as $pdln)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $pdln->nama }}</td>
-                  <td>{{ $pdln->jenis }}</td>
+                  <td><a href="/pdln/{{ $pdln->id }}">{{ $pdln->nama }}</a></td>
+                  <td><a href="/data/{{ $pdln->jenis }}">{{ $pdln->jenis }}</a></td>
                   {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}
                   <td>{{ $pdln->unit_kerja }}</td>
                   <td>{{ $pdln->negara }}</td>

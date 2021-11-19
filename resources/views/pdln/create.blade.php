@@ -24,8 +24,8 @@
                         <h6 class="h2 text-white d-inline-block mb-0">Form Tambah Data PDLN</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#"> PDLN</a></li>
+                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="/pdln"> PDLN</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
                             </ol>
                         </nav>
@@ -49,7 +49,7 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/PDLN">
+                    <form method="POST" action="/pdln" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ml-5 mr-5">
                             <label for="nama">Nama</label>
@@ -74,7 +74,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jumlah_orang"></label>
+                            <label for="jumlah_orang">Jumlah orang</label>
                             <input type="text" class="form-control @error('jumlah_orang') is-invalid @enderror" id="jumlah_orang" placeholder="nomor surat" name="jumlah_orang" value="{{ old('kapaitas_ruang') }}">
                             @error('jumlah_orang')
                             <div class="invalid-feedback">
@@ -83,7 +83,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="unit_kerja"></label>
+                            <label for="unit_kerja">Unit Kerja</label>
                             <input type="text" class="form-control @error('unit_kerja') is-invalid @enderror" id="unit_kerja" placeholder="nomor surat" name="unit_kerja" value="{{ old('kapaitas_ruang') }}">
                             @error('unit_kerja')
                             <div class="invalid-feedback">
@@ -213,6 +213,34 @@
                             </div>
                             @enderror
                         </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="file_surat_uns">file surat uns</label>
+                            <input type="file" class="form-control @error('file_surat_uns') is-invalid @enderror" id="file_surat_uns" placeholder="catatan" name="file_surat_uns" value="{{ old('kapaitas_ruang') }}">
+                            @error('file_surat_uns')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="file_belmawa">file belmawa</label>
+                            <input type="file" class="form-control @error('file_belmawa') is-invalid @enderror" id="file_belmawa" placeholder="catatan" name="file_belmawa" value="{{ old('kapaitas_ruang') }}">
+                            @error('file_belmawa')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="file_ktln">file ktln</label>
+                            <input type="file" class="form-control @error('file_ktln') is-invalid @enderror" id="file_ktln" placeholder="catatan" name="file_ktln" value="{{ old('kapaitas_ruang') }}">
+                            @error('file_ktln')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
                         <button type="submit" class="btn btn-primary ml-5">Submit</button>
                     </form>
 

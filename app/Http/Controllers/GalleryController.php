@@ -15,6 +15,7 @@ class GalleryController extends Controller
     public function index()
     {
         //
+        return view('galeri.index');
     }
 
     /**
@@ -24,7 +25,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

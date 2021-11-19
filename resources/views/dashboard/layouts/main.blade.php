@@ -35,6 +35,9 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset('assets2/css/argon.css?v=1.2.0')}}" type="text/css">
+{{-- editor berita --}}
+  <link rel="stylesheet" type="text/css" href="/css/trix.css">
+  <script type="text/javascript" src="/js/trix.js"></script>
 </head>
 
 <body>
@@ -53,6 +56,12 @@
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <!-- Nav items -->
                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url('/dashboard')}}">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Dashboard</span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{{url('/pdln')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
@@ -356,7 +365,7 @@
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
             <div class="copyright text-center  text-lg-left  text-muted">
-              &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+              &copy; 2021 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
             </div>
           </div>
           <div class="col-lg-6">

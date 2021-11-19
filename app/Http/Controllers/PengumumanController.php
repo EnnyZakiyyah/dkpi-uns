@@ -27,7 +27,7 @@ class PengumumanController extends Controller
      */
     public function create()
     {
-        //
+        return view('pengumuman.create');
     }
 
     /**
@@ -50,6 +50,9 @@ class PengumumanController extends Controller
     public function show(Pengumuman $pengumuman)
     {
         //
+        return view('pengumuman.show', [
+            'pengumuman' => $pengumuman
+        ]);
     }
 
     /**
@@ -60,7 +63,10 @@ class PengumumanController extends Controller
      */
     public function edit(Pengumuman $pengumuman)
     {
-        //
+
+        return view('pengumuman.edit', [
+            'pengumuman' => $pengumuman
+        ]);
     }
 
     /**
@@ -84,5 +90,9 @@ class PengumumanController extends Controller
     public function destroy(Pengumuman $pengumuman)
     {
         //
+        Pengumuman::destroy($pengumuman);
+
+        return redirect('/pengumuman')
+        ->with('success', 'data berhasil dihapus');
     }
 }

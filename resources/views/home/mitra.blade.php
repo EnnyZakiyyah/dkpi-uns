@@ -4,7 +4,7 @@
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <div class="box">
-   
+
       <!-- ======= Portfolio Section ======= -->
       <section id="mitra" class="portfolio">
       <div class="container" data-aos="fade-up">
@@ -16,10 +16,10 @@
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
           <li data-filter=".filter-cv">CV/PT</li>
-          <li data-filter=".filter-sch">Sekolah/Yayasan</li>
-          <li data-filter=".filter-inter">Internasional</li>
-          <li data-filter=".filter-jasa"><center>Jasa Keuangan</center></li>
-          <li data-filter=".filter-gov">Pemerintah</li>
+          <li data-filter=".filter-yayasan">Sekolah/Yayasan</li>
+          <li data-filter=".filter-internasional">Internasional</li>
+          <li data-filter=".filter-jasaKeuangan"><center>Jasa Keuangan</center></li>
+          <li data-filter=".filter-pemerintah">Pemerintah</li>
         </ul>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
@@ -39,36 +39,18 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($cvs as $cv)
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
+                  <th scope="row">{{ $loop->iteration }}</th>
+                  <td>{{ $cv->nama_instansi }}</td>
+                  <td>{{ $cv->ruang_lingkup }}</td>
+                  <td>{{ $cv->jangka_waktu_awal }}</td>
+                  <td>{{ $cv->jangka_waktu_akhir }}</td>
+                  <td>{{ $cv->pejabat_penandatangan }}</td>
+                  <td>{{ $cv->status }}</td>
+                  <td></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
+                @endforeach
               </tbody>
             </table>
 
@@ -90,10 +72,8 @@
                 </li>
               </ul>
             </nav>
-            </div>
-
-          <!-- Sekolah/Yayasan -->
-          <div class="portfolio-item filter-sch">
+        </div>
+        <div class="portfolio-item filter-yayasan">
             <table class="table table-hover">
               <thead>
                 <tr class="text-primary">
@@ -108,36 +88,18 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($yayasans as $yayasan)
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
+                  <th scope="row">{{ $loop->iteration }}</th>
+                  <td>{{ $yayasan->nama_instansi }}</td>
+                  <td>{{ $yayasan->ruang_lingkup }}</td>
+                  <td>{{ $yayasan->jangka_waktu_awal }}</td>
+                  <td>{{ $yayasan->jangka_waktu_akhir }}</td>
+                  <td>{{ $yayasan->pejabat_penandatangan }}</td>
+                  <td>{{ $yayasan->status }}</td>
+                  <td></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
+                @endforeach
               </tbody>
             </table>
 
@@ -159,10 +121,8 @@
                 </li>
               </ul>
             </nav>
-            </div>
-
-          <!-- Internasional -->
-          <div class="portfolio-item filter-inter">
+        </div>
+        <div class="portfolio-item filter-internasional">
             <table class="table table-hover">
               <thead>
                 <tr class="text-primary">
@@ -177,36 +137,18 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($internasionals as $internasional)
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
+                  <th scope="row">{{ $loop->iteration }}</th>
+                  <td>{{ $internasional->nama_instansi }}</td>
+                  <td>{{ $internasional->ruang_lingkup }}</td>
+                  <td>{{ $internasional->jangka_waktu_awal }}</td>
+                  <td>{{ $internasional->jangka_waktu_akhir }}</td>
+                  <td>{{ $internasional->pejabat_penandatangan }}</td>
+                  <td>{{ $internasional->status }}</td>
+                  <td></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
+                @endforeach
               </tbody>
             </table>
 
@@ -228,10 +170,8 @@
                 </li>
               </ul>
             </nav>
-            </div>
-
-        <!-- Jasa Keuangan -->
-        <div class="portfolio-item filter-jasa">
+        </div>
+        <div class="portfolio-item filter-jasaKeuangan">
             <table class="table table-hover">
               <thead>
                 <tr class="text-primary">
@@ -246,36 +186,18 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($jasaKeuangans as $jasaKeuangan)
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
+                  <th scope="row">{{ $loop->iteration }}</th>
+                  <td>{{ $jasaKeuangan->nama_instansi }}</td>
+                  <td>{{ $jasaKeuangan->ruang_lingkup }}</td>
+                  <td>{{ $jasaKeuangan->jangka_waktu_awal }}</td>
+                  <td>{{ $jasaKeuangan->jangka_waktu_akhir }}</td>
+                  <td>{{ $jasaKeuangan->pejabat_penandatangan }}</td>
+                  <td>{{ $jasaKeuangan->status }}</td>
+                  <td></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
+                @endforeach
               </tbody>
             </table>
 
@@ -297,10 +219,8 @@
                 </li>
               </ul>
             </nav>
-            </div>
-
-          <!-- Pemerintah -->
-        <div class="portfolio-item filter-gov">
+        </div>
+        <div class="portfolio-item filter-pemerintah">
             <table class="table table-hover">
               <thead>
                 <tr class="text-primary">
@@ -315,36 +235,18 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($pemerintahs as $pemerintah)
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
+                  <th scope="row">{{ $loop->iteration }}</th>
+                  <td>{{ $pemerintah->nama_instansi }}</td>
+                  <td>{{ $pemerintah->ruang_lingkup }}</td>
+                  <td>{{ $pemerintah->jangka_waktu_awal }}</td>
+                  <td>{{ $pemerintah->jangka_waktu_akhir }}</td>
+                  <td>{{ $pemerintah->pejabat_penandatangan }}</td>
+                  <td>{{ $pemerintah->status }}</td>
+                  <td></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
+                @endforeach
               </tbody>
             </table>
 
@@ -366,7 +268,9 @@
                 </li>
               </ul>
             </nav>
-            </div>
+        </div>
+
+
 
         </div>
 
@@ -375,5 +279,5 @@
 
 
     </div>
- 
+
 @endsection
