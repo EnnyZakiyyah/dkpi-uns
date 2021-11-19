@@ -1,6 +1,7 @@
+
 @extends('dashboard/layouts/main')
 
-@section('title', 'Form Edit data mitra')
+@section('title', 'Tambah Data Mitra')
 
 @section('container')
 
@@ -21,19 +22,19 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Ubah Data Mitra</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah Data Mitra</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#"> Mitra</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Edit</li>
+                                <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="/mitra"> Mitra</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
                             </ol>
                         </nav>
                     </div>
-                    <div class="col-lg-6 col-5 text-right">
+                    {{-- <div class="col-lg-6 col-5 text-right">
                         <a href="#" class="btn btn-sm btn-neutral">New</a>
                         <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -45,16 +46,16 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail Mitra</h3>
+                        <h3 class="mb-0">Tambah Data Mitra Kerjasama</h3>
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/detail-ruang/{{ $mitra->id }}">
+                    <form method="POST" action="/mitra/{{ $mitra->id }}" enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="form-group ml-5 mr-5">
                             <label for="nama_instansi">Nama Instansi</label>
-                            <input type="text" class="form-control  @error('nama_instansi') is-invalid @enderror" id="nama_instansi" placeholder="Nama Ruang" name="nama_instansi" value="{{ $mitra->nama_instansi }}">
+                            <input type="text" class="form-control  @error('nama_instansi') is-invalid @enderror" id="nama_instansi" placeholder="Nama Instansi" name="nama_instansi" value="{{ old('nama_instansi', $mitra->nama_instansi) }}">
                             @error('nama_instansi')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -62,26 +63,44 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="instansi">jenis instansi</label>
-                            <input type="text" class="form-control @error('instansi') is-invalid @enderror" id="instansi" placeholder="Tipe Ruang" name="instansi" value="{{ $mitra->instansi }}">
+                            <label for="instansi" class="form-select" >Jenis Instansi</label>
+                            {{-- <select class="form-select  @error('instansi') is-invalid @enderror" id="instansi" placeholder="jenis instansi" name="instansi" value="{{ old('instansi') }}">
+                            <option value="yayasan">yayasan</option>
+                            <option value="cv">cv</option>
+                            <option value="internasional">internasional</option>
+                            <option value="pemerintah">pemerintah</option>
+                            <option value="jasa_keuangan">jasa_keuangan</option>
+
+
                             @error('instansi')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div>
+                        </div> --}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Default radio
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Default checked radio
+                            </label>
+                          </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="no_mou_uns">nomor MoU UNS</label>
-                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="Kapasitas Ruang" name="no_mou_uns" value="{{ $mitra->no_mou_uns }}">
+                            <label for="no_mou_uns">Nomor MoU UNS</label>
+                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ old('kapaitas_ruang') }}">
                             @error('no_mou_uns')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div>
-                        <div class="form-group ml-5 mr-5">
-                            <label for="no_mou_mitra">nomor MoU Mitra</label>
-                            <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="Kapasitas Ruang" name="no_mou_mitra" value="{{ $mitra->no_mou_mitra }}">
+                        </div>                        <div class="form-group ml-5 mr-5">
+                            <label for="no_mou_mitra">Nomor MoU Mitra</label>
+                            <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="nomor surat" name="no_mou_mitra" value="{{ old('kapaitas_ruang') }}">
                             @error('no_mou_mitra')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -89,17 +108,8 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="ruang_lingkup">Ruang Lingkup</label>
-                            <input type="text" class="form-control @error('ruang_lingkup') is-invalid @enderror" id="ruang_lingkup" placeholder="Letak Ruang" name="ruang_lingkup" value="{{ $mitra->ruang_lingkup }}">
-                            @error('ruang_lingkup')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                        <div class="form-group ml-5 mr-5">
                             <label for="jangka_waktu_awal">Awal</label>
-                            <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="Fungsi Alat" name="jangka_waktu_awal" value="{{ $mitra->jangka_waktu_awal }}">
+                            <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal') }}">
                             @error('jangka_waktu_awal')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -108,7 +118,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="jangka_waktu_akhir">Akhir</label>
-                            <input type="date" class="form-control @error('jangka_waktu_akhir') is-invalid @enderror" id="jangka_waktu_akhir" placeholder="Fungsi Alat" name="jangka_waktu_akhir" value="{{ $mitra->jangka_waktu_akhir }}">
+                            <input type="date" class="form-control @error('jangka_waktu_akhir') is-invalid @enderror" id="jangka_waktu_akhir" placeholder="Jangka Waktu Akhir" name="jangka_waktu_akhir" value="{{ old('jangka_waktu_akhir') }}">
                             @error('jangka_waktu_akhir')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -116,8 +126,8 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="pejabat_penandatangan">Pejabat Penandatangan</label>
-                            <input type="text" class="form-control @error('pejabat_penandatangan') is-invalid @enderror" id="pejabat_penandatangan" placeholder="Letak Ruang" name="pejabat_penandatangan" value="{{ $mitra->pejabat_penandatangan }}">
+                            <label for="pejabat_penandatangan">pejabat penandatangan</label>
+                            <input type="text" class="form-control @error('pejabat_penandatangan') is-invalid @enderror" id="pejabat_penandatangan" placeholder="nama pejabat pendandatangan" name="pejabat_penandatangan" value="{{ old('kapaitas_ruang') }}">
                             @error('pejabat_penandatangan')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -128,7 +138,7 @@
                     </form>
 
                     <!-- Card footer -->
-                    <div class="card-footer py-4">
+                    {{-- <div class="card-footer py-4">
                         <nav aria-label="...">
                             <ul class="pagination justify-content-end mb-0">
                                 <li class="page-item disabled">
@@ -152,7 +162,7 @@
                                 </li>
                             </ul>
                         </nav>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

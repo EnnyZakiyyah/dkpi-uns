@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengaduan;
 use App\Models\Pengumuman;
 use Illuminate\Http\Request;
 
@@ -39,6 +40,18 @@ class PengumumanController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'pengumuman'=>'required',
+            'berlaku'=>'required',
+            'link'=>'required',
+
+        ]);
+        Pengumuman::create($validatedData);
+
+        return redirect('/pengumuman')->with('success', 'Data berhasil ditambah!');
+
+
+
     }
 
     /**

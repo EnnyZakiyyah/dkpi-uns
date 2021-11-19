@@ -71,7 +71,6 @@ class MitraController extends Controller
         ]);
 
 
-
         Mitra::create($validatedData);
 
         return redirect('/mitra')->with('success', 'Data berhasil ditambah!');

@@ -57,8 +57,8 @@
                 @foreach($mitra as $mit)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $mit->nama_instansi }}</td>
-                  <td>{{ $mit->instansi }}</td>
+                  <td><a href="/mitra/{{ $mit->id }}">{{ $mit->nama_instansi }}</a></td>
+                  <td><a href="/data/{{ $mit->instansi }}">{{ $mit->instansi }}</a></td>
                   <td>{{ $mit->no_mou_uns }}</td>
                   <td>{{ $mit->no_mou_mitra }}</td>
                   {{-- <td>{{ $mit->nama_instansi }}</td>
