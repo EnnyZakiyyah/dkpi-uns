@@ -155,7 +155,6 @@ h6 {
 */
 .navbar {
     padding: 0;
-
 }
 
 .navbar ul {
@@ -280,8 +279,8 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
-*/
+  * Mobile Navigation 
+  */
 .mobile-nav-toggle {
     color: #fff;
     font-size: 28px;
@@ -387,6 +386,8 @@ h6 {
 .navbar-mobile .dropdown>.dropdown-active {
     display: block;
 }
+
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -1845,7 +1846,7 @@ section {
 
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #footer .footer-bottom {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -1860,4 +1861,81 @@ section {
     #footer .credits {
         padding-top: 4px;
     }
+} */
+
+.portfolio .container .btn {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Boostrap Buttons Styling */
+
+.portfolio .container .btn-default {
+    font-family: Raleway-SemiBold;
+    font-size: 13px;
+    color: rgba(108, 88, 179, 0.75);
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid rgba(108, 89, 179, 0.75);
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+}
+
+.portfolio .container .btn-default:hover {
+    color: #FFF;
+    background: rgba(108, 88, 179, 0.75);
+    border: 2px solid rgba(108, 89, 179, 0.75);
+}
+
+button[data-filter="mahasiswa"]:focus~div:not([class*="mahasiswa"]) {
+    display: none;
+}
+
+button[data-filter="dosen"]:focus~div:not([class*="dosen"]) {
+    display: none;
+}
+
+button[data-filter="pimpinan"]:focus~div:not([class*="pimpinan"]) {
+    display: none;
+}
+
+button[data-filter="walks"]:focus~div:not([class*="walks"]) {
+    display: none;
+}
+
+button[data-filter="swims"]:focus~div:not([class*="swims"]) {
+    display: none;
+}
+
+button[data-filter="flies"]:focus~div:not([class*="flies"]) {
+    display: none;
+}
+
+.filterDiv {
+    float: left;
+    color: #ffffff;
+    width: 100%;
+    line-height: 100%;
+    text-align: center;
+    margin: 2px;
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* .container {
+    margin-top: 20px;
+    overflow: hidden;
+} */
+
+.tales {
+    width: 100%;
+}
+
+.carousel-inner {
+    width: 100%;
+    max-height: fit-content !important;
 }

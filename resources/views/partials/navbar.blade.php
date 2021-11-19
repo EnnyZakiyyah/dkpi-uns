@@ -5,7 +5,7 @@
           <li><a class="nav-link scrollto " href="home/pdln">Data PDLN</a></li>
           <li><a class="nav-link  scrollto " href="/home/mitra">Mitra</a></li>
           <li><a class="nav-link  scrollto " href="#faq">FAQ</a></li>
-          <li class="dropdown"><a href="#informasi"><span>Informasi</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#berita">Berita</a></li>
               <li><a href="#galeri">Galeri</a></li>
