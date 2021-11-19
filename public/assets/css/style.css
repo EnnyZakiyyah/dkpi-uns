@@ -155,7 +155,6 @@ h6 {
 */
 .navbar {
     padding: 0;
-
 }
 
 .navbar ul {
@@ -280,8 +279,8 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
-*/
+  * Mobile Navigation 
+  */
 .mobile-nav-toggle {
     color: #fff;
     font-size: 28px;
@@ -387,6 +386,8 @@ h6 {
 .navbar-mobile .dropdown>.dropdown-active {
     display: block;
 }
+
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -1845,7 +1846,7 @@ section {
 
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #footer .footer-bottom {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -1860,7 +1861,7 @@ section {
     #footer .credits {
         padding-top: 4px;
     }
-}
+} */
 
 .portfolio .container .btn {
     margin-left: 10px;
@@ -1925,10 +1926,10 @@ button[data-filter="flies"]:focus~div:not([class*="flies"]) {
     display: block;
 }
 
-.container {
+/* .container {
     margin-top: 20px;
     overflow: hidden;
-}
+} */
 
 .tales {
     width: 100%;
@@ -1938,8 +1939,3 @@ button[data-filter="flies"]:focus~div:not([class*="flies"]) {
     width: 100%;
     max-height: fit-content !important;
 }
-
-/* .card {
-    width: 100%;
-    max-height:  !important;
-} */
