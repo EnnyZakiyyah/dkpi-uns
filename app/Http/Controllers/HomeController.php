@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Pdln;
+use App\Models\Mitra;
+
 
 use Illuminate\Http\Request;
 
@@ -14,12 +17,35 @@ class HomeController extends Controller
 
     public function pdln()
     {
-        return view('home.pdln');
+
+        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->get();
+        $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
+        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
+
+        return view('home.pdln', [
+            'title' => 'data PDLN',
+            'mahasiswas' => $mahasiswa,
+            'dosens' => $dosen,
+            'pimpinans' => $pimpinan
+        ]);
     }
 
     public function mitra()
     {
-        return view('home.mitra');
+        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
+        $cv = Mitra::where('instansi', 'cv')->latest()->get();
+        $internasional = Mitra::where('instansi', 'internasional')->latest()->get();
+        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->get();
+        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->get();
+
+        return view('home.mitra', [
+            'title' => 'data Mitra',
+            'yayasans' => $yayasan,
+            'cvs' => $cv,
+            'internasionals' => $internasional,
+            'jasaKeuangans' => $jasaKeuangan,
+            'pemerintahs' => $pemerintah
+        ]);
     }
 
     public function layanan()

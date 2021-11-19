@@ -57,8 +57,8 @@
                 @foreach($pdlns as $pdln)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $pdln->nama }}</td>
-                  <td>{{ $pdln->jenis }}</td>
+                  <td><a href="/pdln/{{ $pdln->id }}">{{ $pdln->nama }}</a></td>
+                  <td><a href="/data/{{ $pdln->jenis }}">{{ $pdln->jenis }}</a></td>
                   {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}
                   <td>{{ $pdln->unit_kerja }}</td>
                   <td>{{ $pdln->negara }}</td>

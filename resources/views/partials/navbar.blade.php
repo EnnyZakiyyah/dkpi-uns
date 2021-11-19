@@ -2,8 +2,8 @@
         <ul>
           <li><a class="nav-link scrollto  " href="/">Home</a></li>
           <li><a class="nav-link scrollto" href="/layanan">Layanan</a></li>
-          <li><a class="nav-link scrollto " href="#data-pdln">Data PDLN</a></li>
-          <li><a class="nav-link  scrollto " href="/hmmitra">Mitra</a></li>
+          <li><a class="nav-link scrollto " href="home/pdln">Data PDLN</a></li>
+          <li><a class="nav-link  scrollto " href="/home/mitra">Mitra</a></li>
           <li><a class="nav-link  scrollto " href="#faq">FAQ</a></li>
           <li class="dropdown"><a href="#informasi"><span>Informasi</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -17,4 +17,3 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      

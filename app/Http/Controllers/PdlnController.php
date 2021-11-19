@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pdln;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class PdlnController extends Controller
 {
@@ -15,7 +16,6 @@ class PdlnController extends Controller
      */
     public function index()
     {
-        // $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->get();
         // $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
         // $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
         $pdln = Pdln::latest()->get();
@@ -53,7 +53,7 @@ class PdlnController extends Controller
         $file_ktln = $request->file('file_ktln')->store('file_ktln');
 
         $validatedData = $request->validate([
-            'jenis' => 'required',
+            'jenis' => '',
             'nama' => 'required',
             'jumlah_orang'=> 'required',
             'unit_kerja'=> 'required' ,
@@ -66,18 +66,18 @@ class PdlnController extends Controller
             'belmawa'=> 'required',
             'catatan_belmawa'=> 'required',
             'ktln_kemensetneg'=> 'required',
-            'catatan_setneg'=> 'required',
-            'status_hidden'=> 'required',
-            'status'=> 'required'
+            'catatan_setneg'=> 'required'
         ]);
 
         $validatedData['file_surat_uns'] = $file_surat_uns;
         $validatedData['file_belmawa'] = $file_belmawa;
         $validatedData['file_ktln'] = $file_ktln;
+        $validatedData['status_hidden'] = 'ada';
+        $validatedData['status'] = 'ada';
 
         Pdln::create($validatedData);
 
-        return redirect('/Pdln')->with('success', 'Data berhasil ditambah!');
+        return redirect('/pdln')->with('success', 'Data berhasil ditambah!');
 
     }
 
@@ -89,8 +89,15 @@ class PdlnController extends Controller
      */
     public function show(Pdln $pdln)
     {
+        // $file_surat_uns = Storage::get($pdln->file_surat_uns, $pdln->nama);
+        // $file_belmawa = Storage::get($pdln->file_belmawa, $pdln->nama);
+        // $file_ktln = Storage::get($pdln->file_ktln, $pdln->nama);
+
         return view('pdln.show', [
-            'pdln' => $pdln
+            'pdln' => $pdln,
+            // 'file_uns' => $file_surat_uns,
+            // 'file_belmawa' => $file_belmawa,
+            // 'file_ktln' => $file_ktln
         ]);
     }
 
@@ -130,5 +137,30 @@ class PdlnController extends Controller
     {
         Pdln::destroy($pdln);
         return redirect('/pdln')->with('status', 'data berhasil dihapus');
+    }
+
+    public function mahasiswa(){
+
+        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->get();
+
+        return view('pdln.index',[
+            'pdlns' => $mahasiswa
+        ]);
+    }
+    public function dosen(){
+
+        $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
+
+        return view('pdln.index',[
+            'pdlns' => $dosen
+        ]);
+    }
+    public function pimpinan(){
+
+        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
+
+        return view('pdln.index',[
+            'pdlns' => $pimpinan
+        ]);
     }
 }

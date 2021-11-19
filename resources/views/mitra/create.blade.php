@@ -50,7 +50,7 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/mitra">
+                    <form method="POST" action="/mitra" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ml-5 mr-5">
                             <label for="nama_instansi">Nama Instansi</label>

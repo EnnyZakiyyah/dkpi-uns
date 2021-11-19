@@ -26,7 +26,7 @@
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/pdln"> PDLN</a></li>
-                                <li class="breadcrumb-item"><a href="/pdln"> {{ $pdln->jenis }}</a></li>
+                                <li class="breadcrumb-item"><a href="/data/{{ $pdln->jenis }}"> {{ $pdln->jenis }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ $pdln->nama }}</li>
                             </ol>
                         </nav>
@@ -66,9 +66,9 @@
                             <p class="card-text">{{ $pdln->catatan_belmawa }}</p>
                             <p class="card-text">{{ $pdln->ktln_kemensetneg }}</p>
                             <p class="card-text">{{ $pdln->catatan_setneg }}</p>
-                            <p class="card-text">{{ $pdln->file_surat_uns }}</p>
-                            <p class="card-text">{{ $pdln->file_ktln }}</p>
-                            <p class="card-text">{{ $pdln->file_belmawa }}</p>
+                            {{-- <p class="card-text">{{ $file_uns }}</p>
+                            <p class="card-text">{{ $file_ktln }}</p>
+                            <p class="card-text">{{ $file_belmawa }}</p> --}}
                             <a href="{{ $pdln->id }}/edit" class="btn btn-primary">Edit</a>
                             <form action="{{ $pdln->id }}" method="POST" class="d-inline">
                                 @method('delete')

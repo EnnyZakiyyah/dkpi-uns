@@ -9,6 +9,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PeringkatController;
 use App\Http\Controllers\PengumumanController;
@@ -36,11 +37,8 @@ Route::get('/layanan', function () {
     ]);
 });
 
-Route::get('/home/pdln', function () {
-    return view('home.pdln', [
-        "title" => "PDLN",
-    ]);
-});
+Route::get('/home/pdln', [HomeController::class, 'pdln']);
+Route::get('home/mitra',[HomeController::class, 'mitra']);
 
 Route::get('/home/peringkat', function () {
     return view('home.peringkat', [
@@ -48,11 +46,7 @@ Route::get('/home/peringkat', function () {
     ]);
 });
 
-Route::get('hmmitra', function () {
-    return view('home.mitra', [
-        "title" => "Mitra",
-    ]);
-});
+
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -72,3 +66,17 @@ Route::resources([
     'faq' => FaqController::class,
     'peringkat' => PeringkatController::class
 ]);
+
+//pdln
+Route::get('/data/mahasiswa', [PdlnController::class, 'mahasiswa']);
+Route::get('/data/dosen', [PdlnController::class, 'dosen']);
+Route::get('/data/pimpinan', [PdlnController::class, 'pimpinan']);
+
+//mitra
+Route::get('/data/cv', [MitraController::class, 'cv']);
+Route::get('/data/yayasan', [MitraController::class, 'yayasan']);
+Route::get('/data/internasional', [MitraController::class, 'internasional']);
+Route::get('/data/jasaKeuangan', [MitraController::class, 'jasaKeuangan']);
+Route::get('/data/pemerintah', [MitraController::class, 'pemerintah']);
+
+

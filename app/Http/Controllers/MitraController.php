@@ -132,4 +132,45 @@ class MitraController extends Controller
         return redirect('/mitra')->with('status', 'data berhasil dihapus');
 
     }
+    public function cv(){
+
+        $cv = Mitra::where('instansi', 'cv')->latest()->get();
+
+        return view('mitra.index',[
+            'mitra' => $cv
+        ]);
+    }
+    public function yayasan(){
+
+        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
+
+        return view('mitra.index',[
+            'mitra' => $yayasan
+        ]);
+    }
+    public function internasional(){
+
+        $internasional = Mitra::where('instansi', 'internasional')->latest()->get();
+
+        return view('mitra.index',[
+            'mitra' => $internasional
+        ]);
+    }
+    public function jasaKeuangan(){
+
+        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->get();
+
+        return view('mitra.index',[
+            'mitra' => $jasaKeuangan
+        ]);
+    }
+    public function pemerintah(){
+
+        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->get();
+
+        return view('mitra.index',[
+            'mitra' => $pemerintah
+        ]);
+    }
+
 }
