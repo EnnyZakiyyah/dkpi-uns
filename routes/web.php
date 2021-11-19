@@ -25,27 +25,15 @@ use App\Http\Controllers\PengumumanController;
 |
 */
 
-Route::get('/', function () {
-    return view('home.index', [
-        "title" => "DKPI - UNS",
-    ]);
-});
-
-Route::get('/layanan', function () {
-    return view('home.layanan', [
-        "title" => "Layanan",
-    ]);
-});
-
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home/layanan',[HomeController::class, 'layanan']);
 Route::get('/home/pdln', [HomeController::class, 'pdln']);
-Route::get('home/mitra',[HomeController::class, 'mitra']);
-
-Route::get('/home/peringkat', function () {
-    return view('home.peringkat', [
-        "title" => "Peringkat",
-    ]);
-});
-
+Route::get('/home/mitra',[HomeController::class, 'mitra']);
+Route::get('/home/faq',[HomeController::class, 'faq']);
+Route::get('/home/berita',[HomeController::class, 'berita']);
+Route::get('/home/geleri',[HomeController::class, 'galeri']);
+Route::get('/home/peringkat',[HomeController::class, 'peringkat']);
+Route::get('/home/pengumuman',[HomeController::class, 'pengumuman']);
 
 
 Route::get('/login', [LoginController::class, 'index']);
@@ -53,6 +41,7 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 

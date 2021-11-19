@@ -39,15 +39,15 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($cvs as $cv)
+                @foreach($yayasans as $yayasan)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $cv->nama_instansi }}</td>
-                  <td>{{ $cv->ruang_lingkup }}</td>
-                  <td>{{ $cv->jangka_waktu_awal }}</td>
-                  <td>{{ $cv->jangka_waktu_akhir }}</td>
-                  <td>{{ $cv->pejabat_penandatangan }}</td>
-                  <td>{{ $cv->status }}</td>
+                  <td>{{ $yayasan->nama_instansi }}</td>
+                  <td>{{ $yayasan->ruang_lingkup }}</td>
+                  <td>{{ $yayasan->jangka_waktu_awal }}</td>
+                  <td>{{ $yayasan->jangka_waktu_akhir }}</td>
+                  <td>{{ $yayasan->pejabat_penandatangan }}</td>
+                  <td>{{ $yayasan->status }}</td>
                   <td></td>
                 </tr>
                 @endforeach
@@ -88,15 +88,15 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($yayasans as $yayasan)
+                @foreach($cvs as $cv)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $yayasan->nama_instansi }}</td>
-                  <td>{{ $yayasan->ruang_lingkup }}</td>
-                  <td>{{ $yayasan->jangka_waktu_awal }}</td>
-                  <td>{{ $yayasan->jangka_waktu_akhir }}</td>
-                  <td>{{ $yayasan->pejabat_penandatangan }}</td>
-                  <td>{{ $yayasan->status }}</td>
+                  <td>{{ $cv->nama_instansi }}</td>
+                  <td>{{ $cv->ruang_lingkup }}</td>
+                  <td>{{ $cv->jangka_waktu_awal }}</td>
+                  <td>{{ $cv->jangka_waktu_akhir }}</td>
+                  <td>{{ $cv->pejabat_penandatangan }}</td>
+                  <td>{{ $cv->status }}</td>
                   <td></td>
                 </tr>
                 @endforeach

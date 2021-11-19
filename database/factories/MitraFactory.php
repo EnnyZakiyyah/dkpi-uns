@@ -23,9 +23,9 @@ class MitraFactory extends Factory
      */
     public function definition()
     {
-        $instansi = ['yayasan', 'cv', 'pemerintah'];
+        $instansi = ['yayasan', 'cv', 'pemerintah','jasaKeuangan','internasional'];
         return [
-            'instansi' => $instansi[rand(0,2)],
+            'instansi' => $instansi[rand(0,4)],
             'nama_instansi' => $this->faker->name(),
             'no_mou_uns' => Str::random(10),
             'no_mou_mitra' => Str::random(10),
