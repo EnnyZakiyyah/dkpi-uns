@@ -49,6 +49,12 @@ Route::get('/home/berita', function () {
     ]);
 });
 
+Route::get('/berita/berita-details', function () {
+    return view('home.beritadetails', [
+        "title" => "Detail Berita",
+    ]);
+});
+
 
 Route::get('/layanan', function () {
     return view('home.layanan', [

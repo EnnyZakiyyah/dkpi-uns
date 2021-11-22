@@ -71,6 +71,11 @@ class HomeController extends Controller
         return view('home.berita');
     }
 
+    public function beritadetails()
+    {
+        return view('home.beritadetails');
+    }
+
     public function galeri()
     {
         return view('home.galeri');
