@@ -28,9 +28,7 @@
 </div>
 
 <div class="row content">
-    <p>
-      <h5>Tugas dan Fungsi</h5>
-    </p>
+      <h5>Tugas dan Fungsi</h5> <br/>
     <ul>
       <p>Direktorat dan Kerjasama, Pengembangan dan Internasionalisasi mempunyai tugas melaksanakan urusan hukum dan pengembangan kegiatan kerja sama</p>
       <li><i class="ri-check-double-line"></i> Pelaksanaan penyusunan peraturan perundang-undangan dan layanan hukum</li>
@@ -40,7 +38,7 @@
       <li><i class="ri-check-double-line"></i> Pelaksanaan evaluasi dan pelaporan kegiatan kerja sama</li>
     </ul>
 </div>
-
+<br/>
 </div>
 
     <!-- ======= Services Section ======= -->
@@ -64,10 +62,10 @@
 
           <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
+              <div class="icon"><i class="bi bi-people-fill"></i></div>
               <h4><a href="">Dosen</a></h4>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-              <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+              <a href="/home/pdln" class="btn-learn-more">Baca Selengkapnya</a>
             </div>
           </div>
 
@@ -76,7 +74,7 @@
               <div class="icon"><i class="bx bx-user"></i></div>
               <h4><a href="">Pimpinan</a></h4>
               <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-              <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+              <a href="/home/pdln" class="btn-learn-more">Baca Selengkapnya</a>
             </div>
           </div>
 
@@ -85,16 +83,13 @@
       </div>
     </section><!-- End Services Section -->
 
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+    <section id="berita" class="skills">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Pengumuman</h2>
+          <h2>Berita</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
-
         <div class="row">
 
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -107,15 +102,43 @@
               <div class="carousel-item active">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                   <div class="col">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card h-100">
+                      <img src="{{asset('assets/img/slide1.jpg')}}" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                         <left> <a href="/berita/beritadetails" class="btn-learn-more">Baca Selengkapnya</a></left>
+                        </p>
+                       
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
                       </div>
                     </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="{{asset('assets/img/cta-bg.jpg')}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <a href="/berita/berita-details" class="btn-learn-more ml-3">Baca Selengkapnya</a>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="{{asset('assets/img/banner-siswa.jpg')}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -152,6 +175,7 @@
                       <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <a href="/layanan/legaldrafting" class="btn-learn-more">Baca Selengkapnya</a>
                       </div>
                       <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
@@ -210,6 +234,28 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+      </div>
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="skills">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Pengumuman</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header" style="background-color: rgb(214, 0, 0)" >
+            <bold style="color: white">INFORMASI !!!</bold>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
 
       </div>
     </section><!-- End Team Section -->
@@ -350,5 +396,6 @@
 
       </div>
     </section><!-- End Contact Section -->
+
 
 @endsection

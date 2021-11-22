@@ -68,6 +68,24 @@ Route::get('layanan/legal-drafting', function () {
     ]);
 });
 
+Route::get('/home/faq', function () {
+    return view('home.faq', [
+        "title" => "FAQ",
+    ]);
+});
+
+Route::get('/home/pengumuman', function () {
+    return view('home.pengumuman', [
+        "title" => "Pengumuman",
+    ]);
+});
+
+Route::get('/home/peringkat', function () {
+    return view('home.peringkat', [
+        "title" => "Peringkat",
+    ]);
+});
+
 
 Route::get('/layanan/legaldrafting', [HomeController::class, 'legaldrafting']);
 Route::get('/home/pdln', [HomeController::class, 'pdln']);

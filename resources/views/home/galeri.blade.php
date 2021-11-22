@@ -4,7 +4,7 @@
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <div class="box">
-    <section id="layanan" class="portfolio">
+    <section id="layanan" class="portfolio"  style="background-color: #f3f5fa">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">

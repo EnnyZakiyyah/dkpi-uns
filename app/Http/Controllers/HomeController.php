@@ -81,6 +81,16 @@ class HomeController extends Controller
         return view('home.galeri');
     }
 
+    public function faq()
+    {
+        return view('home.faq');
+    }
+
+    public function pengumuman()
+    {
+        return view('home.pengumuman');
+    }
+
     public function peringkat()
     {
         return view('home.peringkat');

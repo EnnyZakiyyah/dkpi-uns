@@ -6,7 +6,7 @@
     <div class="box">
 
       <!-- ======= Portfolio Section ======= -->
-      <section id="mitra" class="portfolio">
+      <section id="mitra" class="portfolio"  style="background-color: #f3f5fa">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -65,8 +65,15 @@
                   Please provide a valid city.
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Tahun</label>
                 <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
@@ -79,8 +86,6 @@
           </div>
         </div>
 
-<br/>
-<br/>
 <br/>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
