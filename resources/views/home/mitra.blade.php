@@ -22,6 +22,67 @@
           <li data-filter=".filter-pemerintah">Pemerintah</li>
         </ul>
 
+        <p>
+          <button class="bi bi-search btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Cari Data
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Nama Instansi</label>
+                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi"required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationCustom02" class="form-label">Waktu Mulai</label>
+                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai"required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Nomor MoU UNS</label>
+                <input type="text" class="form-control" id="validationCustom03" name="nomor_uns"required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Waktu Berakhir</label>
+                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir"required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Nomor MoU Mitra</label>
+                <input type="text" class="form-control" id="validationCustom03" name="nomor_mitra" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-warning" type="submit">Cari Data</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+<br/>
+<br/>
+<br/>
+
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         <!-- CV/PT -->
         <div class="portfolio-item filter-cv">

@@ -4,228 +4,56 @@
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <div class="box">
-    <section id="layanan" class="faq section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Layanan</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-link active" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="true">About</a>
-            <a class="nav-link" id="nav-resume-tab" data-toggle="tab" href="#nav-resume" role="tab" aria-controls="nav-resume" aria-selected="false">Resume</a>
+      <section id="data-pdln" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <h2>Layanan</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
           </div>
-        </nav>
-
-       <!--Sidebar 1-->
-
-       <div id="content">
-        <div class="container">
-          <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-              <div class="row">
-                <div class="col-lg-4 pl-5 pr-5" style="background-color: rgb(217, 238, 238); padding-top: 50px; padding-bottom: 40px; text-align: center;">
-                  <img class="img-thumbnail rounded-pill" src="profil.jpg" width="200" height="200">
-                  <br>
-                  <br>
-                  <h2><span>Enny</span> Zakiyyah</h2>
-                  <div id="box">
-                    Graphic Designer
-                  </div>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-twitter"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <p>
-                    <i class="bi bi-calendar4"></i>&nbsp;&nbsp;&nbsp;October 11, 1999
-                  </p>
-                  <p>
-                    <i class="bi bi-geo-alt"></i>&nbsp;&nbsp;&nbsp;Jembatan Baru 15, PMK
-                  </p>
-                  <p>
-                    <i class="bi bi-envelope"></i>&nbsp;&nbsp;&nbsp;enny.9h08@gmail.com
-                  </p>
-                  <p>
-                    <i class="bi bi-phone"></i>&nbsp;&nbsp;&nbsp;+62 853 3131 8280
-                  </p>
-                  <p>
-                    <i class="bi bi-instagram"></i>&nbsp;&nbsp;&nbsp;ennyzakiy_arisa
-                  </p>
-                  <p>
-                    <center><a href="#" class="btn btn-primary btn-lg active mt-5" role="button" aria-pressed="true">Download CV<i class="bi bi-download"></i></a></center>
-                  </p>
-                </div>
-
-      <!--Content 1-->
-                <div class="col-lg-8 pl-5 pr-5" style="background-color:  rgb(242, 248, 248); padding-top: 50px; padding-bottom: 40px;">
-                  <div class="content">
-                    <bold><h3>About Me</h3></bold>
-                    <hr color="orange"></hr>
-                    <p>I'm Graphic Designer and Designer UI/UX, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
-
-                      <br><br>My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.</p>
-                    <bold><h3>What I'm Doing</h3></bold>
-                    <div class="row row-cols-1 row-cols-md-2 mt-4" >
-                      <div class="col mb-4 text-center">
-                        <div class="card h-100">
-                          <img src="icon/icon-dev.svg" class="card-img-top mt-5" alt="" width="50px" height="50px">
-                          <div class="card-body">
-                            <h5 class="card-title">Web Development</h5>
-                            <p class="card-text"><center>High-quality development of sites at the professional level.</center></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col mb-4 text-center">
-                        <div class="card h-100">
-                          <img src="icon/icon-design.svg" class="card-img-top mt-5" alt="" width="50px" height="50px">
-                          <div class="card-body">
-                            <h5 class="card-title">Web Designer</h5>
-                            <p class="card-text"><center>The most modern and high-quality design made at a professional level.</center></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+  
+          <div class="row">
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-people-fill"></i></div>
+                <h4><a href="">Penyusunan Legal Drafting</a></h4>
+                <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                <a href="/layanan/legaldrafting" class="btn-learn-more">Baca Selengkapnya</a>
+              </div>
+            </div>
+  
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="">Pengembangan PSDKU</a></h4>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+              </div>
+            </div>
+  
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-user"></i></div>
+                <h4><a href="">Pencairan Dana Kerjasama</a></h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
               </div>
             </div>
 
-        <!--Sidebar 1-->
-
-            <div class="tab-pane fade" id="nav-resume" role="tabpanel" aria-labelledby="nav-resume-tab">
-              <div class="row">
-                <div class="col-lg-4 pl-5 pr-5" style="background-color: rgb(217, 238, 238); padding-top: 50px; padding-bottom: 40px; text-align: center;">
-                  <img class="img-thumbnail rounded-pill" src="profil.jpg" width="200" height="200">
-                  <br>
-                  <br>
-                  <h2><span>Enny</span> Zakiyyah</h2>
-                  <div id="box">
-                    Graphic Designer
-                  </div>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-twitter"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <p>
-                    <i class="bi bi-calendar4"></i>&nbsp;&nbsp;&nbsp;October 11, 1999
-                  </p>
-                  <p>
-                    <i class="bi bi-geo-alt"></i>&nbsp;&nbsp;&nbsp;Jembatan Baru 15, PMK
-                  </p>
-                  <p>
-                    <i class="bi bi-envelope"></i>&nbsp;&nbsp;&nbsp;enny.9h08@gmail.com
-                  </p>
-                  <p>
-                    <i class="bi bi-phone"></i>&nbsp;&nbsp;&nbsp;+62 853 3131 8280
-                  </p>
-                  <p>
-                    <i class="bi bi-instagram"></i>&nbsp;&nbsp;&nbsp;ennyzakiy_arisa
-                  </p>
-                  <p>
-                    <center><a href="#" class="btn btn-primary btn-lg active mt-5" role="button" aria-pressed="true">Download CV<i class="bi bi-download"></i></a></center>
-                  </p>
-                </div>
-
-      <!--Content 2-->
-
-                <div class="col-lg-8 pl-5 pr-5" style="background-color:  rgb(242, 248, 248); padding-top: 50px; padding-bottom: 40px;">
-                  <div class="content">
-                    <bold><h3 class="">Resume</h3></bold>
-                    <hr color="orange" style="margin-bottom: 30px;"></hr>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <img src="icon/icon-education.svg" class="card-img-left mb-3" alt="" width="50px" height="50px">
-                        <span class="resume-title pl-3"style="font-size : 23px;">Educations</span>
-                          <div class="resume-item">
-                            <h4>SMA Negeri 1 Pamekasan</h4>
-                            <h5>2015 - 2018</h5>
-                          </div>
-                          <div class="resume-item">
-                            <h4>PIKTI - ITS</h4>
-                            <h5>2018 - 2019</h5>
-                          </div>
-                          <div class="resume-item">
-                            <h4>Universitas Sebelas Maret</h4>
-                            <h5>2019 - Sekarang</h5>
-                            <p><em>D3 Teknik Informatika</em></p>
-                          </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <img src="icon/icon-experience.svg" class="card-img-left mb-3" alt="" width="50px" height="50px">
-                        <span class="resume-title pl-3"style="font-size : 23px;">Working Experience</span>
-                          <div class="resume-item">
-                            <h4>Graphic Design</h4>
-                            <h5>2020 - 2021</h5>
-                          </div>
-                          <div class="resume-item">
-                            <h4>Asisten Labkom</h4>
-                            <h5>2019 - Sekarang</h5>
-                          </div>
-                          <div class="resume-item">
-                            <h4>Asisten Dosen</h4>
-                            <h5>2021</h5>
-                            <p><em>Pemrograman Web</em></p>
-                          </div>
-                          <div class="resume-item">
-                            <h4>TIM IT Helpdesk SM UNS 2021</h4>
-                            <h5>2021</h5>
-                          </div>
-                      </div>
-                      <!-- ======= Skills Section ======= -->
-<!-- <section id="skills" class="skills">
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Skills</h2>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-    </div>
-
-    <div class="row skills-content">
-
-      <div class="col-lg-6">
-
-        <div class="progress">
-          <span class="skill">HTML <i class="val">100%</i></span>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-
-       
-        </div>
-
-      </div>
-
-    </div> -->
-
-  </div>
-</section><!-- End Skills Section -->
-                    </div>
-                  </div>
-                </div>
-          <!--Content 2-->
-            <div class="tab-pane fade" id="nav-portfolio" role="tabpanel" aria-labelledby="nav-portfolio-tab">..dsfsd.
-
-
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-user"></i></div>
+                <h4><a href="">Pemrosesan Surat Izin</a></h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+              </div>
             </div>
-            <div class="tab-pane fade" id="nav-blog" role="tabpanel" aria-labelledby="nav-blog-tab">..dsfsd.</div>
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">.fsfds.</div>
+  
           </div>
+  
         </div>
-      </div>
-
-
-
+      </section><!-- End Services Section -->
     </div>
-  </div>
 
        
         {{-- <div class="faq-list">

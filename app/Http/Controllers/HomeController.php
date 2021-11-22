@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Pdln;
 use App\Models\Mitra;
 
@@ -51,6 +52,28 @@ class HomeController extends Controller
     public function layanan()
     {
         return view('home.layanan');
+    }
+
+    public function legaldrafting()
+    {
+        return view('home.layanan.legaldrafting', [
+            "title" => "Legal Drafting",
+        ]);
+    }
+
+    public function galeridetails()
+    {
+        return view('home.galeridetails');
+    }
+
+    public function berita()
+    {
+        return view('home.berita');
+    }
+
+    public function galeri()
+    {
+        return view('home.galeri');
     }
 
     public function peringkat()

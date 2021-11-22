@@ -31,14 +31,41 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/home/galeri', function () {
+    return view('home.galeri', [
+        "title" => "Galeri",
+    ]);
+});
+
+Route::get('/galeri/more-details', function () {
+    return view('home.galeridetails', [
+        "title" => "Detail MoU",
+    ]);
+});
+
+Route::get('/home/berita', function () {
+    return view('home.berita', [
+        "title" => "Berita",
+    ]);
+});
+
+
 Route::get('/layanan', function () {
     return view('home.layanan', [
         "title" => "Layanan",
     ]);
 });
 
+Route::get('layanan/legal-drafting', function () {
+    return view('home.layanan.legaldrafting', [
+        "title" => "Legal Drafting",
+    ]);
+});
+
+
+Route::get('/layanan/legaldrafting', [HomeController::class, 'legaldrafting']);
 Route::get('/home/pdln', [HomeController::class, 'pdln']);
-Route::get('home/mitra',[HomeController::class, 'mitra']);
+Route::get('home/mitra', [HomeController::class, 'mitra']);
 
 Route::get('/home/peringkat', function () {
     return view('home.peringkat', [
@@ -78,5 +105,3 @@ Route::get('/data/yayasan', [MitraController::class, 'yayasan']);
 Route::get('/data/internasional', [MitraController::class, 'internasional']);
 Route::get('/data/jasaKeuangan', [MitraController::class, 'jasaKeuangan']);
 Route::get('/data/pemerintah', [MitraController::class, 'pemerintah']);
-
-
