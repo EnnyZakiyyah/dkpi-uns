@@ -6,7 +6,7 @@
     <div class="box">
 
       <!-- ======= Portfolio Section ======= -->
-      <section id="pdln" class="portfolio">
+      <section id="pdln" class="portfolio" style="background-color: #f3f5fa">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -14,27 +14,97 @@
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
-        <nav class="navbar navbar-light blue-grey lighten-5">
-          <form class="form-inline">
-            <button class="btn btn-outline-success" type="button">Main button</button>
-            <button class="btn btn-sm align-middle btn-outline-secondary" type="button">Smaller button</button>
-            <button class="btn btn-sm btn-secondary" type="button">Smaller button</button>
-            <button class="btn align-middle btn-primary" type="button">Smaller button</button>
-          </form>
-        </nav>
-
                 {{-- <label for="tahun" class="form-label">Tampilkan Data Tahun</label>
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
                   </div> --}}
+<div class="container">
+  <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <li data-filter=".filter-mahasiswa">Mahasiswa</li>
+                    <li data-filter=".filter-dosen">Dosen</li>
+                    <li data-filter=".filter-pimpinan">Pimpinan</li>
+                 
+  </ul> </div>
 
-                  <h2>Filter DIV Elements</h2>
+  <p>
+    <button class="bi bi-search btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Cari Data
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Nama Instansi</label>
+          <input type="text" class="form-control" id="validationCustom01" name="nama_instansi"required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">Waktu Mulai</label>
+          <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai"required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Tujuan</label>
+          <input type="text" class="form-control" id="validationCustom03" name="nomor_uns"required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Waktu Berakhir</label>
+          <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir"required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Negara</label>
+          <input type="text" class="form-control" id="validationCustom03" name="nomor_mitra" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">Status</label>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>Proses TTD Pimpinan</option>
+            <option>Proses Dikti</option>
+            <option>Proses Setneg</option>
+            <option>Disetujui</option>
+            <option>Ditolak Dikti</option>
+            <option>Ditolak Setneg</option>
+            <option>Dikembalikan</option>
+          </select>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">Tahun</label>
+          <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-warning" type="submit">Cari Data</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
+<br/>
+          
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         <!-- CV/PT -->
-
             <div class="portfolio-item filter-mahasiswa">
 
             <table class="table table-hover">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Faq;
+
 use App\Models\Pdln;
 
 
@@ -86,6 +87,43 @@ class HomeController extends Controller
             'title'=>'galeri'
         ]);
     }
+    public function legaldrafting()
+    {
+        return view('home.layanan.legaldrafting', [
+            "title" => "Legal Drafting",
+        ]);
+    }
+
+    public function galeridetails()
+    {
+        return view('home.galeridetails');
+    }
+
+    public function berita()
+    {
+        return view('home.berita');
+    }
+
+    public function beritadetails()
+    {
+        return view('home.beritadetails');
+    }
+
+    public function galeri()
+    {
+        return view('home.galeri');
+    }
+
+    public function faq()
+    {
+        return view('home.faq');
+    }
+
+    public function pengumuman()
+    {
+        return view('home.pengumuman');
+    }
+
     public function peringkat()
     {
         return view('home.peringkat',[

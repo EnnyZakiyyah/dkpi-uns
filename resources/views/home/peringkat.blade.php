@@ -2,118 +2,84 @@
 @section('container')
 <!-- ======= Hero Section ======= -->
 
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <div class="box">
-    <section id="layanan" class="faq section-bg">
-      <div class="container" data-aos="fade-up">
+      <!-- ======= Portfolio Section ======= -->
+      <section id="pdln" class="portfolio"  style="background-color: #f3f5fa">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <h2>Data PDLN</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          </div>
+  
+                  {{-- <label for="tahun" class="form-label">Tampilkan Data Tahun</label>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+                      <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+                    </div> --}}
+  <div class="container">
+    <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                      <li data-filter=".filter-thes">THES</li>
+                      <li data-filter=".filter-qs">QS Star</li>
+                   
+    </ul> </div>
+  
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          <!-- CV/PT -->
+              <div class="portfolio-item filter-thes">
+                <div class="card">
+                  <img src="{{asset('assets/img/cta-bg.jpg')}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <div class="portfolio-description">
+                        <h2>This is an example of portfolio detail</h2>
+                        <p>
+                          Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                        </p>
+                            <strong>Category</strong>&nbsp;Penandatanganan<br/>
+                            <strong>Client</strong>&nbsp;: BSI<br/>
+                            <strong>Project date</strong>&nbsp;: 01 March, 2020<br/>
+                            <strong>Project URL</strong>&nbsp;: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a><br/>
+                     
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+          </div>
 
-        <div class="section-title">
-          <h2>Layanan</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+
+              <div class="portfolio-item filter-qs">
+  
+                <div class="portfolio-item filter-qs">
+                  <div class="card">
+                    <img src="{{asset('assets/img/cta-bg.jpg')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">
+                        <div class="portfolio-description">
+                          <h2>This is an example of portfolio detail</h2>
+                          <p>
+                            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                          </p>
+                              <strong>Category</strong>&nbsp;Penandatanganan<br/>
+                              <strong>Client</strong>&nbsp;: BSI<br/>
+                              <strong>Project date</strong>&nbsp;: 01 March, 2020<br/>
+                              <strong>Project URL</strong>&nbsp;: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a><br/>
+                       
+                        </div>
+                      </p>
+                    </div>
+                  </div>
+                  
+                  </div>
+                 
+  
+              </div>
+  
+  
         </div>
+      </section><!-- End Portfolio Section -->
 
-        <div class="faq-list">
-          <ul>
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Penyusunan Legal Drafting <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                <br>
-                    <h5>Alur Proses</h5>
-                <ul>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                </ul>
-                <br>
-                    <h5>Review</h5>
-                <ul>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                </ul>
-                <br>
-                    <h5>Konsultasi</h5>
-                <ul>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Loroooem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                </ul>
-                <br>
-                    <center><h5>Download File</h5></center>
-                    <center><button type="button" class="btn btn-primary btn-sm">Download File</button></center>
-                
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Pengembangan PSDKU <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse show" data-bs-parent=".faq-list">
-                <br>
-                    <h5>Alur Proses</h5>
-                <ul>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                </ul>
-                <br>
-                <br>
-                    <center><h5>Download File</h5></center>
-                    <center><button type="button" class="btn btn-primary btn-sm">Download File</button></center>
-                
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Pencairan Dana Kerjasama <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse show" data-bs-parent=".faq-list">
-                <br>
-                    <h5>Alur Proses</h5>
-                <ul>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                </ul>
-                <br>
-                <br>
-                    <center><h5>Download File</h5></center>
-                    <center><button type="button" class="btn btn-primary btn-sm">Download File</button></center>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Pemrosesan Surat Izin PDLN <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                <br>
-                    <h5>Alur Proses</h5>
-                <ul>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </br>
-                   &nbsp&nbsp&nbsp<i class="ri-check-double-line"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>
-                </ul>
-                <br>
-                <br>
-                    <center><h5>Download File</h5></center>
-                    <center><button type="button" class="btn btn-primary btn-sm">Download File</button></center>
-                
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
+    
       </div>
  
 @endsection
