@@ -47,7 +47,8 @@
 
         <div class="section-title">
           <h2>Data PDLN</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+        <p>Perjalanan Dinas Luar Negeri (PDLN) adalah adalah penugasan yang dilakukan oleh mahasiswa, dosen, maupun pimpinan dalam rangka tugas belajar dan tugas dinas lainnya di luar negeri yang disetujui oleh Rektor UNS</p>
         </div>
 
         <div class="row">
@@ -55,7 +56,7 @@
             <div class="icon-box">
               <div class="icon"><i class="bi bi-people-fill"></i></div>
               <h4><a href="/home/pdln">Mahasiswa</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <p>Data mahasiswa yang melakukan perjalanan dinas ke luar negeri dalam rangka tugas belajar maupun tugas lainnya dapat dilihat disini</p>
               <a href="/home/pdln" class="btn-learn-more">Baca Selengkapnya</a>
             </div>
           </div>
@@ -64,16 +65,16 @@
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="/home/pdln">Dosen</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <p>Data Dosen yang melakukan perjalanan dinas ke luar negeri dalam rangka tugas belajar, penelitian, maupun tugas lainnya dapat dilihat disini</p>
               <a href="/home/pdln" class="btn-learn-more">Baca Selengkapnya</a>
             </div>
           </div>
 
-          <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+          <div  class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-user"></i></div>
               <h4><a href="/home/pdln">Pimpinan</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <p>Data pejabat UNS yang melakukan perjalanan dinas ke luar negeri dalam rangka diplomasi maupun tugas lainnya dapat dilihat disini</p>
               <a href="/home/pdln" class="btn-learn-more">Baca Selengkapnya</a>
             </div>
           </div>
@@ -87,8 +88,9 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <a href="/home/pengumuman"><h2>Pengumuman</h2></a>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <a href="/home/pengumuman"><h2>Berita</h2></a>
+          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+        {{-- <p>Pengumuman Direktorat Kerjasama, Internasionalisasi </p> --}}
         </div>
         <div class="row">
 
@@ -244,18 +246,24 @@
 
         <div class="section-title">
           <h2>Pengumuman</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p>Informasi terkait Direktorat Kerjasama, pengembangan, dan Internasionalisasi dapat dilihat pada kolom berikut </p>
+          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
         </div>
 
         <div class="card">
-          <div class="card-header" style="background-color: rgb(214, 0, 0)" >
-            <bold style="color: white">INFORMASI !!!</bold>
+            <div class="card-header" style="background-color: rgb(214, 0, 0)" >
+              <bold style="color: white">INFORMASI !!!</bold>
+            </div>
+            @foreach ($pengumumans as $pengumuman)
+
+
+            <div class="card-body">
+              <h5 class="card-title">{{ $pengumuman->judul }}</h5>
+              <p class="card-text">{{ $pengumuman->pengumuman }}</p>
+
+            </div>
+            @endforeach
           </div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
 
       </div>
     </section><!-- End Team Section -->
@@ -270,16 +278,18 @@
 
         <div class="section-title">
           <a href="/home/faq"><h2>Frequently Asked Questions</h2></a>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
         </div>
 
         <div class="faq-list">
           <ul>
+
               @foreach ($faqs as $faq)
 
-            <li data-aos="fade-up" data-aos-delay="{{ $loop->iteration }}00">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-{{ $loop->iteration }}">{{ $faq->pertanyaan }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-{{ $loop->iteration }}" class="collapse show" data-bs-parent=".faq-list">
+
+            <li data-aos="fade-up" data-aos-delay="{{ $i = $loop->iteration }}00">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-{{ $i }}">{{ $faq->pertanyaan }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-{{ $i }}" class="collapse show" data-bs-parent=".faq-list">
                 <p>{{ $faq->jawaban }}</p>
               </div>
             </li>
@@ -292,7 +302,7 @@
       </section><!-- End Frequently Asked Questions Section -->
 
           <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    {{-- <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -360,7 +370,7 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section><!-- End Contact Section --> --}}
 
 
 @endsection

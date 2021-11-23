@@ -11,7 +11,9 @@
 
           <div class="section-title">
             <h2>Pengumuman</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p>Informasi terkait Direktorat Kerjasama, pengembangan, dan Internasionalisasi dapat dilihat pada kolom berikut </p>
+            
+            {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
           </div>
 
 
@@ -22,10 +24,15 @@
                             <div class="card-header" style="background-color: rgb(214, 0, 0)" >
                               <bold style="color: white">INFORMASI !!!</bold>
                             </div>
+                            @foreach ($pengumumans as $pengumuman)
+
+
                             <div class="card-body">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <h5 class="card-title">{{ $pengumuman->judul }}</h5>
+                              <p class="card-text">{{ $pengumuman->pengumuman }}</p>
+
                             </div>
+                            @endforeach
                           </div>
 
 

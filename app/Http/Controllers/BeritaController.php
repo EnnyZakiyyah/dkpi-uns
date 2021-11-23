@@ -41,7 +41,14 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+            'link' => ''
+        ]);
+
+        Berita::create($validatedData);
+        return redirect('/berita')->with('status', 'berita telah ditambahkan');
 
     }
 
@@ -85,6 +92,15 @@ class BeritaController extends Controller
     public function update(Request $request, Berita $berita)
     {
         //
+        $validatedData = $request->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+            'link' => ''
+        ]);
+
+        Berita::where('id', $berita->id)->update($validatedData);
+        return redirect('/berita')->with('status', 'berita telah ditambahkan');
+
     }
 
     /**

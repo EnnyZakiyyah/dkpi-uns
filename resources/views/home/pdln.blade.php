@@ -11,7 +11,9 @@
 
         <div class="section-title">
           <h2>Data PDLN</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Perjalanan Dinas Luar Negeri (PDLN) adalah adalah penugasan yang dilakukan oleh mahasiswa, dosen, maupun pimpinan dalam rangka tugas belajar dan tugas dinas lainnya di luar negeri yang disetujui oleh Rektor UNS</p>
+
+          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
         </div>
 
                 {{-- <label for="tahun" class="form-label">Tampilkan Data Tahun</label>
@@ -24,7 +26,7 @@
                     <li data-filter=".filter-mahasiswa">Mahasiswa</li>
                     <li data-filter=".filter-dosen">Dosen</li>
                     <li data-filter=".filter-pimpinan">Pimpinan</li>
-                 
+
   </ul> </div>
 
   <p>
@@ -101,7 +103,7 @@
   </div>
 
 <br/>
-          
+
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         <!-- CV/PT -->

@@ -92,6 +92,16 @@ class PengumumanController extends Controller
     public function update(Request $request, Pengumuman $pengumuman)
     {
         //
+        $validatedData = $request->validate([
+            'pengumuman'=>'required',
+            'berlaku'=>'required',
+            'link'=>'required',
+
+        ]);
+        Pengumuman::create($validatedData);
+
+        return redirect('/pengumuman')->with('success', 'Data berhasil ditambah!');
+
     }
 
     /**

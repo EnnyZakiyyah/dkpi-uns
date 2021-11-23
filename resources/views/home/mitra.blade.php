@@ -11,7 +11,8 @@
 
         <div class="section-title">
           <h2>Mitra Kerja Sama</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p>Data Mitra yang menjalin hubungan kerjasama dengan UNS dapat dilihat pada tabel berikut</p>
+          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -38,7 +39,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="validationCustom02" class="form-label">Waktu Mulai</label>
+                <label for="validationCustom02" class="form-label">Awal</label>
                 <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai"required>
                 <div class="valid-feedback">
                   Looks good!
@@ -52,7 +53,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Waktu Berakhir</label>
+                <label for="validationCustom03" class="form-label">Akhir</label>
                 <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir"required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
@@ -97,11 +98,11 @@
                   <th scope="col">No.</th>
                   <th scope="col">Nama Instansi</th>
                   <th scope="col">Ruang Lingkup</th>
-                  <th scope="col">Waktu Mulai</th>
-                  <th scope="col">Waktu Berakhir</th>
+                  <th scope="col">Awal</th>
+                  <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Aksi</th>
+                  {{-- <th scope="col">Aksi</th> --}}
                 </tr>
               </thead>
               <tbody>
@@ -146,8 +147,8 @@
                   <th scope="col">No.</th>
                   <th scope="col">Nama Instansi</th>
                   <th scope="col">Ruang Lingkup</th>
-                  <th scope="col">Waktu Mulai</th>
-                  <th scope="col">Waktu Berakhir</th>
+                  <th scope="col">Awal</th>
+                  <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
                   <th scope="col">Aksi</th>
@@ -195,8 +196,8 @@
                   <th scope="col">No.</th>
                   <th scope="col">Nama Instansi</th>
                   <th scope="col">Ruang Lingkup</th>
-                  <th scope="col">Waktu Mulai</th>
-                  <th scope="col">Waktu Berakhir</th>
+                  <th scope="col">Awal</th>
+                  <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
                   <th scope="col">Aksi</th>
@@ -244,8 +245,8 @@
                   <th scope="col">No.</th>
                   <th scope="col">Nama Instansi</th>
                   <th scope="col">Ruang Lingkup</th>
-                  <th scope="col">Waktu Mulai</th>
-                  <th scope="col">Waktu Berakhir</th>
+                  <th scope="col">Awal</th>
+                  <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
                   <th scope="col">Aksi</th>
@@ -293,8 +294,8 @@
                   <th scope="col">No.</th>
                   <th scope="col">Nama Instansi</th>
                   <th scope="col">Ruang Lingkup</th>
-                  <th scope="col">Waktu Mulai</th>
-                  <th scope="col">Waktu Berakhir</th>
+                  <th scope="col">Awal</th>
+                  <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
                   <th scope="col">Aksi</th>

@@ -116,6 +116,24 @@ class MitraController extends Controller
     public function update(Request $request, Mitra $mitra)
     {
         //
+        $validatedData = $request->validate([
+            'instansi' => '',
+            'nama_instansi' =>'required',
+            'no_mou_uns' =>'required',
+            'no_mou_mitra' =>'required',
+            'ruang_lingkup' =>'required',
+            'jangka_waktu_awal' =>'required',
+            'jangka_waktu_akhir' =>'required',
+            'pejabat_penandatangan' =>'required',
+            'file_mou' =>'',
+            'status_hidden' =>''
+            ]);
+
+
+            Mitra::where('id', $mitra->id)->update($validatedData);
+            return redirect('/mitra')->with('success', 'Data berhasil diubah!');
+
+
     }
 
     /**

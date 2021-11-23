@@ -153,29 +153,29 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Data PDLN</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Mitra</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/home/pdln">Data PDLN</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/home/mitra">Mitra</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Informasi</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Pengumuman</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/home/pengumuman">Pengumuman</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            {{-- <h4>Our Social Networks</h4>
+            {{-- <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> --}}
+            {{-- <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-youtube"></i></a> --}} 
+              {{-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
               <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> --}}
             </div>
           </div>
 

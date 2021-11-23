@@ -45,15 +45,15 @@ class PengaduanController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama'=>'required',
-            'email'=>'required',
-            'subject'=>'required',
+            'nama'=>'',
+            'email'=>'',
+            'subject'=>'',
             'message'=>'required'
             ]);
 
             Pengaduan::create($validatedData);
 
-            return redirect('/home');
+            return redirect('/');
             // ->with('success', 'Data berhasil ditambah!');
 
 

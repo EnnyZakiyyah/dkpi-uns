@@ -124,7 +124,25 @@ class PdlnController extends Controller
      */
     public function update(Request $request, Pdln $pdln)
     {
+        $validatedData = $request->validate([
+            'jenis' => '',
+            'nama' => 'required',
+            'jumlah_orang'=> 'required',
+            'unit_kerja'=> 'required' ,
+            'jangka_waktu_awal'=> 'required',
+            'jangka_waktu_akhir'=> 'required',
+            'tujuan'=> 'required',
+            'negara'=> 'required',
+            'surat_uns'=> 'required',
+            'catatan_uns'=> 'required',
+            'belmawa'=> 'required',
+            'catatan_belmawa'=> 'required',
+            'ktln_kemensetneg'=> 'required',
+            'catatan_setneg'=> 'required'
+        ]);
 
+        Pdln::where('id', $pdln->id)->update($validatedData);
+        return redirect('/pdln')->with('status', 'data berhasil diubah');
     }
 
     /**

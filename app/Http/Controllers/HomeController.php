@@ -11,6 +11,8 @@ use App\Models\Berita;
 use App\Models\Pengumuman;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
+use App\Models\Peringkat;
 
 class HomeController extends Controller
 {
@@ -24,7 +26,8 @@ class HomeController extends Controller
         return view('home.index',[
             'title' => 'DKPI',
             'pengumumans' => $pengumuman,
-            'faqs' => $faq
+            'faqs' => $faq,
+            'beritas' => $berita
         ]);
     }
 
@@ -69,24 +72,6 @@ class HomeController extends Controller
         ]);
     }
 
-    public function faq()
-    {
-        return view('home.faq',[
-            'title'=>'FAQ'
-        ]);
-    }
-    public function berita()
-    {
-        return view('home.berita',[
-            'title'=>'berita'
-        ]);
-    }
-    public function galeri()
-    {
-        return view('home.galeri',[
-            'title'=>'galeri'
-        ]);
-    }
     public function legaldrafting()
     {
         return view('home.layanan.legaldrafting', [
@@ -94,46 +79,74 @@ class HomeController extends Controller
         ]);
     }
 
-    public function galeridetails()
+    public function galeridetails(Gallery $id)
     {
-        return view('home.galeridetails');
+        // $galeri = Gallery::where('id', $id);
+        return view('home.galeridetails',[
+            'title' => 'detail gambar',
+            'galeri' => $id
+        ]);
     }
 
     public function berita()
     {
-        return view('home.berita');
+        $berita = Berita::get();
+        return view('home.berita',[
+            'title' => 'berita',
+            'beritas' => $berita
+        ]);
+
     }
 
-    public function beritadetails()
+    public function beritadetails(Berita $id)
     {
-        return view('home.beritadetails');
+        // $berita = Berita::where('id', $id)->get();
+        return view('home.beritadetails',[
+            'title'=>'Detail Berita',
+            'berita' => $id
+        ]);
     }
 
     public function galeri()
     {
-        return view('home.galeri');
+        $gallery =  Gallery::get();
+        return view('home.galeri',[
+            'title'=>'Galeri',
+            'galleries' => $gallery
+        ]);
     }
 
     public function faq()
     {
-        return view('home.faq');
-    }
+        $faqs = Faq::get();
+        return view('home.faq',[
+            'title'=>'FAQ',
+            'faqs' => $faqs
+        ]);
 
-    public function pengumuman()
-    {
-        return view('home.pengumuman');
     }
 
     public function peringkat()
     {
+
+        $thes = Peringkat::where('jenis', 'THES')->latest()->get();
+        $qs = Peringkat::where('jenis', 'QSstar')->latest()->get();
         return view('home.peringkat',[
-            'title'=>'peringkat'
+            'title'=>'peringkat',
+            'thess' => $thes,
+            'qss' => $qs
         ]);
     }
+
     public function pengumuman()
     {
-        return view('home.pengumuman',[
-            'title'=>'pengumuman'
+        $pengumuman = Pengumuman::latest()->get();
+
+        return view('home/pengumuman',[
+            'title'=>'Pengumuman',
+            'pengumumans' => $pengumuman
         ]);
+
     }
+
 }
