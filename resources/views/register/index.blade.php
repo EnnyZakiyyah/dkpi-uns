@@ -38,16 +38,16 @@
                         <div class="line"></div>
                     </div>
                     <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Name</h6>
+                            <h6 class="mb-0 text-sm"></h6>
                         </label> <input class="mb-4 @error('name')is-invalid @enderror" type="text" name="name" placeholder="Enter name" id="name"> </div>
                     <div class="row px-3"> <label class="mb-1" required value="{{ old('name') }}">
-                            <h6 class="mb-0 text-sm">Username</h6>
+                            <h6 class="mb-0 text-sm"></h6>
                         </label> <input class="mb-4" type="text" name="username" placeholder="Enter username" id="username" required value="{{ old('username') }}"> </div>
                     <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Email Address</h6>
+                            <h6 class="mb-0 text-sm"></h6>
                         </label> <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address" id="email" required value="{{ old('email') }}"> </div>
                     <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Password</h6>
+                            <h6 class="mb-0 text-sm"></h6>
                         </label> <input type="password" name="password" placeholder="Enter password" id="password" required> </div>
                     <div class="row px-3 mb-4">
                         <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>

@@ -157,28 +157,12 @@ class PdlnController extends Controller
         return redirect('/pdln')->with('status', 'data berhasil dihapus');
     }
 
-    public function mahasiswa(){
+    public function jenis($jenis){
 
-        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->get();
-
-        return view('pdln.index',[
-            'pdlns' => $mahasiswa
-        ]);
-    }
-    public function dosen(){
-
-        $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
+        $jenis = Pdln::where('jenis', $jenis)->latest()->get();
 
         return view('pdln.index',[
-            'pdlns' => $dosen
-        ]);
-    }
-    public function pimpinan(){
-
-        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
-
-        return view('pdln.index',[
-            'pdlns' => $pimpinan
+            'pdlns' => $jenis
         ]);
     }
 }

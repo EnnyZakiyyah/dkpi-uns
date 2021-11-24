@@ -115,10 +115,10 @@ class MitraController extends Controller
      * @param  \App\Models\Mitra  $mitra
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mitra $mitra)
+    public function update($mitra)
     {
         //
-        $validatedData = $request->validate([
+        $validatedData = request()->validate([
             'instansi' => '',
             'nama_instansi' =>'required',
             'no_mou_uns' =>'required',
@@ -132,7 +132,7 @@ class MitraController extends Controller
             ]);
 
 
-            Mitra::where('id', $mitra->id)->update($validatedData);
+            Mitra::where('id', $mitra)->update($validatedData);
             return redirect('/mitra')->with('success', 'Data berhasil diubah!');
 
 
