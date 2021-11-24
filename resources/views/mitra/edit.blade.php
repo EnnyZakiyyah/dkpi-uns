@@ -92,7 +92,7 @@
                           </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="no_mou_uns">Nomor MoU UNS</label>
-                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ old('no_mou_uns', $mitra->no_mou_uns) }}">
                             @error('no_mou_uns')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -100,7 +100,7 @@
                             @enderror
                         </div>                        <div class="form-group ml-5 mr-5">
                             <label for="no_mou_mitra">Nomor MoU Mitra</label>
-                            <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="nomor surat" name="no_mou_mitra" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="nomor surat" name="no_mou_mitra" value="{{ old('no_mou_mitea', $mitra->no_mou_mitra) }}">
                             @error('no_mou_mitra')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -109,7 +109,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="jangka_waktu_awal">Awal</label>
-                            <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal') }}">
+                            <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal',$mitra->jangka_waktu_awal) }}">
                             @error('jangka_waktu_awal')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -118,7 +118,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="jangka_waktu_akhir">Akhir</label>
-                            <input type="date" class="form-control @error('jangka_waktu_akhir') is-invalid @enderror" id="jangka_waktu_akhir" placeholder="Jangka Waktu Akhir" name="jangka_waktu_akhir" value="{{ old('jangka_waktu_akhir') }}">
+                            <input type="date" class="form-control @error('jangka_waktu_akhir') is-invalid @enderror" id="jangka_waktu_akhir" placeholder="Jangka Waktu Akhir" name="jangka_waktu_akhir" value="{{ old('jangka_waktu_akhir',$mitra->jangka_waktu_akhir) }}">
                             @error('jangka_waktu_akhir')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -127,7 +127,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="pejabat_penandatangan">pejabat penandatangan</label>
-                            <input type="text" class="form-control @error('pejabat_penandatangan') is-invalid @enderror" id="pejabat_penandatangan" placeholder="nama pejabat pendandatangan" name="pejabat_penandatangan" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('pejabat_penandatangan') is-invalid @enderror" id="pejabat_penandatangan" placeholder="nama pejabat pendandatangan" name="pejabat_penandatangan" value="{{ old('pejabat_pendandatangan',$mitra->pejabat_penandatangan) }}">
                             @error('pejabat_penandatangan')
                             <div class="invalid-feedback">
                                 {{ $message }}

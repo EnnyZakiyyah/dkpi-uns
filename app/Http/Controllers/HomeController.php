@@ -140,7 +140,8 @@ class HomeController extends Controller
 
     public function pengumuman()
     {
-        $pengumuman = Pengumuman::latest()->get();
+        $pengumuman = Pengumuman::get();
+
 
         return view('home/pengumuman',[
             'title'=>'Pengumuman',
