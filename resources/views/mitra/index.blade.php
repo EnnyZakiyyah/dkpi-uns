@@ -54,19 +54,19 @@
                 </tr>
               </thead>
               <tbody class="list">
-                @foreach($mitra as $mit)
+                @foreach($mitras as $mitra)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td><a href="/mitra/{{ $mit->id }}">{{ $mit->nama_instansi }}</a></td>
-                  <td><a href="/data/{{ $mit->instansi }}">{{ $mit->instansi }}</a></td>
-                  <td>{{ $mit->no_mou_uns }}</td>
-                  <td>{{ $mit->no_mou_mitra }}</td>
-                  {{-- <td>{{ $mit->nama_instansi }}</td>
-                  <td>{{ $mit->nama_instansi }}</td> --}}
-                  <td>{{ $mit->pejabat_penandatangan}}</td>
+                  <td><a href="/mitra/{{ $mitra->id }}">{{ $mitra->nama_instansi }}</a></td>
+                  <td><a href="/mitra/data/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></td>
+                  <td>{{ $mitra->no_mou_uns }}</td>
+                  <td>{{ $mitra->no_mou_mitra }}</td>
+                  {{-- <td>{{ $mitra->nama_instansi }}</td>
+                  <td>{{ $mitra->nama_instansi }}</td> --}}
+                  <td>{{ $mitra->pejabat_penandatangan}}</td>
 
                   <td>
-                    <a href="/mitra/{{ $mit->id }}" class="badge badge-info">Detail</a>
+                    <a href="/mitra/{{ $mitra->id }}" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
                 @endforeach

@@ -93,8 +93,8 @@ class PdlnController extends Controller
         // $file_belmawa = Storage::get($pdln->file_belmawa, $pdln->nama);
         // $file_ktln = Storage::get($pdln->file_ktln, $pdln->nama);
 
-        return view('pdln.show', [
-            'pdln' => $pdln,
+        return view('pdln.show',[
+            'pdln' => $pdln
             // 'file_uns' => $file_surat_uns,
             // 'file_belmawa' => $file_belmawa,
             // 'file_ktln' => $file_ktln

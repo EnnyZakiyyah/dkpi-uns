@@ -349,10 +349,14 @@
                   <span>Support</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#!" class="dropdown-item">
+                <a href="#!" class="">
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
                 </a>
+                <form action="/logout" method="POST" class="dropdown-item">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">logout</button>
+                </form>
               </div>
             </li>
           </ul>

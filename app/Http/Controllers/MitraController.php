@@ -17,7 +17,7 @@ class MitraController extends Controller
         $mitra = Mitra::latest()->get();
 
         return view('mitra.index', [
-            'mitra' => $mitra
+            'mitras' => $mitra
         ]);
         // $yayasan = Mitra::where('jenis', 'yayasan')->latest()->get();
         // $cv = Mitra::where('jenis', 'cv')->latest()->get();
@@ -84,9 +84,10 @@ class MitraController extends Controller
      * @param  \App\Models\Mitra  $mitra
      * @return \Illuminate\Http\Response
      */
-    public function show(Mitra $mitra)
+    public function show($id)
     {
         //
+        $mitra = Mitra::find($id);
         return view('mitra.show',[
             'mitra' =>  $mitra
         ]);
@@ -98,11 +99,12 @@ class MitraController extends Controller
      * @param  \App\Models\Mitra  $mitra
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mitra $mitra)
+    public function edit($mitra)
     {
         //
+        $data=Mitra::find($mitra);
         return view('mitra.edit',[
-            'mitra' => $mitra
+            'mitra' => $data
         ]);
     }
 
@@ -149,45 +151,58 @@ class MitraController extends Controller
         return redirect('/mitra')->with('status', 'data berhasil dihapus');
 
     }
-    public function cv(){
 
-        $cv = Mitra::where('instansi', 'cv')->latest()->get();
-
+    public function instansi($instansi)
+    {
+        $instansi = Mitra::where('instansi', $instansi)->latest()->get();
         return view('mitra.index',[
-            'mitra' => $cv
+            'mitras' => $instansi
         ]);
     }
-    public function yayasan(){
 
-        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
 
-        return view('mitra.index',[
-            'mitra' => $yayasan
-        ]);
-    }
-    public function internasional(){
 
-        $internasional = Mitra::where('instansi', 'internasional')->latest()->get();
 
-        return view('mitra.index',[
-            'mitra' => $internasional
-        ]);
-    }
-    public function jasaKeuangan(){
 
-        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->get();
+    // public function cv(){
 
-        return view('mitra.index',[
-            'mitra' => $jasaKeuangan
-        ]);
-    }
-    public function pemerintah(){
+    //     $cv = Mitra::where('instansi', 'cv')->latest()->get();
 
-        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->get();
+    //     return view('mitra.index',[
+    //         'mitra' => $cv
+    //     ]);
+    // }
+    // public function yayasan(){
 
-        return view('mitra.index',[
-            'mitra' => $pemerintah
-        ]);
-    }
+    //     $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
+
+    //     return view('mitra.index',[
+    //         'mitra' => $yayasan
+    //     ]);
+    // }
+    // public function internasional(){
+
+    //     $internasional = Mitra::where('instansi', 'internasional')->latest()->get();
+
+    //     return view('mitra.index',[
+    //         'mitra' => $internasional
+    //     ]);
+    // }
+    // public function jasaKeuangan(){
+
+    //     $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->get();
+
+    //     return view('mitra.index',[
+    //         'mitra' => $jasaKeuangan
+    //     ]);
+    // }
+    // public function pemerintah(){
+
+    //     $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->get();
+
+    //     return view('mitra.index',[
+    //         'mitra' => $pemerintah
+    //     ]);
+    // }
 
 }

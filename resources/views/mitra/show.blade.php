@@ -26,7 +26,7 @@
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/Mitra"> Mitra</a></li>
-                                <li class="breadcrumb-item"><a href="#"> {{ $mitra->instansi }}</a></li>
+                                <li class="breadcrumb-item"><a href="/mitra/data/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"> {{ $mitra->nama_instansi }}</li>
                             </ol>
                         </nav>
@@ -53,7 +53,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Nama instansi: {{ $mitra->nama_instansi}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ $mitra->instansi}}</h6>
+                            {{-- <h6 class="card-subtitle mb-2 text-muted">{{ $mitra->instansi}}</h6> --}}
                             <p class="card-text">{{ $mitra->no_mou_uns }}</p>
                             <p class="card-text">{{ $mitra->no_mou_mitra }}</p>
                             <p class="card-text">{{ $mitra->ruang_lingkup }}</p>

@@ -22,7 +22,7 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah Data Mitra</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Form Ubah Data Mitra</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
@@ -92,7 +92,7 @@
                           </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="no_mou_uns">Nomor MoU UNS</label>
-                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ old('no_mou_uns', $mitra->no_mou_uns) }}">
+                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ $mitra->no_mou_uns }}">
                             @error('no_mou_uns')
                             <div class="invalid-feedback">
                                 {{ $message }}
