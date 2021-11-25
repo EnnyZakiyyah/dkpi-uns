@@ -95,21 +95,22 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="/pengaduan" method="POST"  class="php-email-form">
+            <form action="/pengaduan" method="post"  class="php-email-form">
+            {{-- <form action="/pengaduan" method="POST" > --}}
                 @csrf
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="nama">Your name</label>
-                  <input type="text" name="nama" class="form-control" id="nama" required>
+                  <input type="text" name="nama" class="form-control" id="nama" >
                 </div>
                 <div class="form-group col-md-6">
                   <label for="email">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <input type="email" class="form-control" name="email" id="email" >
                 </div>
               </div>
               <div class="form-group">
                 <label for="subject">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="subject" id="subject" >
               </div>
               <div class="form-group">
                 <label for="message">Message</label>

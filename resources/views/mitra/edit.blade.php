@@ -62,8 +62,8 @@
                             </div>
                             @enderror
                         </div>
-                        <div class="form-group ml-5 mr-5">
-                            <label for="instansi" class="form-select" >Jenis Instansi</label>
+                        {{-- <div class="form-group ml-5 mr-5">
+                            <label for="instansi" class="form-select" >Jenis Instansi</label> --}}
                             {{-- <select class="form-select  @error('instansi') is-invalid @enderror" id="instansi" placeholder="jenis instansi" name="instansi" value="{{ old('instansi') }}">
                             <option value="yayasan">yayasan</option>
                             <option value="cv">cv</option>
@@ -78,7 +78,7 @@
                             </div>
                             @enderror
                         </div> --}}
-                        <div class="form-check">
+                        {{-- <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                             <label class="form-check-label" for="flexRadioDefault1">
                               Default radio
@@ -89,7 +89,7 @@
                             <label class="form-check-label" for="flexRadioDefault2">
                               Default checked radio
                             </label>
-                          </div>
+                          </div> --}}
                         <div class="form-group ml-5 mr-5">
                             <label for="no_mou_uns">Nomor MoU UNS</label>
                             <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ $mitra->no_mou_uns }}">
@@ -98,15 +98,26 @@
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div>                        <div class="form-group ml-5 mr-5">
+                        </div>
+                        <div class="form-group ml-5 mr-5">
                             <label for="no_mou_mitra">Nomor MoU Mitra</label>
-                            <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="nomor surat" name="no_mou_mitra" value="{{ old('no_mou_mitea', $mitra->no_mou_mitra) }}">
+                            <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="nomor surat" name="no_mou_mitra" value="{{ old('ruang_lingkup', $mitra->no_mou_mitra) }}">
                             @error('no_mou_mitra')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
+
+                    <div class="form-group ml-5 mr-5">
+                        <label for="ruang_lingkup">Ruang Lingkup</label>
+                        <input type="text" class="form-control @error('ruang_lingkup') is-invalid @enderror" id="ruang_lingkup" placeholder="nomor surat" name="ruang_lingkup" value="{{ old('ruang_lingkup', $mitra->ruang_lingkup) }}">
+                        @error('ruang_lingkup')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="jangka_waktu_awal">Awal</label>
                             <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal',$mitra->jangka_waktu_awal) }}">

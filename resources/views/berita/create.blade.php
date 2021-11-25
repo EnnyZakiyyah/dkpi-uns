@@ -50,7 +50,7 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/berita">
+                    <form method="POST" action="/berita" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group ml-5 mr-5">
@@ -65,7 +65,6 @@
                         <div class="form-group ml-5 mr-5">
                             <label for="link"> link Berita</label>
                             <input id="link" type="text" name="link" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link berita" name="link" value="{{ old('link') }}">
-                            {{-- <trix-editor input="link"></trix-editor> --}}
                             @error('link')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -78,6 +77,16 @@
                             <input id="isi" type="hidden" name="isi" class="form-control  @error('isi') is-invalid @enderror" id="isi" placeholder="isi berita" name="isi" value="{{ old('isi') }}">
                             <trix-editor input="isi"></trix-editor>
                             @error('isi')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="gambar"> gambar pendukung</label>
+                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" value="{{ old('gambar') }}">
+                            {{-- <trix-editor input="gambar"></trix-editor> --}}
+                            @error('gambar')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

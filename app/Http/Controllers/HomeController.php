@@ -21,7 +21,7 @@ class HomeController extends Controller
     public function index()
     {
         $faq = Faq::get();
-        $pengumuman = Pengumuman::get();
+        $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
         $berita = Berita::get();
 
         return view('home.index',[
@@ -141,8 +141,7 @@ class HomeController extends Controller
 
     public function pengumuman()
     {
-        $pengumuman = Pengumuman::whereDate('berlaku', '>', today())->get();
-
+        $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
 
         return view('home/pengumuman',[
             'title'=>'Pengumuman',

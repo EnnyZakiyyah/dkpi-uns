@@ -46,11 +46,14 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah Berita</h3>
+                        <h3 class="mb-0">edit Berita</h3>
                     </div>
+                    <img src="storage/app/{{ $berita->gambar }}" >
+
 
                     <!-- body card -->
-                    <form method="POST" action="/berita">
+                    <form method="POST" action="/berita/{{ $berita->id }}">
+                        @method('put')
                         @csrf
 
                         <div class="form-group ml-5 mr-5">
@@ -64,8 +67,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="link"> link Berita</label>
-                            <input id="link" type="text" name="link" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link berita" name="link" value="{{ old('link', $berita->link) }}">
-                            {{-- <trix-editor input="link"></trix-editor> --}}
+                            <input id="link" type="text" name="link" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link berita" name="link" value="{{ old('link',$berita->link) }}">
                             @error('link')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -83,7 +85,15 @@
                             </div>
                             @enderror
                         </div>
-
+                        <div class="form-group ml-5 mr-5">
+                            <label for="gambar"> ganti gambar</label>
+                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" value="{{ old('gambar', $berita->gambar) }}">
+                            @error('gambar')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                         <button type="submit" class="btn btn-primary ml-5">Submit</button>
                         <a href="/berita" class="card-link ml-5">Kembali</a>
                     </form>
