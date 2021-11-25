@@ -47,7 +47,7 @@
     <div class="scrollbar-inner">
         <!-- Brand -->
         <div class="sidenav-header  align-items-center">
-            <a class="navbar-brand" href="javascript:void(0)">
+            <a class="navbar-brand" href="{{url('/')}}">
               <img src="{{asset('/images/Logo-UNS-New-04.png')}}" class="navbar-brand-img"  alt="...">
             </a>
         </div>
@@ -108,6 +108,12 @@
                         <a class="nav-link active" href="{{url('/faq')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">FAQ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url('/register')}}">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Register account</span>
                         </a>
                     </li>
                 </ul>

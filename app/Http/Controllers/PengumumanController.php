@@ -15,10 +15,13 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        $pengumuman = Pengumuman::get();
+        $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
+        $expired = Pengumuman::whereDate('berlaku', '<', today())->latest()->get();
         return view('pengumuman.index',[
-            'pengumumans' => $pengumuman
+            'active' => $pengumuman,
+            'expired'=> $expired
         ]);
+        // return $pengumuman;
     }
 
     /**
@@ -98,7 +101,7 @@ class PengumumanController extends Controller
             'link'=>'required',
 
         ]);
-        Pengumuman::create($validatedData);
+        Pengumuman::where('id', $pengumuman)->update($validatedData);
 
         return redirect('/pengumuman')->with('success', 'Data berhasil ditambah!');
 

@@ -47,7 +47,17 @@
                 </tr>
               </thead>
               <tbody class="list">
-                @foreach($pengumumans as $pengumuman)
+                @foreach($active as $pengumuman)
+                <tr>
+                  <th scope="row">{{ $loop->iteration }}</th>
+                  <td>{{ $pengumuman->pengumuman }}</td>
+                  <td>{{ $pengumuman->berlaku }}</td>
+                  <td>
+                    <a href="/pengumuman/{{ $pengumuman->id }}" class="badge badge-info">Detail</a>
+                  </td>
+                </tr>
+                @endforeach
+                @foreach($expired as $pengumuman)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
                   <td>{{ $pengumuman->pengumuman }}</td>

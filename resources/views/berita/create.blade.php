@@ -62,10 +62,20 @@
                             </div>
                             @enderror
                         </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="link"> link Berita</label>
+                            <input id="link" type="text" name="link" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link berita" name="link" value="{{ old('link') }}">
+                            {{-- <trix-editor input="link"></trix-editor> --}}
+                            @error('link')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="judul"> Isi Berita</label>
-                            <input id="isi" type="hidden" name="content" class="form-control  @error('isi') is-invalid @enderror" id="isi" placeholder="isi berita" name="isi" value="{{ old('isi') }}">
+                            <label for="isi"> isi Berita</label>
+                            <input id="isi" type="hidden" name="isi" class="form-control  @error('isi') is-invalid @enderror" id="isi" placeholder="isi berita" name="isi" value="{{ old('isi') }}">
                             <trix-editor input="isi"></trix-editor>
                             @error('isi')
                             <div class="invalid-feedback">
@@ -73,35 +83,10 @@
                             </div>
                             @enderror
                         </div>
+
                         <button type="submit" class="btn btn-primary ml-5">Submit</button>
                     </form>
 
-                    <!-- Card footer -->
-                    {{-- <div class="card-footer py-4">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div> --}}
                 </div>
             </div>
         </div>

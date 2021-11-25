@@ -39,11 +39,14 @@
                     </div>
                     <div class="row px-3"> <label class="mb-1">
                             <h6 class="mb-0 text-sm"></h6>
-                        </label> <input class="mb-4 @error('name')is-invalid @enderror" type="text" name="name" placeholder="Enter name" id="name"> </div>
+                        </label>
+                        <input class="mb-4 @error('name')is-invalid @enderror" type="text" name="name" placeholder="Enter name" id="name"> </div>
                     <div class="row px-3"> <label class="mb-1" required value="{{ old('name') }}">
                             <h6 class="mb-0 text-sm"></h6>
-                        </label> <input class="mb-4" type="text" name="username" placeholder="Enter username" id="username" required value="{{ old('username') }}"> </div>
-                    <div class="row px-3"> <label class="mb-1">
+                        </label>
+                        {{-- <input class="mb-4" type="text" name="username" placeholder="Enter username" id="username" required value="{{ old('username') }}"> </div> --}}
+                    <div class="row px-3">
+                        <label class="mb-1">
                             <h6 class="mb-0 text-sm"></h6>
                         </label> <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address" id="email" required value="{{ old('email') }}"> </div>
                     <div class="row px-3"> <label class="mb-1">

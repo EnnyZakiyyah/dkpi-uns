@@ -1,18 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
+
 use App\Models\Faq;
 
+
 use App\Models\Pdln;
-
-
 use App\Models\Mitra;
 use App\Models\Berita;
+use App\Models\Gallery;
+use App\Models\Peringkat;
 use App\Models\Pengumuman;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Gallery;
-use App\Models\Peringkat;
 
 class HomeController extends Controller
 {
@@ -140,7 +141,7 @@ class HomeController extends Controller
 
     public function pengumuman()
     {
-        $pengumuman = Pengumuman::get();
+        $pengumuman = Pengumuman::whereDate('berlaku', '>', today())->get();
 
 
         return view('home/pengumuman',[

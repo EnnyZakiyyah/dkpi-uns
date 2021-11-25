@@ -74,10 +74,12 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Berita $berita)
+    public function edit($id)
     {
         //
-        return view('berita.edit',[
+
+            $berita = Berita::find($id);
+            return view('berita.edit',[
             'berita' => $berita
         ]);
 

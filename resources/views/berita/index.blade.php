@@ -53,7 +53,7 @@
                   <td>{{ $berita->judul }}</td>
                   <td>{{ $berita->created_at }}</td>
                   <td>
-                    <a href="/berita/{{ $berita->id }}" class="badge badge-info">Detail</a>
+                    <a href="/berita/{{ $berita->id }}/edit" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
                 @endforeach

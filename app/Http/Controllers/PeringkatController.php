@@ -14,7 +14,14 @@ class PeringkatController extends Controller
      */
     public function index()
     {
-        return view('peringkat.index');
+        $thes =  Peringkat::where('jenis','THES')->get();
+        $qs = Peringkat::where('jenis','QSstar')->get();
+        return view('peringkat.index',[
+            'title' => 'peringkat',
+            'thes' => $thes,
+            'qs' => $qs
+        ]);
+
     }
 
     /**

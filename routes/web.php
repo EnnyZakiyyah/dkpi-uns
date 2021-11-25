@@ -44,6 +44,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/register', [RegisterController::class, 'index']);
 
 
 // Route::resources([
@@ -67,16 +68,16 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard',[DashboardController::class, 'index']);
-    Route::get('/register', [RegisterController::class, 'index']);
+    // Route::get('/register', [RegisterController::class, 'index']);
     Route::post('/logout', [LoginController::class, 'logout']);
     Route::resource('/mitra',  MitraController::class);
-    Route::resource('/pdln', PdlnController::class);
-    Route::resource('/berita', BeritaController::class);
-    Route::resource('/galeri', GalleryController::class);
-    Route::resource('/pengumuman', PengumumanController::class);
-    Route::resource('/pengaduan', PengaduanController::class);
-    Route::resource('/peringkat', PeringkatController::class);
-    Route::resource('/faq', FaqController::class);
+    // Route::resource('/pdln', PdlnController::class);
+    // Route::resource('/berita', BeritaController::class);
+    // Route::resource('/galeri', GalleryController::class);
+    // Route::resource('/pengumuman', PengumumanController::class);
+    // Route::resource('/pengaduan', PengaduanController::class);
+    // Route::resource('/peringkat', PeringkatController::class);
+    // Route::resource('/faq', FaqController::class);
 
 
 
@@ -107,7 +108,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/',[BeritaController::class, 'index']);
         Route::get('/{id}',[BeritaController::class, 'show']);
         Route::get('/create',[BeritaController::class, 'create']);
-        Route::post('/',[PdlnController::class, 'store']);
+        Route::post('/',[BeritaController::class, 'store']);
         Route::get('/{id}/edit',[BeritaController::class, 'edit']);
         Route::put('/{id}',[BeritaController::class, 'update']);
         Route::delete('/{id}',[BeritaController::class, 'destroy']);
@@ -116,7 +117,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/',[PengaduanController::class, 'index']);
         Route::get('/{id}',[PengaduanController::class, 'show']);
         Route::get('/create',[PengaduanController::class, 'create']);
-        Route::post('/',[PdlnController::class, 'store']);
+        Route::post('/',[PengaduanController::class, 'store']);
         Route::get('/{id}/edit',[PengaduanController::class, 'edit']);
         Route::put('/{id}',[PengaduanController::class, 'update']);
         Route::delete('/{id}',[PengaduanController::class, 'destroy']);
@@ -125,7 +126,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/',[PengumumanController::class, 'index']);
         Route::get('/{id}',[PengumumanController::class, 'show']);
         Route::get('/create',[PengumumanController::class, 'create']);
-        Route::post('/',[PdlnController::class, 'store']);
+        Route::post('/',[PengumumanController::class, 'store']);
         Route::get('/{id}/edit',[PengumumanController::class, 'edit']);
         Route::put('/{id}',[PengumumanController::class, 'update']);
         Route::delete('/{id}',[PengumumanController::class, 'destroy']);
@@ -134,7 +135,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/',[PeringkatController::class, 'index']);
         Route::get('/{id}',[PeringkatController::class, 'show']);
         Route::get('/create',[PeringkatController::class, 'create']);
-        Route::post('/',[PdlnController::class, 'store']);
+        Route::post('/',[PeringkatController::class, 'store']);
         Route::get('/{id}/edit',[PeringkatController::class, 'edit']);
         Route::put('/{id}',[PeringkatController::class, 'update']);
         Route::delete('/{id}',[PeringkatController::class, 'destroy']);
@@ -143,7 +144,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/',[FaqController::class, 'index']);
         Route::get('/{id}',[FaqController::class, 'show']);
         Route::get('/create',[FaqController::class, 'create']);
-        Route::post('/',[PdlnController::class, 'store']);
+        Route::post('/',[FaqController::class, 'store']);
         Route::get('/{id}/edit',[FaqController::class, 'edit']);
         Route::put('/{id}',[FaqController::class, 'update']);
         Route::delete('/{id}',[FaqController::class, 'destroy']);
@@ -152,7 +153,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/',[GalleryController::class, 'index']);
         Route::get('/{id}',[GalleryController::class, 'show']);
         Route::get('/create',[GalleryController::class, 'create']);
-        Route::post('/',[PdlnController::class, 'store']);
+        Route::post('/',[GalleryController::class, 'store']);
         Route::get('/{id}/edit',[GalleryController::class, 'edit']);
         Route::put('/{id}',[GalleryController::class, 'update']);
         Route::delete('/{id}',[GalleryController::class, 'destroy']);
