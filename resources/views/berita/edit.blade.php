@@ -77,8 +77,9 @@
 
                         <div class="form-group ml-5 mr-5">
                             <label for="isi"> isi Berita</label>
-                            <input id="isi" type="hidden" name="isi" class="form-control  @error('isi') is-invalid @enderror" id="isi" placeholder="isi berita" name="isi" value="{{ old('isi',$berita->isi) }}">
-                            <trix-editor input="isi"></trix-editor>
+                            <textarea  id="editor" type="hidden" name="isi" class="form-control  @error('isi') is-invalid @enderror" id="isi" placeholder="isi berita" name="isi" value="{{ old('isi') }}">
+                                    {{ $berita->isi }}
+                            </textarea>
                             @error('isi')
                             <div class="invalid-feedback">
                                 {{ $message }}

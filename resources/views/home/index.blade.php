@@ -34,14 +34,16 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
+
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div class="row row-cols-1 row-cols-md-3 g-4">
+
                     <div class="col">
                       <div class="card h-100">
                         <img src="{{asset('assets/img/slide1.jpg')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">1</h5>
                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                            <left> <a href="/berita/beritadetails" class="btn-learn-more">Baca Selengkapnya</a></left>
                           </p>
@@ -52,11 +54,12 @@
                         </div>
                       </div>
                     </div>
+
                     <div class="col">
                       <div class="card h-100">
                         <img src="{{asset('assets/img/cta-bg.jpg')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">2</h5>
                           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                           <a href="/berita/berita-details" class="btn-learn-more ml-3">Baca Selengkapnya</a>
                         </div>
@@ -85,7 +88,7 @@
                       <div class="card h-100">
                         <img src="{{asset('assets/img/slide1.jpg')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">3</h5>
                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                         <div class="card-footer">
@@ -97,7 +100,7 @@
                       <div class="card h-100">
                         <img src="{{asset('assets/img/cta-bg.jpg')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">4</h5>
                           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                         </div>
                         <div class="card-footer">
@@ -109,7 +112,7 @@
                       <div class="card h-100">
                         <img src="{{asset('assets/img/banner-siswa.jpg')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">5</h5>
                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                           <a href="/layanan/legaldrafting" class="btn-learn-more">Baca Selengkapnya</a>
                         </div>
@@ -126,7 +129,7 @@
                       <div class="card h-100">
                         <img src="{{asset('assets/img/slide1.jpg')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">6</h5>
                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                         <div class="card-footer">
@@ -138,7 +141,7 @@
                       <div class="card h-100">
                         <img src="{{asset('assets/img/cta-bg.jpg')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">7</h5>
                           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                         </div>
                         <div class="card-footer">

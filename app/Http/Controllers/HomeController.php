@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
         $faq = Faq::get();
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
-        $berita = Berita::get();
+        $berita = Berita::latest()->take(6)->get();
 
         return view('home.index',[
             'title' => 'DKPI',
@@ -80,12 +80,12 @@ class HomeController extends Controller
         ]);
     }
 
-    public function galeridetails(Gallery $id)
+    public function galeridetails( $id)
     {
-        // $galeri = Gallery::where('id', $id);
+        $galeri = Gallery::find($id)->get();
         return view('home.galeridetails',[
             'title' => 'detail gambar',
-            'galeri' => $id
+            'galeri' => $galeri
         ]);
     }
 

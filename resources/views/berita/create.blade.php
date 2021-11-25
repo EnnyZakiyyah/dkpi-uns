@@ -72,7 +72,7 @@
                             @enderror
                         </div>
 
-                        <div class="form-group ml-5 mr-5">
+                        {{-- <div class="form-group ml-5 mr-5">
                             <label for="isi"> isi Berita</label>
                             <input id="isi" type="hidden" name="isi" class="form-control  @error('isi') is-invalid @enderror" id="isi" placeholder="isi berita" name="isi" value="{{ old('isi') }}">
                             <trix-editor input="isi"></trix-editor>
@@ -81,7 +81,7 @@
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div>
+                        </div> --}}
                         <div class="form-group ml-5 mr-5">
                             <label for="gambar"> gambar pendukung</label>
                             <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" value="{{ old('gambar') }}">
@@ -92,6 +92,18 @@
                             </div>
                             @enderror
                         </div>
+
+                        <div class="form-group ml-5 mr-5">
+                        <label for="isi"> isi Berita</label>
+                        <textarea  id="editor" type="hidden" name="isi" class="form-control  @error('isi') is-invalid @enderror" id="isi" placeholder="isi berita" name="isi" value="{{ old('isi') }}">
+
+                        </textarea>
+                        @error('isi')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
 
                         <button type="submit" class="btn btn-primary ml-5">Submit</button>
                     </form>
