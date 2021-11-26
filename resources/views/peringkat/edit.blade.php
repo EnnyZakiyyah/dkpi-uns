@@ -86,8 +86,9 @@
 
                         <div class="form-group ml-5 mr-5">
                             <label for="berita"> berita peringkat</label>
-                            <input id="berita" type="hidden" name="berita" class="form-control  @error('berita') is-invalid @enderror" id="berita" placeholder="berita peringkat" name="berita" value="{{ old('berita',$peringkat->berita) }}">
-                            <trix-editor input="berita"></trix-editor>
+                            <textarea  id="editor" type="hidden" name="berita" class="form-control  @error('berita') is-invalid @enderror" id="berita" placeholder="berita berita" name="berita" value="{{ old('berita') }}">
+                                    {{ $peringkat->berita }}
+                            </textarea>
                             @error('berita')
                             <div class="invalid-feedback">
                                 {{ $message }}

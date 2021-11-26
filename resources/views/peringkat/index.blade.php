@@ -54,7 +54,7 @@
                   <td>{{ $peringkat->judul }}</td>
                   <td>{{ $peringkat->link }}</td>
                   <td>
-                    <a href="/peringkat/{{ $peringkat->id }}" class="badge badge-info">Detail</a>
+                    <a href="/peringkat/{{ $peringkat->id }}/edit" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
                 @endforeach
