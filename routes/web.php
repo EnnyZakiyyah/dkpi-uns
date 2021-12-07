@@ -6,6 +6,7 @@ use App\Http\Controllers\PdlnController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PeringkatController;
 use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,3 +131,16 @@ Route::get('/data/yayasan', [MitraController::class, 'yayasan']);
 Route::get('/data/internasional', [MitraController::class, 'internasional']);
 Route::get('/data/jasaKeuangan', [MitraController::class, 'jasaKeuangan']);
 Route::get('/data/pemerintah', [MitraController::class, 'pemerintah']);
+
+//email
+// Route::get('/contact', '@showContactForm');
+// Route::post('/contact', 'EmailController@sendMail')->name('send.email');
+
+//Route::get('/email', 'EmailController@create');
+//Route::get('/send-email', '@showContactForm');
+//Route::get('/send-email', 'EmailController@create');
+//Route::post('/send-email', 'EmailController@sendEmail')->name('send.email');
+
+Route::get('/contact-form', [ContactController::class, 'showForm']);
+
+Route::post('/contact-form', [ContactController::class, 'storeForm'])->name('contact.save');
