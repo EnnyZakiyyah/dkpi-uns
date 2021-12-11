@@ -14,7 +14,10 @@ class PeringkatController extends Controller
      */
     public function index()
     {
-        return view('peringkat.index');
+        $peringkat =Peringkat::get();
+        return view('peringkat.index',[
+            'peringkats' => $peringkat
+        ]);
     }
 
     /**

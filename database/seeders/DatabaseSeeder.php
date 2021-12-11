@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory(1)->create();
         Mitra::factory(10)->create();
         Pdln::factory(10)->create();
         Berita::factory(10)->create();

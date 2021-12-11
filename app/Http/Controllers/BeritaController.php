@@ -51,13 +51,15 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function show(Berita $berita)
+    public function show($berita)
     {
         //
-
+        $berita = Berita::find($berita);
         return view('berita.show', [
             'berita' => $berita
         ]);
+
+        // return Berita::find($berita);
     }
 
     /**
