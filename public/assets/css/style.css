@@ -396,6 +396,7 @@ h6 {
     width: 100%;
     height: 80vh;
     background: #37517e;
+    /* background: #fff; */
 }
 
 #hero .container {
@@ -497,13 +498,14 @@ h6 {
     }
 
     #hero .hero-img img {
-        width: 70%;
+        width: 50%;
+
     }
 }
 
 @media (max-width: 575px) {
     #hero .hero-img img {
-        width: 80%;
+        width: 50%;
     }
 
     #hero .btn-get-started {
@@ -1944,4 +1946,36 @@ button[data-filter="flies"]:focus~div:not([class*="flies"]) {
 .carousel-inner {
     width: 100%;
     max-height: fit-content !important;
+}
+
+/* .container .carousel-inner .carousel-item active {
+    width: 100%;
+    max-height: fit-content !important;
+} */
+
+.d-block {
+    opacity: 0.2;
+    /* border-radius: 20px; */
+    /* width: 250px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    padding: 2px;
+   
+    box-shadow: 0 0 5px 5px #2d4369;
+    -moz-box-shadow: 0 0 5px 5px #2d4369;
+    -webkit-box-shadow: 0 0 5px 5px #2d4369;
+    border-radius: 20px;
+    -moz-border-radius: 5px;
+}
+
+.d-block:hover {
+    opacity: 1.2;
+    /* width: 250px; */
+    /* box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+   
+    padding: 2px;
+    box-shadow: 3px 3px 3px 3px #2d4369, 0 6px 20px 0 #2d4369;
+    -moz-box-shadow: 0 0 5px 5px #2d4369;
+    -webkit-box-shadow: 0 0 5px 5px #2d4369;
+    border-radius: 20px;
+    -moz-border-radius: 3px;
 }
