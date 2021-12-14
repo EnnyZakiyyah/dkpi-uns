@@ -1,7 +1,7 @@
 
 @extends('dashboard/layouts/main')
 
-@section('title', 'Tambah berita')
+@section('title', 'Tambah FAQ')
 
 @section('container')
 
@@ -50,7 +50,7 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/berita">
+                    <form method="POST" action="/faq">
                         @csrf
 
                         <div class="form-group ml-5 mr-5">

@@ -34,10 +34,11 @@
         <div class="card">
           <!-- Card header -->
           <div class="card-header border-0">
-            <h3 class="mb-0">Berita</h3>
+            <h3 class="mb-0">Pengumuman</h3>
           </div>
           <!-- Light table -->
           <div class="table-responsive">
+            <a href="{{'/pengumuman/create'}}" class="btn btn-primary">Tambah Data</a>
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>

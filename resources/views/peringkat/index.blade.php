@@ -38,6 +38,7 @@
           </div>
           <!-- Light table -->
           <div class="table-responsive">
+            {{-- <a href="{{'/peringkat/create'}}" class="btn btn-primary">Tambah Data</a> --}}
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
@@ -77,6 +78,7 @@
   </div>
   <!-- Light table -->
   <div class="table-responsive">
+    {{-- <a href="{{'/peringkat/create'}}" class="btn btn-primary">Tambah Data</a> --}}
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>

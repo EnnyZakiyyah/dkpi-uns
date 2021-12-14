@@ -68,7 +68,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/peringkat', PeringkatController::class);
     Route::resource('/faq', FaqController::class);
 
-
+});
 
     // Route::prefix('/mitra')->group(function(){
     //     Route::get('/',[MitraController::class, 'index']);
