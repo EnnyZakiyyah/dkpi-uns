@@ -55,10 +55,10 @@
                             <h5 class="card-title">{{ $berita->judul}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ $berita->isi}}</h6>
                             <p class="card-text">{{ $berita->isi }}</p>
-                            <p class="card-text">{{ $berita->message }}</p>
+                            {{-- <p class="card-text">{{ $berita->message }}</p> --}}
                             <p class="card-text">{{ $berita->created_at }}</p>
-                            <a href="{{ $berita->id }}/edit" class="btn btn-primary">Edit</a>
-                            <form action="{{ $berita->id }}" method="POST" class="d-inline">
+                            <a href="/berita/{{ $berita->id }}/edit" class="btn btn-primary">Edit</a>
+                            <form action="/berita{{ $berita->id }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Delete</button>

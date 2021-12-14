@@ -91,7 +91,7 @@
                           </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="no_mou_uns">Nomor MoU UNS</label>
-                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ old('no_mou_uns') }}">
                             @error('no_mou_uns')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -99,7 +99,7 @@
                             @enderror
                         </div>                        <div class="form-group ml-5 mr-5">
                             <label for="no_mou_mitra">Nomor MoU Mitra</label>
-                            <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="nomor surat" name="no_mou_mitra" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="nomor surat" name="no_mou_mitra" value="{{ old('no_mou_mitra') }}">
                             @error('no_mou_mitra')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -126,7 +126,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="pejabat_penandatangan">pejabat penandatangan</label>
-                            <input type="text" class="form-control @error('pejabat_penandatangan') is-invalid @enderror" id="pejabat_penandatangan" placeholder="nama pejabat pendandatangan" name="pejabat_penandatangan" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('pejabat_penandatangan') is-invalid @enderror" id="pejabat_penandatangan" placeholder="nama pejabat pendandatangan" name="pejabat_penandatangan" value="{{ old('pejabat_penandatangan') }}">
                             @error('pejabat_penandatangan')
                             <div class="invalid-feedback">
                                 {{ $message }}

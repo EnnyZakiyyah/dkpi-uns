@@ -6,13 +6,13 @@
     <div class="box">
         <section id="berita" class="berita section-bg">
             <div class="container" data-aos="fade-up">
-      
+
               <div class="section-title">
                 <h2>Berita</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
               <div class="row">
-      
+
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -30,7 +30,7 @@
                               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                                <left> <a href="/berita/beritadetails" class="btn-learn-more">Baca Selengkapnya</a></left>
                               </p>
-                             
+
                             </div>
                             <div class="card-footer">
                               <small class="text-muted">Last updated 3 mins ago</small>
@@ -155,14 +155,14 @@
                     <span class="visually-hidden">Next</span>
                   </button>
                 </div>
-      
+
             </div>
-         
-      
-      
+
+
+
             </div>
           </section><!-- End Team Section -->
     </div>
-           
- 
+
+
 @endsection

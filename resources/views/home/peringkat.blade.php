@@ -5,12 +5,12 @@
       <!-- ======= Portfolio Section ======= -->
       <section id="pdln" class="portfolio"  style="background-color: #f3f5fa">
         <div class="container" data-aos="fade-up">
-  
+
           <div class="section-title">
-            <h2>Data PDLN</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h2>Peringkat UNS</h2>
+            <p>dari tahun ke tahun, UNS terus meningkatkan mutu dan layanan </p>
           </div>
-  
+
                   {{-- <label for="tahun" class="form-label">Tampilkan Data Tahun</label>
                     <div class="input-group mb-3">
                       <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -20,9 +20,9 @@
     <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                       <li data-filter=".filter-thes">THES</li>
                       <li data-filter=".filter-qs">QS Star</li>
-                   
+
     </ul> </div>
-  
+
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
           <!-- CV/PT -->
               <div class="portfolio-item filter-thes">
@@ -31,15 +31,18 @@
                   <div class="card-body">
                     <p class="card-text">
                       <div class="portfolio-description">
-                        <h2>This is an example of portfolio detail</h2>
+                          @foreach ($thess as $thes)
+
+
+                        <h2>{{ $thes->judul }}</h2>
                         <p>
-                          Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                          {{ $thes->berita }}
                         </p>
-                            <strong>Category</strong>&nbsp;Penandatanganan<br/>
-                            <strong>Client</strong>&nbsp;: BSI<br/>
-                            <strong>Project date</strong>&nbsp;: 01 March, 2020<br/>
-                            <strong>Project URL</strong>&nbsp;: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a><br/>
-                     
+                            <strong>Category</strong>&nbsp;{{ $thes->jenis }}<br/>
+                            <strong>Client</strong>&nbsp;: {{ $thes->peringkat }}<br/>
+                            <strong>Project date</strong>&nbsp;: {{ $thes->created_at }}<br/>
+                            <strong>Project URL</strong>&nbsp;: <a href="{{ $thes->link }}">selengkapnya</a><br/>
+                            @endforeach
                       </div>
                     </p>
                   </div>
@@ -49,37 +52,40 @@
 
 
               <div class="portfolio-item filter-qs">
-  
+
                 <div class="portfolio-item filter-qs">
                   <div class="card">
                     <img src="{{asset('assets/img/cta-bg.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <p class="card-text">
                         <div class="portfolio-description">
-                          <h2>This is an example of portfolio detail</h2>
-                          <p>
-                            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-                          </p>
-                              <strong>Category</strong>&nbsp;Penandatanganan<br/>
-                              <strong>Client</strong>&nbsp;: BSI<br/>
-                              <strong>Project date</strong>&nbsp;: 01 March, 2020<br/>
-                              <strong>Project URL</strong>&nbsp;: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a><br/>
-                       
+                            @foreach ($qss as $qs)
+
+
+                            <h2>{{ $qs->judul }}</h2>
+                            <p>
+                              {{ $qs->berita }}
+                            </p>
+                                <strong>Category</strong>&nbsp;{{ $qs->jenis }}<br/>
+                                <strong>Client</strong>&nbsp;: {{ $qs->peringkat }}<br/>
+                                <strong>Project date</strong>&nbsp;: {{ $qs->created_at }}<br/>
+                                <strong>Project URL</strong>&nbsp;: <a href="{{ $qs->link }}">selengkapnya</a><br/>
+                                @endforeach
                         </div>
                       </p>
                     </div>
                   </div>
-                  
+
                   </div>
-                 
-  
+
+
               </div>
-  
-  
+
+
         </div>
       </section><!-- End Portfolio Section -->
 
-    
+
       </div>
- 
+
 @endsection

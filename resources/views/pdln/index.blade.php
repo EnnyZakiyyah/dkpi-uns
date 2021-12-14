@@ -20,7 +20,7 @@
             </nav>
           </div>
           <div class="col-lg-6 col-5 text-right">
-            <a href="/pdln" class="btn btn-sm btn-neutral">New</a>
+            <a href="/pdln/create" class="btn btn-sm btn-neutral">New</a>
             <a href="#" class="btn btn-sm btn-neutral">Filters</a>
           </div>
         </div>
@@ -38,6 +38,7 @@
           </div>
           <!-- Light table -->
           <div class="table-responsive">
+            <a href="{{'/pdln/create'}}" class="btn btn-primary">Tambah Data</a>
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
@@ -58,7 +59,7 @@
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
                   <td><a href="/pdln/{{ $pdln->id }}">{{ $pdln->nama }}</a></td>
-                  <td><a href="/data/{{ $pdln->jenis }}">{{ $pdln->jenis }}</a></td>
+                  <td><a href="/pdln/data/{{ $pdln->jenis }}">{{ $pdln->jenis }}</a></td>
                   {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}
                   <td>{{ $pdln->unit_kerja }}</td>
                   <td>{{ $pdln->negara }}</td>
@@ -75,7 +76,6 @@
           <!-- Card footer -->
           <div class="card-footer py-4">
             <nav aria-label="...">
-              <a href="{{'/pdln/create'}}" class="btn btn-primary">Tambah Data</a>
               <ul class="pagination justify-content-end mb-0">
                 <li class="page-item disabled">
                   <a class="page-link" href="#" tabindex="-1">

@@ -93,8 +93,8 @@ class PdlnController extends Controller
         // $file_belmawa = Storage::get($pdln->file_belmawa, $pdln->nama);
         // $file_ktln = Storage::get($pdln->file_ktln, $pdln->nama);
 
-        return view('pdln.show', [
-            'pdln' => $pdln,
+        return view('pdln.show',[
+            'pdln' => $pdln
             // 'file_uns' => $file_surat_uns,
             // 'file_belmawa' => $file_belmawa,
             // 'file_ktln' => $file_ktln
@@ -124,7 +124,25 @@ class PdlnController extends Controller
      */
     public function update(Request $request, Pdln $pdln)
     {
+        $validatedData = $request->validate([
+            'jenis' => '',
+            'nama' => 'required',
+            'jumlah_orang'=> 'required',
+            'unit_kerja'=> 'required' ,
+            'jangka_waktu_awal'=> 'required',
+            'jangka_waktu_akhir'=> 'required',
+            'tujuan'=> 'required',
+            'negara'=> 'required',
+            'surat_uns'=> 'required',
+            'catatan_uns'=> 'required',
+            'belmawa'=> 'required',
+            'catatan_belmawa'=> 'required',
+            'ktln_kemensetneg'=> 'required',
+            'catatan_setneg'=> 'required'
+        ]);
 
+        Pdln::where('id', $pdln->id)->update($validatedData);
+        return redirect('/pdln')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -139,28 +157,12 @@ class PdlnController extends Controller
         return redirect('/pdln')->with('status', 'data berhasil dihapus');
     }
 
-    public function mahasiswa(){
+    public function jenis($jenis){
 
-        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->get();
-
-        return view('pdln.index',[
-            'pdlns' => $mahasiswa
-        ]);
-    }
-    public function dosen(){
-
-        $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
+        $jenis = Pdln::where('jenis', $jenis)->latest()->get();
 
         return view('pdln.index',[
-            'pdlns' => $dosen
-        ]);
-    }
-    public function pimpinan(){
-
-        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
-
-        return view('pdln.index',[
-            'pdlns' => $pimpinan
+            'pdlns' => $jenis
         ]);
     }
 }

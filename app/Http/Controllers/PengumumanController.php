@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengaduan;
 use App\Models\Pengumuman;
 use Illuminate\Http\Request;
 
@@ -14,10 +15,13 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        $pengumuman = Pengumuman::get();
+        $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
+        $expired = Pengumuman::whereDate('berlaku', '<', today())->latest()->get();
         return view('pengumuman.index',[
-            'pengumumans' => $pengumuman
+            'active' => $pengumuman,
+            'expired'=> $expired
         ]);
+        // return $pengumuman;
     }
 
     /**
@@ -39,6 +43,18 @@ class PengumumanController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'pengumuman'=>'required',
+            'berlaku'=>'required',
+            'link'=>'required',
+
+        ]);
+        Pengumuman::create($validatedData);
+
+        return redirect('/pengumuman')->with('success', 'Data berhasil ditambah!');
+
+
+
     }
 
     /**
@@ -79,6 +95,16 @@ class PengumumanController extends Controller
     public function update(Request $request, Pengumuman $pengumuman)
     {
         //
+        $validatedData = $request->validate([
+            'pengumuman'=>'required',
+            'berlaku'=>'required',
+            'link'=>'required',
+
+        ]);
+        Pengumuman::where('id', $pengumuman)->update($validatedData);
+
+        return redirect('/pengumuman')->with('success', 'Data berhasil ditambah!');
+
     }
 
     /**
