@@ -1954,7 +1954,7 @@ button[data-filter="flies"]:focus~div:not([class*="flies"]) {
 } */
 
 .d-block {
-    opacity: 0.2;
+    opacity: 1.2;
     /* border-radius: 20px; */
     /* width: 250px;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
@@ -1967,10 +1967,10 @@ button[data-filter="flies"]:focus~div:not([class*="flies"]) {
     -moz-border-radius: 5px;
 }
 
-.d-block:hover {
+/* .d-block:hover {
     opacity: 1.2;
-    /* width: 250px; */
-    /* box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    width: 250px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    
     padding: 2px;
     box-shadow: 3px 3px 3px 3px #2d4369, 0 6px 20px 0 #2d4369;
@@ -1978,4 +1978,4 @@ button[data-filter="flies"]:focus~div:not([class*="flies"]) {
     -webkit-box-shadow: 0 0 5px 5px #2d4369;
     border-radius: 20px;
     -moz-border-radius: 3px;
-}
+} */
