@@ -1,7 +1,7 @@
 <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto  " href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="/layanan">Layanan</a></li>
+          <li><a class="nav-link scrollto" href="/home/layanan">Layanan</a></li>
           <li><a class="nav-link scrollto " href="/home/pdln">Data PDLN</a></li>
           <li><a class="nav-link  scrollto " href="/home/mitra">Mitra</a></li>
           <li><a class="nav-link  scrollto " href="/home/faq">FAQ</a></li>

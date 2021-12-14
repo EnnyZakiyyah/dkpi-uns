@@ -38,6 +38,8 @@
 {{-- editor berita --}}
   <link rel="stylesheet" type="text/css" href="/css/trix.css">
   <script type="text/javascript" src="/js/trix.js"></script>
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/31.0.0/classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -47,7 +49,7 @@
     <div class="scrollbar-inner">
         <!-- Brand -->
         <div class="sidenav-header  align-items-center">
-            <a class="navbar-brand" href="javascript:void(0)">
+            <a class="navbar-brand" href="{{url('/')}}">
               <img src="{{asset('/images/Logo-UNS-New-04.png')}}" class="navbar-brand-img"  alt="...">
             </a>
         </div>
@@ -108,6 +110,12 @@
                         <a class="nav-link active" href="{{url('/faq')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">FAQ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{url('/register')}}">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Register account</span>
                         </a>
                     </li>
                 </ul>
@@ -174,7 +182,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="assets/img/theme/team-1.jpg" class="avatar rounded-circle">
+                        <img src="assets/img/theme/team-1.jpg" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -349,10 +357,14 @@
                   <span>Support</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#!" class="dropdown-item">
+                <a href="#!" class="">
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
                 </a>
+                <form action="/logout" method="POST" class="dropdown-item">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">logout</button>
+                </form>
               </div>
             </li>
           </ul>
@@ -400,6 +412,13 @@
     <script src="{{asset('assets2/vendor/chart.js/dist/Chart.extension.js')}}"></script>
     <!-- Argon JS -->
     <script src="{{asset('assets2/js/argon.js?v=1.2.0')}}"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 </body>
 
 </html>

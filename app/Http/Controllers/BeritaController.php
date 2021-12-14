@@ -41,7 +41,16 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $gambar = $request->file('gambar')->store('gambar');
+        $validatedData = $request->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+            'link' => ''
+        ]);
+        $validatedData['gambar'] = $gambar;
+
+        Berita::create($validatedData);
+        return redirect('/berita')->with('status', 'berita telah ditambahkan');
 
     }
 
@@ -53,13 +62,12 @@ class BeritaController extends Controller
      */
     public function show($berita)
     {
-        //
         $berita = Berita::find($berita);
-        return view('berita.show', [
+        return view('berita.show',[
             'berita' => $berita
         ]);
 
-        // return Berita::find($berita);
+        // return $berita;
     }
 
     /**
@@ -68,10 +76,11 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Berita $berita)
+    public function edit($id)
     {
         //
-        return view('berita.edit',[
+            $berita = Berita::find($id);
+            return view('berita.edit',[
             'berita' => $berita
         ]);
 
@@ -84,9 +93,19 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Berita $berita)
+    public function update($id)
     {
         //
+        // $validatedData['gambar'] = request()->file('gambar')->store('gambar');
+        $validatedData = request()->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+            'link' => ''
+        ]);
+
+        Berita::where('id', $id)->update($validatedData);
+        return redirect('/berita')->with('status', 'berita telah ditambahkan');
+
     }
 
     /**

@@ -38,6 +38,7 @@
           </div>
           <!-- Light table -->
           <div class="table-responsive">
+              <a href="{{'/mitra/create'}}" class="btn btn-primary">Tambah Data</a>
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
@@ -54,19 +55,19 @@
                 </tr>
               </thead>
               <tbody class="list">
-                @foreach($mitra as $mit)
+                @foreach($mitras as $mitra)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $mit->nama_instansi }}</td>
-                  <td>{{ $mit->instansi }}</td>
-                  <td>{{ $mit->no_mou_uns }}</td>
-                  <td>{{ $mit->no_mou_mitra }}</td>
-                  {{-- <td>{{ $mit->nama_instansi }}</td>
-                  <td>{{ $mit->nama_instansi }}</td> --}}
-                  <td>{{ $mit->pejabat_penandatangan}}</td>
+                  <td><a href="/mitra/{{ $mitra->id }}">{{ $mitra->nama_instansi }}</a></td>
+                  <td><a href="/mitra/data/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></td>
+                  <td>{{ $mitra->no_mou_uns }}</td>
+                  <td>{{ $mitra->no_mou_mitra }}</td>
+                  {{-- <td>{{ $mitra->nama_instansi }}</td>
+                  <td>{{ $mitra->nama_instansi }}</td> --}}
+                  <td>{{ $mitra->pejabat_penandatangan}}</td>
 
                   <td>
-                    <a href="/mitra/{{ $mit->id }}" class="badge badge-info">Detail</a>
+                    <a href="/mitra/{{ $mitra->id }}" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
                 @endforeach

@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
         Mitra::factory(10)->create();
         Pdln::factory(10)->create();
         Berita::factory(10)->create();
-        Pengumuman::factory(10)->create();
-        Faq::factory(10)->create();
-        Pengaduan::factory(10)->create();
-        Peringkat::factory(10)->create();
+        Pengumuman::factory(7)->create();
+        Faq::factory(5)->create();
+        Pengaduan::factory(4)->create();
+        Peringkat::factory(4)->create();
     }
 }

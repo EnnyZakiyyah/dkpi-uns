@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use finfo;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
@@ -40,6 +41,19 @@ class FaqController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'pertanyaan' => '',
+            'jawaban' => '',
+            'link' => ''
+        ]);
+        // $validatedData = [
+        //     'pertanyaan' => 'dsa',
+        //     'jawaban' => 'adfa',
+        //     'link' => 'asdfasdf'
+        // ];
+
+        Faq::create($validatedData);
+        return redirect('/faq');
     }
 
     /**
@@ -61,9 +75,11 @@ class FaqController extends Controller
      * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faq $faq)
+    public function edit($faq)
     {
         //
+        $faq = Faq::find($faq);
+        // return $faq;
          return view('faq.edit', [
             'faq' => $faq
         ]);
@@ -76,9 +92,18 @@ class FaqController extends Controller
      * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faq $faq)
+    public function update(Request $request,$faq)
     {
         //
+        $validatedData = $request->validate([
+            'pertanyaan' => '',
+            'jawaban' => '',
+            'link' => ''
+        ]);
+
+        Faq::where('id', $faq)->update($validatedData);
+        return redirect('/faq');
+
     }
 
     /**

@@ -18,7 +18,7 @@ class PengaduanController extends Controller
     {
         //
         $pengaduan = Pengaduan::get();
-        
+
         return view('pengaduan.index',[
             'pengaduans' => $pengaduan
         ]);
@@ -44,7 +44,18 @@ class PengaduanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama'=>'',
+            'email'=>'',
+            'subject'=>'',
+            'message'=>'required'
+            ]);
+
+            Pengaduan::create($validatedData);
+
+            return redirect('/');
+            // ->with('success', 'Data berhasil ditambah!');
+
 
     }
 

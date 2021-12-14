@@ -1,7 +1,7 @@
 
 @extends('dashboard/layouts/main')
 
-@section('title', 'Tambah berita')
+@section('title', 'Tambah FAQ')
 
 @section('container')
 
@@ -50,13 +50,14 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/berita">
+                    <form method="POST" action="/faq">
                         @csrf
 
                         <div class="form-group ml-5 mr-5">
                             <label for="pertanyaan"> pertanyaan</label>
-                            <input id="pertanyaan" type="hidden" name="content" class="form-control  @error('pertanyaan') is-invalid @enderror" id="pertanyaan" placeholder="pertanyaan berita" name="pertanyaan" value="{{ old('pertanyaan') }}">
-                            <trix-editor input="pertanyaan"></trix-editor>
+                            <textarea  id="editor" type="hidden" name="pertanyaan" class="form-control  @error('pertanyaan') is-invalid @enderror" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="{{ old('pertanyaan') }}">
+
+                            </textarea>
                             @error('pertanyaan')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -66,8 +67,9 @@
 
                         <div class="form-group ml-5 mr-5">
                             <label for="jawaban"> jawaban</label>
-                            <input id="jawaban" type="hidden" name="content" class="form-control  @error('jawaban') is-invalid @enderror" id="jawaban" placeholder="jawaban berita" name="jawaban" value="{{ old('jawaban') }}">
-                            <trix-editor input="jawaban"></trix-editor>
+                            <textarea  id="editor" type="hidden" name="jawaban" class="form-control  @error('jawaban') is-invalid @enderror" id="jawaban" placeholder="jawaban" name="jawaban" value="{{ old('jawaban') }}">
+
+                            </textarea>
                             @error('jawaban')
                             <div class="invalid-feedback">
                                 {{ $message }}

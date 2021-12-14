@@ -1,19 +1,35 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
+
+use App\Models\Faq;
+
 
 use App\Models\Pdln;
 use App\Models\Mitra;
-
-
+use App\Models\Berita;
+use App\Models\Gallery;
+use App\Models\Peringkat;
+use App\Models\Pengumuman;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
     //
     public function index()
     {
-        return view('home.index');
+        $faq = Faq::get();
+        $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
+        $berita = Berita::latest()->take(6)->get();
+
+        return view('home.index',[
+            'title' => 'DKPI',
+            'pengumumans' => $pengumuman,
+            'faqs' => $faq,
+            'beritas' => $berita
+        ]);
     }
 
     public function pdln()
@@ -33,8 +49,9 @@ class HomeController extends Controller
 
     public function mitra()
     {
-        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
+        // $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
         $cv = Mitra::where('instansi', 'cv')->latest()->get();
+        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
         $internasional = Mitra::where('instansi', 'internasional')->latest()->get();
         $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->get();
         $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->get();
@@ -51,7 +68,9 @@ class HomeController extends Controller
 
     public function layanan()
     {
-        return view('home.layanan');
+        return view('home.layanan',[
+            'title'=>'layanan'
+        ]);
     }
 
     public function legaldrafting()
@@ -61,38 +80,74 @@ class HomeController extends Controller
         ]);
     }
 
-    public function galeridetails()
+    public function galeridetails( $id)
     {
-        return view('home.galeridetails');
+        $galeri = Gallery::find($id)->get();
+        return view('home.galeridetails',[
+            'title' => 'detail gambar',
+            'galeri' => $galeri
+        ]);
     }
 
     public function berita()
     {
-        return view('home.berita');
+        $berita = Berita::get();
+        return view('home.berita',[
+            'title' => 'berita',
+            'beritas' => $berita
+        ]);
+
     }
 
-    public function beritadetails()
+    public function beritadetails(Berita $id)
     {
-        return view('home.beritadetails');
+        // $berita = Berita::where('id', $id)->get();
+        return view('home.beritadetails',[
+            'title'=>'Detail Berita',
+            'berita' => $id
+        ]);
     }
 
     public function galeri()
     {
-        return view('home.galeri');
+        $gallery =  Gallery::get();
+        return view('home.galeri',[
+            'title'=>'Galeri',
+            'galleries' => $gallery
+        ]);
     }
 
     public function faq()
     {
-        return view('home.faq');
-    }
+        $faqs = Faq::get();
+        return view('home.faq',[
+            'title'=>'FAQ',
+            'faqs' => $faqs
+        ]);
 
-    public function pengumuman()
-    {
-        return view('home.pengumuman');
     }
 
     public function peringkat()
     {
-        return view('home.peringkat');
+
+        $thes = Peringkat::where('jenis', 'THES')->latest()->get();
+        $qs = Peringkat::where('jenis', 'QSstar')->latest()->get();
+        return view('home.peringkat',[
+            'title'=>'peringkat',
+            'thess' => $thes,
+            'qss' => $qs
+        ]);
     }
+
+    public function pengumuman()
+    {
+        $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
+
+        return view('home/pengumuman',[
+            'title'=>'Pengumuman',
+            'pengumumans' => $pengumuman
+        ]);
+
+    }
+
 }

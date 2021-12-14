@@ -9,13 +9,13 @@
 
             <div class="section-title">
               <h2>Galeri</h2>
-              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+              {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
             </div>
-    
+
             <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                 <li data-filter=".filter-mou">MoU</li>
               </ul>
-      
+
               <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
               <!-- CV/PT -->
               <div class="col-lg-6 col-md-6 portfolio-item filter-mou">
@@ -37,11 +37,11 @@
                 </div>
               </div>
             </div>
-    
+
 
   </div>
 </section><!-- End Skills Section -->
-   
-           
- 
+
+
+
 @endsection

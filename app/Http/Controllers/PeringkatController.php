@@ -14,10 +14,14 @@ class PeringkatController extends Controller
      */
     public function index()
     {
-        $peringkat =Peringkat::get();
+        $thes =  Peringkat::where('jenis','THES')->get();
+        $qs = Peringkat::where('jenis','QSstar')->get();
         return view('peringkat.index',[
-            'peringkats' => $peringkat
+            'title' => 'peringkat',
+            'thes' => $thes,
+            'qs' => $qs
         ]);
+
     }
 
     /**
@@ -80,7 +84,14 @@ class PeringkatController extends Controller
      */
     public function update(Request $request, Peringkat $peringkat)
     {
-        //
+        $validatedData = $request->validate([
+            'judul'=>'required',
+            'berita' =>'required',
+            'link' =>'',
+            'peringkat'=>'required'
+        ]);
+        Peringkat::where('id',$peringkat->id)->update($validatedData);
+        return redirect('/peringkat');
     }
 
     /**
