@@ -1,7 +1,7 @@
 
 @extends('dashboard/layouts/main')
 
-@section('title', 'EDIT FAQ')
+@section('title', 'Tambah FAQ')
 
 @section('container')
 
@@ -46,18 +46,19 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">EDIT FAQ</h3>
+                        <h3 class="mb-0">Tambah FAQ</h3>
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/faq">
+                    <form method="POST" action="/faq/{{ $faq->id }}">
                         @method("put")
                         @csrf
 
                         <div class="form-group ml-5 mr-5">
                             <label for="pertanyaan"> pertanyaan</label>
-                            <input id="pertanyaan" type="hidden" name="content" class="form-control  @error('pertanyaan') is-invalid @enderror" id="pertanyaan" placeholder="pertanyaan berita" name="pertanyaan" value="{{ old('pertanyaan', $faq->pertanyaan) }}">
-                            <trix-editor input="pertanyaan"></trix-editor>
+                            <textarea  id="editor" type="hidden" name="pertanyaan" class="form-control  @error('pertanyaan') is-invalid @enderror" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="{{ old('pertanyaan', $faq->pertanyaan) }}">
+                                {{ $faq->pertanyaan }}
+                            </textarea>
                             @error('pertanyaan')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -67,8 +68,9 @@
 
                         <div class="form-group ml-5 mr-5">
                             <label for="jawaban"> jawaban</label>
-                            <input id="jawaban" type="hidden" name="content" class="form-control  @error('jawaban') is-invalid @enderror" id="jawaban" placeholder="jawaban berita" name="jawaban" value="{{ old('jawaban', $faq->jawaban) }}">
-                            <trix-editor input="jawaban"></trix-editor>
+                            <textarea  id="editor" type="hidden" name="jawaban" class="form-control  @error('jawaban') is-invalid @enderror" id="jawaban" placeholder="jawaban" name="jawaban" value="{{ old('jawaban', $faq->jawaban) }}">
+                                {{ $faq->jawaban }}
+                            </textarea>
                             @error('jawaban')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -78,7 +80,7 @@
 
                         <div class="form-group ml-5 mr-5">
                             <label for="link"> link DKPI</label>
-                            <input type="textarea" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="cth: /home/layanan" name="link" value="{{ old('link', $faq->link) }}">
+                            <input type="textarea" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="cth: /home/layanan" name="link" value="{{ old('link',$faq->link) }}">
                             @error('link')
                             <div class="invalid-feedback">
                                 {{ $message }}
