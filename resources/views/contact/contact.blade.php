@@ -35,9 +35,9 @@
         </div>
 
         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          @if(session()->has('message'))
+          @if(session()->has('success'))
           <div class="alert alert-success">
-              {{ session()->get('message') }}
+              {{ session()->get('success') }}
           </div>
       @endif
           <form action="{{ route('contact.save') }}" method="post" role="form" class="php-email-form">

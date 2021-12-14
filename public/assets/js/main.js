@@ -163,6 +163,9 @@
       preloader.remove()
     });
   }
+  // $(window).load(function() {
+  //   $('#preloader').hide();
+  // });
 
   /**
    * Initiate  glightbox 
