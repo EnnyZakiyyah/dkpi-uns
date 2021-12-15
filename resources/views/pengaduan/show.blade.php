@@ -52,10 +52,10 @@
                     <!-- body card -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $pengaduan->nama}}</h5>
+                            <h5 class="card-title">{{ $pengaduan->name}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ $pengaduan->email}}</h6>
                             <p class="card-text">{{ $pengaduan->subject }}</p>
-                            <p class="card-text">{{ $pengaduan->message }}</p>
+                            <p class="card-text">{{ $pengaduan->pesan }}</p>
                             <p class="card-text">{{ $pengaduan->created_at }}</p>
                             <a href="{{ $pengaduan->id }}/edit" class="btn btn-primary">Edit</a>
                             <form action="{{ $pengaduan->id }}" method="POST" class="d-inline">

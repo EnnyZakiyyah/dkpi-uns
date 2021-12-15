@@ -3,7 +3,7 @@
 
       <div class="section-title">
         <h2>Contact</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
       </div>
 
       <div class="row">
@@ -22,14 +22,14 @@
               <p>dkpi@unit.uns.ac.id</p>
             </div>
 
-            <div class="phone">
+            {{-- <div class="phone">
               <i class="bi bi-phone"></i>
               <h4>Call:</h4>
               <p>+1 5589 55488 55s</p>
-            </div>
+            </div> --}}
 
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.557955402161!2d110.85618205872194!3d-7.562339500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a170196ee6af5%3A0xb0cb66cefd551d09!2sBAA%20BAPSI!5e0!3m2!1sen!2sid!4v1635387187906!5m2!1sen!2sid" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
- 
+
           </div>
 
         </div>
@@ -82,7 +82,7 @@
               @enderror
             </div>
           </div>
-           
+
             <div class="form-group">
               <label for="name">Message</label>
               <textarea class="form-control" name="pesan" rows="10" required></textarea>

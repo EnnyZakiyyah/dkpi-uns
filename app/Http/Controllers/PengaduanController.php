@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactUs;
 use App\Models\Pengaduan;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class PengaduanController extends Controller
     public function index()
     {
         //
-        $pengaduan = Pengaduan::get();
+        $pengaduan = ContactUs::get();
 
         return view('pengaduan.index',[
             'pengaduans' => $pengaduan
@@ -65,7 +66,7 @@ class PengaduanController extends Controller
      * @param  \App\Models\Pengaduan  $pengaduan
      * @return \Illuminate\Http\Response
      */
-    public function show(Pengaduan $pengaduan)
+    public function show(ContactUs $pengaduan)
     {
         //
         return view('pengaduan.show', [

@@ -188,3 +188,6 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/contact-form', [ContactController::class, 'showForm']);
 
 Route::post('/contact-form', [ContactController::class, 'storeForm'])->name('contact.save');
+
+// download file
+Route::get('books/{uuid}/download', 'FileController@download')->name('file.download');
