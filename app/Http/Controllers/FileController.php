@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class FileController extends Controller
 {
     //
+<<<<<<< HEAD
     public function download($id)
     {
         $file = File::findOrFail($id);
@@ -32,4 +33,16 @@ class FileController extends Controller
     }
 
     
+=======
+    public function index()
+    {
+        $books = Book::all();
+        return view('books.index', compact('books'));
+    }
+
+    public function create()
+    {
+        return view('books.create');
+    }
+>>>>>>> 27caf6f3da1cdaaaa6dc0950fedab564c6c09875
 }

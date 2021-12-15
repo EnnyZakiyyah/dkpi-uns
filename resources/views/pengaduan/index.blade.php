@@ -52,7 +52,7 @@
                 @foreach($pengaduans as $pengaduan)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $pengaduan->nama }}</td>
+                  <td>{{ $pengaduan->name }}</td>
                   <td>{{ $pengaduan->email }}</td>
                   <td>{{ $pengaduan->subject }}</td>
                   <td>{{ $pengaduan->created_at }}</td>

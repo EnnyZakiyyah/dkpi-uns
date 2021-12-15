@@ -4,11 +4,11 @@
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <div class="box">
-   
+
 
       <section id="data-pdln" class="services section-bg">
         <div class="container" data-aos="fade-up">
-  
+
           <div class="section-title">
             <h2>Alur Legal Drafting</h2>
             {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
@@ -23,7 +23,7 @@
                 </ol>
               </div>
               <div class="col-11 mb-4" style="align-left">Inisiasi MoU sebagai payung kerjasama dapat dilakukan oleh Pihak eksternal atau Unit/ Fakultas dengan lebih dahulu merencanakan program/kegiatan konkret yang akan dilakukan oleh Unit/Lembaga/Fakultas/Prodi dengan pihak mitra yang nantinya akan diwujudkan dalam bentuk Perjanjian Kerjasama/kontrak kerja/kontrak swakelola/penunjukan langsung.</div>
-             
+
               <div class="col-1">
                 <ol class="list-group list-group-numbered">
                   <h3><span class="badge" style="background-color: rgba(108, 88, 179, 0.75)">2</span></h3>
@@ -41,9 +41,9 @@
                 Surat Permohonan Kerjasama dari Pihak eksternal atau Unit/Lembaga/Fakultas di lingkungan UNS dilampiri dengan : <br/><br/>
                 <i class="ri-check-double-line" style="color : rgba(190, 35, 121, 0.75)"></i> Draf MoU apabila sudah ada dalam bentuk hardcopy dan softcopy yang dikirimkan melalui sikd. Apabila belum ada draf yang akan di-review-kan maka  DKPI yang akan menyusun draf MoU tersebut;</li><br/>
                 <i class="ri-check-double-line" style = "color : rgba(190, 35, 121, 0.75)"></i> Rencana program/kegiatan yang hendak dilaksanakan.</li>
-               
+
               </div>
-             
+
               <div class="col-1">
                 <ol class="list-group list-group-numbered">
                   <h3><span class="badge" style="background-color: rgba(108, 88, 179, 0.75)">4</span></h3>
@@ -58,7 +58,7 @@
                 </ol>
               </div>
               <div class="col-11 mb-4" style="align-left">Draf MoU akan dicetak dalam bentuk draf dan dinaikkan kepada Pimpinan UNS untuk review terakhir sebelum dicetak final di kertas standar MoU.</div>
-             
+
               <div class="col-1">
                 <ol class="list-group list-group-numbered">
                   <h3><span class="badge" style="background-color: rgba(108, 88, 179, 0.75)">6</span></h3>
@@ -94,7 +94,7 @@
                 </ol>
               </div>
               <div class="col-11 mb-4" style="align-left">MoU/ Nota Kesepahaman/ Nota Kesepahaman Bersama/ Nota Kesepakatan/ Nota Kesepakatan Bersama (bisa menggunakan salah satu istilah)</div>
-             
+
               <div class="col-1">
                 <ol class="list-group list-group-numbered">
                   <h3><span class="badge" style="background-color: rgba(108, 88, 179, 0.75)">2</span></h3>
@@ -117,12 +117,16 @@
           </div>
           <center><div class="d-grid gap-5 d-md-block">
             <a class="btn btn-secondary" type="button" href="/layanan">Kembali</a>
+<<<<<<< HEAD
             @isset($sc->link) <a href="{{ route('download', $file->id) }}" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Download File</i></a>
            
    <a href="{{ route('download', $file->id) }}" class="btn btn-primary">
       Download
    </a>
 @endisset
+=======
+            <a href="{{ route('file.download', $book->uuid) }}">{{ $book->cover }}" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Download File</i></button>
+>>>>>>> 27caf6f3da1cdaaaa6dc0950fedab564c6c09875
           </div></center>
 
 
@@ -137,11 +141,11 @@
           <ol class="list-group list-group-numbered">
             <h3><li><span class="badge bg-secondary">2</span></li></h3>
           </ol> --}}
-        
+
         </div>
       </section><!-- End Services Section -->
     </div>
 
- 
- 
+
+
 @endsection
