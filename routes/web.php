@@ -64,9 +64,22 @@ Route::middleware('auth')->group(function () {
     Route::resource('/berita', BeritaController::class);
     Route::resource('/galeri', GalleryController::class);
     Route::resource('/pengumuman', PengumumanController::class);
-    // Route::resource('/pengaduan', PengaduanController::class);
+    Route::resource('/pengaduan', PengaduanController::class);
     Route::resource('/peringkat', PeringkatController::class);
     Route::resource('/faq', FaqController::class);
+
+
+    Route::get('/data/mahasiswa', [PdlnController::class, 'mahasiswa']);
+    Route::get('/data/dosen', [PdlnController::class, 'dosen']);
+    Route::get('/data/pimpinan', [PdlnController::class, 'pimpinan']);
+
+    //mitra
+    Route::get('/data/cv', [MitraController::class, 'cv']);
+    Route::get('/data/yayasan', [MitraController::class, 'yayasan']);
+    Route::get('/data/internasional', [MitraController::class, 'internasional']);
+    Route::get('/data/jasaKeuangan', [MitraController::class, 'jasaKeuangan']);
+    Route::get('/data/pemerintah', [MitraController::class, 'pemerintah']);
+
 
 });
 
@@ -102,15 +115,15 @@ Route::middleware('auth')->group(function () {
     //     Route::put('/{id}',[BeritaController::class, 'update']);
     //     Route::delete('/{id}',[BeritaController::class, 'destroy']);
     // });
-    Route::prefix('/pengaduan')->group(function(){
-        Route::get('/',[PengaduanController::class, 'index']);
-        Route::get('/{id}',[PengaduanController::class, 'show']);
-        Route::get('/create',[PengaduanController::class, 'create']);
-        // Route::post('/',[PengaduanController::class, 'store']);
-        Route::get('/{id}/edit',[PengaduanController::class, 'edit']);
-        Route::put('/{id}',[PengaduanController::class, 'update']);
-        Route::delete('/{id}',[PengaduanController::class, 'destroy']);
-    });
+    // Route::prefix('/pengaduan')->group(function(){
+    //     Route::get('/',[PengaduanController::class, 'index']);
+    //     Route::get('/{id}',[PengaduanController::class, 'show']);
+    //     Route::get('/create',[PengaduanController::class, 'create']);
+    //     // Route::post('/',[PengaduanController::class, 'store']);
+    //     Route::get('/{id}/edit',[PengaduanController::class, 'edit']);
+    //     Route::put('/{id}',[PengaduanController::class, 'update']);
+    //     Route::delete('/{id}',[PengaduanController::class, 'destroy']);
+    // });
     // Route::prefix('/pengumuman')->group(function(){
     //     Route::get('/',[PengumumanController::class, 'index']);
     //     Route::get('/{id}',[PengumumanController::class, 'show']);
@@ -150,29 +163,19 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::resources([
-    'mitra' => MitraController::class,
-    'pdln' => PdlnController::class,
-    'berita' => BeritaController::class,
-    'galeri' => GalleryController::class,
-    'pengumuman' => PengumumanController::class,
-    'pengaduan' => PengaduanController::class,
-    'faq' => FaqController::class,
-    'peringkat' => PeringkatController::class
-]);
+// Route::resources([
+//     'mitra' => MitraController::class,
+//     'pdln' => PdlnController::class,
+//     'berita' => BeritaController::class,
+//     'galeri' => GalleryController::class,
+//     'pengumuman' => PengumumanController::class,
+//     'pengaduan' => PengaduanController::class,
+//     'faq' => FaqController::class,
+//     'peringkat' => PeringkatController::class
+// ]);
 
 //pdln
-Route::get('/data/mahasiswa', [PdlnController::class, 'mahasiswa']);
-Route::get('/data/dosen', [PdlnController::class, 'dosen']);
-Route::get('/data/pimpinan', [PdlnController::class, 'pimpinan']);
-
-//mitra
-Route::get('/data/cv', [MitraController::class, 'cv']);
-Route::get('/data/yayasan', [MitraController::class, 'yayasan']);
-Route::get('/data/internasional', [MitraController::class, 'internasional']);
-Route::get('/data/jasaKeuangan', [MitraController::class, 'jasaKeuangan']);
-Route::get('/data/pemerintah', [MitraController::class, 'pemerintah']);
-
+//
 //email
 // Route::get('/contact', '@showContactForm');
 // Route::post('/contact', 'EmailController@sendMail')->name('send.email');
