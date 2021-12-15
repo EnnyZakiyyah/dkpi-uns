@@ -15,6 +15,7 @@ use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PeringkatController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,16 +29,16 @@ use App\Http\Controllers\EmailController;
 */
 //home
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/home/layanan',[HomeController::class, 'layanan']);
+Route::get('/home/layanan', [HomeController::class, 'layanan']);
 Route::get('/home/pdln', [HomeController::class, 'pdln']);
-Route::get('/home/mitra',[HomeController::class, 'mitra']);
-Route::get('/home/faq',[HomeController::class, 'faq']);
-Route::get('/home/berita',[HomeController::class, 'berita']);
-Route::get('/home/galeri',[HomeController::class, 'galeri']);
-Route::get('/home/peringkat',[HomeController::class, 'peringkat']);
-Route::get('/home/pengumuman',[HomeController::class, 'pengumuman']);
+Route::get('/home/mitra', [HomeController::class, 'mitra']);
+Route::get('/home/faq', [HomeController::class, 'faq']);
+Route::get('/home/berita', [HomeController::class, 'berita']);
+Route::get('/home/galeri', [HomeController::class, 'galeri']);
+Route::get('/home/peringkat', [HomeController::class, 'peringkat']);
+Route::get('/home/pengumuman', [HomeController::class, 'pengumuman']);
 Route::get('/home/galeri/{id}', [HomeController::class, 'galeridetails']);
-Route::get('/home/berita/berita-details',[HomeController::class, 'beritadetails']);
+Route::get('/home/berita/berita-details', [HomeController::class, 'beritadetails']);
 Route::get('/layanan/legaldrafting', [HomeController::class, 'legaldrafting']);
 
 
@@ -51,12 +52,12 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 // Route::get('/create',[PengaduanController::class, 'create']);
-Route::post('/pengaduan',[PengaduanController::class, 'store']);
+Route::post('/pengaduan', [PengaduanController::class, 'store']);
 
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard',[DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/register', [RegisterController::class, 'index']);
     Route::post('/logout', [LoginController::class, 'logout']);
     Route::resource('/mitra',  MitraController::class);
@@ -67,86 +68,85 @@ Route::middleware('auth')->group(function () {
     // Route::resource('/pengaduan', PengaduanController::class);
     Route::resource('/peringkat', PeringkatController::class);
     Route::resource('/faq', FaqController::class);
-
 });
 
-    // Route::prefix('/mitra')->group(function(){
-    //     Route::get('/',[MitraController::class, 'index']);
-    //     //
-    //     Route::get('/create',[MitraController::class, 'create']);
-    //     Route::post('/',[PdlnController::class, 'store']);
-    //     Route::get('/{id}',[MitraController::class, 'show']);
-    //     Route::get('/{id}/edit',[MitraController::class, 'edit']);
-    //     Route::post('/{id}',[MitraController::class, 'update']);
-    //     Route::delete('/{id}',[MitraController::class, 'destroy']);
+// Route::prefix('/mitra')->group(function(){
+//     Route::get('/',[MitraController::class, 'index']);
+//     //
+//     Route::get('/create',[MitraController::class, 'create']);
+//     Route::post('/',[PdlnController::class, 'store']);
+//     Route::get('/{id}',[MitraController::class, 'show']);
+//     Route::get('/{id}/edit',[MitraController::class, 'edit']);
+//     Route::post('/{id}',[MitraController::class, 'update']);
+//     Route::delete('/{id}',[MitraController::class, 'destroy']);
 
 
-    // });
+// });
 
-    // Route::prefix('/pdln')->group(function(){
-    //     Route::get('/',[PdlnController::class, 'index']);
-    //     Route::get('/{id}',[PdlnController::class, 'show']);
-    //     Route::get('/create',[PdlnController::class, 'create']);
-    //     Route::post('/',[PdlnController::class, 'store']);
-    //     Route::get('/{id}/edit',[PdlnController::class, 'edit']);
-    //     Route::put('/{id}',[PdlnController::class, 'update']);
-    //     Route::delete('/{id}',[PdlnController::class, 'destroy']);
-    //     Route::get('/data/{jenis}', [PdlnController::class, 'jenis']);
-    // });
-    // Route::prefix('/berita')->group(function(){
-    //     Route::get('/',[BeritaController::class, 'index']);
-    //     Route::get('/create',[BeritaController::class, 'create']);
-    //     Route::post('/',[BeritaController::class, 'store']);
-    //     Route::get('/{id}',[BeritaController::class, 'show']);
-    //     Route::get('/{id}/edit',[BeritaController::class, 'edit']);
-    //     Route::put('/{id}',[BeritaController::class, 'update']);
-    //     Route::delete('/{id}',[BeritaController::class, 'destroy']);
-    // });
-    Route::prefix('/pengaduan')->group(function(){
-        Route::get('/',[PengaduanController::class, 'index']);
-        Route::get('/{id}',[PengaduanController::class, 'show']);
-        Route::get('/create',[PengaduanController::class, 'create']);
-        // Route::post('/',[PengaduanController::class, 'store']);
-        Route::get('/{id}/edit',[PengaduanController::class, 'edit']);
-        Route::put('/{id}',[PengaduanController::class, 'update']);
-        Route::delete('/{id}',[PengaduanController::class, 'destroy']);
-    });
-    // Route::prefix('/pengumuman')->group(function(){
-    //     Route::get('/',[PengumumanController::class, 'index']);
-    //     Route::get('/{id}',[PengumumanController::class, 'show']);
-    //     Route::get('/create',[PengumumanController::class, 'create']);
-    //     Route::post('/',[PengumumanController::class, 'store']);
-    //     Route::get('/{id}/edit',[PengumumanController::class, 'edit']);
-    //     Route::put('/{id}',[PengumumanController::class, 'update']);
-    //     Route::delete('/{id}',[PengumumanController::class, 'destroy']);
-    // });
-    //     Route::prefix('/peringkat')->group(function(){
-    //     Route::get('/',[PeringkatController::class, 'index']);
-    //     Route::get('/{id}',[PeringkatController::class, 'show']);
-    //     Route::get('/create',[PeringkatController::class, 'create']);
-    //     Route::post('/',[PeringkatController::class, 'store']);
-    //     Route::get('/{id}/edit',[PeringkatController::class, 'edit']);
-    //     Route::put('/{id}',[PeringkatController::class, 'update']);
-    //     Route::delete('/{id}',[PeringkatController::class, 'destroy']);
-    // });
-    //     Route::prefix('/faq')->group(function(){
-    //     Route::get('/',[FaqController::class, 'index']);
-    //     Route::get('/{id}',[FaqController::class, 'show']);
-    //     Route::get('/create',[FaqController::class, 'create']);
-    //     Route::post('/',[FaqController::class, 'store']);
-    //     Route::get('/{id}/edit',[FaqController::class, 'edit']);
-    //     Route::put('/{id}',[FaqController::class, 'update']);
-    //     Route::delete('/{id}',[FaqController::class, 'destroy']);
-    // });
-    // Route::prefix('/galeri')->group(function(){
-    //     Route::get('/',[GalleryController::class, 'index']);
-    //     Route::get('/{id}',[GalleryController::class, 'show']);
-    //     Route::get('/create',[GalleryController::class, 'create']);
-    //     Route::post('/',[GalleryController::class, 'store']);
-    //     Route::get('/{id}/edit',[GalleryController::class, 'edit']);
-    //     Route::put('/{id}',[GalleryController::class, 'update']);
-    //     Route::delete('/{id}',[GalleryController::class, 'destroy']);
-    // });
+// Route::prefix('/pdln')->group(function(){
+//     Route::get('/',[PdlnController::class, 'index']);
+//     Route::get('/{id}',[PdlnController::class, 'show']);
+//     Route::get('/create',[PdlnController::class, 'create']);
+//     Route::post('/',[PdlnController::class, 'store']);
+//     Route::get('/{id}/edit',[PdlnController::class, 'edit']);
+//     Route::put('/{id}',[PdlnController::class, 'update']);
+//     Route::delete('/{id}',[PdlnController::class, 'destroy']);
+//     Route::get('/data/{jenis}', [PdlnController::class, 'jenis']);
+// });
+// Route::prefix('/berita')->group(function(){
+//     Route::get('/',[BeritaController::class, 'index']);
+//     Route::get('/create',[BeritaController::class, 'create']);
+//     Route::post('/',[BeritaController::class, 'store']);
+//     Route::get('/{id}',[BeritaController::class, 'show']);
+//     Route::get('/{id}/edit',[BeritaController::class, 'edit']);
+//     Route::put('/{id}',[BeritaController::class, 'update']);
+//     Route::delete('/{id}',[BeritaController::class, 'destroy']);
+// });
+Route::prefix('/pengaduan')->group(function () {
+    Route::get('/', [PengaduanController::class, 'index']);
+    Route::get('/{id}', [PengaduanController::class, 'show']);
+    Route::get('/create', [PengaduanController::class, 'create']);
+    // Route::post('/',[PengaduanController::class, 'store']);
+    Route::get('/{id}/edit', [PengaduanController::class, 'edit']);
+    Route::put('/{id}', [PengaduanController::class, 'update']);
+    Route::delete('/{id}', [PengaduanController::class, 'destroy']);
+});
+// Route::prefix('/pengumuman')->group(function(){
+//     Route::get('/',[PengumumanController::class, 'index']);
+//     Route::get('/{id}',[PengumumanController::class, 'show']);
+//     Route::get('/create',[PengumumanController::class, 'create']);
+//     Route::post('/',[PengumumanController::class, 'store']);
+//     Route::get('/{id}/edit',[PengumumanController::class, 'edit']);
+//     Route::put('/{id}',[PengumumanController::class, 'update']);
+//     Route::delete('/{id}',[PengumumanController::class, 'destroy']);
+// });
+//     Route::prefix('/peringkat')->group(function(){
+//     Route::get('/',[PeringkatController::class, 'index']);
+//     Route::get('/{id}',[PeringkatController::class, 'show']);
+//     Route::get('/create',[PeringkatController::class, 'create']);
+//     Route::post('/',[PeringkatController::class, 'store']);
+//     Route::get('/{id}/edit',[PeringkatController::class, 'edit']);
+//     Route::put('/{id}',[PeringkatController::class, 'update']);
+//     Route::delete('/{id}',[PeringkatController::class, 'destroy']);
+// });
+//     Route::prefix('/faq')->group(function(){
+//     Route::get('/',[FaqController::class, 'index']);
+//     Route::get('/{id}',[FaqController::class, 'show']);
+//     Route::get('/create',[FaqController::class, 'create']);
+//     Route::post('/',[FaqController::class, 'store']);
+//     Route::get('/{id}/edit',[FaqController::class, 'edit']);
+//     Route::put('/{id}',[FaqController::class, 'update']);
+//     Route::delete('/{id}',[FaqController::class, 'destroy']);
+// });
+// Route::prefix('/galeri')->group(function(){
+//     Route::get('/',[GalleryController::class, 'index']);
+//     Route::get('/{id}',[GalleryController::class, 'show']);
+//     Route::get('/create',[GalleryController::class, 'create']);
+//     Route::post('/',[GalleryController::class, 'store']);
+//     Route::get('/{id}/edit',[GalleryController::class, 'edit']);
+//     Route::put('/{id}',[GalleryController::class, 'update']);
+//     Route::delete('/{id}',[GalleryController::class, 'destroy']);
+// });
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
@@ -185,3 +185,6 @@ Route::get('/data/pemerintah', [MitraController::class, 'pemerintah']);
 Route::get('/contact-form', [ContactController::class, 'showForm']);
 
 Route::post('/contact-form', [ContactController::class, 'storeForm'])->name('contact.save');
+
+//download file
+Route::get('file/download/{id}', [FileController::class, 'download'])->name('download');
