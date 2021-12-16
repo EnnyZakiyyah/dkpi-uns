@@ -37,7 +37,7 @@ Route::get('/home/galeri',[HomeController::class, 'galeri']);
 Route::get('/home/peringkat',[HomeController::class, 'peringkat']);
 Route::get('/home/pengumuman',[HomeController::class, 'pengumuman']);
 Route::get('/home/galeri/{id}', [HomeController::class, 'galeridetails']);
-Route::get('/home/berita/berita-details',[HomeController::class, 'beritadetails']);
+Route::get('/home/berita/beritadetails',[HomeController::class, 'beritadetails']);
 Route::get('/layanan/legaldrafting', [HomeController::class, 'legaldrafting']);
 
 
@@ -73,12 +73,26 @@ Route::middleware('auth')->group(function () {
     Route::get('/data/dosen', [PdlnController::class, 'dosen']);
     Route::get('/data/pimpinan', [PdlnController::class, 'pimpinan']);
 
+// import
+    Route::get('/data/pdlnimport', [PdlnController::class, 'import']);
+    Route::get('/data/mitraimport', [MitraController::class, 'import']);
+
     //mitra
     Route::get('/data/cv', [MitraController::class, 'cv']);
     Route::get('/data/yayasan', [MitraController::class, 'yayasan']);
     Route::get('/data/internasional', [MitraController::class, 'internasional']);
     Route::get('/data/jasaKeuangan', [MitraController::class, 'jasaKeuangan']);
     Route::get('/data/pemerintah', [MitraController::class, 'pemerintah']);
+
+    //     Route::prefix('/pengaduan')->group(function(){
+    //     Route::get('/',[PengaduanController::class, 'index']);
+    //     Route::get('/{id}',[PengaduanController::class, 'show']);
+    //     Route::get('/create',[PengaduanController::class, 'create']);
+    //     // Route::post('/',[PengaduanController::class, 'store']);
+    //     Route::get('/{id}/edit',[PengaduanController::class, 'edit']);
+    //     Route::put('/{id}',[PengaduanController::class, 'update']);
+    //     Route::delete('/{id}',[PengaduanController::class, 'destroy']);
+    // });
 
 
 });
@@ -115,15 +129,7 @@ Route::middleware('auth')->group(function () {
     //     Route::put('/{id}',[BeritaController::class, 'update']);
     //     Route::delete('/{id}',[BeritaController::class, 'destroy']);
     // });
-    // Route::prefix('/pengaduan')->group(function(){
-    //     Route::get('/',[PengaduanController::class, 'index']);
-    //     Route::get('/{id}',[PengaduanController::class, 'show']);
-    //     Route::get('/create',[PengaduanController::class, 'create']);
-    //     // Route::post('/',[PengaduanController::class, 'store']);
-    //     Route::get('/{id}/edit',[PengaduanController::class, 'edit']);
-    //     Route::put('/{id}',[PengaduanController::class, 'update']);
-    //     Route::delete('/{id}',[PengaduanController::class, 'destroy']);
-    // });
+
     // Route::prefix('/pengumuman')->group(function(){
     //     Route::get('/',[PengumumanController::class, 'index']);
     //     Route::get('/{id}',[PengumumanController::class, 'show']);

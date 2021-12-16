@@ -19,13 +19,13 @@ class PdlnImport implements ToModel
             'nama' => $row[1],
             'jumlah_orang'=> $row[2],
             'unit_kerja'=> $row[3] ,
-            'jangka_waktu_awal'=> $row[4],
-            'jangka_waktu_akhir'=> $row[4],
-            'tujuan'=> $row[5],
-            'negara'=> $row[6],
-            'surat_uns'=> $row[7],
-            'catatan_uns'=> $row[8],
-            'status'=> $row[9]
+            'jangka_waktu_awal'=> $row[5],
+            'jangka_waktu_akhir'=> $row[6],
+            'tujuan'=> $row[4],
+            'negara'=> $row[7],
+            'surat_uns'=> $row[8],
+            'catatan_uns'=> $row[9],
+            'status'=> $row[10]
         ]);
     }
 }
