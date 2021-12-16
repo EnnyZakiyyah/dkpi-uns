@@ -44,7 +44,9 @@
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">Judul</th>
+                  <th scope="col" class="sort" data-sort="nama">Exceprt</th>
                   <th scope="col" class="sort" data-sort="nama">Dibuat</th>
+                  <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
@@ -52,9 +54,10 @@
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
                   <td>{{ $berita->judul }}</td>
+                  <td>{{ $berita->excerpt }}</td>
                   <td>{{ $berita->created_at }}</td>
                   <td>
-                    <a href="/berita/{{ $berita->id }}/edit" class="badge badge-info">Detail</a>
+                    <a href="/berita/{{ $berita->id }}" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
                 @endforeach

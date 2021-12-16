@@ -18,10 +18,9 @@ class CreateBeritasTable extends Migration
 
             $table->string('judul');
             $table->string('gambar');
-            $table->text('isi');
-            $table->string('link');
-
-
+            $table->text('excerpt');
+            $table->text('body');
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }

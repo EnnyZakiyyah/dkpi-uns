@@ -30,7 +30,6 @@ class BeritaController extends Controller
     {
         //
         return view('berita.create');
-
     }
 
     /**
@@ -44,14 +43,15 @@ class BeritaController extends Controller
         $gambar = $request->file('gambar')->store('gambar');
         $validatedData = $request->validate([
             'judul' => 'required',
-            'isi' => 'required',
-            'link' => ''
+            'gambar' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'published_at' => 'required'
         ]);
         $validatedData['gambar'] = $gambar;
 
         Berita::create($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
-
     }
 
     /**
@@ -63,7 +63,7 @@ class BeritaController extends Controller
     public function show($berita)
     {
         $berita = Berita::find($berita);
-        return view('berita.show',[
+        return view('berita.show', [
             'berita' => $berita
         ]);
 
@@ -79,11 +79,10 @@ class BeritaController extends Controller
     public function edit($id)
     {
         //
-            $berita = Berita::find($id);
-            return view('berita.edit',[
+        $berita = Berita::find($id);
+        return view('berita.edit', [
             'berita' => $berita
         ]);
-
     }
 
     /**
@@ -99,13 +98,14 @@ class BeritaController extends Controller
         // $validatedData['gambar'] = request()->file('gambar')->store('gambar');
         $validatedData = request()->validate([
             'judul' => 'required',
-            'isi' => 'required',
-            'link' => ''
+            'gambar' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'published_at' => 'required'
         ]);
 
         Berita::where('id', $id)->update($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
-
     }
 
     /**
@@ -116,10 +116,9 @@ class BeritaController extends Controller
      */
     public function destroy(Berita $berita)
     {
-        //
+        // //
+        // $post = Berita::find($berita);
         Berita::destroy($berita);
-
-        return redirect('/berita')
-        ->with('success', 'data berhasil dihapus');
+        return redirect('/berita')->with('success', 'data berhasil dihapus');
     }
 }

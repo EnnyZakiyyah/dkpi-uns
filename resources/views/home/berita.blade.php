@@ -12,7 +12,8 @@
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
               <div class="row">
-
+                @if($posts->count())
+              
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -155,10 +156,12 @@
                     <span class="visually-hidden">Next</span>
                   </button>
                 </div>
-
+                @else
+                <p class="text-center fs-4">No post found.</p>
+                @endif
             </div>
 
-
+           
 
             </div>
           </section><!-- End Team Section -->
