@@ -8,6 +8,8 @@
         <div class="container" data-aos="fade-up">
 
             <main id="main">
+            {{-- @if($beritas->count()) --}}
+            @foreach ($berita as $berita)
 
                 <!-- ======= Breadcrumbs ======= -->
                 <section id="breadcrumbs" class="breadcrumbs">
@@ -17,7 +19,7 @@
                       <li><a href="/home/berita">Berita</a></li>
                       <li>Berita Details</li>
                     </ol>
-                    <h2>Berita Details</h2>
+                    <h2>{{ $berita->judul }}</h2>
             
                   </div>
                 </section><!-- End Breadcrumbs -->
@@ -33,15 +35,15 @@
                           <div class="swiper-wrapper align-items-center">
             
                             <div class="swiper-slide">
-                                <img src="{{asset('assets/img/cta-bg.jpg')}}" alt="">
+                                <img src="{{ $berita->gambar }}" alt="">
                             </div>
             
                             <div class="swiper-slide">
-                                <img src="{{asset('assets/img/cta-bg.jpg')}}" alt="">
+                                <img src="{{ $berita->gambar }}" alt="">
                             </div>
             
                             <div class="swiper-slide">
-                                <img src="{{asset('assets/img/cta-bg.jpg')}}" alt="">
+                                <img src="{{ $berita->gambar }}" alt="">
                             </div>
             
                           </div>
@@ -54,11 +56,11 @@
                       <div class="portfolio-description">
                         <h2>This is an example of portfolio detail</h2>
                         <p>
-                          Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                          {{ $berita->body }}
                         </p>
-                            <strong>Category</strong>&nbsp;Penandatanganan<br/>
-                            <strong>Client</strong>&nbsp;: BSI<br/>
-                            <strong>Project date</strong>&nbsp;: 01 March, 2020<br/>
+                            {{-- <strong>Category</strong>&nbsp;Penandatanganan<br/>
+                            <strong>Client</strong>&nbsp;: BSI<br/> --}}
+                            <strong>Project date</strong>&nbsp;: {{ $berita->created_at }}<br/>
                             <strong>Project URL</strong>&nbsp;: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a><br/>
                      
                       </div>
@@ -66,9 +68,11 @@
             
                   </div>
                 </section><!-- End Portfolio Details Section -->
-            
+                {{-- @else
+                <p class="text-center fs-4">No post found.</p>
+                @endif --}}
               </main><!-- End #main -->
-            
+            @endforeach
         </div>
   </div>
 </section><!-- End Skills Section -->

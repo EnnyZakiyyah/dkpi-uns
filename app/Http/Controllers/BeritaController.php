@@ -17,7 +17,9 @@ class BeritaController extends Controller
         //
         $berita = Berita::get();
         return view('berita.index', [
-            'beritas' => $berita
+            'beritas' => $berita,
+            // 'slug' => 'judul-post-pertama'
+            // 'berita' => Berita::latest()->get
         ]);
     }
 
@@ -53,14 +55,20 @@ class BeritaController extends Controller
         Berita::create($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
     }
-
+    // public static function find($id)
+    // {
+    //     return view('beritadetails', [
+    //         "judul" => "pertama",
+    //         "berita" => "Berita::find($id)"
+    //     ]);
+    // }
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function show($berita)
+    public function show(Berita $berita)
     {
         $berita = Berita::find($berita);
         return view('berita.show', [
@@ -114,7 +122,7 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Berita $berita)
+    public function destroy($berita)
     {
         // //
         // $post = Berita::find($berita);

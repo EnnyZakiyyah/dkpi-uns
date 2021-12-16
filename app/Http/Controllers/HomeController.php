@@ -99,13 +99,14 @@ class HomeController extends Controller
 
     }
 
-    public function beritadetails(Berita $id)
+    public function beritadetails($id)
     {
-        // $berita = Berita::where('id', $id)->get();
+        $berita = Berita::where('id', $id)->get();
         return view('home.beritadetails',[
             'title'=>'Detail Berita',
-            'berita' => $id
+            'berita' => $berita
         ]);
+        // return $berita;
     }
 
     public function galeri()
