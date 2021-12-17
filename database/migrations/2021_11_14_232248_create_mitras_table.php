@@ -20,12 +20,13 @@ class CreateMitrasTable extends Migration
             $table->string('nama_instansi');
             $table->string('no_mou_uns');
             $table->string('no_mou_mitra');
-            $table->string('ruang_lingkup');
+            $table->text('ruang_lingkup');
             $table->string('jangka_waktu_awal');
             $table->string('jangka_waktu_akhir');
-            $table->string('pejabat_penandatangan');
+            $table->text('pejabat_penandatangan');
             $table->string('file_mou')->default('ada');
-            $table->string('status_hidden')->default(True);
+            $table->string('status_hidden')->default('aktif');
+            $table->string('status')->default('berlaku');
             $table->timestamps();
         });
     }

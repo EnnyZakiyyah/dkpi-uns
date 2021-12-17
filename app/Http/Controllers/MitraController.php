@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\MitraImport;
 use App\Models\Mitra;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class MitraController extends Controller
 {
@@ -128,7 +131,8 @@ class MitraController extends Controller
             'jangka_waktu_akhir' =>'required',
             'pejabat_penandatangan' =>'required',
             'file_mou' =>'',
-            'status_hidden' =>''
+            'status_hidden' =>'',
+            'status'=>''
             ]);
 
 
@@ -158,6 +162,15 @@ class MitraController extends Controller
         return view('mitra.index',[
             'mitras' => $instansi
         ]);
+    }
+
+    public function import()
+    {
+        // Excel::import(new PdlnImport, 'pdln.xlsx');
+        Excel::import(new MitraImport,'mitra.xlsx');
+
+
+        return redirect('/mitra')->with('success', 'All good!');
     }
 
 
