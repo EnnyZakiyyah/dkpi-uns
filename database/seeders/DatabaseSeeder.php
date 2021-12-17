@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         User::factory(1)->create();
     //     Mitra::factory(10)->create();
     //     Pdln::factory(10)->create();
-         Berita::factory(10)->create();
+        //  Berita::factory(10)->create();
     //     Pengumuman::factory(7)->create();
     //     Faq::factory(5)->create();
     //     Pengaduan::factory(4)->create();

@@ -17,6 +17,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PeringkatController;
 use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\DownloadFileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,10 @@ Route::get('/home/pengumuman', [HomeController::class, 'pengumuman']);
 Route::get('/home/galeri/{id}', [HomeController::class, 'galeridetails']);
 Route::get('/home/berita/beritadetails/{id}', [HomeController::class, 'beritadetails']);
 Route::get('/layanan/legaldrafting', [HomeController::class, 'legaldrafting']);
+
+
+Route::get('/mou-download', [DownloadFileController::class, 'mou']);
+Route::get('/pks-download', [DownloadFileController::class, 'pks']);
 
 
 // Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -83,6 +88,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/data/mitraimport', [MitraController::class, 'import']);
 
     //mitra
+    Route::get('/data/{instansi}', [MitraController::class, 'instansi']);
+
     Route::get('/data/cv', [MitraController::class, 'cv']);
     Route::get('/data/yayasan', [MitraController::class, 'yayasan']);
     Route::get('/data/internasional', [MitraController::class, 'internasional']);

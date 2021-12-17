@@ -59,7 +59,7 @@
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
                   <td><a href="/mitra/{{ $mitra->id }}">{{ $mitra->nama_instansi }}</a></td>
-                  <td><a href="/mitra/data/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></td>
+                  <td><a href="/data/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></td>
                   <td>{{ $mitra->no_mou_uns }}</td>
                   <td>{{ $mitra->no_mou_mitra }}</td>
                   {{-- <td>{{ $mitra->nama_instansi }}</td>

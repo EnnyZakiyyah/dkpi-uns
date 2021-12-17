@@ -151,7 +151,7 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Aksi</th>
+                  {{-- <th scope="col">Aksi</th> --}}
                 </tr>
               </thead>
               <tbody>
@@ -200,7 +200,7 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Aksi</th>
+                  {{-- <th scope="col">Aksi</th> --}}
                 </tr>
               </thead>
               <tbody>
@@ -249,7 +249,7 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Aksi</th>
+                  {{-- <th scope="col">Aksi</th> --}}
                 </tr>
               </thead>
               <tbody>
@@ -298,7 +298,7 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Aksi</th>
+                  {{-- <th scope="col">Aksi</th> --}}
                 </tr>
               </thead>
               <tbody>
