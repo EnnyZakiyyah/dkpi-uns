@@ -48,7 +48,11 @@
                     <div class="card-header border-0">
                         <h3 class="mb-0">Tambah Berita</h3>
                     </div>
-
+                    @if (session('success'))
+                    <div class="alert-success">
+                      <p>{{ session('success') }}</p>
+                    </div>
+                    @endif
                     <!-- body card -->
                     <form method="POST" action="/berita" enctype="multipart/form-data">
                         @csrf
@@ -63,9 +67,9 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link Berita</label>
-                            <input id="link" type="text" name="link" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link berita" name="link" value="{{ old('link') }}">
-                            @error('link')
+                            <label for="excerpt">Excerpt</label>
+                            <input id="" type="text" name="excerpt" class="form-control  @error('excerpt') is-invalid @enderror" id="excerpt" placeholder="excerpt berita" name="Excerpt" value="{{ old('excerpt') }}">
+                            @error('excerpt')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -84,7 +88,7 @@
                         </div> --}}
                         <div class="form-group ml-5 mr-5">
                             <label for="gambar"> gambar pendukung</label>
-                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" value="{{ old('gambar') }}">
+                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" required>
                             {{-- <trix-editor input="gambar"></trix-editor> --}}
                             @error('gambar')
                             <div class="invalid-feedback">
@@ -94,15 +98,26 @@
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                        <label for="isi"> isi Berita</label>
-                        <textarea  id="editor" type="hidden" name="isi" class="form-control  @error('isi') is-invalid @enderror" id="isi" placeholder="isi berita" name="isi" value="{{ old('isi') }}">
+                        <label for="body"> isi Berita</label>
+                        <textarea  id="editor" type="hidden" name="body" class="form-control  @error('body') is-invalid @enderror" id="body" placeholder="isi berita" name="body" value="{{ old('body') }}">
 
                         </textarea>
-                        @error('isi')
+                        @error('body')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
                         @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="published_at"> Published</label>
+                            <input id="published_at" type="date" name="published_at" class="form-control  @error('published_at') is-invalid @enderror" id="published_atr" placeholder="published_at berita" name="published_at" value="{{ old('published_at') }}">
+                            {{-- <trix-editor input="gambar"></trix-editor> --}}
+                            @error('published_at')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                     </div>
 
                         <button type="submit" class="btn btn-primary ml-5">Submit</button>

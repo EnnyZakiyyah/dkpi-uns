@@ -106,6 +106,7 @@ class HomeController extends Controller
             'title'=>'Detail Berita',
             'berita' => $berita
         ]);
+        // return $berita;
     }
 
     public function galeri()

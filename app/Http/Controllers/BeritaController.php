@@ -17,7 +17,9 @@ class BeritaController extends Controller
         //
         $berita = Berita::get();
         return view('berita.index', [
-            'beritas' => $berita
+            'beritas' => $berita,
+            // 'slug' => 'judul-post-pertama'
+            // 'berita' => Berita::latest()->get
         ]);
     }
 
@@ -30,7 +32,6 @@ class BeritaController extends Controller
     {
         //
         return view('berita.create');
-
     }
 
     /**
@@ -41,19 +42,28 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        $gambar = $request->file('gambar')->store('gambar');
+        // return $request->file('gambar')->store('berita-images');
         $validatedData = $request->validate([
             'judul' => 'required',
-            'isi' => 'required',
-            'link' => ''
+            'gambar' => 'image|file|max:1024',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'published_at' => 'required'
         ]);
-        $validatedData['gambar'] = $gambar;
-
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
+        }
+        // $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
         Berita::create($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
-
     }
-
+    // public static function find($id)
+    // {
+    //     return view('beritadetails', [
+    //         "judul" => "pertama",
+    //         "berita" => "Berita::find($id)"
+    //     ]);
+    // }
     /**
      * Display the specified resource.
      *
@@ -63,11 +73,11 @@ class BeritaController extends Controller
     public function show($berita)
     {
         $berita = Berita::find($berita);
-        return view('berita.show',[
+        return view('berita.show', [
             'berita' => $berita
         ]);
 
-        // return $berita;
+        //  return $berita;
     }
 
     /**
@@ -79,11 +89,10 @@ class BeritaController extends Controller
     public function edit($id)
     {
         //
-            $berita = Berita::find($id);
-            return view('berita.edit',[
+        $berita = Berita::find($id);
+        return view('berita.edit', [
             'berita' => $berita
         ]);
-
     }
 
     /**
@@ -99,13 +108,14 @@ class BeritaController extends Controller
         // $validatedData['gambar'] = request()->file('gambar')->store('gambar');
         $validatedData = request()->validate([
             'judul' => 'required',
-            'isi' => 'required',
-            'link' => ''
+            'gambar' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'published_at' => 'required'
         ]);
 
         Berita::where('id', $id)->update($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
-
     }
 
     /**
@@ -114,12 +124,11 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Berita $berita)
+    public function destroy($berita)
     {
-        //
+        // //
+        // $post = Berita::find($berita);
         Berita::destroy($berita);
-
-        return redirect('/berita')
-        ->with('success', 'data berhasil dihapus');
+        return redirect('/berita')->with('success', 'data berhasil dihapus');
     }
 }

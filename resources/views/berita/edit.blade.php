@@ -66,9 +66,9 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link Berita</label>
-                            <input id="link" type="text" name="link" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link berita" name="link" value="{{ old('link',$berita->link) }}">
-                            @error('link')
+                            <label for="excerpt"> Excerpt</label>
+                            <input id="excerpt" type="text" name="excerpt" class="form-control  @error('excerpt') is-invalid @enderror" id="excerpt" placeholder="excerpt berita" name="excerpt" value="{{ old('excerpt', $berita->excerpt) }}">
+                            @error('excerpt')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -76,11 +76,11 @@
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="isi"> isi Berita</label>
-                            <textarea  id="editor" type="hidden" name="isi" class="form-control  @error('isi') is-invalid @enderror" id="isi" placeholder="isi berita" name="isi" value="{{ old('isi') }}">
-                                    {{ $berita->isi }}
+                            <label for="body"> isi Berita</label>
+                            <textarea  id="editor" type="hidden" name="body" class="form-control  @error('body') is-invalid @enderror" id="body" placeholder="isi berita" name="body" value="{{ old('body') }}">
+                                    {{ $berita->body }}
                             </textarea>
-                            @error('isi')
+                            @error('body')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -90,6 +90,15 @@
                             <label for="gambar"> ganti gambar</label>
                             <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" value="{{ old('gambar', $berita->gambar) }}">
                             @error('gambar')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="published_at"> Published</label>
+                            <input id="published_at" type="date" name="published_at" class="form-control  @error('published_at') is-invalid @enderror" id="published_at" placeholder="publsihed berita" name="published_at" value="{{ old('published_at', $berita->published_at) }}">
+                            @error('published_at')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
