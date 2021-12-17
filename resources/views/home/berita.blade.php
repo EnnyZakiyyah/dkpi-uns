@@ -29,7 +29,7 @@
                         @foreach ($beritas->skip(0) as $berita )
                         <div class="col">
                           <div class="card h-100">
-                            <img src="{{ $berita->gambar }}" class="card-img-top" alt="...">
+                            <img src="{{asset('storage/'. $berita->gambar )}}" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">{{ $berita->judul }}</h5>
                               <p class="card-text">{{ $berita->excerpt }}

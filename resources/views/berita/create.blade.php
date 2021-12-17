@@ -88,7 +88,7 @@
                         </div> --}}
                         <div class="form-group ml-5 mr-5">
                             <label for="gambar"> gambar pendukung</label>
-                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" value="{{ old('gambar') }}">
+                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" required>
                             {{-- <trix-editor input="gambar"></trix-editor> --}}
                             @error('gambar')
                             <div class="invalid-feedback">

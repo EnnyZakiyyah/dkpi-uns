@@ -42,16 +42,18 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        $gambar = $request->file('gambar')->store('gambar');
+        // return $request->file('gambar')->store('berita-images');
         $validatedData = $request->validate([
             'judul' => 'required',
-            'gambar' => 'required',
+            'gambar' => 'image|file|max:1024',
             'excerpt' => 'required',
             'body' => 'required',
             'published_at' => 'required'
         ]);
-        $validatedData['gambar'] = $gambar;
-
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
+        }
+        // $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
         Berita::create($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
     }
@@ -68,14 +70,14 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function show(Berita $berita)
+    public function show($berita)
     {
         $berita = Berita::find($berita);
         return view('berita.show', [
             'berita' => $berita
         ]);
 
-        // return $berita;
+        //  return $berita;
     }
 
     /**

@@ -57,7 +57,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Judul Berita: {{ $berita->judul}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ $berita->gambar}}</h6>
+                            <img src="{{asset('storage/'. $berita->gambar )}}" class="card-img-top" alt="...">
                             <p class="card-text">{{ $berita->excerpt }}</p>
                             <p class="card-text">{{ $berita->body }}</p>
                             <p class="card-text">{{ $berita->published_at }}</p>

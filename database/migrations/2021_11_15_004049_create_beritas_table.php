@@ -17,7 +17,7 @@ class CreateBeritasTable extends Migration
             $table->id();
 
             $table->string('judul');
-            $table->string('gambar');
+            $table->string('gambar')->nullable();
             $table->text('excerpt');
             $table->text('body');
             $table->timestamp('published_at')->nullable();

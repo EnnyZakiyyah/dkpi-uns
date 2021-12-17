@@ -23,11 +23,20 @@ class BeritaFactory extends Factory
     {
         return [
 
-            'judul'=> $this->faker->sentence(2),
+            'judul' => $this->faker->sentence(2),
             // 'slug'=> $this->faker->sentence(3),
-            'gambar'=>$this->faker->mimeType(),
-            'isi'=> $this->faker->paragraph(2),
-            'link'=> $this->faker->domainName()
+            'gambar' => $this->faker->mimeType(),
+            'excerpt' => $this->faker->paragraph(),
+            'body' => collect($this->faker->paragraphs(mt_rand(5, 10)))
+                        ->map(function($p){
+                            return"<p>$p</p>";
+                        })->implode(''),
+            // 'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(mt_rand(5, 10)))).'</p>',
+            // 'body' => collect($this->faker->paragraphs(mt_rand(5, 10)))
+            //             ->map(fn ($p) => "<p>$p</p>"),
+            //     ->implode(''),
+            'published_at' => $this->faker->dateTime(),
+            // 'link'=> $this->faker->domainName()
         ];
     }
 }

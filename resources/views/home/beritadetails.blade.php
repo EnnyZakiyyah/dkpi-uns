@@ -35,15 +35,15 @@
                           <div class="swiper-wrapper align-items-center">
             
                             <div class="swiper-slide">
-                                <img src="{{ $berita->gambar }}" alt="">
+                                <img src="{{asset('storage/'. $berita->gambar )}}" alt="">
                             </div>
             
                             <div class="swiper-slide">
-                                <img src="{{ $berita->gambar }}" alt="">
+                                <img src="{{asset('storage/'. $berita->gambar )}}" alt="">
                             </div>
             
                             <div class="swiper-slide">
-                                <img src="{{ $berita->gambar }}" alt="">
+                                <img src="{{asset('storage/'. $berita->gambar )}}" alt="">
                             </div>
             
                           </div>
