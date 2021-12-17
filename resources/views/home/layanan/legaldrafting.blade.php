@@ -116,17 +116,9 @@
             </div>
           </div>
           <center><div class="d-grid gap-5 d-md-block">
-            <a class="btn btn-secondary" type="button" href="/layanan">Kembali</a>
-<<<<<<< HEAD
-            @isset($sc->link) <a href="{{ route('download', $file->id) }}" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Download File</i></a>
-           
-   <a href="{{ route('download', $file->id) }}" class="btn btn-primary">
-      Download
-   </a>
-@endisset
-=======
-            <a href="{{ route('file.download', $book->uuid) }}">{{ $book->cover }}" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Download File</i></button>
->>>>>>> 27caf6f3da1cdaaaa6dc0950fedab564c6c09875
+            {{-- <a class="btn btn-secondary" type="button" href="/layanan">Kembali</a> --}}
+            <a href="/mou-download" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Ketentuan MoU</i></button>
+            <a href="/pks-download" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Ketentuan PKS</i></button>
           </div></center>
 
 
