@@ -20,9 +20,9 @@ class CreatePdlnsTable extends Migration
             $table->string('nama');
             $table->integer('jumlah_orang');
             $table->string('unit_kerja');
-            $table->date('jangka_waktu_awal');
-            $table->date('jangka_waktu_akhir');
-            $table->string('tujuan');
+            $table->string('jangka_waktu_awal');
+            $table->string('jangka_waktu_akhir');
+            $table->text('tujuan');
             $table->string('negara');
             $table->string('surat_uns')->default('null');
             $table->text('catatan_uns')->default('null');

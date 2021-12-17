@@ -106,10 +106,10 @@ class PengaduanController extends Controller
      * @param  \App\Models\Pengaduan  $pengaduan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pengaduan $pengaduan)
+    public function destroy($pengaduan)
     {
         //
-        Pengaduan::destroy($pengaduan);
+        ContactUs::destroy($pengaduan);
 
         return redirect('/pengaduan')
         ->with('success', 'data berhasil dihapus');

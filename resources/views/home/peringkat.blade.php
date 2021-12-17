@@ -35,13 +35,14 @@
 
 
                         <h2>{{ $thes->judul }}</h2>
-                        <p>
-                          {{ $thes->berita }}
-                        </p>
-                            <strong>Category</strong>&nbsp;{{ $thes->jenis }}<br/>
-                            <strong>Client</strong>&nbsp;: {{ $thes->peringkat }}<br/>
-                            <strong>Project date</strong>&nbsp;: {{ $thes->created_at }}<br/>
-                            <strong>Project URL</strong>&nbsp;: <a href="{{ $thes->link }}">selengkapnya</a><br/>
+
+                            <strong>Kategori</strong>&nbsp;:{{ $thes->jenis }}<br/>
+                            <strong>Peringkat</strong>&nbsp;: {{ $thes->peringkat }}<br/>
+                            <strong>dimuat</strong>&nbsp;: {{ $thes->created_at }}<br/>
+                            {{-- <strong>Project URL</strong>&nbsp;: <a href="{{ $thes->link }}">selengkapnya</a><br/> --}}
+                            <p>
+                                {!! $thes->berita !!}
+                              </p>
                             @endforeach
                       </div>
                     </p>
@@ -63,14 +64,15 @@
 
 
                             <h2>{{ $qs->judul }}</h2>
-                            <p>
-                              {{ $qs->berita }}
-                            </p>
-                                <strong>Category</strong>&nbsp;{{ $qs->jenis }}<br/>
-                                <strong>Client</strong>&nbsp;: {{ $qs->peringkat }}<br/>
-                                <strong>Project date</strong>&nbsp;: {{ $qs->created_at }}<br/>
-                                <strong>Project URL</strong>&nbsp;: <a href="{{ $qs->link }}">selengkapnya</a><br/>
-                                @endforeach
+
+                                <strong>Kategori</strong>&nbsp;:{{ $qs->jenis }}<br/>
+                                <strong>Peringkat</strong>&nbsp;: {{ $qs->peringkat }}<br/>
+                                <strong>Dimuat</strong>&nbsp;: {{ $qs->created_at }}<br/>
+                                {{-- <strong>Project URL</strong>&nbsp;: <a href="{{ $qs->link }}">selengkapnya</a><br/> --}}
+                                <p>
+                                    {!! $qs->berita !!}
+                                  </p>
+                                  @endforeach
                         </div>
                       </p>
                     </div>

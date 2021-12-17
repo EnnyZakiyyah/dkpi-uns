@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Pdln;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Imports\PdlnImport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
+use PhpOffice\PhpSpreadsheet\Calculation\LookupRef\ExcelMatch;
 
 class PdlnController extends Controller
 {
@@ -164,5 +167,13 @@ class PdlnController extends Controller
         return view('pdln.index',[
             'pdlns' => $jenis
         ]);
+    }
+    public function import()
+    {
+        // Excel::import(new PdlnImport, 'pdln.xlsx');
+        Excel::import(new PdlnImport,'pdln.xlsx');
+
+
+        return redirect('/pdln')->with('success', 'All good!');
     }
 }
