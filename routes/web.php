@@ -78,6 +78,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/data/mitraimport', [MitraController::class, 'import']);
 
     //mitra
+    Route::get('/data/{instansi}', [MitraController::class, 'instansi']);
+
     Route::get('/data/cv', [MitraController::class, 'cv']);
     Route::get('/data/yayasan', [MitraController::class, 'yayasan']);
     Route::get('/data/internasional', [MitraController::class, 'internasional']);
