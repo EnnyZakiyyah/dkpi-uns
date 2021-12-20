@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
         $faq = Faq::get();
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
-        $berita = Berita::latest()->take(6)->get();
+        $berita = Berita::latest()->take(3)->get();
 
         return view('home.index',[
             'title' => 'DKPI',

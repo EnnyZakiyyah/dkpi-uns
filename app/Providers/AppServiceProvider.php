@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
             return realpath(base_path().'/../public_html');
         });
     }
+    
 
     /**
      * Bootstrap any application services.
