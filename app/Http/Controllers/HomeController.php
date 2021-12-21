@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Carbon\Carbon;
 
 use App\Models\Faq;
@@ -24,7 +25,8 @@ class HomeController extends Controller
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
         $berita = Berita::latest()->take(6)->get();
 
-        return view('home.index',[
+
+        return view('home.index', [
             'title' => 'DKPI',
             'pengumumans' => $pengumuman,
             'faqs' => $faq,
@@ -50,14 +52,18 @@ class HomeController extends Controller
     public function mitra()
     {
         // $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
-        $cv = Mitra::where('instansi', 'cv')->latest()->get();
-        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
-        $internasional = Mitra::where('instansi', 'internasional')->latest()->get();
-        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->get();
-        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->get();
+        // $mitras = Mitra::latest();
+        // dd(request('nama_instansi'));
+
+        $cv = Mitra::where('instansi', 'cv')->latest()->filter(['nama_instansi'])->get();
+        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->filter(['nama_instansi'])->get();
+        $internasional = Mitra::where('instansi', 'internasional')->latest()->filter(['nama_instansi'])->get();
+        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->filter(['nama_instansi'])->get();
+        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->filter(['nama_instansi'])->get();
 
         return view('home.mitra', [
             'title' => 'data Mitra',
+            // 'mitras' => $mitras->get(),
             'yayasans' => $yayasan,
             'cvs' => $cv,
             'internasionals' => $internasional,
@@ -68,8 +74,8 @@ class HomeController extends Controller
 
     public function layanan()
     {
-        return view('home.layanan',[
-            'title'=>'layanan'
+        return view('home.layanan', [
+            'title' => 'layanan'
         ]);
     }
 
@@ -80,10 +86,10 @@ class HomeController extends Controller
         ]);
     }
 
-    public function galeridetails( $id)
+    public function galeridetails($id)
     {
         $galeri = Gallery::find($id)->get();
-        return view('home.galeridetails',[
+        return view('home.galeridetails', [
             'title' => 'detail gambar',
             'galeri' => $galeri
         ]);
@@ -92,18 +98,17 @@ class HomeController extends Controller
     public function berita()
     {
         $berita = Berita::get();
-        return view('home.berita',[
+        return view('home.berita', [
             'title' => 'berita',
             'beritas' => $berita
         ]);
-
     }
 
     public function beritadetails($id)
     {
         $berita = Berita::where('id', $id)->get();
-        return view('home.beritadetails',[
-            'title'=>'Detail Berita',
+        return view('home.beritadetails', [
+            'title' => 'Detail Berita',
             'berita' => $berita
         ]);
         // return $berita;
@@ -112,8 +117,8 @@ class HomeController extends Controller
     public function galeri()
     {
         $gallery =  Gallery::get();
-        return view('home.galeri',[
-            'title'=>'Galeri',
+        return view('home.galeri', [
+            'title' => 'Galeri',
             'galleries' => $gallery
         ]);
     }
@@ -121,11 +126,10 @@ class HomeController extends Controller
     public function faq()
     {
         $faqs = Faq::get();
-        return view('home.faq',[
-            'title'=>'FAQ',
+        return view('home.faq', [
+            'title' => 'FAQ',
             'faqs' => $faqs
         ]);
-
     }
 
     public function peringkat()
@@ -133,8 +137,8 @@ class HomeController extends Controller
 
         $thes = Peringkat::where('jenis', 'THES')->latest()->get();
         $qs = Peringkat::where('jenis', 'QSstar')->latest()->get();
-        return view('home.peringkat',[
-            'title'=>'peringkat',
+        return view('home.peringkat', [
+            'title' => 'peringkat',
             'thess' => $thes,
             'qss' => $qs
         ]);
@@ -144,11 +148,9 @@ class HomeController extends Controller
     {
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
 
-        return view('home/pengumuman',[
-            'title'=>'Pengumuman',
+        return view('home/pengumuman', [
+            'title' => 'Pengumuman',
             'pengumumans' => $pengumuman
         ]);
-
     }
-
 }

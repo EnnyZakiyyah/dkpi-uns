@@ -48,11 +48,11 @@
                     <div class="card-header border-0">
                         <h3 class="mb-0">edit Berita</h3>
                     </div>
-                    <img src="storage/app/{{ $berita->gambar }}" >
+                    {{-- <img src="storage/app/{{ $berita->gambar }}" > --}}
 
 
                     <!-- body card -->
-                    <form method="POST" action="/berita/{{ $berita->id }}">
+                    <form method="POST" action="/berita/{{ $berita->id }}"  enctype="multipart/form-data">
                         @method('put')
                         @csrf
 
@@ -88,6 +88,11 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="gambar"> ganti gambar</label>
+                              @if($berita->gambar)
+                                <img src="{{ asset('storage/' . $berita->gambar) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                            @else
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                            @endif
                             <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" value="{{ old('gambar', $berita->gambar) }}">
                             @error('gambar')
                             <div class="invalid-feedback">
@@ -113,5 +118,21 @@
             </div>
         </div>
     </div>
+    <script>
+        function previewImage(){
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('.img-preview');
+    
+            imgPreview.style.display = 'block';
+    
+            const ofReader = new FileReader();
+            ofReader.readAsDataURL(image.files[0]);
+    
+            ofReader.onload = function(ofREvent){
+                imgPreview.src = ofReader.target.result;
+            }
+    
+        }
+    </script>
     <!-- End Main content -->
     @endsection

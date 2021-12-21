@@ -88,6 +88,7 @@
                         </div> --}}
                         <div class="form-group ml-5 mr-5">
                             <label for="gambar"> gambar pendukung</label>
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
                             <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar" required>
                             {{-- <trix-editor input="gambar"></trix-editor> --}}
                             @error('gambar')
@@ -127,5 +128,23 @@
             </div>
         </div>
     </div>
+    <script>
+        function previewImage(){
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('.img-preview');
+    
+            imgPreview.style.display = 'block';
+    
+            const ofReader = new FileReader();
+            ofReader.readAsDataURL(image.files[0]);
+    
+            ofReader.onload = function(ofREvent){
+                imgPreview.src = ofReader.target.result;
+            }
+    
+        }
+    </script>
     <!-- End Main content -->
     @endsection
+
+    

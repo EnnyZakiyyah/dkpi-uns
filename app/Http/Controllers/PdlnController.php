@@ -24,7 +24,7 @@ class PdlnController extends Controller
         $pdln = Pdln::latest()->get();
 
 
-        return view('pdln.index',[
+        return view('pdln.index', [
             'title' => 'Data Pdln',
             'pdlns' => $pdln
             // 'mahasiswa' => $mahasiswa,
@@ -58,18 +58,18 @@ class PdlnController extends Controller
         $validatedData = $request->validate([
             'jenis' => '',
             'nama' => 'required',
-            'jumlah_orang'=> 'required',
-            'unit_kerja'=> 'required' ,
-            'jangka_waktu_awal'=> 'required',
-            'jangka_waktu_akhir'=> 'required',
-            'tujuan'=> 'required',
-            'negara'=> 'required',
-            'surat_uns'=> 'required',
-            'catatan_uns'=> 'required',
-            'belmawa'=> 'required',
-            'catatan_belmawa'=> 'required',
-            'ktln_kemensetneg'=> 'required',
-            'catatan_setneg'=> 'required'
+            'jumlah_orang' => 'required',
+            'unit_kerja' => 'required',
+            'jangka_waktu_awal' => 'required',
+            'jangka_waktu_akhir' => 'required',
+            'tujuan' => 'required',
+            'negara' => 'required',
+            'surat_uns' => 'required',
+            'catatan_uns' => 'required',
+            'belmawa' => 'required',
+            'catatan_belmawa' => 'required',
+            'ktln_kemensetneg' => 'required',
+            'catatan_setneg' => 'required'
         ]);
 
         $validatedData['file_surat_uns'] = $file_surat_uns;
@@ -81,7 +81,6 @@ class PdlnController extends Controller
         Pdln::create($validatedData);
 
         return redirect('/pdln')->with('success', 'Data berhasil ditambah!');
-
     }
 
     /**
@@ -96,7 +95,7 @@ class PdlnController extends Controller
         // $file_belmawa = Storage::get($pdln->file_belmawa, $pdln->nama);
         // $file_ktln = Storage::get($pdln->file_ktln, $pdln->nama);
 
-        return view('pdln.show',[
+        return view('pdln.show', [
             'pdln' => $pdln
             // 'file_uns' => $file_surat_uns,
             // 'file_belmawa' => $file_belmawa,
@@ -130,18 +129,18 @@ class PdlnController extends Controller
         $validatedData = $request->validate([
             'jenis' => '',
             'nama' => 'required',
-            'jumlah_orang'=> 'required',
-            'unit_kerja'=> 'required' ,
-            'jangka_waktu_awal'=> 'required',
-            'jangka_waktu_akhir'=> 'required',
-            'tujuan'=> 'required',
-            'negara'=> 'required',
-            'surat_uns'=> 'required',
-            'catatan_uns'=> 'required',
-            'belmawa'=> 'required',
-            'catatan_belmawa'=> 'required',
-            'ktln_kemensetneg'=> 'required',
-            'catatan_setneg'=> 'required'
+            'jumlah_orang' => 'required',
+            'unit_kerja' => 'required',
+            'jangka_waktu_awal' => 'required',
+            'jangka_waktu_akhir' => 'required',
+            'tujuan' => 'required',
+            'negara' => 'required',
+            'surat_uns' => 'required',
+            'catatan_uns' => 'required',
+            'belmawa' => 'required',
+            'catatan_belmawa' => 'required',
+            'ktln_kemensetneg' => 'required',
+            'catatan_setneg' => 'required'
         ]);
 
         Pdln::where('id', $pdln->id)->update($validatedData);
@@ -160,18 +159,19 @@ class PdlnController extends Controller
         return redirect('/pdln')->with('status', 'data berhasil dihapus');
     }
 
-    public function jenis($jenis){
+    public function jenis($jenis)
+    {
 
         $jenis = Pdln::where('jenis', $jenis)->latest()->get();
 
-        return view('pdln.index',[
+        return view('pdln.index', [
             'pdlns' => $jenis
         ]);
     }
     public function import()
     {
         // Excel::import(new PdlnImport, 'pdln.xlsx');
-        Excel::import(new PdlnImport,'pdln.xlsx');
+        Excel::import(new PdlnImport, 'pdln.xlsx');
 
 
         return redirect('/pdln')->with('success', 'All good!');

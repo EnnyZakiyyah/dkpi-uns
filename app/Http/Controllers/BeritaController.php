@@ -102,18 +102,21 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request ,$id)
     {
         //
         // $validatedData['gambar'] = request()->file('gambar')->store('gambar');
-        $validatedData = request()->validate([
+        $validatedData = $request->validate([
             'judul' => 'required',
-            'gambar' => 'required',
+            'gambar' => 'image|file|max:1024',
             'excerpt' => 'required',
             'body' => 'required',
             'published_at' => 'required'
         ]);
-
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
+        }
+       
         Berita::where('id', $id)->update($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
     }

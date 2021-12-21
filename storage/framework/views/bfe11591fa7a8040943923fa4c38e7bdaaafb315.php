@@ -1,5 +1,5 @@
-@extends('layouts.main')
-@section('container')
+
+<?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
@@ -14,7 +14,7 @@
         <div class="section-title">
           <h2>Mitra Kerja Sama</h2>
             <p>Data Mitra yang menjalin hubungan kerjasama dengan UNS dapat dilihat pada tabel berikut</p>
-          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+          
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -35,53 +35,35 @@
             <form class="row g-3 needs-validation" action="/home/mitra">
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
-                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="{{ request('nama_instansi') }}" required>
+                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
-                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai" value="{{ request('waktu_mulai') }}" required>
+                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai" value="<?php echo e(request('waktu_mulai')); ?>" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
-              {{-- <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Nomor MoU UNS</label>
-                <input type="text" class="form-control" id="validationCustom03" name="nomor_mou"required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div> --}}
+              
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
-                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir" value="{{ request('waktu_berakhir') }}" required>
+                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir" value="<?php echo e(request('waktu_berakhir')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
-              {{-- <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Nomor MoU Mitra</label>
-                <input type="text" class="form-control" id="validationCustom03" name="nomor_mitra" required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div> --}}
+              
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
-                <input type="text" class="form-control" id="validationCustom03" name="pejabat" value="{{ request('pejabat') }}" required>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat" value="<?php echo e(request('pejabat')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
-              {{-- <div class="col-md-3">
-                <label for="validationCustom04" class="form-label">Tahun</label>
-                <input type="text" class="form-control" id="validationCustom03" name="tahun" required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div> --}}
+              
               <div class="col-12">
                 <button class="btn btn-warning" type="submit">Cari Data</button>
               </div>
@@ -104,22 +86,22 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  
                 </tr>
               </thead>
               <tbody>
-                @foreach($yayasans as $yayasan)
+                <?php $__currentLoopData = $yayasans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $yayasan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $yayasan->nama_instansi }}</td>
-                  <td>{{ $yayasan->ruang_lingkup }}</td>
-                  <td>{{ $yayasan->jangka_waktu_awal }}</td>
-                  <td>{{ $yayasan->jangka_waktu_akhir }}</td>
-                  <td>{{ $yayasan->pejabat_penandatangan }}</td>
-                  <td>{{ $yayasan->status }}</td>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($yayasan->nama_instansi); ?></td>
+                  <td><?php echo e($yayasan->ruang_lingkup); ?></td>
+                  <td><?php echo e($yayasan->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($yayasan->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($yayasan->pejabat_penandatangan); ?></td>
+                  <td><?php echo e($yayasan->status); ?></td>
                   <td></td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
 
@@ -153,22 +135,22 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  
                 </tr>
               </thead>
               <tbody>
-                @foreach($cvs as $cv)
+                <?php $__currentLoopData = $cvs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $cv->nama_instansi }}</td>
-                  <td>{{ $cv->ruang_lingkup }}</td>
-                  <td>{{ $cv->jangka_waktu_awal }}</td>
-                  <td>{{ $cv->jangka_waktu_akhir }}</td>
-                  <td>{{ $cv->pejabat_penandatangan }}</td>
-                  <td>{{ $cv->status }}</td>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($cv->nama_instansi); ?></td>
+                  <td><?php echo e($cv->ruang_lingkup); ?></td>
+                  <td><?php echo e($cv->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($cv->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($cv->pejabat_penandatangan); ?></td>
+                  <td><?php echo e($cv->status); ?></td>
                   <td></td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
 
@@ -202,22 +184,22 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  
                 </tr>
               </thead>
               <tbody>
-                @foreach($internasionals as $internasional)
+                <?php $__currentLoopData = $internasionals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $internasional): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $internasional->nama_instansi }}</td>
-                  <td>{{ $internasional->ruang_lingkup }}</td>
-                  <td>{{ $internasional->jangka_waktu_awal }}</td>
-                  <td>{{ $internasional->jangka_waktu_akhir }}</td>
-                  <td>{{ $internasional->pejabat_penandatangan }}</td>
-                  <td>{{ $internasional->status }}</td>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($internasional->nama_instansi); ?></td>
+                  <td><?php echo e($internasional->ruang_lingkup); ?></td>
+                  <td><?php echo e($internasional->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($internasional->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($internasional->pejabat_penandatangan); ?></td>
+                  <td><?php echo e($internasional->status); ?></td>
                   <td></td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
 
@@ -251,22 +233,22 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  
                 </tr>
               </thead>
               <tbody>
-                @foreach($jasaKeuangans as $jasaKeuangan)
+                <?php $__currentLoopData = $jasaKeuangans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jasaKeuangan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $jasaKeuangan->nama_instansi }}</td>
-                  <td>{{ $jasaKeuangan->ruang_lingkup }}</td>
-                  <td>{{ $jasaKeuangan->jangka_waktu_awal }}</td>
-                  <td>{{ $jasaKeuangan->jangka_waktu_akhir }}</td>
-                  <td>{{ $jasaKeuangan->pejabat_penandatangan }}</td>
-                  <td>{{ $jasaKeuangan->status }}</td>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($jasaKeuangan->nama_instansi); ?></td>
+                  <td><?php echo e($jasaKeuangan->ruang_lingkup); ?></td>
+                  <td><?php echo e($jasaKeuangan->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($jasaKeuangan->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($jasaKeuangan->pejabat_penandatangan); ?></td>
+                  <td><?php echo e($jasaKeuangan->status); ?></td>
                   <td></td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
 
@@ -300,22 +282,22 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  
                 </tr>
               </thead>
               <tbody>
-                @foreach($pemerintahs as $pemerintah)
+                <?php $__currentLoopData = $pemerintahs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pemerintah): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $pemerintah->nama_instansi }}</td>
-                  <td>{{ $pemerintah->ruang_lingkup }}</td>
-                  <td>{{ $pemerintah->jangka_waktu_awal }}</td>
-                  <td>{{ $pemerintah->jangka_waktu_akhir }}</td>
-                  <td>{{ $pemerintah->pejabat_penandatangan }}</td>
-                  <td>{{ $pemerintah->status }}</td>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($pemerintah->nama_instansi); ?></td>
+                  <td><?php echo e($pemerintah->ruang_lingkup); ?></td>
+                  <td><?php echo e($pemerintah->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($pemerintah->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($pemerintah->pejabat_penandatangan); ?></td>
+                  <td><?php echo e($pemerintah->status); ?></td>
                   <td></td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
 
@@ -349,8 +331,8 @@
 
     </div>
 
-    {{-- @else
-    <p class="text-center fs-4">No post found.</p>
-    @endif --}}
+    
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/home/mitra.blade.php ENDPATH**/ ?>

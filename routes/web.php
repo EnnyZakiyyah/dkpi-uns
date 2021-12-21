@@ -83,7 +83,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/data/dosen', [PdlnController::class, 'dosen']);
     Route::get('/data/pimpinan', [PdlnController::class, 'pimpinan']);
 
-// import
+    // import
     Route::get('/data/pdlnimport', [PdlnController::class, 'import']);
     Route::get('/data/mitraimport', [MitraController::class, 'import']);
 
@@ -109,75 +109,75 @@ Route::middleware('auth')->group(function () {
 
 });
 
-    // Route::prefix('/mitra')->group(function(){
-    //     Route::get('/',[MitraController::class, 'index']);
-    //     //
-    //     Route::get('/create',[MitraController::class, 'create']);
-    //     Route::post('/',[PdlnController::class, 'store']);
-    //     Route::get('/{id}',[MitraController::class, 'show']);
-    //     Route::get('/{id}/edit',[MitraController::class, 'edit']);
-    //     Route::post('/{id}',[MitraController::class, 'update']);
-    //     Route::delete('/{id}',[MitraController::class, 'destroy']);
+// Route::prefix('/mitra')->group(function(){
+//     Route::get('/',[MitraController::class, 'index']);
+//     //
+//     Route::get('/create',[MitraController::class, 'create']);
+//     Route::post('/',[PdlnController::class, 'store']);
+//     Route::get('/{id}',[MitraController::class, 'show']);
+//     Route::get('/{id}/edit',[MitraController::class, 'edit']);
+//     Route::post('/{id}',[MitraController::class, 'update']);
+//     Route::delete('/{id}',[MitraController::class, 'destroy']);
 
 
-    // });
+// });
 
-    // Route::prefix('/pdln')->group(function(){
-    //     Route::get('/',[PdlnController::class, 'index']);
-    //     Route::get('/{id}',[PdlnController::class, 'show']);
-    //     Route::get('/create',[PdlnController::class, 'create']);
-    //     Route::post('/',[PdlnController::class, 'store']);
-    //     Route::get('/{id}/edit',[PdlnController::class, 'edit']);
-    //     Route::put('/{id}',[PdlnController::class, 'update']);
-    //     Route::delete('/{id}',[PdlnController::class, 'destroy']);
-    //     Route::get('/data/{jenis}', [PdlnController::class, 'jenis']);
-    // });
-    // Route::prefix('/berita')->group(function(){
-    //     Route::get('/',[BeritaController::class, 'index']);
-    //     Route::get('/create',[BeritaController::class, 'create']);
-    //     Route::post('/',[BeritaController::class, 'store']);
-    //     Route::get('/{id}',[BeritaController::class, 'show']);
-    //     Route::get('/{id}/edit',[BeritaController::class, 'edit']);
-    //     Route::put('/{id}',[BeritaController::class, 'update']);
-    //     Route::delete('/{id}',[BeritaController::class, 'destroy']);
-    // });
+// Route::prefix('/pdln')->group(function(){
+//     Route::get('/',[PdlnController::class, 'index']);
+//     Route::get('/{id}',[PdlnController::class, 'show']);
+//     Route::get('/create',[PdlnController::class, 'create']);
+//     Route::post('/',[PdlnController::class, 'store']);
+//     Route::get('/{id}/edit',[PdlnController::class, 'edit']);
+//     Route::put('/{id}',[PdlnController::class, 'update']);
+//     Route::delete('/{id}',[PdlnController::class, 'destroy']);
+//     Route::get('/data/{jenis}', [PdlnController::class, 'jenis']);
+// });
+// Route::prefix('/berita')->group(function(){
+//     Route::get('/',[BeritaController::class, 'index']);
+//     Route::get('/create',[BeritaController::class, 'create']);
+//     Route::post('/',[BeritaController::class, 'store']);
+//     Route::get('/{id}',[BeritaController::class, 'show']);
+//     Route::get('/{id}/edit',[BeritaController::class, 'edit']);
+//     Route::put('/{id}',[BeritaController::class, 'update']);
+//     Route::delete('/{id}',[BeritaController::class, 'destroy']);
+// });
 
-    // Route::prefix('/pengumuman')->group(function(){
-    //     Route::get('/',[PengumumanController::class, 'index']);
-    //     Route::get('/{id}',[PengumumanController::class, 'show']);
-    //     Route::get('/create',[PengumumanController::class, 'create']);
-    //     Route::post('/',[PengumumanController::class, 'store']);
-    //     Route::get('/{id}/edit',[PengumumanController::class, 'edit']);
-    //     Route::put('/{id}',[PengumumanController::class, 'update']);
-    //     Route::delete('/{id}',[PengumumanController::class, 'destroy']);
-    // });
-    //     Route::prefix('/peringkat')->group(function(){
-    //     Route::get('/',[PeringkatController::class, 'index']);
-    //     Route::get('/{id}',[PeringkatController::class, 'show']);
-    //     Route::get('/create',[PeringkatController::class, 'create']);
-    //     Route::post('/',[PeringkatController::class, 'store']);
-    //     Route::get('/{id}/edit',[PeringkatController::class, 'edit']);
-    //     Route::put('/{id}',[PeringkatController::class, 'update']);
-    //     Route::delete('/{id}',[PeringkatController::class, 'destroy']);
-    // });
-    //     Route::prefix('/faq')->group(function(){
-    //     Route::get('/',[FaqController::class, 'index']);
-    //     Route::get('/{id}',[FaqController::class, 'show']);
-    //     Route::get('/create',[FaqController::class, 'create']);
-    //     Route::post('/',[FaqController::class, 'store']);
-    //     Route::get('/{id}/edit',[FaqController::class, 'edit']);
-    //     Route::put('/{id}',[FaqController::class, 'update']);
-    //     Route::delete('/{id}',[FaqController::class, 'destroy']);
-    // });
-    // Route::prefix('/galeri')->group(function(){
-    //     Route::get('/',[GalleryController::class, 'index']);
-    //     Route::get('/{id}',[GalleryController::class, 'show']);
-    //     Route::get('/create',[GalleryController::class, 'create']);
-    //     Route::post('/',[GalleryController::class, 'store']);
-    //     Route::get('/{id}/edit',[GalleryController::class, 'edit']);
-    //     Route::put('/{id}',[GalleryController::class, 'update']);
-    //     Route::delete('/{id}',[GalleryController::class, 'destroy']);
-    // });
+// Route::prefix('/pengumuman')->group(function(){
+//     Route::get('/',[PengumumanController::class, 'index']);
+//     Route::get('/{id}',[PengumumanController::class, 'show']);
+//     Route::get('/create',[PengumumanController::class, 'create']);
+//     Route::post('/',[PengumumanController::class, 'store']);
+//     Route::get('/{id}/edit',[PengumumanController::class, 'edit']);
+//     Route::put('/{id}',[PengumumanController::class, 'update']);
+//     Route::delete('/{id}',[PengumumanController::class, 'destroy']);
+// });
+//     Route::prefix('/peringkat')->group(function(){
+//     Route::get('/',[PeringkatController::class, 'index']);
+//     Route::get('/{id}',[PeringkatController::class, 'show']);
+//     Route::get('/create',[PeringkatController::class, 'create']);
+//     Route::post('/',[PeringkatController::class, 'store']);
+//     Route::get('/{id}/edit',[PeringkatController::class, 'edit']);
+//     Route::put('/{id}',[PeringkatController::class, 'update']);
+//     Route::delete('/{id}',[PeringkatController::class, 'destroy']);
+// });
+//     Route::prefix('/faq')->group(function(){
+//     Route::get('/',[FaqController::class, 'index']);
+//     Route::get('/{id}',[FaqController::class, 'show']);
+//     Route::get('/create',[FaqController::class, 'create']);
+//     Route::post('/',[FaqController::class, 'store']);
+//     Route::get('/{id}/edit',[FaqController::class, 'edit']);
+//     Route::put('/{id}',[FaqController::class, 'update']);
+//     Route::delete('/{id}',[FaqController::class, 'destroy']);
+// });
+// Route::prefix('/galeri')->group(function(){
+//     Route::get('/',[GalleryController::class, 'index']);
+//     Route::get('/{id}',[GalleryController::class, 'show']);
+//     Route::get('/create',[GalleryController::class, 'create']);
+//     Route::post('/',[GalleryController::class, 'store']);
+//     Route::get('/{id}/edit',[GalleryController::class, 'edit']);
+//     Route::put('/{id}',[GalleryController::class, 'update']);
+//     Route::delete('/{id}',[GalleryController::class, 'destroy']);
+// });
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
@@ -209,3 +209,28 @@ Route::post('/contact-form', [ContactController::class, 'storeForm'])->name('con
 
 // download file
 Route::get('books/{uuid}/download', 'FileController@download')->name('file.download');
+
+
+
+Route::get('/blog', function () {
+    $berita = [
+        [
+            "title" => "Judul Pertama",
+            "slug" => "judul-post-pertama",
+            "author" => "Enny Zakiyyah",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque earum id ducimus amet sequi eius quidem ipsum impedit eos ea, optio incidunt at, necessitatibus accusantium? Animi quam odio ut sequi?"
+        ], [
+            "title" => "Judul Kedua",
+            "author" => "Enny Zakiyyah",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque earum id ducimus amet sequi eius quidem ipsum impedit eos ea, optio incidunt at, necessitatibus accusantium? Animi quam odio ut sequi?"
+        ]
+    ];
+    return view('posts', [
+        "title" => "Posts",
+        "posts" => $berita
+    ]);
+});
+
+Route::get('berita/{slug}', function ($slug) {
+    return view('post');
+});

@@ -11,4 +11,11 @@ class Mitra extends Model
 
     protected $table = 'mitras';
     protected $guarded =  ['id'];
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['nama_instansi'] ?? false, function($query, $nama_instansi){
+            return $query->where('nama_instansi', 'like', '%' . $nama_instansi. '%');
+        });
+    }
 }

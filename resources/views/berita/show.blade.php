@@ -57,7 +57,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Judul Berita: {{ $berita->judul}}</h5>
-                            <img src="{{asset('storage/'. $berita->gambar )}}" class="card-img-top" alt="...">
+                            <img src="{{asset('storage/'. $berita->gambar )}}" class="img-fluid mb-3 col-sm-5 d-block" alt="...">
                             <p class="card-text">{{ $berita->excerpt }}</p>
                             <p class="card-text">{{ $berita->body }}</p>
                             <p class="card-text">{{ $berita->published_at }}</p>
@@ -102,5 +102,6 @@
             </div>
         </div>
     </div>
+    
     <!-- End Main content -->
     @endsection

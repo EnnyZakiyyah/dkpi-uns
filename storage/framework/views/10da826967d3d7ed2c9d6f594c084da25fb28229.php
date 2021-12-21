@@ -1,5 +1,5 @@
-@extends('layouts.main')
-@section('container')
+
+<?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
@@ -11,7 +11,7 @@
 
           <div class="section-title">
             <h2>Alur Legal Drafting</h2>
-            {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+            
           </div>
 
           <h2><span class="badge mb-3 pl-2" style="background-color: rgba(190, 35, 121, 0.75)">SOP</span></h2>
@@ -119,22 +119,12 @@
             <a class="btn btn-secondary" type="button" href="/layanan">Kembali</a>
             <a class="btn btn-primary" type="button" href="/mou-download"><i class="bi bi-download">&nbsp; Ketentuan MoU</i></a>
             <a class="btn btn-primary" type="button" href="/pks-download"><i class="bi bi-download">&nbsp; Ketentuan PKS</i></a>
-            {{-- <a href="/mou-download" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Ketentuan MoU</i></button>
-            <a href="/pks-download" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Ketentuan PKS</i></button> --}}
+            
           </div></center>
 
 
 
-          {{-- <ol class="list-group list-group-numbered">
-            <h3><li><span class="badge bg-secondary">1</span></li></h3>fdfdf
-            <div class="ms-2 me-auto">
-              <div class="fw-bold">Subheading</div>
-              Cras justo odio
-            </div>
-          </ol>
-          <ol class="list-group list-group-numbered">
-            <h3><li><span class="badge bg-secondary">2</span></li></h3>
-          </ol> --}}
+          
 
         </div>
       </section><!-- End Services Section -->
@@ -142,4 +132,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/home/layanan/legaldrafting.blade.php ENDPATH**/ ?>

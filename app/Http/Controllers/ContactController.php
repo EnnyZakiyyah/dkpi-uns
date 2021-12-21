@@ -38,7 +38,7 @@ class ContactController extends Controller
         ContactUs::create($request->all());
         Mail::send('contact.contact-template', $data, function ($message) use ($request) {
             $message->from($request->email);
-            $message->to('enny.9h08@gmail.com', 'Hello Admin')->subject($request->get('subject'));
+            $message->to('dkpiuns@gmail.com', 'Hello Admin')->subject($request->get('subject'));
         });
 
         return back()->with('success', 'Thanks for contacting us.');
