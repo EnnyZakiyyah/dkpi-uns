@@ -3,6 +3,13 @@
 @section('title', 'Dashboard')
 
 @section('container')
+<style type="text/css">
+    .pagination li{
+        float: left;
+        list-style-type: none;
+        margin:5px;
+    }
+</style>
   <!-- Header -->
   <!-- Header -->
   <div class="header bg-primary pb-6">
@@ -78,7 +85,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> {{ $pdlns->links() }}
   </div>
 
   <!-- End Main content -->

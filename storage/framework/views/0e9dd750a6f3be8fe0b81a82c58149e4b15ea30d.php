@@ -1,6 +1,13 @@
 <?php $__env->startSection('title', 'Dashboard'); ?>
 
 <?php $__env->startSection('container'); ?>
+<style type="text/css">
+    .pagination li{
+        float: left;
+        list-style-type: none;
+        margin:5px;
+    }
+</style>
   <!-- Header -->
   <!-- Header -->
   <div class="header bg-primary pb-6">
@@ -70,15 +77,14 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
-            <?php echo e($pdlns->links()); ?>
-
-        </div>
+          </div>
           <!-- Card footer -->
           <div class="card-footer py-4">
           </div>
         </div>
       </div>
-    </div>
+    </div> <?php echo e($pdlns->links()); ?>
+
   </div>
 
   <!-- End Main content -->

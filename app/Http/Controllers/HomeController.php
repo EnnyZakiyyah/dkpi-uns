@@ -14,6 +14,8 @@ use App\Models\Peringkat;
 use App\Models\Pengumuman;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
@@ -35,9 +37,9 @@ class HomeController extends Controller
     public function pdln()
     {
 
-        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->get();
-        $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
-        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
+        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->paginate(15);
+        $dosen = Pdln::where('jenis', 'dosen')->latest()->paginate(15);
+        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->paginate(15);
 
         return view('home.pdln', [
             'title' => 'data PDLN',
@@ -50,11 +52,11 @@ class HomeController extends Controller
     public function mitra()
     {
         // $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
-        $cv = Mitra::where('instansi', 'cv')->latest()->get();
-        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
-        $internasional = Mitra::where('instansi', 'internasional')->latest()->get();
-        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->get();
-        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->get();
+        $cv = Mitra::where('instansi', 'cv')->latest()->paginate(20);
+        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->paginate(20);
+        $internasional = Mitra::where('instansi', 'internasional')->latest()->paginate(20);
+        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->paginate(20);
+        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->paginate(20);
 
         return view('home.mitra', [
             'title' => 'data Mitra',

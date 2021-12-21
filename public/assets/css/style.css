@@ -151,7 +151,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
     padding: 0;
@@ -279,7 +279,7 @@ h6 {
 }
 
 /**
-  * Mobile Navigation 
+  * Mobile Navigation
   */
 .mobile-nav-toggle {
     color: #fff;
@@ -1959,7 +1959,7 @@ button[data-filter="flies"]:focus~div:not([class*="flies"]) {
     /* width: 250px;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     padding: 2px;
-   
+
     box-shadow: 0 0 5px 5px #2d4369;
     -moz-box-shadow: 0 0 5px 5px #2d4369;
     -webkit-box-shadow: 0 0 5px 5px #2d4369;
@@ -1971,7 +1971,7 @@ button[data-filter="flies"]:focus~div:not([class*="flies"]) {
     opacity: 1.2;
     width: 250px;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   
+
     padding: 2px;
     box-shadow: 3px 3px 3px 3px #2d4369, 0 6px 20px 0 #2d4369;
     -moz-box-shadow: 0 0 5px 5px #2d4369;
