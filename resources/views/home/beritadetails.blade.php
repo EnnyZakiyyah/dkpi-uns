@@ -59,7 +59,7 @@
                             {{-- <strong>Category</strong>&nbsp;Penandatanganan<br/>
                             <strong>Client</strong>&nbsp;: BSI<br/> --}}
                             <strong>dirilis</strong>&nbsp;: {{ $berita->published_at }}<br/>
-                            <strong>video</strong>&nbsp;: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a><br/>
+                            {{-- <strong>video</strong>&nbsp;: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a><br/> --}}
                             <p>
                                 {!! $berita->body !!}
                             </p>

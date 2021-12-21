@@ -61,10 +61,11 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jenis">kategori</label>
-                            <input type="radio" class="form-control @error('jenis') is-invalid @enderror" id="jenis" placeholder="jenis jenis" name="jenis" value="{{ old('jenis') }}">
-                            <label for="jenis">HTML</label><br>
-                            <label for="jenis">HTML</label><br>
+                            <label for="jenis" class="form-select" >jenis</label>
+                            <select class="form-select  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis">
+                            <option value="mahasiswa">mahasiswa</option>
+                            <option value="dosen">dosen</option>
+                            <option value="pimppinan">internasional</option>
 
 
                             @error('jenis')
@@ -75,7 +76,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="jumlah_orang">Jumlah orang</label>
-                            <input type="text" class="form-control @error('jumlah_orang') is-invalid @enderror" id="jumlah_orang" placeholder="nomor surat" name="jumlah_orang" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('jumlah_orang') is-invalid @enderror" id="jumlah_orang" placeholder="jumlah orang" name="jumlah_orang" value="{{ old('kapaitas_ruang') }}">
                             @error('jumlah_orang')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -84,7 +85,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="unit_kerja">Unit Kerja</label>
-                            <input type="text" class="form-control @error('unit_kerja') is-invalid @enderror" id="unit_kerja" placeholder="nomor surat" name="unit_kerja" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('unit_kerja') is-invalid @enderror" id="unit_kerja" placeholder="unit kerja/fakultas" name="unit_kerja" value="{{ old('kapaitas_ruang') }}">
                             @error('unit_kerja')
                             <div class="invalid-feedback">
                                 {{ $message }}

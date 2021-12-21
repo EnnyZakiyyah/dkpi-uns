@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Imports\PdlnImport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\Calculation\LookupRef\ExcelMatch;
 
@@ -21,7 +22,7 @@ class PdlnController extends Controller
     {
         // $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
         // $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
-        $pdln = Pdln::latest()->get();
+        $pdln = Pdln::latest()->paginate(20);
 
 
         return view('pdln.index',[
@@ -56,7 +57,7 @@ class PdlnController extends Controller
         $file_ktln = $request->file('file_ktln')->store('file_ktln');
 
         $validatedData = $request->validate([
-            'jenis' => '',
+            'jenis' => 'required',
             'nama' => 'required',
             'jumlah_orang'=> 'required',
             'unit_kerja'=> 'required' ,
@@ -64,19 +65,19 @@ class PdlnController extends Controller
             'jangka_waktu_akhir'=> 'required',
             'tujuan'=> 'required',
             'negara'=> 'required',
-            'surat_uns'=> 'required',
-            'catatan_uns'=> 'required',
-            'belmawa'=> 'required',
-            'catatan_belmawa'=> 'required',
-            'ktln_kemensetneg'=> 'required',
-            'catatan_setneg'=> 'required'
+            'surat_uns'=> '',
+            'catatan_uns'=> '',
+            'belmawa'=> '',
+            'catatan_belmawa'=> '',
+            'ktln_kemensetneg'=> '',
+            'catatan_setneg'=> ''
         ]);
 
         $validatedData['file_surat_uns'] = $file_surat_uns;
         $validatedData['file_belmawa'] = $file_belmawa;
         $validatedData['file_ktln'] = $file_ktln;
-        $validatedData['status_hidden'] = 'ada';
-        $validatedData['status'] = 'ada';
+        $validatedData['status_hidden'] = 'berlaku';
+        $validatedData['status'] = 'berlaku';
 
         Pdln::create($validatedData);
 
@@ -154,8 +155,9 @@ class PdlnController extends Controller
      * @param  \App\Models\Pdln  $pdln
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pdln $pdln)
+    public function destroy($pdln)
     {
+        // return $pdln;
         Pdln::destroy($pdln);
         return redirect('/pdln')->with('status', 'data berhasil dihapus');
     }

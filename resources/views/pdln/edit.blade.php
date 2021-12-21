@@ -62,10 +62,11 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jenis">kategori</label>
-                            <input type="radio" class="form-control @error('jenis') is-invalid @enderror" id="jenis" placeholder="jenis jenis" name="jenis" value="{{ old('jenis', $pdln->jenis) }}">
-                            <label for="jenis">HTML</label><br>
-                            <label for="jenis">HTML</label><br>
+                            <label for="jenis" class="form-select" >jenis</label>
+                            <select class="form-select  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis" value="{{ old('jenis', $pdln->jenis) }}">
+                            <option value="mahasiswa">mahasiswa</option>
+                            <option value="dosen">dosen</option>
+                            <option value="pimppinan">internasional</option>
 
 
                             @error('jenis')

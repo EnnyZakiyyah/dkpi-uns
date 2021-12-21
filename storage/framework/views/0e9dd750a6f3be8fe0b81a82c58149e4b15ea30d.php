@@ -1,8 +1,6 @@
-@extends('dashboard/layouts/main')
+<?php $__env->startSection('title', 'Dashboard'); ?>
 
-@section('title', 'Dashboard')
-
-@section('container')
+<?php $__env->startSection('container'); ?>
   <!-- Header -->
   <!-- Header -->
   <div class="header bg-primary pb-6">
@@ -38,16 +36,16 @@
           </div>
           <!-- Light table -->
           <div class="table-responsive">
-            <a href="{{'/pdln/create'}}" class="btn btn-primary">Tambah Data</a>
+            <a href="<?php echo e('/pdln/create'); ?>" class="btn btn-primary">Tambah Data</a>
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">Nama</th>
                   <th scope="col" class="sort" data-sort="nama">kategori</th>
-                  {{-- <th scope="col" class="sort" data-sort="nim">jumlah</th> --}}
+                  
                   <th scope="col" class="sort" data-sort="nama">unit</th>
-                  {{-- <th scope="col" class="sort" data-sort="nama">tujuan</th> --}}
+                  
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
@@ -55,24 +53,26 @@
                 </tr>
               </thead>
               <tbody class="list">
-                @foreach($pdlns as $pdln)
+                <?php $__currentLoopData = $pdlns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pdln): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
-                  <td><a href="/pdln/{{ $pdln->id }}">{{ $pdln->nama }}</a></td>
-                  <td><a href="/pdln/data/{{ $pdln->jenis }}">{{ $pdln->jenis }}</a></td>
-                  {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}
-                  <td>{{ $pdln->unit_kerja }}</td>
-                  <td>{{ $pdln->negara }}</td>
-                  <td>{{ $pdln->jangka_waktu_awal }}</td>
-                  <td>{{ $pdln->jangka_waktu_akhir }}</td>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><a href="/pdln/<?php echo e($pdln->id); ?>"><?php echo e($pdln->nama); ?></a></td>
+                  <td><a href="/pdln/data/<?php echo e($pdln->jenis); ?>"><?php echo e($pdln->jenis); ?></a></td>
+                  
+                  <td><?php echo e($pdln->unit_kerja); ?></td>
+                  <td><?php echo e($pdln->negara); ?></td>
+                  <td><?php echo e($pdln->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($pdln->jangka_waktu_akhir); ?></td>
                   <td>
-                    <a href="/pdln/{{ $pdln->id }}" class="badge badge-info">Detail</a>
+                    <a href="/pdln/<?php echo e($pdln->id); ?>" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
-          </div>
+            <?php echo e($pdlns->links()); ?>
+
+        </div>
           <!-- Card footer -->
           <div class="card-footer py-4">
           </div>
@@ -82,4 +82,6 @@
   </div>
 
   <!-- End Main content -->
-  @endsection
+  <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('dashboard/layouts/main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/pdln/index.blade.php ENDPATH**/ ?>
