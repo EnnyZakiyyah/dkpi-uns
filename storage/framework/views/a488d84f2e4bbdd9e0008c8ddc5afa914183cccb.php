@@ -59,7 +59,7 @@
                             <form action="<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                             </form>
                             <a href="/mitra" class="card-link ml-5">Kembali</a>
                         </div>

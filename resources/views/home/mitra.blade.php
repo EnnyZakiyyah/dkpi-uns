@@ -9,7 +9,7 @@
       <section id="mitra" class="portfolio"  style="background-color: #f3f5fa">
       <div class="container" data-aos="fade-up">
 
-    
+
 
         <div class="section-title">
           <h2>Mitra Kerja Sama</h2>
@@ -18,8 +18,8 @@
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter=".filter-cv">CV/PT</li>
-          <li data-filter=".filter-yayasan">Sekolah/Yayasan</li>
+            <li data-filter=".filter-yayasan">Sekolah/Yayasan</li>
+            <li data-filter=".filter-cv">CV/PT</li>
           <li data-filter=".filter-internasional">Internasional</li>
           <li data-filter=".filter-jasaKeuangan"><center>Jasa Keuangan</center></li>
           <li data-filter=".filter-pemerintah">Pemerintah</li>
@@ -93,8 +93,9 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         <!-- CV/PT -->
-        <div class="portfolio-item filter-cv">
+        <div class="portfolio-item filter-yayasan">
             <table class="table table-hover">
+                <h5>YAYASAN/SEKOLAH</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -104,7 +105,7 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  <th scope="col">Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -117,7 +118,17 @@
                   <td>{{ $yayasan->jangka_waktu_akhir }}</td>
                   <td>{{ $yayasan->pejabat_penandatangan }}</td>
                   <td>{{ $yayasan->status }}</td>
-                  <td></td>
+                  <td>
+                    <a href="/home/mitra/{{ $yayasan->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    @if (Auth::check())
+                    <a href="/mitra/{{ $yayasan->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="{{ $yayasan->id }}" method="POST" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                    </form>
+                    @endif
+                </td>
                 </tr>
                 @endforeach
               </tbody>
@@ -132,8 +143,11 @@
               </ul>
             </nav>
         </div>
-        <div class="portfolio-item filter-yayasan">
+
+
+        <div class="portfolio-item filter-cv">
             <table class="table table-hover">
+                <h5>CV/PT</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -143,7 +157,7 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  <th scope="col">Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -156,7 +170,17 @@
                   <td>{{ $cv->jangka_waktu_akhir }}</td>
                   <td>{{ $cv->pejabat_penandatangan }}</td>
                   <td>{{ $cv->status }}</td>
-                  <td></td>
+                  <td>
+                    <a href="/home/mitra/{{ $cv->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    @if (Auth::check())
+                    <a href="/mitra/{{ $cv->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="{{ $cv->id }}" method="POST" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                    </form>
+                    @endif
+                </td>
                 </tr>
                 @endforeach
               </tbody>
@@ -173,6 +197,7 @@
         </div>
         <div class="portfolio-item filter-internasional">
             <table class="table table-hover">
+                <h5>INTERNASIONAL</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -182,7 +207,7 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  <th scope="col">Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -195,7 +220,17 @@
                   <td>{{ $internasional->jangka_waktu_akhir }}</td>
                   <td>{{ $internasional->pejabat_penandatangan }}</td>
                   <td>{{ $internasional->status }}</td>
-                  <td></td>
+                  <td>
+                    <a href="/home/mitra/{{ $internasional->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    @if (Auth::check())
+                    <a href="/mitra/{{ $internasional->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="{{ $internasional->id }}" method="POST" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                    </form>
+                    @endif
+                </td>
                 </tr>
                 @endforeach
               </tbody>
@@ -212,6 +247,7 @@
         </div>
         <div class="portfolio-item filter-jasaKeuangan">
             <table class="table table-hover">
+                <h5>JASA KEUANGAN</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -221,7 +257,7 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  <th scope="col">Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -234,7 +270,17 @@
                   <td>{{ $jasaKeuangan->jangka_waktu_akhir }}</td>
                   <td>{{ $jasaKeuangan->pejabat_penandatangan }}</td>
                   <td>{{ $jasaKeuangan->status }}</td>
-                  <td></td>
+                  <td>
+                    <a href="/home/mitra/{{ $jasaKeuangan->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    @if (Auth::check())
+                    <a href="/mitra/{{ $jasaKeuangan->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="{{ $jasaKeuangan->id }}" method="POST" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                    </form>
+                    @endif
+                </td>
                 </tr>
                 @endforeach
               </tbody>
@@ -251,6 +297,7 @@
         </div>
         <div class="portfolio-item filter-pemerintah">
             <table class="table table-hover">
+                <h5>PEMERINTAH</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -260,7 +307,7 @@
                   <th scope="col">Akhir</th>
                   <th scope="col">Pejabat Penandatangan</th>
                   <th scope="col">Status</th>
-                  {{-- <th scope="col">Aksi</th> --}}
+                  <th scope="col">Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -273,7 +320,17 @@
                   <td>{{ $pemerintah->jangka_waktu_akhir }}</td>
                   <td>{{ $pemerintah->pejabat_penandatangan }}</td>
                   <td>{{ $pemerintah->status }}</td>
-                  <td></td>
+                  <td>
+                    <a href="/home/mitra/{{ $pemerintah->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    @if (Auth::check())
+                    <a href="/mitra/{{ $pemerintah->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="{{ $pemerintah->id }}" method="POST" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                    </form>
+                    @endif
+                </td>
                 </tr>
                 @endforeach
               </tbody>

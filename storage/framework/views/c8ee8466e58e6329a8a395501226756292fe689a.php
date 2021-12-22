@@ -1,7 +1,7 @@
 
 
 
-<?php $__env->startSection('title', 'Tambah Data Mitra'); ?>
+<?php $__env->startSection('title', 'Edit Data Mitra'); ?>
 
 <?php $__env->startSection('container'); ?>
 
@@ -27,7 +27,7 @@
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/mitra"> Mitra</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
+                                <li class="breadcrumb-item active" aria-current="page"> Edit</li>
                             </ol>
                         </nav>
                     </div>
@@ -43,7 +43,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah Data Mitra Kerjasama</h3>
+                        <h3 class="mb-0">Edit Data Mitra Kerjasama</h3>
                     </div>
 
                     <!-- body card -->
