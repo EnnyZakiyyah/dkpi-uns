@@ -43,6 +43,8 @@ Route::get('/home/peringkat', [HomeController::class, 'peringkat']);
 Route::get('/home/pengumuman', [HomeController::class, 'pengumuman']);
 Route::get('/home/galeri/{id}', [HomeController::class, 'galeridetails']);
 Route::get('/home/berita/beritadetails/{id}', [HomeController::class, 'beritadetails']);
+Route::get('/home/mitra/{id}', [HomeController::class, 'mitradetails']);
+Route::get('/home/pdln/{id}', [HomeController::class, 'pdlndetails']);
 Route::get('/layanan/legaldrafting', [HomeController::class, 'legaldrafting']);
 
 

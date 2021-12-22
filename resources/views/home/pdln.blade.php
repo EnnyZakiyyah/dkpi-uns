@@ -38,38 +38,38 @@
     <div class="card card-body">
       <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
-          <label for="validationCustom01" class="form-label">Nama Instansi</label>
-          <input type="text" class="form-control" id="validationCustom01" name="nama_instansi"required>
+          <label for="validationCustom01" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="validationCustom01" name="nama"required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom02" class="form-label">Waktu Mulai</label>
-          <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai"required>
+          <input type="date" class="form-control" id="validationCustom02" name="jangka_waktu_awal"required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom03" class="form-label">Tujuan</label>
-          <input type="text" class="form-control" id="validationCustom03" name="nomor_uns"required>
+          <input type="text" class="form-control" id="validationCustom03" name="tujuan"required>
           <div class="invalid-feedback">
-            Please provide a valid city.
+            Looks good!
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom03" class="form-label">Waktu Berakhir</label>
-          <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir"required>
+          <input type="date" class="form-control" id="validationCustom03" name="jangka_waktu_akhir"required>
           <div class="invalid-feedback">
-            Please provide a valid city.
+            Looks good!
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom03" class="form-label">Negara</label>
-          <input type="text" class="form-control" id="validationCustom03" name="nomor_mitra" required>
+          <input type="text" class="form-control" id="validationCustom03" name="negara" required>
           <div class="invalid-feedback">
-            Please provide a valid city.
+            Looks good!
           </div>
         </div>
         <div class="col-md-3">
@@ -90,7 +90,7 @@
         </div>
         <div class="col-md-3">
           <label for="validationCustom04" class="form-label">Tahun</label>
-          <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
+          <input type="text" class="form-control" id="validationCustom03" name="tahun" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
@@ -110,13 +110,14 @@
             <div class="portfolio-item filter-mahasiswa">
 
             <table class="table table-hover">
-
+<h5>MAHASISWA</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
                   <th scope="col">Nama</th>
                   <th scope="col">unit kerja</th>
                   <th scope="col">negara</th>
+                  <th scope="col">tujuan</th>
                   <th scope="col">awal</th>
                   <th scope="col">akhir</th>
                   <th scope="col">Status</th>
@@ -130,6 +131,7 @@
                   <td>{{ $mahasiswa->nama }}</td>
                   <td>{{ $mahasiswa->unit_kerja }}</td>
                   <td>{{ $mahasiswa->negara }}</td>
+                  <td>{{ $mahasiswa->tujuan }}</td>
                   <td>{{ $mahasiswa->jangka_waktu_awal }}</td>
                   <td>{{ $mahasiswa->jangka_waktu_akhir }}</td>
                   <td>{{ $mahasiswa->status }}</td>
@@ -141,28 +143,24 @@
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
-<<<<<<< Updated upstream
-            {{$mahasiswas->links()}}
-            </nav>
-=======
                 <ul class="pagination justify-content-center">
                   <li class="page-item">
                     {{ $mahasiswas->links() }}
                   </li>
                 </ul>
               </nav>
->>>>>>> Stashed changes
             </div>
             <div class="portfolio-item filter-dosen">
 
                 <table class="table table-hover">
-
+<h5>DOSEN</h5>
                   <thead>
                     <tr class="text-primary">
                       <th scope="col">No.</th>
                       <th scope="col">Nama</th>
                       <th scope="col">unit kerja</th>
                       <th scope="col">negara</th>
+                      <th scope="col">tujuan</th>
                       <th scope="col">awal</th>
                       <th scope="col">akhir</th>
                       <th scope="col">Status</th>
@@ -176,6 +174,7 @@
                       <td>{{ $dosen->nama }}</td>
                       <td>{{ $dosen->unit_kerja }}</td>
                       <td>{{ $dosen->negara }}</td>
+                      <td>{{ $dosen->tujuan }}</td>
                       <td>{{ $dosen->jangka_waktu_awal }}</td>
                       <td>{{ $dosen->jangka_waktu_akhir }}</td>
                       <td>{{ $dosen->status }}</td>
@@ -197,13 +196,14 @@
                 <div class="portfolio-item filter-pimpinan">
 
                     <table class="table table-hover">
-
+<H5>PIMPINAN</H5>
                       <thead>
                         <tr class="text-primary">
                           <th scope="col">No.</th>
                           <th scope="col">Nama</th>
                           <th scope="col">unit kerja</th>
                           <th scope="col">negara</th>
+                          <th scope="col">tujuan</th>
                           <th scope="col">awal</th>
                           <th scope="col">akhir</th>
                           <th scope="col">Status</th>
@@ -217,6 +217,7 @@
                           <td>{{ $pimpinan->nama }}</td>
                           <td>{{ $pimpinan->unit_kerja }}</td>
                           <td>{{ $pimpinan->negara }}</td>
+                          <td>{{ $pimpinan->tujuan }}</td>
                           <td>{{ $pimpinan->jangka_waktu_awal }}</td>
                           <td>{{ $pimpinan->jangka_waktu_akhir }}</td>
                           <td>{{ $pimpinan->status }}</td>

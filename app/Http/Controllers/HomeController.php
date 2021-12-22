@@ -48,6 +48,15 @@ class HomeController extends Controller
             'pimpinans' => $pimpinan
         ]);
     }
+    public function pdlndetails($id)
+    {
+        $pdln = Pdln::find($id);
+
+        return view('home.pdlndetails',[
+            'title' => 'detail pdln',
+            'pdlns' => $pdln
+        ]);
+    }
 
     public function mitra()
     {
@@ -65,6 +74,15 @@ class HomeController extends Controller
             'internasionals' => $internasional,
             'jasaKeuangans' => $jasaKeuangan,
             'pemerintahs' => $pemerintah
+        ]);
+    }
+    public function mitradetails($id)
+    {
+        $mitra = Mitra::find($id);
+
+        return view('home.mitradetails',[
+            'title' => 'detail mitra',
+            'mitras' => $mitra
         ]);
     }
 
