@@ -47,6 +47,11 @@ Route::get('/home/mitra/{id}', [HomeController::class, 'mitradetails']);
 Route::get('/home/pdln/{id}', [HomeController::class, 'pdlndetails']);
 Route::get('/layanan/legaldrafting', [HomeController::class, 'legaldrafting']);
 
+Route::get('/home/mitra-yayasan', [HomeController::class, 'yayasan']);
+Route::get('/home/mitra-cv', [HomeController::class, 'cv']);
+Route::get('/home/mitra-internasional', [HomeController::class, 'internasional']);
+Route::get('/home/mitra-jasaKeuangan', [HomeController::class, 'jasaKeuangan']);
+Route::get('/home/mitra-pemerintah', [HomeController::class, 'pemerintah']);
 
 Route::get('/mou-download', [DownloadFileController::class, 'mou']);
 Route::get('/pks-download', [DownloadFileController::class, 'pks']);

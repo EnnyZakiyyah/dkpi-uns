@@ -88,8 +88,9 @@ class HomeController extends Controller
 
         return view('home.mitradetails',[
             'title' => 'detail mitra',
-            'mitras' => $mitra
+            'mitra' => $mitra
         ]);
+        // return $mitra;
     }
 
     public function layanan()
@@ -172,5 +173,51 @@ class HomeController extends Controller
             'title' => 'Pengumuman',
             'pengumumans' => $pengumuman
         ]);
+    }
+
+    public function yayasan(){
+        $yayasan = Mitra::where('instansi', 'yayasan')->paginate(5)->withQueryString();
+
+        return view('home.mitra.yayasan',[
+            'title' => 'yayasan',
+            'yayasans' => $yayasan
+        ]);
+        // return $yayasan;
+    }
+    public function internasional(){
+        $internasional = Mitra::where('instansi', 'internasional')->paginate(5)->withQueryString();
+
+        return view('home.mitra.internasional',[
+            'title' => 'internasional',
+            'internasionals' => $internasional
+        ]);
+        // return $yayasan;
+    }
+    public function cv(){
+        $cv = Mitra::where('instansi', 'cv')->paginate(5)->withQueryString();
+
+        return view('home.mitra.cv',[
+            'title' => 'cv',
+            'cvs' => $cv
+        ]);
+        // return $yayasan;
+    }
+    public function jasaKeuangan(){
+        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->paginate(5)->withQueryString();
+
+        return view('home.mitra.jasaKeuangan',[
+            'title' => 'jasaKeuangan',
+            'jasaKeuangans' => $jasaKeuangan
+        ]);
+        // return $yayasan;
+    }
+        public function pemerintah(){
+        $pemerintah = Mitra::where('instansi', 'pemerintah')->paginate(5)->withQueryString();
+
+        return view('home.mitra.pemerintah',[
+            'title' => 'pemerintah',
+            'pemerintahs' => $pemerintah
+        ]);
+        // return $yayasan;
     }
 }

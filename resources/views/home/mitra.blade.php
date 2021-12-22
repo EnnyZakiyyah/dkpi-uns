@@ -19,6 +19,7 @@
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <li data-filter=".filter-yayasan">Sekolah/Yayasan</li>
+            <a href="/home/mitra-yayasan">yayasan</a>
             <li data-filter=".filter-cv">CV/PT</li>
           <li data-filter=".filter-internasional">Internasional</li>
           <li data-filter=".filter-jasaKeuangan"><center>Jasa Keuangan</center></li>
@@ -122,7 +123,7 @@
                     <a href="/home/mitra/{{ $yayasan->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())
                     <a href="/mitra/{{ $yayasan->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="{{ $yayasan->id }}" method="POST" class="d-inline">
+                    <form action="/mitra/{{ $yayasan->id }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
@@ -174,7 +175,7 @@
                     <a href="/home/mitra/{{ $cv->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())
                     <a href="/mitra/{{ $cv->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="{{ $cv->id }}" method="POST" class="d-inline">
+                    <form action="/mitra/{{ $cv->id }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
@@ -224,7 +225,7 @@
                     <a href="/home/mitra/{{ $internasional->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())
                     <a href="/mitra/{{ $internasional->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="{{ $internasional->id }}" method="POST" class="d-inline">
+                    <form action="/mitra/{{ $internasional->id }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
@@ -274,7 +275,7 @@
                     <a href="/home/mitra/{{ $jasaKeuangan->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())
                     <a href="/mitra/{{ $jasaKeuangan->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="{{ $jasaKeuangan->id }}" method="POST" class="d-inline">
+                    <form action="/mitra/{{ $jasaKeuangan->id }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
@@ -324,7 +325,7 @@
                     <a href="/home/mitra/{{ $pemerintah->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())
                     <a href="/mitra/{{ $pemerintah->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="{{ $pemerintah->id }}" method="POST" class="d-inline">
+                    <form action="/mitra/{{ $pemerintah->id }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
