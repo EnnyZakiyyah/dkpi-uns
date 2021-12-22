@@ -50,7 +50,7 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/mitra" enctype="multipart/form-data">
+                    <form method="POST" action="/mitra">
                         @csrf
                         <div class="form-group ml-5 mr-5">
                             <label for="nama_instansi">Nama Instansi</label>
@@ -63,12 +63,12 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="instansi" class="form-select" >Jenis Instansi</label>
-                            {{-- <select class="form-select  @error('instansi') is-invalid @enderror" id="instansi" placeholder="jenis instansi" name="instansi" value="{{ old('instansi') }}">
-                            <option value="yayasan">yayasan</option>
-                            <option value="cv">cv</option>
+                            <select class="form-select  @error('instansi') is-invalid @enderror" id="instansi" placeholder="jenis instansi" name="instansi">
+                            <option value="yayasan">yayasan/sekolah</option>
+                            <option value="cv">CV/PT</option>
                             <option value="internasional">internasional</option>
                             <option value="pemerintah">pemerintah</option>
-                            <option value="jasa_keuangan">jasa_keuangan</option>
+                            <option value="jasa_keuangan">jasa keuangan</option>
 
 
                             @error('instansi')
@@ -76,8 +76,8 @@
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div> --}}
-                        <div class="form-check">
+                        </div>
+                        {{-- <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                             <label class="form-check-label" for="flexRadioDefault1">
                               Default radio
@@ -88,19 +88,30 @@
                             <label class="form-check-label" for="flexRadioDefault2">
                               Default checked radio
                             </label>
-                          </div>
+                          </div> --}}
+
                         <div class="form-group ml-5 mr-5">
                             <label for="no_mou_uns">Nomor MoU UNS</label>
-                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="{{ old('no_mou_uns') }}">
+                            <input type="text" class="form-control @error('no_mou_uns') is-invalid @enderror" id="no_mou_uns" placeholder="nomor surat UNS" name="no_mou_uns" value="{{ old('no_mou_uns') }}">
                             @error('no_mou_uns')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div>                        <div class="form-group ml-5 mr-5">
+                        </div>
+                        <div class="form-group ml-5 mr-5">
                             <label for="no_mou_mitra">Nomor MoU Mitra</label>
                             <input type="text" class="form-control @error('no_mou_mitra') is-invalid @enderror" id="no_mou_mitra" placeholder="nomor surat" name="no_mou_mitra" value="{{ old('no_mou_mitra') }}">
                             @error('no_mou_mitra')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="ruang_lingkup">Ruang Lingkup</label>
+                            <input type="text" class="form-control @error('ruang_lingkup') is-invalid @enderror" id="ruang_lingkup" placeholder="Ruang Lingkup" name="ruang_lingkup" value="{{ old('ruang_lingkup') }}">
+                            @error('ruang_lingkup')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

@@ -52,22 +52,22 @@
                     <!-- body card -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $pdln->nama}}</h5>
-                            <h6 class="card-subtitle mb-3 text-muted">{{ $pdln->jenis}}</h6>
-                            <p class="card-text">{{ $pdln->jumlah_orang }}</p>
-                            <p class="card-text">{{ $pdln->unit_kerja }}</p>
-                            <p class="card-text">{{ $pdln->tujuan }}</p>
-                            <p class="card-text">{{ $pdln->negara }}</p>
-                            <p class="card-text">{{ $pdln->jangka_waktu_awal }}</p>
-                            <p class="card-text">{{ $pdln->jangka_waktu_akhir }}</p>
-                            <p class="card-text">{{ $pdln->surat_uns }}</p>
-                            <p class="card-text">{{ $pdln->catatan_uns }}</p>
-                            <p class="card-text">{{ $pdln->belmawa }}</p>
-                            <p class="card-text">{{ $pdln->catatan_belmawa }}</p>
-                            <p class="card-text">{{ $pdln->ktln_kemensetneg }}</p>
-                            <p class="card-text">{{ $pdln->catatan_setneg }}</p>
+                            <h5 class="card-title">Nama:{{ $pdln->nama}}</h5>
+                            <h6 class="card-subtitle mb-3 text-muted">Kategori: {{ $pdln->jenis}}</h6>
+                            <p class="card-text">Jumlah Orang: {{ $pdln->jumlah_orang }}</p>
+                            <p class="card-text">Unit Kerja: {{ $pdln->unit_kerja }}</p>
+                            <p class="card-text">Tujuan: {{ $pdln->tujuan }}</p>
+                            <p class="card-text">Negara: {{ $pdln->negara }}</p>
+                            <p class="card-text">Awal: {{ $pdln->jangka_waktu_awal }}</p>
+                            <p class="card-text">Akhir:{{ $pdln->jangka_waktu_akhir }}</p>
+                            <p class="card-text">Nomor surat UNS:{{ $pdln->surat_uns }}</p>
+                            <p class="card-text">Catatan UNS{{ $pdln->catatan_uns }}</p>
+                            <p class="card-text">Nomor Surat Belmawa: {{ $pdln->belmawa }}</p>
+                            <p class="card-text">Catatan Belmawa: {{ $pdln->catatan_belmawa }}</p>
+                            <p class="card-text">nomor ktln: {{ $pdln->ktln_kemensetneg }}</p>
+                            <p class="card-text">catatan Ktln: {{ $pdln->catatan_setneg }}</p>
                             {{-- <p class="card-text">{{ $file_uns }}</p>
-                            <p class="card-text">{{ $file_ktln }}</p>
+                            <p class="card-text" >{{ $file_ktln }}</p>
                             <p class="card-text">{{ $file_belmawa }}</p> --}}
                             <a href="{{ $pdln->id }}/edit" class="btn btn-primary">Edit</a>
                             <form action="{{ $pdln->id }}" method="POST" class="d-inline">

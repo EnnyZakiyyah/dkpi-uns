@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
@@ -60,61 +61,41 @@
                 
               </div>
               <div class="row">
-                
+                <div class="carousel-inner">
+                   
+                  <div class="carousel-item active">
+                    
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                      <?php $__currentLoopData = $beritas->skip(0); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                      <div class="col">
+                        <div class="card h-100">
+                          <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title"><?php echo e($berita->judul); ?></h5>
+                            <p class="card-text"><?php echo e($berita->excerpt); ?>
 
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  </div>
-
-                  <div class="carousel-inner">
-
-                    <div class="carousel-item active">
-
-                      <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <?php $__currentLoopData = $beritas->skip(0); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="col">
-                          <div class="card h-100">
-                            <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title"><?php echo e($berita->judul); ?></h5>
-                              <p class="card-text"><?php echo e($berita->excerpt); ?>
-
-                               <left> <a href="/home/berita/beritadetails/<?php echo e($berita->id); ?>" class="btn-learn-more">Baca Selengkapnya...</a></left>
-                              </p>
-                            </div>
-                            <div class="card-footer">
-                              <small class="text-muted"><?php echo e($berita->created_at->diffForHumans()); ?></small>
-                            </div>
+                             <left> <a href="/home/berita/beritadetails/<?php echo e($berita->id); ?>" class="btn-learn-more">Baca Selengkapnya...</a></left>
+                            </p>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted"><?php echo e($berita->created_at->diffForHumans()); ?></small>
                           </div>
                         </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </div>
-
-                    </div>
-
+                      </div>
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </div>
-
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-
+                  </div>
                 </div>
-
                 
-
             </div>
 
 
-
+            <div class="d-flex justify-content-center">
+              <a href="/home/berita/">Selengkapnya</a>
             </div>
+           
+            </div>
+            
           </section><!-- End Team Section -->
     </div>
 
@@ -139,6 +120,59 @@
 </div>
 <br/>
 </div>
+    <div class="box">
+      <section id="data-pdln" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+
+          <div class="section-title">
+            <h2>Layanan</h2>
+            
+        <p>Direktorat Kerjasama, Pengembangan, dan Internasionalisasi (DKPI) UNS menyediakan layanan yang dapat diakses dalam beberapa hal sebagai berikut</p>
+        </div>
+
+
+          <div class="row">
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="">Penyusunan Legal Drafting</a></h4>
+                
+                <a href="/layanan/legaldrafting" class="btn-learn-more">Baca Selengkapnya</a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="">Pengembangan PSDKU</a></h4>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-cash-coin"></i></div>
+                <h4><a href="">Pencairan Dana Kerjasama</a></h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-user"></i></div>
+                <h4><a href="">Pemrosesan Surat Izin</a></h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section><!-- End Services Section -->
+    </div>
 
     <!-- ======= Services Section ======= -->
     <section id="data-pdln" class="services section-bg">

@@ -1,5 +1,4 @@
-@extends('layouts.main')
-@section('container')
+<?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
@@ -13,14 +12,10 @@
           <h2>Data PDLN</h2>
           <p>Perjalanan Dinas Luar Negeri (PDLN) adalah adalah penugasan yang dilakukan oleh mahasiswa, dosen, maupun pimpinan dalam rangka tugas belajar dan tugas dinas lainnya di luar negeri yang disetujui oleh Rektor UNS</p>
 
-          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+          
         </div>
 
-                {{-- <label for="tahun" class="form-label">Tampilkan Data Tahun</label>
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
-                  </div> --}}
+                
 <div class="container">
   <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                     <li data-filter=".filter-mahasiswa">Mahasiswa</li>
@@ -124,30 +119,32 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($mahasiswas as $mahasiswa)
+                <?php $__currentLoopData = $mahasiswas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mahasiswa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $mahasiswa->nama }}</td>
-                  <td>{{ $mahasiswa->unit_kerja }}</td>
-                  <td>{{ $mahasiswa->negara }}</td>
-                  <td>{{ $mahasiswa->jangka_waktu_awal }}</td>
-                  <td>{{ $mahasiswa->jangka_waktu_akhir }}</td>
-                  <td>{{ $mahasiswa->status }}</td>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($mahasiswa->nama); ?></td>
+                  <td><?php echo e($mahasiswa->unit_kerja); ?></td>
+                  <td><?php echo e($mahasiswa->negara); ?></td>
+                  <td><?php echo e($mahasiswa->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($mahasiswa->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($mahasiswa->status); ?></td>
                   <td></td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
 <<<<<<< Updated upstream
-            {{$mahasiswas->links()}}
+            <?php echo e($mahasiswas->links()); ?>
+
             </nav>
 =======
                 <ul class="pagination justify-content-center">
                   <li class="page-item">
-                    {{ $mahasiswas->links() }}
+                    <?php echo e($mahasiswas->links()); ?>
+
                   </li>
                 </ul>
               </nav>
@@ -170,29 +167,49 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($dosens as $dosen)
+                    <?php $__currentLoopData = $dosens; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dosen): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                      <th scope="row">{{ $loop->iteration }}</th>
-                      <td>{{ $dosen->nama }}</td>
-                      <td>{{ $dosen->unit_kerja }}</td>
-                      <td>{{ $dosen->negara }}</td>
-                      <td>{{ $dosen->jangka_waktu_awal }}</td>
-                      <td>{{ $dosen->jangka_waktu_akhir }}</td>
-                      <td>{{ $dosen->status }}</td>
+                      <th scope="row"><?php echo e($loop->iteration); ?></th>
+                      <td><?php echo e($dosen->nama); ?></td>
+                      <td><?php echo e($dosen->unit_kerja); ?></td>
+                      <td><?php echo e($dosen->negara); ?></td>
+                      <td><?php echo e($dosen->jangka_waktu_awal); ?></td>
+                      <td><?php echo e($dosen->jangka_waktu_akhir); ?></td>
+                      <td><?php echo e($dosen->status); ?></td>
                       <td></td>
                     </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </tbody>
                 </table>
 
                 <!-- Pagination -->
                 <nav aria-label="Page navigation example">
+<<<<<<< Updated upstream
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+=======
                     <ul class="pagination justify-content-center">
                       <li class="page-item">
-                        {{ $dosens->links() }}
+                        <?php echo e($dosens->links()); ?>
+
                       </li>
                     </ul>
                   </nav>
+>>>>>>> Stashed changes
                 </div>
                 <div class="portfolio-item filter-pimpinan">
 
@@ -211,29 +228,49 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach($pimpinans as $pimpinan)
+                        <?php $__currentLoopData = $pimpinans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pimpinan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                          <th scope="row">{{ $loop->iteration }}</th>
-                          <td>{{ $pimpinan->nama }}</td>
-                          <td>{{ $pimpinan->unit_kerja }}</td>
-                          <td>{{ $pimpinan->negara }}</td>
-                          <td>{{ $pimpinan->jangka_waktu_awal }}</td>
-                          <td>{{ $pimpinan->jangka_waktu_akhir }}</td>
-                          <td>{{ $pimpinan->status }}</td>
+                          <th scope="row"><?php echo e($loop->iteration); ?></th>
+                          <td><?php echo e($pimpinan->nama); ?></td>
+                          <td><?php echo e($pimpinan->unit_kerja); ?></td>
+                          <td><?php echo e($pimpinan->negara); ?></td>
+                          <td><?php echo e($pimpinan->jangka_waktu_awal); ?></td>
+                          <td><?php echo e($pimpinan->jangka_waktu_akhir); ?></td>
+                          <td><?php echo e($pimpinan->status); ?></td>
                           <td></td>
                         </tr>
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                       </tbody>
                     </table>
 
                     <!-- Pagination -->
                     <nav aria-label="Page navigation example">
+<<<<<<< Updated upstream
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+=======
                         <ul class="pagination justify-content-center">
                           <li class="page-item">
-                            {{ $pimpinans->links() }}
+                            <?php echo e($pimpinans->links()); ?>
+
                           </li>
                         </ul>
                       </nav>
+>>>>>>> Stashed changes
                     </div>
 
             </div>
@@ -245,4 +282,6 @@
 
     </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/home/pdln.blade.php ENDPATH**/ ?>

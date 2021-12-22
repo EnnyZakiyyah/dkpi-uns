@@ -16,7 +16,7 @@ class CreateMitrasTable extends Migration
         Schema::create('mitras', function (Blueprint $table) {
             $table->id();
 
-            $table->enum('instansi', ['yayasan', 'cv', 'internasional', 'jasaKeuangan','pemerintah'])->default('cv');
+            $table->enum('instansi', ['yayasan', 'cv', 'internasional', 'jasaKeuangan','pemerintah']);
             $table->string('nama_instansi');
             $table->string('no_mou_uns');
             $table->string('no_mou_mitra');
@@ -24,7 +24,7 @@ class CreateMitrasTable extends Migration
             $table->string('jangka_waktu_awal');
             $table->string('jangka_waktu_akhir');
             $table->text('pejabat_penandatangan');
-            $table->string('file_mou')->default('ada');
+            $table->string('file_mou')->default('-');
             $table->string('status_hidden')->default('aktif');
             $table->string('status')->default('berlaku');
             $table->timestamps();

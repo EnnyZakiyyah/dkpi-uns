@@ -6,6 +6,8 @@ use App\Imports\MitraImport;
 use App\Models\Mitra;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\DB;
+
 
 
 class MitraController extends Controller
@@ -17,7 +19,7 @@ class MitraController extends Controller
      */
     public function index()
     {
-        $mitra = Mitra::latest()->paginate(5);
+        $mitra = Mitra::latest()->paginate(20);
 
         return view('mitra.index', [
             'mitras' => $mitra
@@ -60,16 +62,16 @@ class MitraController extends Controller
         // $file_mou = $request->file('file_mou')->store('file_mou');
 
         $validatedData = $request->validate([
-            'instansi' => '',
-            'nama_instansi' => 'required',
-            'no_mou_uns' => 'required',
-            'no_mou_mitra' => 'required',
-            'ruang_lingkup' => 'required',
-            'jangka_waktu_awal' => 'required',
-            'jangka_waktu_akhir' => 'required',
-            'pejabat_penandatangan' => 'required',
-            'file_mou' => '',
-            'status_hidden' => ''
+        'instansi' => 'required',
+        'nama_instansi' =>'required',
+        'no_mou_uns' =>'required',
+        'no_mou_mitra' =>'required',
+        'ruang_lingkup' =>'required',
+        'jangka_waktu_awal' =>'required',
+        'jangka_waktu_akhir' =>'required',
+        'pejabat_penandatangan' =>'required',
+        // 'file_mou' =>'',
+        // 'status_hidden' =>''
         ]);
 
 
@@ -143,7 +145,7 @@ class MitraController extends Controller
      * @param  \App\Models\Mitra  $mitra
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mitra $mitra)
+    public function destroy($mitra)
     {
         //
         Mitra::destroy($mitra);
