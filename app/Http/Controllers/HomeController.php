@@ -23,7 +23,7 @@ class HomeController extends Controller
     {
         $faq = Faq::get();
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
-        $berita = Berita::latest()->take(6)->get();
+        $berita = Berita::latest()->take(6)->paginate(3);
 
 
         return view('home.index', [
@@ -97,7 +97,7 @@ class HomeController extends Controller
 
     public function berita()
     {
-        $berita = Berita::get();
+        $berita = Berita::latest()->paginate(3);
         return view('home.berita', [
             'title' => 'berita',
             'beritas' => $berita
