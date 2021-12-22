@@ -8,6 +8,8 @@
       <section id="mitra" class="portfolio"  style="background-color: #f3f5fa">
       <div class="container" data-aos="fade-up">
 
+
+
         <div class="section-title">
           <h2>Mitra Kerja Sama</h2>
             <p>Data Mitra yang menjalin hubungan kerjasama dengan UNS dapat dilihat pada tabel berikut</p>
@@ -16,6 +18,7 @@
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <li data-filter=".filter-yayasan">Sekolah/Yayasan</li>
+            <a href="/home/mitra-yayasan">yayasan</a>
             <li data-filter=".filter-cv">CV/PT</li>
           <li data-filter=".filter-internasional">Internasional</li>
           <li data-filter=".filter-jasaKeuangan"><center>Jasa Keuangan</center></li>
@@ -29,56 +32,38 @@
         </p>
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation" action="/home/mitra">
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
-                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi"required>
+                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
-                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai"required>
+                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai" value="<?php echo e(request('waktu_mulai')); ?>" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
-              <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Nomor MoU UNS</label>
-                <input type="text" class="form-control" id="validationCustom03" name="nomor_uns"required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div>
+              
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
-                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir"required>
+                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir" value="<?php echo e(request('waktu_berakhir')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
-              <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Nomor MoU Mitra</label>
-                <input type="text" class="form-control" id="validationCustom03" name="nomor_mitra" required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div>
+              
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
-                <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat" value="<?php echo e(request('pejabat')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
-              <div class="col-md-3">
-                <label for="validationCustom04" class="form-label">Tahun</label>
-                <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div>
+              
               <div class="col-12">
                 <button class="btn btn-warning" type="submit">Cari Data</button>
               </div>
@@ -119,7 +104,7 @@
                     <a href="/home/mitra/<?php echo e($yayasan->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
                     <a href="/mitra/<?php echo e($yayasan->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="<?php echo e($yayasan->id); ?>" method="POST" class="d-inline">
+                    <form action="/mitra/<?php echo e($yayasan->id); ?>" method="POST" class="d-inline">
                         <?php echo method_field('delete'); ?>
                         <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
@@ -133,14 +118,13 @@
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <?php echo e($yayasans->links()); ?>
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <?php echo e($yayasans->links()); ?>
 
-                  </li>
-                </ul>
-              </nav>
-            </div>
+                </li>
+              </ul>
+            </nav>
         </div>
 
 
@@ -173,7 +157,7 @@
                     <a href="/home/mitra/<?php echo e($cv->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
                     <a href="/mitra/<?php echo e($cv->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="<?php echo e($cv->id); ?>" method="POST" class="d-inline">
+                    <form action="/mitra/<?php echo e($cv->id); ?>" method="POST" class="d-inline">
                         <?php echo method_field('delete'); ?>
                         <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
@@ -187,14 +171,13 @@
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <?php echo e($cvs->links()); ?>
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <?php echo e($cvs->links()); ?>
 
-                  </li>
-                </ul>
-              </nav>
-            </div>
+                </li>
+              </ul>
+            </nav>
         </div>
         <div class="portfolio-item filter-internasional">
             <table class="table table-hover">
@@ -225,7 +208,7 @@
                     <a href="/home/mitra/<?php echo e($internasional->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
                     <a href="/mitra/<?php echo e($internasional->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="<?php echo e($internasional->id); ?>" method="POST" class="d-inline">
+                    <form action="/mitra/<?php echo e($internasional->id); ?>" method="POST" class="d-inline">
                         <?php echo method_field('delete'); ?>
                         <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
@@ -239,14 +222,13 @@
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <?php echo e($internasionals->links()); ?>
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <?php echo e($internasionals->links()); ?>
 
-                  </li>
-                </ul>
-              </nav>
-            </div>
+                </li>
+              </ul>
+            </nav>
         </div>
         <div class="portfolio-item filter-jasaKeuangan">
             <table class="table table-hover">
@@ -277,7 +259,7 @@
                     <a href="/home/mitra/<?php echo e($jasaKeuangan->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
                     <a href="/mitra/<?php echo e($jasaKeuangan->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="<?php echo e($jasaKeuangan->id); ?>" method="POST" class="d-inline">
+                    <form action="/mitra/<?php echo e($jasaKeuangan->id); ?>" method="POST" class="d-inline">
                         <?php echo method_field('delete'); ?>
                         <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
@@ -291,14 +273,13 @@
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <?php echo e($jasaKeuangans->links()); ?>
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <?php echo e($jasaKeuangans->links()); ?>
 
-                  </li>
-                </ul>
-              </nav>
-            </div>
+                </li>
+              </ul>
+            </nav>
         </div>
         <div class="portfolio-item filter-pemerintah">
             <table class="table table-hover">
@@ -329,7 +310,7 @@
                     <a href="/home/mitra/<?php echo e($pemerintah->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
                     <a href="/mitra/<?php echo e($pemerintah->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="<?php echo e($pemerintah->id); ?>" method="POST" class="d-inline">
+                    <form action="/mitra/<?php echo e($pemerintah->id); ?>" method="POST" class="d-inline">
                         <?php echo method_field('delete'); ?>
                         <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
@@ -343,14 +324,13 @@
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <?php echo e($pemerintahs->links()); ?>
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <?php echo e($pemerintahs->links()); ?>
 
-                  </li>
-                </ul>
-              </nav>
-            </div>
+                </li>
+              </ul>
+            </nav>
         </div>
 
 
@@ -362,6 +342,8 @@
 
 
     </div>
+
+    
 
 <?php $__env->stopSection(); ?>
 

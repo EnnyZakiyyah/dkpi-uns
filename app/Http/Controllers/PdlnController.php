@@ -22,7 +22,7 @@ class PdlnController extends Controller
     {
         // $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
         // $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
-        $pdln = Pdln::latest()->paginate(20);
+        $pdln = Pdln::latest()->paginate(10);
 
 
         return view('pdln.index',[
