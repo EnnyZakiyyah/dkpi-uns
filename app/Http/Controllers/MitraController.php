@@ -17,7 +17,7 @@ class MitraController extends Controller
      */
     public function index()
     {
-        $mitra = Mitra::latest()->get();
+        $mitra = Mitra::latest()->paginate(5);
 
         return view('mitra.index', [
             'mitras' => $mitra
@@ -46,7 +46,6 @@ class MitraController extends Controller
     {
         //
         return view('mitra.create');
-
     }
 
     /**
@@ -61,24 +60,22 @@ class MitraController extends Controller
         // $file_mou = $request->file('file_mou')->store('file_mou');
 
         $validatedData = $request->validate([
-        'instansi' => '',
-        'nama_instansi' =>'required',
-        'no_mou_uns' =>'required',
-        'no_mou_mitra' =>'required',
-        'ruang_lingkup' =>'required',
-        'jangka_waktu_awal' =>'required',
-        'jangka_waktu_akhir' =>'required',
-        'pejabat_penandatangan' =>'required',
-        'file_mou' =>'',
-        'status_hidden' =>''
+            'instansi' => '',
+            'nama_instansi' => 'required',
+            'no_mou_uns' => 'required',
+            'no_mou_mitra' => 'required',
+            'ruang_lingkup' => 'required',
+            'jangka_waktu_awal' => 'required',
+            'jangka_waktu_akhir' => 'required',
+            'pejabat_penandatangan' => 'required',
+            'file_mou' => '',
+            'status_hidden' => ''
         ]);
 
 
         Mitra::create($validatedData);
 
         return redirect('/mitra')->with('success', 'Data berhasil ditambah!');
-
-
     }
 
     /**
@@ -91,7 +88,7 @@ class MitraController extends Controller
     {
         //
         $mitra = Mitra::find($id);
-        return view('mitra.show',[
+        return view('mitra.show', [
             'mitra' =>  $mitra
         ]);
     }
@@ -105,8 +102,8 @@ class MitraController extends Controller
     public function edit($mitra)
     {
         //
-        $data=Mitra::find($mitra);
-        return view('mitra.edit',[
+        $data = Mitra::find($mitra);
+        return view('mitra.edit', [
             'mitra' => $data
         ]);
     }
@@ -123,23 +120,21 @@ class MitraController extends Controller
         //
         $validatedData = request()->validate([
             'instansi' => '',
-            'nama_instansi' =>'required',
-            'no_mou_uns' =>'required',
-            'no_mou_mitra' =>'required',
-            'ruang_lingkup' =>'required',
-            'jangka_waktu_awal' =>'required',
-            'jangka_waktu_akhir' =>'required',
-            'pejabat_penandatangan' =>'required',
-            'file_mou' =>'',
-            'status_hidden' =>'',
-            'status'=>''
-            ]);
+            'nama_instansi' => 'required',
+            'no_mou_uns' => 'required',
+            'no_mou_mitra' => 'required',
+            'ruang_lingkup' => 'required',
+            'jangka_waktu_awal' => 'required',
+            'jangka_waktu_akhir' => 'required',
+            'pejabat_penandatangan' => 'required',
+            'file_mou' => '',
+            'status_hidden' => '',
+            'status' => ''
+        ]);
 
 
-            Mitra::where('id', $mitra)->update($validatedData);
-            return redirect('/mitra')->with('success', 'Data berhasil diubah!');
-
-
+        Mitra::where('id', $mitra)->update($validatedData);
+        return redirect('/mitra')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -153,13 +148,12 @@ class MitraController extends Controller
         //
         Mitra::destroy($mitra);
         return redirect('/mitra')->with('status', 'data berhasil dihapus');
-
     }
 
     public function instansi($instansi)
     {
         $instansi = Mitra::where('instansi', $instansi)->latest()->get();
-        return view('mitra.index',[
+        return view('mitra.index', [
             'mitras' => $instansi
         ]);
     }
@@ -167,7 +161,7 @@ class MitraController extends Controller
     public function import()
     {
         // Excel::import(new PdlnImport, 'pdln.xlsx');
-        Excel::import(new MitraImport,'mitra.xlsx');
+        Excel::import(new MitraImport, 'mitra.xlsx');
 
 
         return redirect('/mitra')->with('success', 'All good!');

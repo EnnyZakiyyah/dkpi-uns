@@ -37,9 +37,9 @@ class HomeController extends Controller
     public function pdln()
     {
 
-        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->get();
-        $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
-        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
+        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->paginate(5);
+        $dosen = Pdln::where('jenis', 'dosen')->latest()->paginate(5);
+        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->paginate(5);
 
         return view('home.pdln', [
             'title' => 'data PDLN',
@@ -55,11 +55,11 @@ class HomeController extends Controller
         // $mitras = Mitra::latest();
         // dd(request('nama_instansi'));
 
-        $cv = Mitra::where('instansi', 'cv')->latest()->filter(['nama_instansi'])->get();
-        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->filter(['nama_instansi'])->get();
-        $internasional = Mitra::where('instansi', 'internasional')->latest()->filter(['nama_instansi'])->get();
-        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->filter(['nama_instansi'])->get();
-        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->filter(['nama_instansi'])->get();
+        $cv = Mitra::where('instansi', 'cv')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
+        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
+        $internasional = Mitra::where('instansi', 'internasional')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
+        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
+        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
 
         return view('home.mitra', [
             'title' => 'data Mitra',
