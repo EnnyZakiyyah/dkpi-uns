@@ -141,8 +141,17 @@
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
+<<<<<<< Updated upstream
             {{$mahasiswas->links()}}
             </nav>
+=======
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    {{ $mahasiswas->links() }}
+                  </li>
+                </ul>
+              </nav>
+>>>>>>> Stashed changes
             </div>
             <div class="portfolio-item filter-dosen">
 
@@ -178,22 +187,12 @@
 
                 <!-- Pagination -->
                 <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                      </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        {{ $dosens->links() }}
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
                 <div class="portfolio-item filter-pimpinan">
 
@@ -229,22 +228,12 @@
 
                     <!-- Pagination -->
                     <nav aria-label="Page navigation example">
-                      <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                          </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item">
+                            {{ $pimpinans->links() }}
+                          </li>
+                        </ul>
+                      </nav>
                     </div>
 
             </div>

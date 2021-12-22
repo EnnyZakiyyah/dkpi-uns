@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
 <?php $__env->startSection('title', 'Tambah Data Mitra'); ?>
 
 <?php $__env->startSection('container'); ?>
@@ -44,7 +50,11 @@
                     </div>
 
                     <!-- body card -->
+<<<<<<< Updated upstream
                     <form method="POST" action="/mitra">
+=======
+                    <form method="POST" action="/mitra" enctype="multipart/form-data">
+>>>>>>> Stashed changes
                         <?php echo csrf_field(); ?>
                         <div class="form-group ml-5 mr-5">
                             <label for="nama_instansi">Nama Instansi</label>
@@ -72,6 +82,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="instansi" class="form-select" >Jenis Instansi</label>
+<<<<<<< Updated upstream
                             <select class="form-select  <?php $__errorArgs = ['instansi'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -103,6 +114,21 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         
 
+=======
+                            
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Default radio
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Default checked radio
+                            </label>
+                          </div>
+>>>>>>> Stashed changes
                         <div class="form-group ml-5 mr-5">
                             <label for="no_mou_uns">Nomor MoU UNS</label>
                             <input type="text" class="form-control <?php $__errorArgs = ['no_mou_uns'];
@@ -112,7 +138,11 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
+<<<<<<< Updated upstream
 unset($__errorArgs, $__bag); ?>" id="no_mou_uns" placeholder="nomor surat UNS" name="no_mou_uns" value="<?php echo e(old('no_mou_uns')); ?>">
+=======
+unset($__errorArgs, $__bag); ?>" id="no_mou_uns" placeholder="nomor surat" name="no_mou_uns" value="<?php echo e(old('no_mou_uns')); ?>">
+>>>>>>> Stashed changes
                             <?php $__errorArgs = ['no_mou_uns'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -126,8 +156,12 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+<<<<<<< Updated upstream
                         </div>
                         <div class="form-group ml-5 mr-5">
+=======
+                        </div>                        <div class="form-group ml-5 mr-5">
+>>>>>>> Stashed changes
                             <label for="no_mou_mitra">Nomor MoU Mitra</label>
                             <input type="text" class="form-control <?php $__errorArgs = ['no_mou_mitra'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -152,6 +186,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
+<<<<<<< Updated upstream
                             <label for="ruang_lingkup">Ruang Lingkup</label>
                             <input type="text" class="form-control <?php $__errorArgs = ['ruang_lingkup'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -176,6 +211,8 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
+=======
+>>>>>>> Stashed changes
                             <label for="jangka_waktu_awal">Awal</label>
                             <input type="date" class="form-control <?php $__errorArgs = ['jangka_waktu_awal'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

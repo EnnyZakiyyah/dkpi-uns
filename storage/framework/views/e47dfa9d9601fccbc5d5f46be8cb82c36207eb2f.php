@@ -9,6 +9,11 @@
       <section id="mitra" class="portfolio"  style="background-color: #f3f5fa">
       <div class="container" data-aos="fade-up">
 
+<<<<<<< Updated upstream
+=======
+    
+
+>>>>>>> Stashed changes
         <div class="section-title">
           <h2>Mitra Kerja Sama</h2>
             <p>Data Mitra yang menjalin hubungan kerjasama dengan UNS dapat dilihat pada tabel berikut</p>
@@ -30,21 +35,33 @@
         </p>
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
+<<<<<<< Updated upstream
             <form class="row g-3 needs-validation" novalidate>
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
                 <input type="text" class="form-control" id="validationCustom01" name="nama_instansi"required>
+=======
+            <form class="row g-3 needs-validation" action="/home/mitra">
+              <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Nama Instansi</label>
+                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>" required>
+>>>>>>> Stashed changes
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
+<<<<<<< Updated upstream
                 <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai"required>
+=======
+                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai" value="<?php echo e(request('waktu_mulai')); ?>" required>
+>>>>>>> Stashed changes
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
+<<<<<<< Updated upstream
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Nomor MoU UNS</label>
                 <input type="text" class="form-control" id="validationCustom03" name="nomor_uns"required>
@@ -62,10 +79,17 @@
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Nomor MoU Mitra</label>
                 <input type="text" class="form-control" id="validationCustom03" name="nomor_mitra" required>
+=======
+              
+              <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Akhir</label>
+                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir" value="<?php echo e(request('waktu_berakhir')); ?>" required>
+>>>>>>> Stashed changes
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
+<<<<<<< Updated upstream
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
                 <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
@@ -76,10 +100,20 @@
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Tahun</label>
                 <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
+=======
+              
+              <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat" value="<?php echo e(request('pejabat')); ?>" required>
+>>>>>>> Stashed changes
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
+<<<<<<< Updated upstream
+=======
+              
+>>>>>>> Stashed changes
               <div class="col-12">
                 <button class="btn btn-warning" type="submit">Cari Data</button>
               </div>
@@ -125,6 +159,7 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
+<<<<<<< Updated upstream
                   <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
@@ -136,6 +171,10 @@
                   <a class="page-link" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                   </a>
+=======
+                  <?php echo e($yayasans->links()); ?>
+
+>>>>>>> Stashed changes
                 </li>
               </ul>
             </nav>
@@ -174,6 +213,7 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
+<<<<<<< Updated upstream
                   <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
@@ -185,6 +225,10 @@
                   <a class="page-link" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                   </a>
+=======
+                  <?php echo e($cvs->links()); ?>
+
+>>>>>>> Stashed changes
                 </li>
               </ul>
             </nav>
@@ -223,6 +267,7 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
+<<<<<<< Updated upstream
                   <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
@@ -234,6 +279,10 @@
                   <a class="page-link" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                   </a>
+=======
+                  <?php echo e($internasionals->links()); ?>
+
+>>>>>>> Stashed changes
                 </li>
               </ul>
             </nav>
@@ -272,6 +321,7 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
+<<<<<<< Updated upstream
                   <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
@@ -283,6 +333,10 @@
                   <a class="page-link" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                   </a>
+=======
+                  <?php echo e($jasaKeuangans->links()); ?>
+
+>>>>>>> Stashed changes
                 </li>
               </ul>
             </nav>
@@ -321,6 +375,7 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
+<<<<<<< Updated upstream
                   <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
@@ -332,6 +387,10 @@
                   <a class="page-link" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                   </a>
+=======
+                  <?php echo e($pemerintahs->links()); ?>
+
+>>>>>>> Stashed changes
                 </li>
               </ul>
             </nav>
@@ -347,6 +406,11 @@
 
     </div>
 
+<<<<<<< Updated upstream
+=======
+    
+
+>>>>>>> Stashed changes
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/home/mitra.blade.php ENDPATH**/ ?>

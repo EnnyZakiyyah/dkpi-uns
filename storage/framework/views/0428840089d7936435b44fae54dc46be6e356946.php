@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 <?php $__env->startSection('title', 'Tambah Data PDLN'); ?>
 
 <?php $__env->startSection('container'); ?>
@@ -71,18 +76,29 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
+<<<<<<< Updated upstream
                             <label for="jenis" class="form-select" >jenis</label>
                             <select class="form-select  <?php $__errorArgs = ['jenis'];
+=======
+                            <label for="jenis">kategori</label>
+                            <input type="radio" class="form-control <?php $__errorArgs = ['jenis'];
+>>>>>>> Stashed changes
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
+<<<<<<< Updated upstream
 unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis">
                             <option value="mahasiswa">mahasiswa</option>
                             <option value="dosen">dosen</option>
                             <option value="pimppinan">internasional</option>
+=======
+unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="jenis jenis" name="jenis" value="<?php echo e(old('jenis')); ?>">
+                            <label for="jenis">HTML</label><br>
+                            <label for="jenis">HTML</label><br>
+>>>>>>> Stashed changes
 
 
                             <?php $__errorArgs = ['jenis'];
@@ -108,7 +124,11 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
+<<<<<<< Updated upstream
 unset($__errorArgs, $__bag); ?>" id="jumlah_orang" placeholder="jumlah orang" name="jumlah_orang" value="<?php echo e(old('kapaitas_ruang')); ?>">
+=======
+unset($__errorArgs, $__bag); ?>" id="jumlah_orang" placeholder="nomor surat" name="jumlah_orang" value="<?php echo e(old('kapaitas_ruang')); ?>">
+>>>>>>> Stashed changes
                             <?php $__errorArgs = ['jumlah_orang'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -132,7 +152,11 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
+<<<<<<< Updated upstream
 unset($__errorArgs, $__bag); ?>" id="unit_kerja" placeholder="unit kerja/fakultas" name="unit_kerja" value="<?php echo e(old('kapaitas_ruang')); ?>">
+=======
+unset($__errorArgs, $__bag); ?>" id="unit_kerja" placeholder="nomor surat" name="unit_kerja" value="<?php echo e(old('kapaitas_ruang')); ?>">
+>>>>>>> Stashed changes
                             <?php $__errorArgs = ['unit_kerja'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

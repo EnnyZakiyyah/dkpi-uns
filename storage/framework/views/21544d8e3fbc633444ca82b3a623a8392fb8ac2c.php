@@ -136,9 +136,19 @@
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
+<<<<<<< Updated upstream
             <?php echo e($mahasiswas->links()); ?>
 
             </nav>
+=======
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <?php echo e($mahasiswas->links()); ?>
+
+                  </li>
+                </ul>
+              </nav>
+>>>>>>> Stashed changes
             </div>
             <div class="portfolio-item filter-dosen">
 
@@ -174,6 +184,7 @@
 
                 <!-- Pagination -->
                 <nav aria-label="Page navigation example">
+<<<<<<< Updated upstream
                   <ul class="pagination justify-content-center">
                     <li class="page-item">
                       <a class="page-link" href="#" aria-label="Previous">
@@ -190,6 +201,15 @@
                     </li>
                   </ul>
                 </nav>
+=======
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <?php echo e($dosens->links()); ?>
+
+                      </li>
+                    </ul>
+                  </nav>
+>>>>>>> Stashed changes
                 </div>
                 <div class="portfolio-item filter-pimpinan">
 
@@ -225,6 +245,7 @@
 
                     <!-- Pagination -->
                     <nav aria-label="Page navigation example">
+<<<<<<< Updated upstream
                       <ul class="pagination justify-content-center">
                         <li class="page-item">
                           <a class="page-link" href="#" aria-label="Previous">
@@ -241,6 +262,15 @@
                         </li>
                       </ul>
                     </nav>
+=======
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item">
+                            <?php echo e($pimpinans->links()); ?>
+
+                          </li>
+                        </ul>
+                      </nav>
+>>>>>>> Stashed changes
                     </div>
 
             </div>

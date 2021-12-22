@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 <?php $__env->startSection('title', 'Data Mitra'); ?>
+=======
+
+
+<?php $__env->startSection('title', 'Dara Mitra'); ?>
+>>>>>>> Stashed changes
 
 <?php $__env->startSection('container'); ?>
   <!-- Header -->
@@ -36,7 +42,10 @@
           </div>
           <!-- Light table -->
           <div class="table-responsive">
+<<<<<<< Updated upstream
               <a href="<?php echo e('/mitra/create'); ?>" class="btn btn-primary">Tambah Data</a>
+=======
+>>>>>>> Stashed changes
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
@@ -74,9 +83,16 @@
             <nav aria-label="...">
               <a href="<?php echo e('/mitra/create'); ?>" class="btn btn-primary">Tambah Data</a>
               <ul class="pagination justify-content-end mb-0">
+<<<<<<< Updated upstream
                 
                 <?php echo e($mitras->links()); ?>
 
+=======
+                <li class="page-item">
+                  <?php echo e($mitras->links()); ?>
+
+                </li>
+>>>>>>> Stashed changes
               </ul>
             </nav>
           </div>
