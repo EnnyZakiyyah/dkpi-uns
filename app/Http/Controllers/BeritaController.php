@@ -15,7 +15,7 @@ class BeritaController extends Controller
     public function index()
     {
         //
-        $berita = Berita::latest()->paginate(5);
+        $berita = Berita::latest()->filter(request(['judul']))->paginate(5)->withQueryString();
         return view('berita.index', [
             'beritas' => $berita,
             // 'slug' => 'judul-post-pertama'

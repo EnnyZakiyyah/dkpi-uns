@@ -19,7 +19,7 @@ class MitraController extends Controller
      */
     public function index()
     {
-        $mitra = Mitra::latest()->paginate(10);
+        $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5);
 
         return view('mitra.index', [
             'mitras' => $mitra
