@@ -1,7 +1,21 @@
 
 
 <?php $__env->startSection('title', 'Dashboard'); ?>
-
+<?php $__env->startSection('search'); ?>
+<form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main" action="/pdln">
+  <div class="form-group mb-0">
+    <div class="input-group input-group-alternative input-group-merge">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-search"></i></span>
+      </div>
+      <input class="form-control" placeholder="Search" type="text" name="nama" value="<?php echo e(request('nama')); ?>">
+    </div>
+  </div>
+  <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+</form>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('container'); ?>
   <!-- Header -->
   <!-- Header -->
@@ -67,26 +81,11 @@
           <!-- Card footer -->
           <div class="card-footer py-4">
             <nav aria-label="...">
-              
+              <a href="<?php echo e('/pdln/create'); ?>" class="btn btn-primary">Tambah Data</a>
               <ul class="pagination justify-content-end mb-0">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1">
-                    <i class="fas fa-angle-left"></i>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li class="page-item active">
-                  <a class="page-link" href="#">1</a>
-                </li>
                 <li class="page-item">
-                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
-                    <i class="fas fa-angle-right"></i>
-                    <span class="sr-only">Next</span>
-                  </a>
+                  <?php echo e($pengaduans->links()); ?>
+
                 </li>
               </ul>
             </nav>

@@ -20,6 +20,7 @@ class PengumumanController extends Controller
         $expired = Pengumuman::whereDate('berlaku', '<', today())->latest()->filter(request(['pengumuman']))->paginate(5)->withQueryString();
 
         return view('pengumuman.index',[
+            'title' => 'Pengumuman',
             'active' => $pengumuman,
             'expired'=> $expired
         ]);

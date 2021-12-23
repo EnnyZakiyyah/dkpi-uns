@@ -11,4 +11,6 @@ class Pengaduan extends Model
 
     protected $table = 'pengaduans';
     protected $guarded =  ['id'];
+
+    
 }

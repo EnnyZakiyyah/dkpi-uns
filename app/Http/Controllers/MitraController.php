@@ -22,6 +22,7 @@ class MitraController extends Controller
         $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5);
 
         return view('mitra.index', [
+            'title'=> 'Data Mitra',
             'mitras' => $mitra
         ]);
         // $yayasan = Mitra::where('jenis', 'yayasan')->latest()->get();

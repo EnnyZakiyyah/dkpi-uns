@@ -17,6 +17,7 @@ class FaqController extends Controller
     {
         $faq = Faq::filter(request(['pertanyaan']))->paginate(5)->withQueryString();;
         return view('faq.index',[
+            'title' => 'FAQ',
             'faqs' => $faq
         ]);
 

@@ -26,7 +26,7 @@ class PdlnController extends Controller
 
 
         return view('pdln.index', [
-            'title' => 'Data Pdln',
+            'title' => 'Data PDLN',
             'pdlns' => $pdln
             // 'mahasiswa' => $mahasiswa,
             // 'dosen' => $dosen,

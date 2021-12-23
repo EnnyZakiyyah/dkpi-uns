@@ -17,6 +17,7 @@ class BeritaController extends Controller
         //
         $berita = Berita::latest()->filter(request(['judul']))->paginate(5)->withQueryString();
         return view('berita.index', [
+            'title' => 'Berita',
             'beritas' => $berita,
             // 'slug' => 'judul-post-pertama'
             // 'berita' => Berita::latest()->get
@@ -102,7 +103,7 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request ,$id)
+    public function update(Request $request, $id)
     {
         //
         // $validatedData['gambar'] = request()->file('gambar')->store('gambar');
@@ -116,7 +117,7 @@ class BeritaController extends Controller
         if ($request->file('gambar')) {
             $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
         }
-       
+
         Berita::where('id', $id)->update($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
     }

@@ -17,7 +17,7 @@ class PeringkatController extends Controller
         $thes =  Peringkat::where('jenis','THES')->get();
         $qs = Peringkat::where('jenis','QSstar')->get();
         return view('peringkat.index',[
-            'title' => 'peringkat',
+            'title' => 'Peringkat',
             'thes' => $thes,
             'qs' => $qs
         ]);

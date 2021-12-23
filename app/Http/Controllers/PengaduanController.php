@@ -18,9 +18,10 @@ class PengaduanController extends Controller
     public function index()
     {
         //
-        $pengaduan = ContactUs::get();
+        $pengaduan = ContactUs::latest()->filter(request(['nama']))->paginate(5)->withQueryString();
 
         return view('pengaduan.index',[
+            'title' => 'Pengaduan',
             'pengaduans' => $pengaduan
         ]);
     }
