@@ -1,5 +1,5 @@
-@extends('layouts.main')
-@section('container')
+
+<?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
@@ -14,15 +14,15 @@
         <div class="section-title">
           <h2>Mitra Kerja Sama</h2>
             <p>Data Mitra yang menjalin hubungan kerjasama dengan UNS dapat dilihat pada tabel berikut</p>
-          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+          
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <a class="filter-active" href="/home/mitra-cv">CV/PT</a>
-            <a href="/home/mitra-yayasan">Sekolah/Yayasan</a>
-            <a href="/home/mitra-internasional">Internasional</a>
-            <a href="/home/mitra-jasaKeuangan">Jasa Keuangan</a>
-            <a href="/home/mitra-pemerintah">Pemerintah</a>
+          <a href="/home/mitra-cv">CV/PT</a>
+          <a class="filter-active" href="/home/mitra-yayasan">Sekolah/Yayasan</a>
+          <a href="/home/mitra-internasional">Internasional</a>
+          <a href="/home/mitra-jasaKeuangan">Jasa Keuangan</a>
+          <a href="/home/mitra-pemerintah">Pemerintah</a>
         </ul>
 
         <p>
@@ -35,53 +35,35 @@
             <form class="row g-3 needs-validation" action="/home/mitra">
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
-                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="{{ request('nama_instansi') }}" required>
+                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
-                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai" value="{{ request('waktu_mulai') }}" required>
+                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai" value="<?php echo e(request('waktu_mulai')); ?>" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
-              {{-- <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Nomor MoU UNS</label>
-                <input type="text" class="form-control" id="validationCustom03" name="nomor_mou"required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div> --}}
+              
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
-                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir" value="{{ request('waktu_berakhir') }}" required>
+                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir" value="<?php echo e(request('waktu_berakhir')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
-              {{-- <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Nomor MoU Mitra</label>
-                <input type="text" class="form-control" id="validationCustom03" name="nomor_mitra" required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div> --}}
+              
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
-                <input type="text" class="form-control" id="validationCustom03" name="pejabat" value="{{ request('pejabat') }}" required>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat" value="<?php echo e(request('pejabat')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
-              {{-- <div class="col-md-3">
-                <label for="validationCustom04" class="form-label">Tahun</label>
-                <input type="text" class="form-control" id="validationCustom03" name="tahun" required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div> --}}
+              
               <div class="col-12">
                 <button class="btn btn-warning" type="submit">Cari Data</button>
               </div>
@@ -108,28 +90,28 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($cvs as $cv)
+                <?php $__currentLoopData = $yayasans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $yayasan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $cv->nama_instansi }}</td>
-                  <td>{{ $cv->ruang_lingkup }}</td>
-                  <td>{{ $cv->jangka_waktu_awal }}</td>
-                  <td>{{ $cv->jangka_waktu_akhir }}</td>
-                  <td>{{ $cv->pejabat_penandatangan }}</td>
-                  <td>{{ $cv->status }}</td>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($yayasan->nama_instansi); ?></td>
+                  <td><?php echo e($yayasan->ruang_lingkup); ?></td>
+                  <td><?php echo e($yayasan->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($yayasan->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($yayasan->pejabat_penandatangan); ?></td>
+                  <td><?php echo e($yayasan->status); ?></td>
                   <td>
-                    <a href="/home/mitra/{{ $cv->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
-                    @if (Auth::check())
-                    <a href="/mitra/{{ $cv->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="/mitra/{{ $cv->id }}" method="POST" class="d-inline">
-                        @method('delete')
-                        @csrf
+                    <a href="/home/mitra/<?php echo e($yayasan->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    <?php if(Auth::check()): ?>
+                    <a href="/mitra/<?php echo e($yayasan->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="/mitra/<?php echo e($yayasan->id); ?>" method="POST" class="d-inline">
+                        <?php echo method_field('delete'); ?>
+                        <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                     </form>
-                    @endif
+                    <?php endif; ?>
                 </td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
 
@@ -137,7 +119,8 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
-                  {{ $cvs->links() }}
+                  <?php echo e($yayasans->links()); ?>
+
                 </li>
               </ul>
             </nav>
@@ -155,8 +138,8 @@
 
     </div>
 
-    {{-- @else
-    <p class="text-center fs-4">No post found.</p>
-    @endif --}}
+    
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/home/mitra/yayasan.blade.php ENDPATH**/ ?>

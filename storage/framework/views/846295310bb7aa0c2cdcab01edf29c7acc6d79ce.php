@@ -25,7 +25,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/Mitra"> Mitra</a></li>
+                                <li class="breadcrumb-item"><a href="/mitra"> Mitra</a></li>
                                 <li class="breadcrumb-item"><a href="/mitra/data/<?php echo e($mitra->instansi); ?>"><?php echo e($mitra->instansi); ?></a></li>
                                 <li class="breadcrumb-item active" aria-current="page"> <?php echo e($mitra->nama_instansi); ?></li>
                             </ol>
@@ -50,18 +50,18 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Nama instansi: <?php echo e($mitra->nama_instansi); ?></h5>
-                            
-                            <p class="card-text"><?php echo e($mitra->no_mou_uns); ?></p>
-                            <p class="card-text"><?php echo e($mitra->no_mou_mitra); ?></p>
-                            <p class="card-text"><?php echo e($mitra->ruang_lingkup); ?></p>
-                            <p class="card-text"><?php echo e($mitra->jangka_waktu_awal); ?></p>
-                            <p class="card-text"><?php echo e($mitra->jangka_waktu_akhir); ?></p>
-                            <p class="card-text"><?php echo e($mitra->pejabat_penandatangan); ?></p>
+                            <h6 class="card-subtitle mb-2 text-muted"> jenis Instansi: <?php echo e($mitra->instansi); ?></h6>
+                            <p class="card-text">Nomor MoU UNS: <?php echo e($mitra->no_mou_uns); ?></p>
+                            <p class="card-text">Nomor MoU Mitra: <?php echo e($mitra->no_mou_mitra); ?></p>
+                            <p class="card-text">Ruang Lingkup: <?php echo e($mitra->ruang_lingkup); ?></p>
+                            <p class="card-text">Awal Masa Berlaku: <?php echo e($mitra->jangka_waktu_awal); ?></p>
+                            <p class="card-text">Akhir Masa Berlaku: <?php echo e($mitra->jangka_waktu_akhir); ?></p>
+                            <p class="card-text">Pejabat Penandatangan: <?php echo e($mitra->pejabat_penandatangan); ?></p>
                             <a href="<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
                             <form action="<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                             </form>
                             <a href="/mitra" class="card-link ml-5">Kembali</a>
                         </div>

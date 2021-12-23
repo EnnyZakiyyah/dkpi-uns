@@ -18,11 +18,11 @@
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <a href="/home/mitra-yayasan">yayasan</a>
-            <a href="/home/mitra-cv">cv</a>
-            <a href="/home/mitra-internasional">internasional</a>
-            <a href="/home/mitra-jasaKeuangan">jasaKeuangan</a>
-            <a href="/home/mitra-pemerintah">pemerintah</a>
+          <a href="/home/mitra-cv">CV/PT</a>
+          <a href="/home/mitra-yayasan">Sekolah/Yayasan</a>
+          <a href="/home/mitra-internasional">Internasional</a>
+          <a href="/home/mitra-jasaKeuangan">Jasa Keuangan</a>
+          <a class="filter-active" href="/home/mitra-pemerintah">Pemerintah</a>
         </ul>
 
         <p>
@@ -95,7 +95,6 @@
         <!-- CV/PT -->
         <div class="portfolio-item filter-yayasan">
             <table class="table table-hover">
-                <h5>YAYASAN/SEKOLAH</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -138,7 +137,7 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
-                  {{-- {{ $yayasans->links() }} --}}
+                  {{ $pemerintahs->links() }}
                 </li>
               </ul>
             </nav>

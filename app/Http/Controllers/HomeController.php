@@ -44,7 +44,7 @@ class HomeController extends Controller
         $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->paginate(5);
 
         return view('home.pdln', [
-            'title' => 'data PDLN',
+            'title' => 'Data PDLN',
             'mahasiswas' => $mahasiswa,
             'dosens' => $dosen,
             'pimpinans' => $pimpinan
@@ -55,7 +55,7 @@ class HomeController extends Controller
         $pdln = Pdln::find($id);
 
         return view('home.pdlndetails',[
-            'title' => 'detail pdln',
+            'title' => 'Details PDLN',
             'pdlns' => $pdln
         ]);
     }
@@ -73,7 +73,7 @@ class HomeController extends Controller
         $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
 
         return view('home.mitra', [
-            'title' => 'data Mitra',
+            'title' => 'Data Mitra',
             // 'mitras' => $mitras->get(),
             'yayasans' => $yayasan,
             'cvs' => $cv,
@@ -87,7 +87,7 @@ class HomeController extends Controller
         $mitra = Mitra::find($id);
 
         return view('home.mitradetails',[
-            'title' => 'detail mitra',
+            'title' => 'Detail Mitra',
             'mitra' => $mitra
         ]);
         // return $mitra;
@@ -96,7 +96,7 @@ class HomeController extends Controller
     public function layanan()
     {
         return view('home.layanan', [
-            'title' => 'layanan'
+            'title' => 'Layanan'
         ]);
     }
 
@@ -111,7 +111,7 @@ class HomeController extends Controller
     {
         $galeri = Gallery::find($id)->get();
         return view('home.galeridetails', [
-            'title' => 'detail gambar',
+            'title' => 'Detail Galeri',
             'galeri' => $galeri
         ]);
     }
@@ -120,7 +120,7 @@ class HomeController extends Controller
     {
         $berita = Berita::latest()->paginate(3);
         return view('home.berita', [
-            'title' => 'berita',
+            'title' => 'Berita',
             'beritas' => $berita
         ]);
     }
@@ -159,7 +159,7 @@ class HomeController extends Controller
         $thes = Peringkat::where('jenis', 'THES')->latest()->get();
         $qs = Peringkat::where('jenis', 'QSstar')->latest()->get();
         return view('home.peringkat', [
-            'title' => 'peringkat',
+            'title' => 'Peringkat',
             'thess' => $thes,
             'qss' => $qs
         ]);
@@ -179,7 +179,7 @@ class HomeController extends Controller
         $yayasan = Mitra::where('instansi', 'yayasan')->paginate(5)->withQueryString();
 
         return view('home.mitra.yayasan',[
-            'title' => 'yayasan',
+            'title' => 'Sekolah/Yayasan',
             'yayasans' => $yayasan
         ]);
         // return $yayasan;
@@ -188,7 +188,7 @@ class HomeController extends Controller
         $internasional = Mitra::where('instansi', 'internasional')->paginate(5)->withQueryString();
 
         return view('home.mitra.internasional',[
-            'title' => 'internasional',
+            'title' => 'Internasional',
             'internasionals' => $internasional
         ]);
         // return $yayasan;
@@ -197,7 +197,7 @@ class HomeController extends Controller
         $cv = Mitra::where('instansi', 'cv')->paginate(5)->withQueryString();
 
         return view('home.mitra.cv',[
-            'title' => 'cv',
+            'title' => 'CV/PT',
             'cvs' => $cv
         ]);
         // return $yayasan;
@@ -206,7 +206,7 @@ class HomeController extends Controller
         $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->paginate(5)->withQueryString();
 
         return view('home.mitra.jasaKeuangan',[
-            'title' => 'jasaKeuangan',
+            'title' => 'Jasa Keuangan',
             'jasaKeuangans' => $jasaKeuangan
         ]);
         // return $yayasan;
@@ -215,7 +215,7 @@ class HomeController extends Controller
         $pemerintah = Mitra::where('instansi', 'pemerintah')->paginate(5)->withQueryString();
 
         return view('home.mitra.pemerintah',[
-            'title' => 'pemerintah',
+            'title' => 'Pemerintah',
             'pemerintahs' => $pemerintah
         ]);
         // return $yayasan;

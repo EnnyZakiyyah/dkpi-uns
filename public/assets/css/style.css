@@ -975,6 +975,26 @@ section {
     margin-bottom: 20px;
 }
 
+.portfolio #portfolio-flters a {
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px 5px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    color: #444444;
+    transition: all 0.3s;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+}
+
+.portfolio #portfolio-flters a:hover,
+.portfolio #portfolio-flters a.filter-active {
+    background: #47b2e4;
+    color: #fff;
+}
+
 .portfolio #portfolio-flters li {
     cursor: pointer;
     display: inline-block;
@@ -1731,6 +1751,8 @@ section {
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
+
+
 #footer .footer-newsletter form input[type="submit"]:hover {
     background: #209dd8;
 }
@@ -1896,7 +1918,7 @@ section {
     border: 2px solid rgba(108, 89, 179, 0.75);
 }
 
-button[data-filter="mahasiswa"]:focus~div:not([class*="mahasiswa"]) {
+/* button[data-filter="mahasiswa"]:focus~div:not([class*="mahasiswa"]) {
     display: none;
 }
 
@@ -1918,7 +1940,7 @@ button[data-filter="swims"]:focus~div:not([class*="swims"]) {
 
 button[data-filter="flies"]:focus~div:not([class*="flies"]) {
     display: none;
-}
+} */
 
 .filterDiv {
     float: left;

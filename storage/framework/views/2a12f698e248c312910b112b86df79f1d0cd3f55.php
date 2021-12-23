@@ -1,6 +1,6 @@
 
 
-<?php $__env->startSection('title', 'Dara Mitra'); ?>
+<?php $__env->startSection('title', 'Data Mitra'); ?>
 
 <?php $__env->startSection('container'); ?>
   <!-- Header -->

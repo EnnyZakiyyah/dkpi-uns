@@ -34,38 +34,38 @@
     <div class="card card-body">
       <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
-          <label for="validationCustom01" class="form-label">Nama Instansi</label>
-          <input type="text" class="form-control" id="validationCustom01" name="nama_instansi"required>
+          <label for="validationCustom01" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="validationCustom01" name="nama"required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom02" class="form-label">Waktu Mulai</label>
-          <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai"required>
+          <input type="date" class="form-control" id="validationCustom02" name="jangka_waktu_awal"required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom03" class="form-label">Tujuan</label>
-          <input type="text" class="form-control" id="validationCustom03" name="nomor_uns"required>
+          <input type="text" class="form-control" id="validationCustom03" name="tujuan"required>
           <div class="invalid-feedback">
-            Please provide a valid city.
+            Looks good!
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom03" class="form-label">Waktu Berakhir</label>
-          <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir"required>
+          <input type="date" class="form-control" id="validationCustom03" name="jangka_waktu_akhir"required>
           <div class="invalid-feedback">
-            Please provide a valid city.
+            Looks good!
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom03" class="form-label">Negara</label>
-          <input type="text" class="form-control" id="validationCustom03" name="nomor_mitra" required>
+          <input type="text" class="form-control" id="validationCustom03" name="negara" required>
           <div class="invalid-feedback">
-            Please provide a valid city.
+            Looks good!
           </div>
         </div>
         <div class="col-md-3">
@@ -86,7 +86,7 @@
         </div>
         <div class="col-md-3">
           <label for="validationCustom04" class="form-label">Tahun</label>
-          <input type="text" class="form-control" id="validationCustom03" name="pejabat" required>
+          <input type="text" class="form-control" id="validationCustom03" name="tahun" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
@@ -106,13 +106,14 @@
             <div class="portfolio-item filter-mahasiswa">
 
             <table class="table table-hover">
-
+<h5>MAHASISWA</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
                   <th scope="col">Nama</th>
                   <th scope="col">unit kerja</th>
                   <th scope="col">negara</th>
+                  <th scope="col">tujuan</th>
                   <th scope="col">awal</th>
                   <th scope="col">akhir</th>
                   <th scope="col">Status</th>
@@ -126,6 +127,7 @@
                   <td><?php echo e($mahasiswa->nama); ?></td>
                   <td><?php echo e($mahasiswa->unit_kerja); ?></td>
                   <td><?php echo e($mahasiswa->negara); ?></td>
+                  <td><?php echo e($mahasiswa->tujuan); ?></td>
                   <td><?php echo e($mahasiswa->jangka_waktu_awal); ?></td>
                   <td><?php echo e($mahasiswa->jangka_waktu_akhir); ?></td>
                   <td><?php echo e($mahasiswa->status); ?></td>
@@ -137,33 +139,25 @@
 
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <?php echo e($mahasiswas->links()); ?>
+
+                  </li>
+                </ul>
+              </nav>
             </div>
             <div class="portfolio-item filter-dosen">
 
                 <table class="table table-hover">
-
+<h5>DOSEN</h5>
                   <thead>
                     <tr class="text-primary">
                       <th scope="col">No.</th>
                       <th scope="col">Nama</th>
                       <th scope="col">unit kerja</th>
                       <th scope="col">negara</th>
+                      <th scope="col">tujuan</th>
                       <th scope="col">awal</th>
                       <th scope="col">akhir</th>
                       <th scope="col">Status</th>
@@ -177,6 +171,7 @@
                       <td><?php echo e($dosen->nama); ?></td>
                       <td><?php echo e($dosen->unit_kerja); ?></td>
                       <td><?php echo e($dosen->negara); ?></td>
+                      <td><?php echo e($dosen->tujuan); ?></td>
                       <td><?php echo e($dosen->jangka_waktu_awal); ?></td>
                       <td><?php echo e($dosen->jangka_waktu_akhir); ?></td>
                       <td><?php echo e($dosen->status); ?></td>
@@ -188,33 +183,25 @@
 
                 <!-- Pagination -->
                 <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                      </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <?php echo e($dosens->links()); ?>
+
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
                 <div class="portfolio-item filter-pimpinan">
 
                     <table class="table table-hover">
-
+<H5>PIMPINAN</H5>
                       <thead>
                         <tr class="text-primary">
                           <th scope="col">No.</th>
                           <th scope="col">Nama</th>
                           <th scope="col">unit kerja</th>
                           <th scope="col">negara</th>
+                          <th scope="col">tujuan</th>
                           <th scope="col">awal</th>
                           <th scope="col">akhir</th>
                           <th scope="col">Status</th>
@@ -228,6 +215,7 @@
                           <td><?php echo e($pimpinan->nama); ?></td>
                           <td><?php echo e($pimpinan->unit_kerja); ?></td>
                           <td><?php echo e($pimpinan->negara); ?></td>
+                          <td><?php echo e($pimpinan->tujuan); ?></td>
                           <td><?php echo e($pimpinan->jangka_waktu_awal); ?></td>
                           <td><?php echo e($pimpinan->jangka_waktu_akhir); ?></td>
                           <td><?php echo e($pimpinan->status); ?></td>
@@ -239,22 +227,13 @@
 
                     <!-- Pagination -->
                     <nav aria-label="Page navigation example">
-                      <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                          </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item">
+                            <?php echo e($pimpinans->links()); ?>
+
+                          </li>
+                        </ul>
+                      </nav>
                     </div>
 
             </div>
