@@ -90,8 +90,9 @@
             </div>
 
 
-            <div class="d-flex justify-content-center">
-              <a href="/home/berita/">Selengkapnya</a>
+            <div class="d-flex justify-content-center pt-5">
+              <a href="/home/berita/" class="btn btn-outline-primary">Selengkapnya</a>
+              
             </div>
            
             </div>
@@ -270,6 +271,7 @@
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-<?php echo e($i); ?>"><?php echo $faq->pertanyaan; ?><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-<?php echo e($i); ?>" class="collapse show" data-bs-parent=".faq-list">
                 <p><?php echo e($faq->jawaban); ?></p>
+                <a>Link = <?php echo e($faq->link); ?></a>
               </div>
             </li>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
