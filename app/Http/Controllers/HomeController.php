@@ -54,7 +54,7 @@ class HomeController extends Controller
     {
         $pdln = Pdln::find($id);
 
-        return view('home.pdlndetails',[
+        return view('home.pdlndetails', [
             'title' => 'Details PDLN',
             'pdlns' => $pdln
         ]);
@@ -66,11 +66,11 @@ class HomeController extends Controller
         // $mitras = Mitra::latest();
         // dd(request('nama_instansi'));
 
-        $cv = Mitra::where('instansi', 'cv')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
-        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
-        $internasional = Mitra::where('instansi', 'internasional')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
-        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
-        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->filter(['nama_instansi'])->paginate(5)->withQueryString();
+        $cv = Mitra::where('instansi', 'cv')->latest()->paginate(5)->withQueryString();
+        $yayasan = Mitra::where('instansi', 'yayasan')->latest()->paginate(5)->withQueryString();
+        $internasional = Mitra::where('instansi', 'internasional')->latest()->paginate(5)->withQueryString();
+        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->paginate(5)->withQueryString();
+        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->paginate(5)->withQueryString();
 
         return view('home.mitra', [
             'title' => 'Data Mitra',
@@ -86,7 +86,7 @@ class HomeController extends Controller
     {
         $mitra = Mitra::find($id);
 
-        return view('home.mitradetails',[
+        return view('home.mitradetails', [
             'title' => 'Detail Mitra',
             'mitra' => $mitra
         ]);
@@ -175,46 +175,50 @@ class HomeController extends Controller
         ]);
     }
 
-    public function yayasan(){
-        $yayasan = Mitra::where('instansi', 'yayasan')->paginate(5)->withQueryString();
-
-        return view('home.mitra.yayasan',[
+    public function yayasan()
+    {
+        $yayasan = Mitra::latest()->where('instansi', 'yayasan')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+        return view('home.mitra.yayasan', [
             'title' => 'Sekolah/Yayasan',
             'yayasans' => $yayasan
-        ]);
-        // return $yayasan;
-    }
-    public function internasional(){
-        $internasional = Mitra::where('instansi', 'internasional')->paginate(5)->withQueryString();
 
-        return view('home.mitra.internasional',[
+        ]);
+    }
+    public function internasional()
+    {
+        $internasional = Mitra::where('instansi', 'internasional')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+
+        return view('home.mitra.internasional', [
             'title' => 'Internasional',
             'internasionals' => $internasional
         ]);
         // return $yayasan;
     }
-    public function cv(){
-        $cv = Mitra::where('instansi', 'cv')->paginate(5)->withQueryString();
+    public function cv()
+    {
+        $cv = Mitra::where('instansi', 'cv')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
-        return view('home.mitra.cv',[
+        return view('home.mitra.cv', [
             'title' => 'CV/PT',
             'cvs' => $cv
         ]);
         // return $yayasan;
     }
-    public function jasaKeuangan(){
-        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->paginate(5)->withQueryString();
+    public function jasaKeuangan()
+    {
+        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
-        return view('home.mitra.jasaKeuangan',[
+        return view('home.mitra.jasaKeuangan', [
             'title' => 'Jasa Keuangan',
             'jasaKeuangans' => $jasaKeuangan
         ]);
         // return $yayasan;
     }
-        public function pemerintah(){
-        $pemerintah = Mitra::where('instansi', 'pemerintah')->paginate(5)->withQueryString();
+    public function pemerintah()
+    {
+        $pemerintah = Mitra::where('instansi', 'pemerintah')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
-        return view('home.mitra.pemerintah',[
+        return view('home.mitra.pemerintah', [
             'title' => 'Pemerintah',
             'pemerintahs' => $pemerintah
         ]);

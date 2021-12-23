@@ -32,7 +32,7 @@
         </p>
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
-            <form class="row g-3 needs-validation" action="/home/mitra">
+            <form class="row g-3 needs-validation" action="/home/mitra-jasaKeuangan">
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
                 <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>" required>
@@ -42,7 +42,7 @@
               </div>
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
-                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai" value="<?php echo e(request('waktu_mulai')); ?>" required>
+                <input type="date" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="<?php echo e(request('jangka_waktu_awal')); ?>" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
@@ -50,7 +50,7 @@
               
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
-                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir" value="<?php echo e(request('waktu_berakhir')); ?>" required>
+                <input type="date" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="<?php echo e(request('jangka_waktu_akhir')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
@@ -58,7 +58,7 @@
               
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
-                <input type="text" class="form-control" id="validationCustom03" name="pejabat" value="<?php echo e(request('pejabat')); ?>" required>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="<?php echo e(request('pejabat_penandatangan')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>

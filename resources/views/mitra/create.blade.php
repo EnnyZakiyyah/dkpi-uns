@@ -68,7 +68,7 @@
                             <option value="cv">CV/PT</option>
                             <option value="internasional">internasional</option>
                             <option value="pemerintah">pemerintah</option>
-                            <option value="jasa_keuangan">jasa keuangan</option>
+                            <option value="jasaKeuangan">jasa keuangan</option>
 
 
                             @error('instansi')
@@ -117,6 +117,28 @@
                             </div>
                             @enderror
                         </div>
+                        {{-- <div class="form-group ml-5 mr-5">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                </div>
+                                <input class="form-control datepicker" placeholder="Select date" type="text" value="06/20/2020">
+                            </div>
+                        </div> --}}
+                        {{-- <div class="form-group ml-5 mr-5">
+                            <label for="jangka_waktu_awal">Awal</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                </div>
+                                <input type="date" class="form-control datepicker @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal') }}">
+                                @error('jangka_waktu_awal')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                        </div> --}}
                         <div class="form-group ml-5 mr-5">
                             <label for="jangka_waktu_awal">Awal</label>
                             <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal') }}">

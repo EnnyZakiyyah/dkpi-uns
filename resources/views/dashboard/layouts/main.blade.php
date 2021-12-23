@@ -27,6 +27,8 @@
   <link href="{{asset('/images/uns-touch-icon.png')}}" rel="apple-touch-icon">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- DatePicker -->
+  <script src="{{ asset('assets2/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
   <!-- Icons -->
   <link rel="stylesheet" href="{{asset('assets2/vendor/nucleo/css/nucleo.css')}}" type="text/css">
   <link rel="stylesheet" href="{{asset('assets2/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
