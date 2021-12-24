@@ -23,9 +23,9 @@
                   </div> --}}
 <div class="container">
   <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                    <li data-filter=".filter-mahasiswa">Mahasiswa</li>
-                    <li data-filter=".filter-dosen">Dosen</li>
-                    <li data-filter=".filter-pimpinan">Pimpinan</li>
+                    <a class="filter-active" href="/home/pdln-mahasiswa">Mahasiswa</a>
+                    <a href="/home/pdln-dosen">Dosen</a>
+                    <a href="/home/pdln-pimpinan">Pimpinan</a>
 
   </ul> </div>
 
@@ -39,28 +39,21 @@
       <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
           <label for="validationCustom01" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="validationCustom01" name="nama"required>
+          <input type="text" class="form-control" id="validationCustom01" name="nama" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom02" class="form-label">Waktu Mulai</label>
-          <input type="date" class="form-control" id="validationCustom02" name="jangka_waktu_awal"required>
+          <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal"required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">Tujuan</label>
-          <input type="text" class="form-control" id="validationCustom03" name="tujuan"required>
-          <div class="invalid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-6">
           <label for="validationCustom03" class="form-label">Waktu Berakhir</label>
-          <input type="date" class="form-control" id="validationCustom03" name="jangka_waktu_akhir"required>
+          <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir"required>
           <div class="invalid-feedback">
             Looks good!
           </div>
@@ -70,29 +63,6 @@
           <input type="text" class="form-control" id="validationCustom03" name="negara" required>
           <div class="invalid-feedback">
             Looks good!
-          </div>
-        </div>
-        <div class="col-md-3">
-          <label for="validationCustom04" class="form-label">Status</label>
-          <select class="form-select" id="validationCustom04" required>
-            <option selected disabled value="">Choose...</option>
-            <option>Proses TTD Pimpinan</option>
-            <option>Proses Dikti</option>
-            <option>Proses Setneg</option>
-            <option>Disetujui</option>
-            <option>Ditolak Dikti</option>
-            <option>Ditolak Setneg</option>
-            <option>Dikembalikan</option>
-          </select>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
-        </div>
-        <div class="col-md-3">
-          <label for="validationCustom04" class="form-label">Tahun</label>
-          <input type="text" class="form-control" id="validationCustom03" name="tahun" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
           </div>
         </div>
         <div class="col-12">
@@ -110,7 +80,6 @@
             <div class="portfolio-item filter-mahasiswa">
 
             <table class="table table-hover">
-<h5>MAHASISWA</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -153,7 +122,6 @@
             <div class="portfolio-item filter-dosen">
 
                 <table class="table table-hover">
-<h5>DOSEN</h5>
                   <thead>
                     <tr class="text-primary">
                       <th scope="col">No.</th>
@@ -196,7 +164,6 @@
                 <div class="portfolio-item filter-pimpinan">
 
                     <table class="table table-hover">
-<H5>PIMPINAN</H5>
                       <thead>
                         <tr class="text-primary">
                           <th scope="col">No.</th>

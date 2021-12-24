@@ -58,6 +58,7 @@
 
               <div class="section-title">
                 <h2>Berita</h2>
+                <p>Berisi informasi berupa berita terkait hubungan kerjasama.</p>
                 
               </div>
               <div class="row">

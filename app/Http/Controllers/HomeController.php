@@ -224,4 +224,31 @@ class HomeController extends Controller
         ]);
         // return $yayasan;
     }
+    public function mahasiswa()
+    {
+        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->filter(request(['nama','jangka_waktu_awal','jangka_waktu_akhir','negara']))->paginate(5)->withQueryString();;
+
+        return view('home.pdln.mahasiswa', [
+            'title' => 'PDLN-Mahasiswa',
+            'mahasiswas' => $mahasiswa
+        ]);
+    }
+    public function dosen()
+    {
+        $dosen = Pdln::where('jenis', 'dosen')->filter(request(['nama','jangka_waktu_awal','jangka_waktu_akhir','negara']))->paginate(5)->withQueryString();;
+
+        return view('home.pdln.dosen', [
+            'title' => 'PDLN-Dosen',
+            'dosens' => $dosen
+        ]);
+    }
+    public function pimpinan()
+    {
+        $pimpinan = Pdln::where('jenis', 'pimpinan')->filter(request(['nama','jangka_waktu_awal','jangka_waktu_akhir','negara']))->paginate(5)->withQueryString();;
+
+        return view('home.pdln.pimpinan', [
+            'title' => 'PDLN-Pimpinan',
+            'pimpinans' => $pimpinan
+        ]);
+    }
 }

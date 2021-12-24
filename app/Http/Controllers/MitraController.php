@@ -22,7 +22,7 @@ class MitraController extends Controller
         $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5);
 
         return view('mitra.index', [
-            'title'=> 'Data Mitra',
+            'title' => 'Data Mitra',
             'mitras' => $mitra
         ]);
         // $yayasan = Mitra::where('jenis', 'yayasan')->latest()->get();
@@ -63,16 +63,16 @@ class MitraController extends Controller
         // $file_mou = $request->file('file_mou')->store('file_mou');
 
         $validatedData = $request->validate([
-        'instansi' => 'required',
-        'nama_instansi' =>'required',
-        'no_mou_uns' =>'required',
-        'no_mou_mitra' =>'required',
-        'ruang_lingkup' =>'required',
-        'jangka_waktu_awal' =>'required',
-        'jangka_waktu_akhir' =>'required',
-        'pejabat_penandatangan' =>'required',
-        // 'file_mou' =>'',
-        // 'status_hidden' =>''
+            'instansi' => 'required',
+            'nama_instansi' => 'required',
+            'no_mou_uns' => 'required',
+            'no_mou_mitra' => 'required',
+            'ruang_lingkup' => 'required',
+            'jangka_waktu_awal' => 'required',
+            'jangka_waktu_akhir' => 'required',
+            'pejabat_penandatangan' => 'required',
+            // 'file_mou' =>'',
+            // 'status_hidden' =>''
         ]);
 
 

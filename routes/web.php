@@ -53,6 +53,10 @@ Route::get('/home/mitra-internasional', [HomeController::class, 'internasional']
 Route::get('/home/mitra-jasaKeuangan', [HomeController::class, 'jasaKeuangan']);
 Route::get('/home/mitra-pemerintah', [HomeController::class, 'pemerintah']);
 
+Route::get('/home/pdln-mahasiswa', [HomeController::class, 'mahasiswa']);
+Route::get('/home/pdln-dosen', [HomeController::class, 'dosen']);
+Route::get('/home/pdln-pimpinan', [HomeController::class, 'pimpinan']);
+
 Route::get('/mou-download', [DownloadFileController::class, 'mou']);
 Route::get('/pks-download', [DownloadFileController::class, 'pks']);
 
