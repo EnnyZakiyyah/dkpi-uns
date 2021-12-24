@@ -25,11 +25,11 @@ class CreatePdlnsTable extends Migration
             $table->text('tujuan');
             $table->string('negara');
             $table->string('surat_uns')->default('null');
-            $table->text('catatan_uns')->default('null');
+            $table->text('catatan_uns');
             $table->string('belmawa')->default('null');
-            $table->text('catatan_belmawa')->default('null');
+            $table->text('catatan_belmawa');
             $table->string('ktln_kemensetneg')->default('null');
-            $table->text('catatan_setneg')->default('null');
+            $table->text('catatan_setneg');
             $table->string('file_surat_uns')->default('null');
             $table->string('file_belmawa')->default('null');
             $table->string('file_ktln')->default('null');
