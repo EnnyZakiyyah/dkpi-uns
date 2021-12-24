@@ -55,6 +55,7 @@
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">pertanyaan</th>
                   <th scope="col" class="sort" data-sort="nama">jawaban</th>
+                  <th scope="col" class="sort" data-sort="nama">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">

@@ -123,10 +123,7 @@
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">
-                <!-- Heading -->
-                <h6 class="navbar-heading p-0 text-muted">
-                    <span class="docs-normal">Documentation</span>
-                </h6>
+              
             </div>
         </div>
     </div>
@@ -197,7 +194,7 @@
     </nav>
    @yield('container')
       <!-- Footer -->
-      <footer class="footer pt-0">
+      <footer class="footer pt-5">
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
             <div class="copyright text-center  text-lg-left  text-muted">
