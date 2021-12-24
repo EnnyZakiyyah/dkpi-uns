@@ -9,6 +9,7 @@
 
             <div class="section-title">
               <h2>Galeri</h2>
+              <p>Berisi Video/Gambar terkait hubungan kerjasama.</p>
               
             </div>
 
