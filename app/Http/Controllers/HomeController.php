@@ -26,13 +26,15 @@ class HomeController extends Controller
         $faq = Faq::get();
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
         $berita = Berita::latest()->take(6)->paginate(3);
+        $gallery = Gallery::latest()->take(9);
 
 
         return view('home.index', [
             'title' => 'DKPI',
             'pengumumans' => $pengumuman,
             'faqs' => $faq,
-            'beritas' => $berita
+            'beritas' => $berita,
+            'galleries' => $gallery
         ]);
     }
 

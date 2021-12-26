@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -17,12 +18,11 @@
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter=".filter-yayasan">Sekolah/Yayasan</li>
-            <a href="/home/mitra-yayasan">yayasan</a>
-            <li data-filter=".filter-cv">CV/PT</li>
-          <li data-filter=".filter-internasional">Internasional</li>
-          <li data-filter=".filter-jasaKeuangan"><center>Jasa Keuangan</center></li>
-          <li data-filter=".filter-pemerintah">Pemerintah</li>
+            <a class="filter-active" href="/home/mitra-cv">CV/PT</a>
+            <a href="/home/mitra-yayasan">Sekolah/Yayasan</a>
+            <a href="/home/mitra-internasional">Internasional</a>
+            <a href="/home/mitra-jasaKeuangan">Jasa Keuangan</a>
+            <a href="/home/mitra-pemerintah">Pemerintah</a>
         </ul>
 
         <p>
@@ -32,7 +32,7 @@
         </p>
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
-            <form class="row g-3 needs-validation" action="/home/mitra">
+            <form class="row g-3 needs-validation" action="/home/mitra-cv">
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
                 <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>" required>
@@ -42,7 +42,7 @@
               </div>
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
-                <input type="date" class="form-control" id="validationCustom02" name="waktu_mulai" value="<?php echo e(request('waktu_mulai')); ?>" required>
+                <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="<?php echo e(request('jangka_waktu_awal')); ?>" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
@@ -50,7 +50,7 @@
               
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
-                <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir" value="<?php echo e(request('waktu_berakhir')); ?>" required>
+                <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="<?php echo e(request('jangka_waktu_akhir')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
@@ -58,7 +58,7 @@
               
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
-                <input type="text" class="form-control" id="validationCustom03" name="pejabat" value="<?php echo e(request('pejabat')); ?>" required>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="<?php echo e(request('pejabat_penandatangan')); ?>" required>
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
@@ -77,7 +77,6 @@
         <!-- CV/PT -->
         <div class="portfolio-item filter-yayasan">
             <table class="table table-hover">
-                <h5>YAYASAN/SEKOLAH</h5>
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -120,7 +119,8 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
-                  
+                  <?php echo e($cvs->links()); ?>
+
                 </li>
               </ul>
             </nav>
@@ -137,7 +137,7 @@
 
 
     </div>
-
+   
     
 
 <?php $__env->stopSection(); ?>
