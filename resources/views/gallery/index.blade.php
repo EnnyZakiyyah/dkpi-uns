@@ -1,6 +1,8 @@
-<?php $__env->startSection('title', 'Galeri'); ?>
+@extends('dashboard/layouts/main')
 
-<?php $__env->startSection('container'); ?>
+@section('title', 'Galeri')
+
+@section('container')
 <style type="text/css">
     .pagination li{
         float: left;
@@ -35,8 +37,8 @@
         <div class="card-body">
           <div class="row">
             <div class="col">
-              <h5 class="card-title text-uppercase text-muted mb-0">Data PDLN</h5>
-              <span class="h2 font-weight-bold mb-0">Data PDLN</span>
+              <h5 class="card-title text-uppercase text-muted mb-0">Galeri</h5>
+              <span class="h2 font-weight-bold mb-0">Galeri</span>
             </div>
             <div class="col-auto">
               <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -45,8 +47,8 @@
             </div>
           </div>
           <p class="mt-3 mb-0 text-sm">
-            
-            <a class="text-nowrap text-warning" href="/pdln">Perjalanan Dinas Luar Negeri</a>
+            {{-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span> --}}
+            <a class="text-nowrap text-warning" href="/gallery/create">tambahkan galeri</a>
           </p>
         </div>
       </div>
@@ -58,6 +60,4 @@
 </div>
 </div>
 </div>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('dashboard/layouts/main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/galeri/index.blade.php ENDPATH**/ ?>
+@endsection

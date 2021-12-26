@@ -53,7 +53,7 @@
                         @csrf
                         <div class="form-group ml-5 mr-5">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control  @error('nama') is-invalid @enderror" id="nama" placeholder="Nama jenis" name="nama" value="{{ old('nama') }}">
+                            <input type="text" class="form-control  @error('nama') is-invalid @enderror" id="nama" placeholder="Nama" name="nama" value="{{ old('nama') }}">
                             @error('nama')
                             <div class="invalid-feedback">
                                 {{ $message }}

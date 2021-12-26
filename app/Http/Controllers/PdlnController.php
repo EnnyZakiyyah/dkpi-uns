@@ -13,6 +13,12 @@ use PhpOffice\PhpSpreadsheet\Calculation\LookupRef\ExcelMatch;
 
 class PdlnController extends Controller
 {
+
+    public function __construct()
+    {
+        $title = ['title' => 'Data PDLN'];
+        return $title;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +47,9 @@ class PdlnController extends Controller
      */
     public function create()
     {
-        return view('pdln.create');
+        return view('pdln.create',[
+            'title' => 'Data PDLN'
+        ]);
     }
 
     /**
@@ -97,6 +105,7 @@ class PdlnController extends Controller
         // $file_ktln = Storage::get($pdln->file_ktln, $pdln->nama);
 
         return view('pdln.show', [
+            'title' => 'Data PDLN',
             'pdln' => $pdln
             // 'file_uns' => $file_surat_uns,
             // 'file_belmawa' => $file_belmawa,
@@ -114,6 +123,7 @@ class PdlnController extends Controller
     {
         //
         return view('pdln.edit', [
+            'title' => 'Data PDLN',
             'pdln' => $pdln
         ]);
     }
@@ -164,9 +174,10 @@ class PdlnController extends Controller
     public function jenis($jenis)
     {
 
-        $jenis = Pdln::where('jenis', $jenis)->latest()->get();
+        $jenis = Pdln::where('jenis', $jenis)->latest()->paginate(5)->withQueryString();
 
         return view('pdln.index', [
+            'title' => 'Data PDLN',
             'pdlns' => $jenis
         ]);
     }

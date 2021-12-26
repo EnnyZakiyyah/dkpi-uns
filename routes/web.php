@@ -83,16 +83,15 @@ Route::middleware('auth')->group(function () {
     Route::resource('/mitra',  MitraController::class);
     Route::resource('/pdln', PdlnController::class);
     Route::resource('/berita', BeritaController::class);
-    Route::resource('/galeri', GalleryController::class);
+    Route::resource('/gallery', GalleryController::class);
     Route::resource('/pengumuman', PengumumanController::class);
     Route::resource('/pengaduan', PengaduanController::class);
     Route::resource('/peringkat', PeringkatController::class);
     Route::resource('/faq', FaqController::class);
 
 
-    Route::get('/data/mahasiswa', [PdlnController::class, 'mahasiswa']);
-    Route::get('/data/dosen', [PdlnController::class, 'dosen']);
-    Route::get('/data/pimpinan', [PdlnController::class, 'pimpinan']);
+    Route::get('/data/{jenis}', [PdlnController::class, 'jenis']);
+
 
     // import
     Route::get('/data/pdlnimport', [PdlnController::class, 'import']);

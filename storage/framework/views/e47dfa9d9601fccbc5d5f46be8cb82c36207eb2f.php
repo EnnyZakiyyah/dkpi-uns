@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -17,12 +18,12 @@
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter=".filter-yayasan">Sekolah/Yayasan</li>
-            <a href="/home/mitra-yayasan">yayasan</a>
-            <li data-filter=".filter-cv">CV/PT</li>
-          <li data-filter=".filter-internasional">Internasional</li>
-          <li data-filter=".filter-jasaKeuangan"><center>Jasa Keuangan</center></li>
-          <li data-filter=".filter-pemerintah">Pemerintah</li>
+          <a class="filter-active" href="/home/mitra-cv">CV/PT</a>
+          <a href="/home/mitra-yayasan">Sekolah/Yayasan</a>
+          
+          <a href="/home/mitra-internasional">Internasional</a>
+          <a href="/home/mitra-jasaKeuangan"><center>Jasa Keuangan</center></a>
+          <a href="/home/mitra-pemerintah">Pemerintah</a>
         </ul>
 
         <p>
@@ -74,10 +75,61 @@
 <br/>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-        <!-- CV/PT -->
+           <!-- CV/PT -->
+          <div class="portfolio-item filter-cv">
+            <table class="table table-hover">
+              <thead>
+                <tr class="text-primary">
+                  <th scope="col">No.</th>
+                  <th scope="col">Nama Instansi</th>
+                  <th scope="col">Ruang Lingkup</th>
+                  <th scope="col">Awal</th>
+                  <th scope="col">Akhir</th>
+                  <th scope="col">Pejabat Penandatangan</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php $__currentLoopData = $cvs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <tr>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($cv->nama_instansi); ?></td>
+                  <td><?php echo e($cv->ruang_lingkup); ?></td>
+                  <td><?php echo e($cv->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($cv->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($cv->pejabat_penandatangan); ?></td>
+                  <td><?php echo e($cv->status); ?></td>
+                  <td>
+                    <a href="/home/mitra/<?php echo e($cv->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    <?php if(Auth::check()): ?>
+                    <a href="/mitra/<?php echo e($cv->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="/mitra/<?php echo e($cv->id); ?>" method="POST" class="d-inline">
+                        <?php echo method_field('delete'); ?>
+                        <?php echo csrf_field(); ?>
+                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                    </form>
+                    <?php endif; ?>
+                </td>
+                </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+              </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <?php echo e($cvs->links()); ?>
+
+                </li>
+              </ul>
+            </nav>
+        </div>
+        <!-- Sekolah/Yayasan -->
         <div class="portfolio-item filter-yayasan">
             <table class="table table-hover">
-                <h5>YAYASAN/SEKOLAH</h5>
+                
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -128,60 +180,10 @@
         </div>
 
 
-        <div class="portfolio-item filter-cv">
-            <table class="table table-hover">
-                <h5>CV/PT</h5>
-              <thead>
-                <tr class="text-primary">
-                  <th scope="col">No.</th>
-                  <th scope="col">Nama Instansi</th>
-                  <th scope="col">Ruang Lingkup</th>
-                  <th scope="col">Awal</th>
-                  <th scope="col">Akhir</th>
-                  <th scope="col">Pejabat Penandatangan</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php $__currentLoopData = $cvs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
-                  <td><?php echo e($cv->nama_instansi); ?></td>
-                  <td><?php echo e($cv->ruang_lingkup); ?></td>
-                  <td><?php echo e($cv->jangka_waktu_awal); ?></td>
-                  <td><?php echo e($cv->jangka_waktu_akhir); ?></td>
-                  <td><?php echo e($cv->pejabat_penandatangan); ?></td>
-                  <td><?php echo e($cv->status); ?></td>
-                  <td>
-                    <a href="/home/mitra/<?php echo e($cv->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
-                    <?php if(Auth::check()): ?>
-                    <a href="/mitra/<?php echo e($cv->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="/mitra/<?php echo e($cv->id); ?>" method="POST" class="d-inline">
-                        <?php echo method_field('delete'); ?>
-                        <?php echo csrf_field(); ?>
-                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
-                    </form>
-                    <?php endif; ?>
-                </td>
-                </tr>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              </tbody>
-            </table>
-
-            <!-- Pagination -->
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item">
-                  <?php echo e($cvs->links()); ?>
-
-                </li>
-              </ul>
-            </nav>
-        </div>
+       
         <div class="portfolio-item filter-internasional">
             <table class="table table-hover">
-                <h5>INTERNASIONAL</h5>
+                
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -232,7 +234,7 @@
         </div>
         <div class="portfolio-item filter-jasaKeuangan">
             <table class="table table-hover">
-                <h5>JASA KEUANGAN</h5>
+               
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
@@ -283,7 +285,7 @@
         </div>
         <div class="portfolio-item filter-pemerintah">
             <table class="table table-hover">
-                <h5>PEMERINTAH</h5>
+                
               <thead>
                 <tr class="text-primary">
                   <th scope="col">No.</th>
