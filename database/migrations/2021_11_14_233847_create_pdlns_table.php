@@ -24,19 +24,6 @@ class CreatePdlnsTable extends Migration
             $table->string('jangka_waktu_akhir');
             $table->text('tujuan');
             $table->string('negara');
-<<<<<<< Updated upstream
-            $table->string('surat_uns')->default('null');
-            $table->text('catatan_uns');
-            $table->string('belmawa')->default('null');
-            $table->text('catatan_belmawa');
-            $table->string('ktln_kemensetneg')->default('null');
-            $table->text('catatan_setneg');
-            $table->string('file_surat_uns')->default('null');
-            $table->string('file_belmawa')->default('null');
-            $table->string('file_ktln')->default('null');
-            $table->string('status_hidden')->default('null');
-            $table->string('status')->default('null');
-=======
             $table->string('surat_uns')->nullable();
             $table->text('catatan_uns')->nullable();
             $table->string('belmawa')->nullable();
@@ -48,7 +35,6 @@ class CreatePdlnsTable extends Migration
             $table->string('file_ktln')->nullable();
             $table->string('status_hidden')->nullable();
             $table->string('status')->nullable();
->>>>>>> Stashed changes
 
             $table->timestamps();
         });

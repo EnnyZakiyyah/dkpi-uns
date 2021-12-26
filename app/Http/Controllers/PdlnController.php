@@ -105,12 +105,8 @@ class PdlnController extends Controller
         // $file_belmawa = Storage::get($pdln->file_belmawa, $pdln->nama);
         // $file_ktln = Storage::get($pdln->file_ktln, $pdln->nama);
 
-<<<<<<< Updated upstream
-        return view('pdln.show',[
-=======
         return view('pdln.show', [
             'title' => 'Data PDLN',
->>>>>>> Stashed changes
             'pdln' => $pdln
             // 'file_uns' => $file_surat_uns,
             // 'file_belmawa' => $file_belmawa,
@@ -180,12 +176,8 @@ class PdlnController extends Controller
 
         $jenis = Pdln::where('jenis', $jenis)->latest()->paginate(5)->withQueryString();
 
-<<<<<<< Updated upstream
-        return view('pdln.index',[
-=======
         return view('pdln.index', [
             'title' => 'Data PDLN',
->>>>>>> Stashed changes
             'pdlns' => $jenis
         ]);
     }

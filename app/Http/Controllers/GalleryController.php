@@ -15,15 +15,11 @@ class GalleryController extends Controller
     public function index()
     {
         //
-<<<<<<< Updated upstream
-        return view('galeri.index');
-=======
         $gallery =  Gallery::latest()->get();
         return view('gallery.index',[
             'title'=>'galeri',
             'galleries' => $gallery
         ]);
->>>>>>> Stashed changes
     }
 
     /**
