@@ -15,7 +15,15 @@ class GalleryController extends Controller
     public function index()
     {
         //
+<<<<<<< Updated upstream
         return view('galeri.index');
+=======
+        $gallery =  Gallery::latest()->get();
+        return view('gallery.index',[
+            'title'=>'galeri',
+            'galleries' => $gallery
+        ]);
+>>>>>>> Stashed changes
     }
 
     /**
@@ -25,7 +33,9 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        
+        return view('gallery.create',[
+            'title'=>'galeri'
+        ]);
     }
 
     /**
@@ -37,6 +47,18 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         //
+        $gambar = $request->file('gambar')->store('gambar');
+
+        $validatedData = $request->validate([
+        'caption' => 'required'
+        ]);
+
+        $validatedData['gambar'] = $gambar;
+
+        Gallery::create($validatedData);
+        return redirect('/gallery')->with('success', 'Gambar berhasil ditambah!');
+
+
     }
 
     /**
@@ -47,7 +69,10 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery)
     {
-        //
+        return view('gallery.show', [
+            'title' => 'data galeri ',
+            'gallery' => $gallery
+        ]);
     }
 
     /**
@@ -59,6 +84,10 @@ class GalleryController extends Controller
     public function edit(Gallery $gallery)
     {
         //
+        return view('gallery.edit', [
+            'title' => 'edit galeri',
+            'gallery' => $gallery
+        ]);
     }
 
     /**
@@ -81,6 +110,7 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        //
+        Gallery::destroy($gallery);
+        return redirect('/gallery')->with('status', 'data berhasil dihapus');
     }
 }

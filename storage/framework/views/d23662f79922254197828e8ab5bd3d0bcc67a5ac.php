@@ -58,64 +58,46 @@
 
               <div class="section-title">
                 <h2>Berita</h2>
+                <p>Berisi informasi berupa berita terkait hubungan kerjasama.</p>
                 
               </div>
               <div class="row">
-                
+                <div class="carousel-inner">
+                   
+                  <div class="carousel-item active">
+                    
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                      <?php $__currentLoopData = $beritas->skip(0); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                      <div class="col">
+                        <div class="card h-100">
+                          <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title"><?php echo e($berita->judul); ?></h5>
+                            <p class="card-text"><?php echo e($berita->excerpt); ?>
 
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  </div>
-
-                  <div class="carousel-inner">
-
-                    <div class="carousel-item active">
-
-                      <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <?php $__currentLoopData = $beritas->skip(0); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="col">
-                          <div class="card h-100">
-                            <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title"><?php echo e($berita->judul); ?></h5>
-                              <p class="card-text"><?php echo e($berita->excerpt); ?>
-
-                               <left> <a href="/home/berita/beritadetails/<?php echo e($berita->id); ?>" class="btn-learn-more">Baca Selengkapnya...</a></left>
-                              </p>
-                            </div>
-                            <div class="card-footer">
-                              <small class="text-muted"><?php echo e($berita->created_at->diffForHumans()); ?></small>
-                            </div>
+                             <left> <a href="/home/berita/beritadetails/<?php echo e($berita->id); ?>" class="btn-learn-more">Baca Selengkapnya...</a></left>
+                            </p>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted"><?php echo e($berita->created_at->diffForHumans()); ?></small>
                           </div>
                         </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </div>
-
-                    </div>
-
+                      </div>
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </div>
-
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-
+                  </div>
                 </div>
-
                 
-
             </div>
 
 
-
+            <div class="d-flex justify-content-center pt-5">
+              <a href="/home/berita/" class="btn btn-outline-primary">Selengkapnya</a>
+              
             </div>
+           
+            </div>
+            
           </section><!-- End Team Section -->
     </div>
 
@@ -290,6 +272,7 @@
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-<?php echo e($i); ?>"><?php echo $faq->pertanyaan; ?><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-<?php echo e($i); ?>" class="collapse show" data-bs-parent=".faq-list">
                 <p><?php echo e($faq->jawaban); ?></p>
+                <a href="<?php echo e($faq->link); ?>"><?php echo e($faq->link); ?></a>
               </div>
             </li>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -87,7 +87,7 @@ unset($__errorArgs, $__bag); ?>" id="instansi" placeholder="jenis instansi" name
                             <option value="cv">CV/PT</option>
                             <option value="internasional">internasional</option>
                             <option value="pemerintah">pemerintah</option>
-                            <option value="jasa_keuangan">jasa keuangan</option>
+                            <option value="jasaKeuangan">jasa keuangan</option>
 
 
                             <?php $__errorArgs = ['instansi'];
@@ -178,6 +178,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
+                        
+                        
                         <div class="form-group ml-5 mr-5">
                             <label for="jangka_waktu_awal">Awal</label>
                             <input type="date" class="form-control <?php $__errorArgs = ['jangka_waktu_awal'];

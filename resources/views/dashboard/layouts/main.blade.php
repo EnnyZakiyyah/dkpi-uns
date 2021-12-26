@@ -89,9 +89,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
+<<<<<<< Updated upstream
                         <a class="nav-link active" href="{{url('/galeri')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">galeri</span>
+=======
+                        <a class="nav-link {{ ($title === "Galeri") ? 'active' : '' }}" href="{{url('/gallery')}}">
+                            <i class="ni ni-image text-primary"></i>
+                            <span class="nav-link-text">Galeri</span>
+>>>>>>> Stashed changes
                         </a>
                     </li>
                     <li class="nav-item">
@@ -121,10 +127,14 @@
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">
+<<<<<<< Updated upstream
                 <!-- Heading -->
                 <h6 class="navbar-heading p-0 text-muted">
                     <span class="docs-normal">Documentation</span>
                 </h6>
+=======
+
+>>>>>>> Stashed changes
             </div>
         </div>
     </div>
@@ -162,6 +172,7 @@
                 </div>
               </div>
             </li>
+<<<<<<< Updated upstream
             <li class="nav-item d-sm-none">
               <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
                 <i class="ni ni-zoom-split-in"></i>
@@ -231,13 +242,35 @@
                 </div>
               </div>
             </li>
+=======
+
+
+>>>>>>> Stashed changes
           </ul>
           <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
             <li class="nav-item dropdown">
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
+<<<<<<< Updated upstream
 
                   <div class="media-body  ml-2  d-none d-lg-block">
+=======
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <!-- Avatar -->
+                      <img alt="Image placeholder" src="{{asset('assets/img/avatar3.png')}}" class="avatar rounded-circle">
+                    </div>
+                    <div class="col ml--2">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          <span class="mb-0 text-sm  font-weight-bold">Admin</span>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  {{-- <div class="media-body  ml-2  d-none d-lg-block">
+>>>>>>> Stashed changes
                     <span class="mb-0 text-sm  font-weight-bold">Admin</span>
                   </div>
                 </div>
@@ -246,6 +279,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
+<<<<<<< Updated upstream
                 <a href="#!" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
@@ -262,6 +296,9 @@
                   <i class="ni ni-support-16"></i>
                   <span>Support</span>
                 </a>
+=======
+
+>>>>>>> Stashed changes
                 <div class="dropdown-divider"></div>
 
                 <form action="/logout" method="POST" class="dropdown-item">
