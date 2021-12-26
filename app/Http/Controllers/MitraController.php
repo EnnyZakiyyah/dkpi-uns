@@ -48,7 +48,9 @@ class MitraController extends Controller
     public function create()
     {
         //
-        return view('mitra.create');
+        return view('mitra.create',[
+            'title' => 'Data Mitra'
+        ]);
     }
 
     /**
@@ -92,6 +94,7 @@ class MitraController extends Controller
         //
         $mitra = Mitra::find($id);
         return view('mitra.show', [
+            'title' => 'Data Mitra',
             'mitra' =>  $mitra
         ]);
     }
@@ -107,6 +110,7 @@ class MitraController extends Controller
         //
         $data = Mitra::find($mitra);
         return view('mitra.edit', [
+            'title' => 'Data Mitra',
             'mitra' => $data
         ]);
     }

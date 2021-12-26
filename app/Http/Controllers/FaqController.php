@@ -30,7 +30,9 @@ class FaqController extends Controller
      */
     public function create()
     {
-        return view('faq.create');
+        return view('faq.create',[
+            'title' => 'FAQ'
+        ]);
     }
 
     /**
@@ -66,6 +68,7 @@ class FaqController extends Controller
     public function show(Faq $faq)
     {
         return view('faq.show', [
+            'title' => 'FAQ',
             'faq' => $faq
         ]);
     }
@@ -82,6 +85,7 @@ class FaqController extends Controller
         $faq = Faq::find($faq);
         // return $faq;
          return view('faq.edit', [
+            'title' => 'FAQ',
             'faq' => $faq
         ]);
     }

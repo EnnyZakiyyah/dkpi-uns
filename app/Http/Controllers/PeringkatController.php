@@ -32,7 +32,9 @@ class PeringkatController extends Controller
     public function create()
     {
         //
-        return view('peringkat.create');
+        return view('peringkat.create',[
+            'title' => 'Pengaduan'
+        ]);
     }
 
     /**
@@ -56,6 +58,7 @@ class PeringkatController extends Controller
     {
         //
         return view('peringkat.show', [
+            'title' => 'Pengaduan',
             'peringkat' => $peringkat
         ]);
     }
@@ -71,6 +74,7 @@ class PeringkatController extends Controller
         //
 
         return view('peringkat.edit', [
+            'title' => 'Pengaduan',
             'peringkat' => $peringkat
         ]);
     }

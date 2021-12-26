@@ -32,7 +32,9 @@ class BeritaController extends Controller
     public function create()
     {
         //
-        return view('berita.create');
+        return view('berita.create',[
+            'title' => 'Berita'
+        ]);
     }
 
     /**
@@ -75,6 +77,7 @@ class BeritaController extends Controller
     {
         $berita = Berita::find($berita);
         return view('berita.show', [
+            'title' => 'Berita',
             'berita' => $berita
         ]);
 
@@ -92,6 +95,7 @@ class BeritaController extends Controller
         //
         $berita = Berita::find($id);
         return view('berita.edit', [
+            'title' => 'Berita',
             'berita' => $berita
         ]);
     }
