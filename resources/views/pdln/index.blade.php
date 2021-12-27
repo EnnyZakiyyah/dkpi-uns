@@ -50,9 +50,10 @@
   </div>
   <!-- Page content -->
   @php
-        use Carbon\Carbon;
+        // use Carbon\Carbon;
         // $today_date = Carbon::today()->isoFormat('D MMMM Y');
-        $today = Carbon::now()->isoFormat('D MMMM Y');
+        // $today = Carbon::now()->isoFormat('D MMMM Y');
+        // setlocale(LC_TIME, 'id_ID');
     @endphp
   <div class="container-fluid mt--6">
     <div class="row">
@@ -88,8 +89,8 @@
                   {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}
                   <td>{{ $pdln->unit_kerja }}</td>
                   <td>{{ $pdln->negara }}</td>
-                  <td>{{ date('d F Y',strtotime($pdln->jangka_waktu_awal)) }}</td>
-                  <td>{{ date('d F Y',strtotime($pdln->jangka_waktu_akhir)) }}</td>
+                  <td>{{ empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y') }}</td>
+                  <td>{{ empty(strtotime($pdln->jangka_waktu_akhir)) ?  $pdln->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_akhir)))->isoFormat('D MMMM Y') }}</td>
                   <td>
                     <a href="/pdln/{{ $pdln->id }}" class="badge badge-info">Detail</a>
                   </td>

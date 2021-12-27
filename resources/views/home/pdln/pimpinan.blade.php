@@ -101,8 +101,8 @@
                   <td>{{ $pimpinan->unit_kerja }}</td>
                   <td>{{ $pimpinan->negara }}</td>
                   <td>{{ $pimpinan->tujuan }}</td>
-                  <td>{{ $pimpinan->jangka_waktu_awal }}</td>
-                  <td>{{ $pimpinan->jangka_waktu_akhir }}</td>
+                  <td>{{ $date = empty(strtotime($pimpinan->jangka_waktu_awal)) ? $pimpinan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pimpinan->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
+                  <td>{{ $date = empty(strtotime($pimpinan->jangka_waktu_akhir)) ? $pimpinan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pimpinan->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $pimpinan->status }}</td>
                   <td></td>
                 </tr>

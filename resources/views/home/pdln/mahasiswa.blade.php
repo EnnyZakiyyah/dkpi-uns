@@ -101,8 +101,8 @@
                   <td>{{ $mahasiswa->unit_kerja }}</td>
                   <td>{{ $mahasiswa->negara }}</td>
                   <td>{{ $mahasiswa->tujuan }}</td>
-                  <td>{{ $mahasiswa->jangka_waktu_awal }}</td>
-                  <td>{{ $mahasiswa->jangka_waktu_akhir }}</td>
+                  <td>{{ $date = empty(strtotime($mahasiswa->jangka_waktu_awal)) ? $mahasiswa->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($mahasiswa->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
+                  <td>{{ $date = empty(strtotime($mahasiswa->jangka_waktu_akhir)) ? $mahasiswa->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($mahasiswa->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $mahasiswa->status }}</td>
                   <td></td>
                 </tr>

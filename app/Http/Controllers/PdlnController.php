@@ -10,6 +10,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\Calculation\LookupRef\ExcelMatch;
+use Carbon\Carbon;
 
 class PdlnController extends Controller
 {
@@ -18,6 +19,7 @@ class PdlnController extends Controller
     {
         $title = ['title' => 'Data PDLN'];
         return $title;
+       
     }
     /**
      * Display a listing of the resource.
@@ -28,6 +30,7 @@ class PdlnController extends Controller
     {
         // $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
         // $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
+       
         $pdln = Pdln::latest()->filter(request(['nama']))->paginate(5)->withQueryString();
 
 
@@ -47,7 +50,7 @@ class PdlnController extends Controller
      */
     public function create()
     {
-        return view('pdln.create',[
+        return view('pdln.create', [
             'title' => 'Data PDLN'
         ]);
     }
@@ -67,18 +70,18 @@ class PdlnController extends Controller
         $validatedData = $request->validate([
             'jenis' => 'required',
             'nama' => 'required',
-            'jumlah_orang'=> 'required',
-            'unit_kerja'=> 'required' ,
-            'jangka_waktu_awal'=> 'required',
-            'jangka_waktu_akhir'=> 'required',
-            'tujuan'=> 'required',
-            'negara'=> 'required',
-            'surat_uns'=> '',
-            'catatan_uns'=> '',
-            'belmawa'=> '',
-            'catatan_belmawa'=> '',
-            'ktln_kemensetneg'=> '',
-            'catatan_setneg'=> ''
+            'jumlah_orang' => 'required',
+            'unit_kerja' => 'required',
+            'jangka_waktu_awal' => 'required',
+            'jangka_waktu_akhir' => 'required',
+            'tujuan' => 'required',
+            'negara' => 'required',
+            'surat_uns' => '',
+            'catatan_uns' => '',
+            'belmawa' => '',
+            'catatan_belmawa' => '',
+            'ktln_kemensetneg' => '',
+            'catatan_setneg' => ''
         ]);
 
         $validatedData['file_surat_uns'] = $file_surat_uns;
@@ -86,7 +89,7 @@ class PdlnController extends Controller
         $validatedData['file_ktln'] = $file_ktln;
         $validatedData['status_hidden'] = 'berlaku';
         $validatedData['status'] = 'berlaku';
-
+      
         Pdln::create($validatedData);
 
         return redirect('/pdln')->with('success', 'Data berhasil ditambah!');

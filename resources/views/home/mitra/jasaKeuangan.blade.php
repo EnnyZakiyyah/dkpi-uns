@@ -113,8 +113,8 @@
                   <th scope="row">{{ $loop->iteration }}</th>
                   <td>{{ $jasaKeuangan->nama_instansi }}</td>
                   <td>{{ $jasaKeuangan->ruang_lingkup }}</td>
-                  <td>{{ $jasaKeuangan->jangka_waktu_awal }}</td>
-                  <td>{{ $jasaKeuangan->jangka_waktu_akhir }}</td>
+                  <td>{{ $date = empty(strtotime($jasaKeuangan->jangka_waktu_awal)) ? $jasaKeuangan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($jasaKeuangan->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
+                  <td>{{ $date = empty(strtotime($jasaKeuangan->jangka_waktu_akhir)) ? $jasaKeuangan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($jasaKeuangan->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $jasaKeuangan->pejabat_penandatangan }}</td>
                   <td>{{ $jasaKeuangan->status }}</td>
                   <td>

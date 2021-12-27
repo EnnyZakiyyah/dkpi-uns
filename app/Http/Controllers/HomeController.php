@@ -179,10 +179,12 @@ class HomeController extends Controller
 
     public function yayasan()
     {
+        
         $yayasan = Mitra::latest()->where('instansi', 'yayasan')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
         return view('home.mitra.yayasan', [
             'title' => 'Sekolah/Yayasan',
             'yayasans' => $yayasan
+            
 
         ]);
     }
@@ -228,6 +230,7 @@ class HomeController extends Controller
     }
     public function mahasiswa()
     {
+        // $date = empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y');
         $mahasiswa = Pdln::where('jenis', 'mahasiswa')->filter(request(['nama','jangka_waktu_awal','jangka_waktu_akhir','negara']))->paginate(5)->withQueryString();;
 
         return view('home.pdln.mahasiswa', [

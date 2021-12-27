@@ -39,7 +39,7 @@
     <!-- Page content -->
     <?php
         use Carbon\Carbon;
-        $today_date = Carbon::today()->format('d-m-Y');
+        $today_date = Carbon::today()->isoFormat('D MMMM Y');
     ?>
     <div class="container-fluid mt--6">
         <div class="row">
