@@ -15,7 +15,7 @@ class GalleryController extends Controller
     public function index()
     {
         //
-        $gallery =  Gallery::latest()->get();
+        $gallery =  Gallery::latest()->filter(request(['judul']))->paginate(5)->withQueryString();
         return view('gallery.index',[
             'title'=>'galeri',
             'galleries' => $gallery

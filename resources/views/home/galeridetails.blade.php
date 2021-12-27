@@ -33,15 +33,15 @@
                           <div class="swiper-wrapper align-items-center">
             
                             <div class="swiper-slide">
-                                <center><iframe width="560" height="315" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                                <center><iframe  width="650" height="370" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                             </div>
             
                             <div class="swiper-slide">
-                                <center><iframe width="560" height="315" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                                <center><iframe  width="650" height="370" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                             </div>
             
                             <div class="swiper-slide">
-                                <center><iframe width="560" height="315" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                                <center><iframe  width="650" height="370" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                             </div>
             
                           </div>
