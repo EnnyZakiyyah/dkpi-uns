@@ -62,7 +62,7 @@
                             <form action="{{ $faq->id }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                             </form>
                             <a href="/faq" class="card-link ml-5">Kembali</a>
                         </div>

@@ -120,7 +120,7 @@ class PengumumanController extends Controller
      * @param  \App\Models\Pengumuman  $pengumuman
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pengumuman $pengumuman)
+    public function destroy($pengumuman)
     {
         //
         Pengumuman::destroy($pengumuman);

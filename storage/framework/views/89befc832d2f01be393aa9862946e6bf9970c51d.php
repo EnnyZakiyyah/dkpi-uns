@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Galeri'); ?>
 
 <?php $__env->startSection('container'); ?>
