@@ -40,6 +40,10 @@
         </div>
     </div>
     <!-- Page content -->
+    @php
+        use Carbon\Carbon;
+        $today_date = Carbon::today()->isoFormat('D MMMM Y');
+    @endphp
     <div class="container-fluid mt--6">
         <div class="row">
             <div class="col">
@@ -58,7 +62,7 @@
                             <p class="card-text">Unit Kerja: {{ $pdln->unit_kerja }}</p>
                             <p class="card-text">Tujuan: {{ $pdln->tujuan }}</p>
                             <p class="card-text">Negara: {{ $pdln->negara }}</p>
-                            <p class="card-text">Awal: {{ $pdln->jangka_waktu_awal }}</p>
+                            <p class="card-text">Awal: {{ date('d F, Y',strtotime($pdln->jangka_waktu_awal))}}</p>
                             <p class="card-text">Akhir:{{ $pdln->jangka_waktu_akhir }}</p>
                             <p class="card-text">Nomor surat UNS:{{ $pdln->surat_uns }}</p>
                             <p class="card-text">Catatan UNS{{ $pdln->catatan_uns }}</p>

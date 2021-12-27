@@ -49,6 +49,11 @@
     </div>
   </div>
   <!-- Page content -->
+  @php
+        use Carbon\Carbon;
+        // $today_date = Carbon::today()->isoFormat('D MMMM Y');
+        $today = Carbon::now()->isoFormat('D MMMM Y');
+    @endphp
   <div class="container-fluid mt--6">
     <div class="row">
       <div class="col">
@@ -83,8 +88,8 @@
                   {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}
                   <td>{{ $pdln->unit_kerja }}</td>
                   <td>{{ $pdln->negara }}</td>
-                  <td>{{ $pdln->jangka_waktu_awal }}</td>
-                  <td>{{ $pdln->jangka_waktu_akhir }}</td>
+                  <td>{{ date('d F Y',strtotime($pdln->jangka_waktu_awal)) }}</td>
+                  <td>{{ date('d F Y',strtotime($pdln->jangka_waktu_akhir)) }}</td>
                   <td>
                     <a href="/pdln/{{ $pdln->id }}" class="badge badge-info">Detail</a>
                   </td>
