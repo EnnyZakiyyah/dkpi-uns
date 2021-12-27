@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -19,7 +18,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bx bx-file"></i></div>
                 <h4><a href="">Penyusunan Legal Drafting</a></h4>
-                <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                
                 <a href="/layanan/legaldrafting" class="btn-learn-more">Baca Selengkapnya</a>
               </div>
             </div>
@@ -28,7 +27,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bx bx-file"></i></div>
                 <h4><a href="">Pengembangan PSDKU</a></h4>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                
                 <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
               </div>
             </div>
@@ -37,7 +36,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-cash-coin"></i></div>
                 <h4><a href="">Pencairan Dana Kerjasama</a></h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                
                 <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
               </div>
             </div>
@@ -46,7 +45,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bx bx-user"></i></div>
                 <h4><a href="">Pemrosesan Surat Izin</a></h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                
                 <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
               </div>
             </div>

@@ -1,7 +1,7 @@
 
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
-
+<div class="box">
       <!-- ======= Portfolio Section ======= -->
       <section id="pdln" class="portfolio"  style="background-color: #f3f5fa">
         <div class="container" data-aos="fade-up">

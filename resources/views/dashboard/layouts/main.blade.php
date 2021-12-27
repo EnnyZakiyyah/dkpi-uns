@@ -91,7 +91,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title === "Galeri") ? 'active' : '' }}" href="{{url('/galeri')}}">
+                        <a class="nav-link {{ ($title === "Galeri") ? 'active' : '' }}" href="{{url('/gallery')}}">
                             <i class="ni ni-image text-primary"></i>
                             <span class="nav-link-text">Galeri</span>
                         </a>
@@ -123,7 +123,7 @@
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">
-              
+
             </div>
         </div>
     </div>
@@ -149,8 +149,8 @@
                 </div>
               </div>
             </li>
-          
-            
+
+
           </ul>
           <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
             <li class="nav-item dropdown">
@@ -166,7 +166,7 @@
                         <div>
                           <span class="mb-0 text-sm  font-weight-bold">Admin</span>
                         </div>
-                       
+
                       </div>
                     </div>
                   </div>
@@ -179,7 +179,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
-               
+
                 <div class="dropdown-divider"></div>
 
                 <form action="/logout" method="POST" class="dropdown-item">

@@ -106,6 +106,7 @@ unset($__errorArgs, $__bag); ?>
                         
                         <div class="form-group ml-5 mr-5">
                             <label for="gambar"> gambar pendukung</label>
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
                             <input id="gambar" type="file" name="gambar" class="form-control  <?php $__errorArgs = ['gambar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -190,7 +191,24 @@ unset($__errorArgs, $__bag); ?>
             </div>
         </div>
     </div>
+    <script>
+        function previewImage(){
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('.img-preview');
+    
+            imgPreview.style.display = 'block';
+    
+            const ofReader = new FileReader();
+            ofReader.readAsDataURL(image.files[0]);
+    
+            ofReader.onload = function(ofREvent){
+                imgPreview.src = ofReader.target.result;
+            }
+    
+        }
+    </script>
     <!-- End Main content -->
     <?php $__env->stopSection(); ?>
 
+    
 <?php echo $__env->make('dashboard/layouts/main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/berita/create.blade.php ENDPATH**/ ?>

@@ -34,7 +34,9 @@ class PengaduanController extends Controller
     public function create()
     {
         //
-        return view('pengaduan.create');
+        return view('pengaduan.create',[
+            'title' => 'Pengaduan'
+        ]);
 
     }
 
@@ -71,6 +73,7 @@ class PengaduanController extends Controller
     {
         //
         return view('pengaduan.show', [
+            'title' => 'Pengaduan',
             'pengaduan' => $pengaduan
         ]);
     }
@@ -85,6 +88,7 @@ class PengaduanController extends Controller
     {
         //
         return view('pengaduan.edit', [
+            'title' => 'Pengaduan',
             'pengaduan' => $pengaduan
         ]);
     }

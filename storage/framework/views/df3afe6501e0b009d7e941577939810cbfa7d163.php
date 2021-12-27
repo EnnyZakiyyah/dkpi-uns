@@ -54,7 +54,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Judul Berita: <?php echo e($berita->judul); ?></h5>
-                            <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" class="card-img-top" alt="...">
+                            <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" class="img-fluid mb-3 col-sm-5 d-block" alt="...">
                             <p class="card-text"><?php echo e($berita->excerpt); ?></p>
                             <p class="card-text"><?php echo e($berita->body); ?></p>
                             <p class="card-text"><?php echo e($berita->published_at); ?></p>
@@ -80,6 +80,7 @@
             </div>
         </div>
     </div>
+    
     <!-- End Main content -->
     <?php $__env->stopSection(); ?>
 
