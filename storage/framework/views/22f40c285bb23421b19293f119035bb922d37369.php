@@ -1,6 +1,3 @@
-
-
-
 <?php $__env->startSection('title', 'Tambah galeri'); ?>
 
 <?php $__env->startSection('container'); ?>
@@ -43,7 +40,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah Gambar</h3>
+                        <h3 class="mb-0">Tambah video</h3>
                     </div>
                     <?php if(session('success')): ?>
                     <div class="alert-success">
@@ -51,21 +48,19 @@
                     </div>
                     <?php endif; ?>
                     <!-- body card -->
-                    <form method="POST" action="/berita" enctype="multipart/form-data">
+                    <form method="POST" action="/gallery" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="form-group ml-5 mr-5">
-                            <label for="gambar"> gambar </label>
-                            <img class="img-preview img-fluid mb-3 col-sm-5">
-                            <input id="gambar" type="file" name="gambar" class="form-control  <?php $__errorArgs = ['gambar'];
+                            <label for="link">link</label>
+                            <input type="text" class="form-control <?php $__errorArgs = ['link'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="gambar" placeholder="format .jpg" name="gambar" required>
-                            
-                            <?php $__errorArgs = ['gambar'];
+unset($__errorArgs, $__bag); ?>" id="link" placeholder="Link embed youtube" name="link" value="<?php echo e(old('link')); ?>">
+                            <?php $__errorArgs = ['link'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -79,7 +74,30 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="judul">judul</label>
+                            <input type="text" class="form-control <?php $__errorArgs = ['judul'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="judul" placeholder="Judul Video" name="judul" value="<?php echo e(old('judul')); ?>">
+                            <?php $__errorArgs = ['judul'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="invalid-feedback">
+                                <?php echo e($message); ?>
 
+                            </div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
                         <div class="form-group ml-5 mr-5">
                         <label for="caption"> Caption</label>
                         <textarea  id="editor" type="hidden" name="caption" class="form-control  <?php $__errorArgs = ['caption'];
@@ -90,6 +108,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="caption" placeholder="tulis caption" name="caption" value="<?php echo e(old('caption')); ?>">
+                            <?php echo e(old('caption')); ?>
 
                         </textarea>
                         <?php $__errorArgs = ['caption'];

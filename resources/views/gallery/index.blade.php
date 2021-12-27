@@ -48,16 +48,36 @@
           </div>
           <p class="mt-3 mb-0 text-sm">
             {{-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span> --}}
-            <a class="text-nowrap text-warning" href="/gallery/create">tambahkan galeri</a>
+            <a class="text-nowrap text-warning" href="/gallery/create">tambahkan video</a>
           </p>
         </div>
       </div>
     </div>
     <div class="col-xl-3 col-md-6">
       <div class="card card-stats">
+        @foreach ($galleries as $galeri)
 
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <!-- CV/PT -->
+        <div class="col-lg-6 col-md-6 portfolio-item filter-mou">
+          <div class="portfolio-img"><iframe width="230" height="120" src="{{ $galeri->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="portfolio-info">
+            <h4>{{ $galeri->judul }}</h4>
+            <a href="/gallery/{{ $galeri->id }}/edit" class="badge badge-info">Detail</a>
+            {{-- <p>{!! $galeri->caption !!}</p> --}}
+            <a href="{{ $galeri->link }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ $galeri->judul }}"><i class="bx bx-plus"></i></a>
+            <a href="/galeri/{{ $galeri->id }}/edit" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+    </div>
 </div>
 </div>
-</div>
-</div>
+
+
+        @endforeach
+
+    </div>
+
+
 @endsection

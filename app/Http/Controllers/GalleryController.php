@@ -43,13 +43,15 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         //
-        $gambar = $request->file('gambar')->store('gambar');
+        // $gambar = $request->file('gambar')->store('gambar');
 
         $validatedData = $request->validate([
-        'caption' => 'required'
+        'judul' => 'required',
+        'caption' => 'required',
+        'link' =>'required'
         ]);
 
-        $validatedData['gambar'] = $gambar;
+        // $validatedData['gambar'] = $gambar;
 
         Gallery::create($validatedData);
         return redirect('/gallery')->with('success', 'Gambar berhasil ditambah!');
@@ -82,7 +84,7 @@ class GalleryController extends Controller
         //
         return view('gallery.edit', [
             'title' => 'edit galeri',
-            'gallery' => $gallery
+            'galeri' => $gallery
         ]);
     }
 
@@ -93,9 +95,22 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request,$gallery)
     {
         //
+        $validatedData = $request->validate([
+            'judul' => 'required',
+            'caption' => 'required',
+            'link' =>'required',
+            'published_at' => 'required'
+            ]);
+
+            // $validatedData['gambar'] = $gambar;
+
+            Gallery::where('id', $gallery)->update($validatedData);
+            return redirect('/gallery')->with('success', 'Gambar berhasil ditambah!');
+
+
     }
 
     /**

@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/gallery/show.blade.php ENDPATH**/ ?>
