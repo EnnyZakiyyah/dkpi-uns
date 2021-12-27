@@ -48,7 +48,8 @@
                     </div>
                     <?php endif; ?>
                     <!-- body card -->
-                    <form method="POST" action="/gallery" enctype="multipart/form-data">
+                    <form method="POST" action="/gallery/<?php echo e($galeri->id); ?>">
+                        <?php echo method_field('put'); ?>
                         <?php echo csrf_field(); ?>
                         <div class="form-group ml-5 mr-5">
                             <label for="link">link</label>
@@ -59,7 +60,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="link" placeholder="Link embed youtube" name="link" value="<?php echo e(old('link')); ?>">
+unset($__errorArgs, $__bag); ?>" id="link" placeholder="Link embed youtube" name="link" value="<?php echo e(old('link',$galeri->link)); ?>">
                             <?php $__errorArgs = ['link'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -83,7 +84,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="judul" placeholder="Judul Video" name="judul" value="<?php echo e(old('judul')); ?>">
+unset($__errorArgs, $__bag); ?>" id="judul" placeholder="Judul Video" name="judul" value="<?php echo e(old('judul',$galeri->judul)); ?>">
                             <?php $__errorArgs = ['judul'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -108,7 +109,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="caption" placeholder="tulis caption" name="caption" value="<?php echo e(old('caption')); ?>">
-                            <?php echo e(old('caption')); ?>
+                            <?php echo e(old('caption',$galeri->caption)); ?>
 
                         </textarea>
                         <?php $__errorArgs = ['caption'];
@@ -134,7 +135,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="published_atr" placeholder="published_at berita" name="published_at" value="<?php echo e(old('published_at')); ?>">
+unset($__errorArgs, $__bag); ?>" id="published_at" placeholder="dirilis" name="published_at" value="<?php echo e(old('published_at',$galeri->published_at)); ?>">
                             
                             <?php $__errorArgs = ['published_at'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -179,4 +180,4 @@ unset($__errorArgs, $__bag); ?>
     <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('dashboard/layouts/main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/gallery/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('dashboard/layouts/main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/gallery/edit.blade.php ENDPATH**/ ?>

@@ -46,7 +46,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah Gambar</h3>
+                        <h3 class="mb-0">Tambah video</h3>
                     </div>
                     @if (session('success'))
                     <div class="alert-success">
@@ -54,24 +54,30 @@
                     </div>
                     @endif
                     <!-- body card -->
-                    <form method="POST" action="/berita" enctype="multipart/form-data">
+                    <form method="POST" action="/gallery" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ml-5 mr-5">
-                            <label for="gambar"> gambar </label>
-                            <img class="img-preview img-fluid mb-3 col-sm-5">
-                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="format .jpg" name="gambar" required>
-                            {{-- <trix-editor input="gambar"></trix-editor> --}}
-                            @error('gambar')
+                            <label for="link">link</label>
+                            <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" placeholder="Link embed youtube" name="link" value="{{ old('link') }}">
+                            @error('link')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
-
+                        <div class="form-group ml-5 mr-5">
+                            <label for="judul">judul</label>
+                            <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" placeholder="Judul Video" name="judul" value="{{ old('judul') }}">
+                            @error('judul')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                         <div class="form-group ml-5 mr-5">
                         <label for="caption"> Caption</label>
                         <textarea  id="editor" type="hidden" name="caption" class="form-control  @error('caption') is-invalid @enderror" id="caption" placeholder="tulis caption" name="caption" value="{{ old('caption') }}">
-
+                            {{ old('caption') }}
                         </textarea>
                         @error('caption')
                         <div class="invalid-feedback">
