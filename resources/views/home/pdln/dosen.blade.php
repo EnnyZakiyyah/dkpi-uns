@@ -104,7 +104,17 @@
                   <td>{{ $dosen->jangka_waktu_awal }}</td>
                   <td>{{ $dosen->jangka_waktu_akhir }}</td>
                   <td>{{ $dosen->status }}</td>
-                  <td></td>
+                  <td>
+                    <a href="/home/pdln/{{ $dosen->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    @if (Auth::check())
+                    <a href="/pdln/{{ $dosen->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="/pdln/{{ $dosen->id }}" method="POST" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                    </form>
+                    @endif
+                </td>
                 </tr>
                 @endforeach
               </tbody>

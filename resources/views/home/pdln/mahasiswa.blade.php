@@ -104,7 +104,17 @@
                   <td>{{ $mahasiswa->jangka_waktu_awal }}</td>
                   <td>{{ $mahasiswa->jangka_waktu_akhir }}</td>
                   <td>{{ $mahasiswa->status }}</td>
-                  <td></td>
+                  <td>
+                    <a href="/home/pdln/{{ $mahasiswa->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    @if (Auth::check())
+                    <a href="/pdln/{{ $mahasiswa->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="/pdln/{{ $mahasiswa->id }}" method="POST" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                    </form>
+                    @endif
+                </td>
                 </tr>
                 @endforeach
               </tbody>

@@ -50,7 +50,7 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/pengumuman">
+                    <form method="POST" action="/pengumuman/{{ $pengumuman->id }}">
                         @method('put')
                         @csrf
 

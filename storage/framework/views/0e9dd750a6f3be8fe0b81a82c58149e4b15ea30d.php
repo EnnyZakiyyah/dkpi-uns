@@ -1,7 +1,21 @@
 
 
 <?php $__env->startSection('title', 'Dashboard'); ?>
-
+<?php $__env->startSection('search'); ?>
+<form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main" action="/pdln">
+  <div class="form-group mb-0">
+    <div class="input-group input-group-alternative input-group-merge">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-search"></i></span>
+      </div>
+      <input class="form-control" placeholder="Search" type="text" name="nama" value="<?php echo e(request('nama')); ?>">
+    </div>
+  </div>
+  <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+</form>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('container'); ?>
 <style type="text/css">
     .pagination li{
@@ -35,6 +49,11 @@
     </div>
   </div>
   <!-- Page content -->
+  <?php
+        use Carbon\Carbon;
+        // $today_date = Carbon::today()->isoFormat('D MMMM Y');
+        $today = Carbon::now()->isoFormat('D MMMM Y');
+    ?>
   <div class="container-fluid mt--6">
     <div class="row">
       <div class="col">
@@ -45,7 +64,6 @@
           </div>
           <!-- Light table -->
           <div class="table-responsive">
-            <a href="<?php echo e('/pdln/create'); ?>" class="btn btn-primary">Tambah Data</a>
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
@@ -70,8 +88,8 @@
                   
                   <td><?php echo e($pdln->unit_kerja); ?></td>
                   <td><?php echo e($pdln->negara); ?></td>
-                  <td><?php echo e($pdln->jangka_waktu_awal); ?></td>
-                  <td><?php echo e($pdln->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e(date('d F Y',strtotime($pdln->jangka_waktu_awal))); ?></td>
+                  <td><?php echo e(date('d F Y',strtotime($pdln->jangka_waktu_akhir))); ?></td>
                   <td>
                     <a href="/pdln/<?php echo e($pdln->id); ?>" class="badge badge-info">Detail</a>
                   </td>
@@ -82,11 +100,19 @@
           </div>
           <!-- Card footer -->
           <div class="card-footer py-4">
+            <nav aria-label="...">
+              <a href="<?php echo e('/pdln/create'); ?>" class="btn btn-primary">Tambah Data</a>
+              <ul class="pagination justify-content-end mb-0">
+                <li class="page-item">
+                  <?php echo e($pdlns->links()); ?>
+
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-    </div> <?php echo e($pdlns->links()); ?>
-
+    </div> 
   </div>
 
   <!-- End Main content -->

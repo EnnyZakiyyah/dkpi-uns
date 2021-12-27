@@ -1,5 +1,4 @@
-@extends('layouts.main')
-@section('container')
+<?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
@@ -13,19 +12,15 @@
           <h2>Data PDLN</h2>
           <p>Perjalanan Dinas Luar Negeri (PDLN) adalah adalah penugasan yang dilakukan oleh mahasiswa, dosen, maupun pimpinan dalam rangka tugas belajar dan tugas dinas lainnya di luar negeri yang disetujui oleh Rektor UNS</p>
 
-          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+          
         </div>
 
-                {{-- <label for="tahun" class="form-label">Tampilkan Data Tahun</label>
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
-                  </div> --}}
+                
 <div class="container">
   <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                     <a href="/home/pdln-mahasiswa">Mahasiswa</a>
-                    <a href="/home/pdln-dosen">Dosen</a>
-                    <a class="filter-active" href="/home/pdln-pimpinan">Pimpinan</a>
+                    <a class="filter-active" href="/home/pdln-dosen">Dosen</a>
+                    <a href="/home/pdln-pimpinan">Pimpinan</a>
 
   </ul> </div>
 
@@ -39,28 +34,28 @@
       <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
           <label for="validationCustom01" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="validationCustom01" name="nama" value="{{ request('nama') }}"required>
+          <input type="text" class="form-control" id="validationCustom01" name="nama" value="<?php echo e(request('nama')); ?>"required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-6">
             <label for="validationCustom02" class="form-label">Waktu Mulai</label>
-            <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="{{ request('jangka_waktu_awal') }}" required>
+            <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="<?php echo e(request('jangka_waktu_awal')); ?>" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="validationCustom03" class="form-label">Waktu Berakhir</label>
-            <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="{{ request('jangka_waktu_akhir') }}" required>
+            <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="<?php echo e(request('jangka_waktu_akhir')); ?>" required>
             <div class="invalid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="validationCustom03" class="form-label">Negara</label>
-            <input type="text" class="form-control" id="validationCustom03" name="negara" value="{{ request('negara') }}" required>
+            <input type="text" class="form-control" id="validationCustom03" name="negara" value="<?php echo e(request('negara')); ?>" required>
             <div class="invalid-feedback">
               Looks good!
             </div>
@@ -77,7 +72,7 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         <!-- CV/PT -->
-        <div class="portfolio-item filter-pimpinan">
+        <div class="portfolio-item filter-dosen">
 
             <table class="table table-hover">
               <thead>
@@ -94,29 +89,29 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($pimpinans as $pimpinan)
+                <?php $__currentLoopData = $dosens; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dosen): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $pimpinan->nama }}</td>
-                  <td>{{ $pimpinan->unit_kerja }}</td>
-                  <td>{{ $pimpinan->negara }}</td>
-                  <td>{{ $pimpinan->tujuan }}</td>
-                  <td>{{ $pimpinan->jangka_waktu_awal }}</td>
-                  <td>{{ $pimpinan->jangka_waktu_akhir }}</td>
-                  <td>{{ $pimpinan->status }}</td>
+                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($dosen->nama); ?></td>
+                  <td><?php echo e($dosen->unit_kerja); ?></td>
+                  <td><?php echo e($dosen->negara); ?></td>
+                  <td><?php echo e($dosen->tujuan); ?></td>
+                  <td><?php echo e($dosen->jangka_waktu_awal); ?></td>
+                  <td><?php echo e($dosen->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($dosen->status); ?></td>
                   <td>
-                    <a href="/home/pdln/{{ $pimpinan->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
-                    @if (Auth::check())
-                    <a href="/pdln/{{ $pimpinan->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="/pdln/{{ $pimpinan->id }}" method="POST" class="d-inline">
-                        @method('delete')
-                        @csrf
+                    <a href="/home/pdln/<?php echo e($dosen->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    <?php if(Auth::check()): ?>
+                    <a href="/pdln/<?php echo e($dosen->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="/pdln/<?php echo e($dosen->id); ?>" method="POST" class="d-inline">
+                        <?php echo method_field('delete'); ?>
+                        <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                     </form>
-                    @endif
+                    <?php endif; ?>
                 </td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
 
@@ -124,12 +119,12 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                   <li class="page-item">
-                    {{ $pimpinans->links() }}
+                    <?php echo e($dosens->links()); ?>
+
                   </li>
                 </ul>
               </nav>
             </div>
-
             </div>
 
 
@@ -139,4 +134,6 @@
 
     </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/home/pdln/dosen.blade.php ENDPATH**/ ?>
