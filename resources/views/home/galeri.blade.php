@@ -29,7 +29,7 @@
                   <h4>{{ $galeri->judul }}</h4>
                   <p>{!! $galeri->caption !!}</p>
                   <a href="{{ $galeri->link }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ $galeri->judul }}"><i class="bx bx-plus"></i></a>
-                  <a href="/galeri/{{ $galeri->id }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="/home/galeridetails/{{ $galeri->id }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
               @endforeach
