@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -92,12 +91,12 @@
               <tbody>
                 <?php $__currentLoopData = $cvs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($cvs->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($cv->nama_instansi); ?></td>
                   <td><?php echo e($cv->ruang_lingkup); ?></td>
                   <td><?php echo e($cv->jangka_waktu_awal); ?></td>
-                  <td><?php echo e($cv->jangka_waktu_akhir); ?></td>
-                  <td><?php echo e($cv->pejabat_penandatangan); ?></td>
+                  <td><?php echo e($date = empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e($date = empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($cv->status); ?></td>
                   <td>
                     <a href="/home/mitra/<?php echo e($cv->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
@@ -137,7 +136,7 @@
 
 
     </div>
-   
+
     
 
 <?php $__env->stopSection(); ?>

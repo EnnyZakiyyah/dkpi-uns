@@ -33,7 +33,7 @@
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
             <form class="row g-3 needs-validation" action="/home/mitra-yayasan" method="GET">
-           
+
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
                 <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="{{ request('nama_instansi') }}" required>
@@ -41,8 +41,8 @@
                   Looks good!
                 </div>
               </div>
-            
-            
+
+
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
                 <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="{{ request('jangka_waktu_awal') }}" required>
@@ -50,7 +50,7 @@
                   Looks good!
                 </div>
               </div>
-              
+
 
               {{-- <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Nomor MoU UNS</label>
@@ -117,11 +117,16 @@
               <tbody>
                 @foreach($yayasans as $yayasan)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $yayasans->firstItem() + $loop->index }}</th>
                   <td>{{ $yayasan->nama_instansi }}</td>
                   <td>{{ $yayasan->ruang_lingkup }}</td>
-                  <td>{{ $date = empty(strtotime($mahasiswa->jangka_waktu_awal)) ? $yayasan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
+<<<<<<< Updated upstream
+                  <td>{{ $yayasan->jangka_waktu_awal }}</td>
+                  <td>{{ $yayasan->jangka_waktu_akhir }}</td>
+=======
+                  <td>{{ $date = empty(strtotime( $yayasan->jangka_waktu_awal)) ? $yayasan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $date = empty(strtotime($yayasan->jangka_waktu_akhir)) ? $yayasan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
+>>>>>>> Stashed changes
                   <td>{{ $yayasan->pejabat_penandatangan }}</td>
                   <td>{{ $yayasan->status }}</td>
                   <td>

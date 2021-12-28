@@ -91,13 +91,13 @@
               <tbody>
                 <?php $__currentLoopData = $dosens; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dosen): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($dosens->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($dosen->nama); ?></td>
                   <td><?php echo e($dosen->unit_kerja); ?></td>
                   <td><?php echo e($dosen->negara); ?></td>
                   <td><?php echo e($dosen->tujuan); ?></td>
-                  <td><?php echo e($dosen->jangka_waktu_awal); ?></td>
-                  <td><?php echo e($dosen->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($date = empty(strtotime($dosen->jangka_waktu_awal)) ? $dosen->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($dosen->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e($date = empty(strtotime($dosen->jangka_waktu_akhir)) ? $dosen->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($dosen->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($dosen->status); ?></td>
                   <td>
                     <a href="/home/pdln/<?php echo e($dosen->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>

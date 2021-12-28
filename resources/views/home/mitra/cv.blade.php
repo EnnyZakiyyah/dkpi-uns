@@ -110,7 +110,7 @@
               <tbody>
                 @foreach($cvs as $cv)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $cvs->firstItem() + $loop->index }}</th>
                   <td>{{ $cv->nama_instansi }}</td>
                   <td>{{ $cv->ruang_lingkup }}</td>
                   <td>{{ $cv->jangka_waktu_awal }}</td>
@@ -154,7 +154,7 @@
 
 
     </div>
-   
+
     {{-- @else
     <p class="text-center fs-4">No post found.</p>
     @endif --}}

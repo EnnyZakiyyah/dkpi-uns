@@ -2,8 +2,8 @@
         <ul>
           <li><a class="nav-link scrollto {{ ($title === "DKPI") ? 'active' : '' }}  " href="/">Home</a></li>
           <li><a class="nav-link scrollto {{ ($title === "Layanan") ? 'active' : '' }} " href="/home/layanan">Layanan</a></li>
-          <li><a class="nav-link scrollto {{ ($title === "Data PDLN") ? 'active' : '' }}" href="/home/pdln">Data PDLN</a></li>
-          <li><a class="nav-link  scrollto {{ ($title === "Data Mitra") ? 'active' : '' }} " href="/home/mitra">Mitra</a></li>
+          <li><a class="nav-link scrollto {{ ($title === "Data PDLN") ? 'active' : '' }}" href="/home/pdln-mahasiswa">Data PDLN</a></li>
+          <li><a class="nav-link  scrollto {{ ($title === "Data Mitra") ? 'active' : '' }} " href="/home/mitra-cv">Mitra</a></li>
           <li><a class="nav-link  scrollto {{ ($title === "FAQ") ? 'active' : '' }} " href="/home/faq">FAQ</a></li>
           <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down {{ ($title === "Informasi") ? 'active' : '' }}"></i></a>
             <ul>

@@ -110,7 +110,7 @@
               <tbody>
                 @foreach($jasaKeuangans as $jasaKeuangan)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $jasaKeuangans->firstItem() + $loop->index }}</th>
                   <td>{{ $jasaKeuangan->nama_instansi }}</td>
                   <td>{{ $jasaKeuangan->ruang_lingkup }}</td>
                   <td>{{ $date = empty(strtotime($jasaKeuangan->jangka_waktu_awal)) ? $jasaKeuangan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($jasaKeuangan->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
