@@ -47,7 +47,7 @@
                     </div>
                     <?php if(session('success')): ?>
                     <div class="alert-success">
-                       <p><?php echo e(session('success')); ?></p> 
+                       <p><?php echo e(session('success')); ?></p>
                     </div>
                 <?php endif; ?>
                     <!-- body card -->
@@ -63,7 +63,7 @@
                             <form action="/berita/<?php echo e($berita->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                             </form>
                             <a href="/berita" class="card-link ml-5">Kembali</a>
                         </div>
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- End Main content -->
     <?php $__env->stopSection(); ?>
 

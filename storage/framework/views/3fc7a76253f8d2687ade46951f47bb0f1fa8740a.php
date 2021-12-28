@@ -63,9 +63,9 @@
               </div>
               <div class="row">
                 <div class="carousel-inner">
-                   
+
                   <div class="carousel-item active">
-                    
+
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                       <?php $__currentLoopData = $beritas->skip(0); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                       <div class="col">
@@ -87,7 +87,7 @@
                   </div>
                   </div>
                 </div>
-                
+
             </div>
 
 
@@ -95,9 +95,9 @@
               <a href="/home/berita/" class="btn btn-outline-primary">Selengkapnya</a>
               
             </div>
-           
+
             </div>
-            
+
           </section><!-- End Team Section -->
     </div>
 
@@ -147,7 +147,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bx bx-file"></i></div>
                 <h4><a href="">Pengembangan PSDKU</a></h4>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                
                 <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
               </div>
             </div>
@@ -156,7 +156,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-cash-coin"></i></div>
                 <h4><a href="">Pencairan Dana Kerjasama</a></h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                
                 <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
               </div>
             </div>
@@ -165,7 +165,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bx bx-user"></i></div>
                 <h4><a href="">Pemrosesan Surat Izin</a></h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                
                 <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
               </div>
             </div>
@@ -218,8 +218,8 @@
 
       </div>
     </section><!-- End Services Section -->
-
-    <!-- End Team Section -->
+    
+   
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="skills">
@@ -272,7 +272,7 @@
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-<?php echo e($i); ?>"><?php echo $faq->pertanyaan; ?><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-<?php echo e($i); ?>" class="collapse show" data-bs-parent=".faq-list">
                 <p><?php echo e($faq->jawaban); ?></p>
-                <a href="<?php echo e($faq->link); ?>"><?php echo e($faq->link); ?></a>
+                <a href="<?php echo e($faq->link); ?>">selengkapnya</a>
               </div>
             </li>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -287,7 +287,7 @@
           
     <!-- End Contact Section -->
 
-
+    
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/home/index.blade.php ENDPATH**/ ?>
