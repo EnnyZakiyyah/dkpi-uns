@@ -15,9 +15,9 @@
 
                     <ol>
                       <li><a href="/home/galeri">Galeri</a></li>
-                      <li>Galeri Details</li>
+                      <li>{{ $galeri->judul }}</li>
                     </ol>
-                    <h2>{{ $galeri->judul }}</h2>
+                    <h2>Galeri Details</h2>
 
                   </div>
                 </section><!-- End Breadcrumbs -->
@@ -32,9 +32,17 @@
                         <div class="portfolio-details-slider swiper-container">
                           <div class="swiper-wrapper align-items-center">
 
-                            <div >
-                                <center><iframe width="560" height="315" src="{{ $galeri->link }}" title="{{ $galeri->judul }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                            <div class="swiper-slide">
+                                <center><iframe  width="650" height="370" src="{{ $galeri->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                             </div>
+{{--
+                            <div class="swiper-slide">
+                                <center><iframe  width="650" height="370" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <center><iframe  width="650" height="370" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                            </div> --}}
 
                           </div>
                           <div class="swiper-pagination"></div>
@@ -43,14 +51,17 @@
 
                       <div class="col-lg-4">
                         <div class="portfolio-info">
-                          <h3>{{ $galeri->judul }}</h3>
+                          <h3>information</h3>
                           <ul>
+                            <li><strong>Category</strong>Penandatanganan</li>
+                            <li><strong>Client</strong>: BSI</li>
                             <li><strong>Project date</strong>: {{ $galeri->created_at }}</li>
-                            {{-- <li><strong>Project URL</strong>: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a></li> --}}
+                            <li><strong>Project URL</strong>: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a></li>
                           </ul>
                         </div>
                         <div class="portfolio-description">
-                        {!! $galeri->caption !!}
+                          <h2>{{ $galeri->judul }}</h2>
+                            {!! $galeri->caption !!}
                         </div>
                       </div>
 
