@@ -53,6 +53,7 @@
         </div>
       </div>
     </div>
+<<<<<<< Updated upstream
     <div class="col-xl-3 col-md-6">
       <div class="card card-stats">
         @foreach ($galleries as $galeri)
@@ -68,6 +69,55 @@
             {{-- <p>{!! $galeri->caption !!}</p> --}}
             <a href="{{ $galeri->link }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ $galeri->judul }}"><i class="bx bx-plus"></i></a>
             <a href="/galeri/{{ $galeri->id }}/edit" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+=======
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0">
+            <h3 class="mb-0">Galeri</h3>
+          </div>
+          <!-- Light table -->
+          <div class="table-responsive">
+            {{-- <a href="{{'/faq/create'}}" class="btn btn-primary">Tambah Data</a> --}}
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="sort" data-sort="no">No</th>
+                  <th scope="col" class="sort" data-sort="nim">Judul</th>
+                  <th scope="col" class="sort" data-sort="nama">Caption</th>
+                  <th scope="col" class="sort" data-sort="nama">Aksi</th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                @foreach ($galleries as $galeri)
+                <tr>
+                  <th scope="row">{{ $loop->iteration }}</th>
+                  <td>{{ $galeri->judul }}</td>
+                  <td><iframe width="350" height="150" src="{{ $galeri->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                  <td>{!! $galeri->caption !!}</td>
+                  <td>
+                    <a href="/gallery/{{ $galeri->id }}" class="badge badge-info">Detail</a>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+          <!-- Card footer -->
+          <div class="card-footer py-4">
+            <nav aria-label="...">
+              <a href="{{'/gallery/create'}}" class="btn btn-primary">Tambah Data</a>
+              <ul class="pagination justify-content-end mb-0">
+                <li class="page-item">
+                  {{ $galleries->links() }}
+                </li>
+              </ul>
+            </nav>
+>>>>>>> Stashed changes
           </div>
         </div>
     </div>

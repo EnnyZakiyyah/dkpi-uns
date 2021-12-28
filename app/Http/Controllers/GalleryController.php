@@ -119,7 +119,7 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $gallery)
+    public function destroy( $gallery)
     {
         Gallery::destroy($gallery);
         return redirect('/gallery')->with('status', 'data berhasil dihapus');

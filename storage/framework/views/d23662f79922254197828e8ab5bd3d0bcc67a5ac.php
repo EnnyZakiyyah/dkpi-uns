@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
@@ -217,69 +218,8 @@
 
       </div>
     </section><!-- End Services Section -->
-    <div class="box">
-        <section id="data-mitra" class="services section-bg">
-          <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-              <h2>Mitra Kerjasama</h2>
-              
-          <p>Mitra yang telah membangun kerjasama dengan uns</p>
-          </div>
-
-
-            <div class="row">
-              <div class="col-xl-2 col-md-5 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box">
-                  <div class="icon"><i class="bx bx-file"></i></div>
-                  <h4><a href="/home/mitra-cv">CV/PT</a></h4>
-                  
-                  <a href="/home/mitra-cv" class="btn-learn-more">Baca Selengkapnya</a>
-                </div>
-              </div>
-
-              <div class="col-xl-2 col-md-5 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box">
-                  <div class="icon"><i class="bx bx-file"></i></div>
-                  <h4><a href="/home/mitra-yayasan">sekolah/yayasan</a></h4>
-                  
-                  <a href="/home/mitra-yayasan" class="btn-learn-more">Baca Selengkapnya</a>
-                </div>
-              </div>
-
-              <div class="col-xl-2 col-md-5 d-flex align-items-stretch mt-4 mt-xl-2" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box">
-                  <div class="icon"><i class="bi bi-cash-coin"></i></div>
-                  <h4><a href="/home/mitra-internasional">internasional</a></h4>
-                  
-                  <a href="/home/mitra-internasional" class="btn-learn-more">Baca Selengkapnya</a>
-                </div>
-              </div>
-
-              <div class="col-xl-2 col-md-5 d-flex align-items-stretch mt-4 mt-xl-2" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box">
-                  <div class="icon"><i class="bx bx-user"></i></div>
-                  <h4><a href="/home/mitra-jasaKeuangan">jasa keuangan</a></h4>
-                  
-                  <a href="/home/mitra-jasaKeuangan" class="btn-learn-more">Baca Selengkapnya</a>
-                </div>
-              </div>
-
-              <div class="col-xl-2 col-md-5 d-flex align-items-stretch mt-4 mt-xl-2" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box">
-                  <div class="icon"><i class="bx bx-user"></i></div>
-                  <h4><a href="/home/mitra-pemerintah">pemerintah</a></h4>
-                  
-                  <a href="/home/mitra-pemerintah" class="btn-learn-more">Baca Selengkapnya</a>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </section><!-- End Services Section -->
-      </div>
-    <!-- End Team Section -->
+    
+   
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="skills">
@@ -347,53 +287,7 @@
           
     <!-- End Contact Section -->
 
-    <div class="box">
-        <section id="galeri" class="galeri section-bg">
-            <div class="container" data-aos="fade-up">
-
-              <div class="section-title">
-                <h2>galeri</h2>
-                
-                
-              </div>
-              <div class="row">
-                <div class="carousel-inner">
-
-                  <div class="carousel-item active">
-
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                      <?php $__currentLoopData = $galleries->skip(0); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                      <div class="col">
-                        <div class="card h-100">
-                          <img src="<?php echo e(asset('storage/'. $galeri->gambar )); ?>" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title"><?php echo e($galeri->caption); ?></h5>
-                            
-                             <left> <a href="/home/galeri/galeridetails/<?php echo e($galeri->id); ?>" class="btn-learn-more">Baca Selengkapnya...</a></left>
-                            </p>
-                          </div>
-                          <div class="card-footer">
-                            <small class="text-muted"><?php echo e($galeri->created_at->diffForHumans()); ?></small>
-                          </div>
-                        </div>
-                      </div>
-                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                  </div>
-                  </div>
-                </div>
-
-            </div>
-
-
-            <div class="d-flex justify-content-center pt-5">
-              <a href="/home/galeri/" class="btn btn-outline-primary">Selengkapnya</a>
-              
-            </div>
-
-            </div>
-
-          </section><!-- End Team Section -->
-    </div>
+    
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/home/index.blade.php ENDPATH**/ ?>
