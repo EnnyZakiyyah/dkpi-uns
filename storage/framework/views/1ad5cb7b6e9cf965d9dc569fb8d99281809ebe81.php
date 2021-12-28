@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Dashboard'); ?>
 <?php $__env->startSection('search'); ?>
 <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main" action="/pdln">
@@ -162,7 +160,7 @@
               </div>
               <p class="mt-3 mb-0 text-sm">
                 
-                <a class="text-nowrap text-primary" href="/galeri">Meliputi isi Galeri DKPI</a>
+                <a class="text-nowrap text-primary" href="/gallery">Meliputi isi Galeri DKPI</a>
               </p>
             </div>
              <!-- END Card body -->
@@ -237,7 +235,7 @@
                    <!-- END Card body -->
               </div>
             </div>
-      
+
   </div>
   </div>
 

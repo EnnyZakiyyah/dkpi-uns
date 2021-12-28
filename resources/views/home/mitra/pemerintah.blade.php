@@ -110,7 +110,7 @@
               <tbody>
                 @foreach($pemerintahs as $pemerintah)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $pemerintahs->firstItem() + $loop->index }}</th>
                   <td>{{ $pemerintah->nama_instansi }}</td>
                   <td>{{ $pemerintah->ruang_lingkup }}</td>
                   <td>{{ $pemerintah->jangka_waktu_awal }}</td>

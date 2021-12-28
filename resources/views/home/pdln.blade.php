@@ -96,7 +96,7 @@
               <tbody>
                 @foreach($mahasiswas as $mahasiswa)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $attend->firstItem() + $loop->index }}</th>
                   <td>{{ $mahasiswa->nama }}</td>
                   <td>{{ $mahasiswa->unit_kerja }}</td>
                   <td>{{ $mahasiswa->negara }}</td>

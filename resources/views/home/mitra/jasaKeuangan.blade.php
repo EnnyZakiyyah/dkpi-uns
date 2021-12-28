@@ -110,7 +110,7 @@
               <tbody>
                 @foreach($jasaKeuangans as $jasaKeuangan)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $jasaKeuangans->firstItem() + $loop->index }}</th>
                   <td>{{ $jasaKeuangan->nama_instansi }}</td>
                   <td>{{ $jasaKeuangan->ruang_lingkup }}</td>
                   <td>{{ $jasaKeuangan->jangka_waktu_awal }}</td>
