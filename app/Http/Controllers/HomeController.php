@@ -111,11 +111,12 @@ class HomeController extends Controller
 
     public function galeridetails($id)
     {
-        $galeri = Gallery::find($id)->get();
+        $galeri = Gallery::find($id);
         return view('home.galeridetails', [
             'title' => 'Detail Galeri',
             'galeri' => $galeri
         ]);
+        // return $galeri;
     }
 
     public function berita()

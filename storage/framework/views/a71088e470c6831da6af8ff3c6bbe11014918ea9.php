@@ -27,7 +27,7 @@
                   <h4><?php echo e($galeri->judul); ?></h4>
                   <p><?php echo $galeri->caption; ?></p>
                   <a href="<?php echo e($galeri->link); ?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?php echo e($galeri->judul); ?>"><i class="bx bx-plus"></i></a>
-                  <a href="/galeri/<?php echo e($galeri->id); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="/home/galeridetails/<?php echo e($galeri->id); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
