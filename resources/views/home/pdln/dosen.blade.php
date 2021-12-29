@@ -96,7 +96,7 @@
               <tbody>
                 @foreach($dosens as $dosen)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $dosens->firstItem() + $loop->index }}</th>
                   <td>{{ $dosen->nama }}</td>
                   <td>{{ $dosen->unit_kerja }}</td>
                   <td>{{ $dosen->negara }}</td>

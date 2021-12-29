@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -92,13 +91,13 @@
               <tbody>
                 <?php $__currentLoopData = $mahasiswas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mahasiswa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($attend->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($mahasiswa->nama); ?></td>
                   <td><?php echo e($mahasiswa->unit_kerja); ?></td>
                   <td><?php echo e($mahasiswa->negara); ?></td>
                   <td><?php echo e($mahasiswa->tujuan); ?></td>
-                  <td><?php echo e($mahasiswa->jangka_waktu_awal); ?></td>
-                  <td><?php echo e($mahasiswa->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($date = empty(strtotime($mahasiswa->jangka_waktu_awal)) ? $mahasiswa->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($mahasiswa->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e($date = empty(strtotime($mahasiswa->jangka_waktu_akhir)) ? $mahasiswa->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($mahasiswa->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($mahasiswa->status); ?></td>
                   <td></td>
                 </tr>
@@ -140,8 +139,8 @@
                       <td><?php echo e($dosen->unit_kerja); ?></td>
                       <td><?php echo e($dosen->negara); ?></td>
                       <td><?php echo e($dosen->tujuan); ?></td>
-                      <td><?php echo e($dosen->jangka_waktu_awal); ?></td>
-                      <td><?php echo e($dosen->jangka_waktu_akhir); ?></td>
+                      <td><?php echo e($date = empty(strtotime($dosen->jangka_waktu_awal)) ? $dosen->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($dosen->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?> }}</td>
+                      <td><?php echo e($date = empty(strtotime($dosen->jangka_waktu_akhir)) ? $dosen->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($dosen->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?> }}</td>
                       <td><?php echo e($dosen->status); ?></td>
                       <td></td>
                     </tr>
@@ -183,8 +182,8 @@
                           <td><?php echo e($pimpinan->unit_kerja); ?></td>
                           <td><?php echo e($pimpinan->negara); ?></td>
                           <td><?php echo e($pimpinan->tujuan); ?></td>
-                          <td><?php echo e($pimpinan->jangka_waktu_awal); ?></td>
-                          <td><?php echo e($pimpinan->jangka_waktu_akhir); ?></td>
+                          <td><?php echo e($date = empty(strtotime($pimpinan->jangka_waktu_awal)) ? $pimpinan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pimpinan->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?> }}</td>
+                          <td><?php echo e($date = empty(strtotime($pimpinan->jangka_waktu_akhir)) ? $pimpinan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pimpinan->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?> }}</td>
                           <td><?php echo e($pimpinan->status); ?></td>
                           <td></td>
                         </tr>

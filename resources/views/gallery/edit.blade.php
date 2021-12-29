@@ -46,7 +46,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah video</h3>
+                        <h3 class="mb-0">edit video</h3>
                     </div>
                     @if (session('success'))
                     <div class="alert-success">

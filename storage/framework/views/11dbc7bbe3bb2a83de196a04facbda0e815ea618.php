@@ -2,8 +2,8 @@
         <ul>
           <li><a class="nav-link scrollto <?php echo e(($title === "DKPI") ? 'active' : ''); ?>  " href="/">Home</a></li>
           <li><a class="nav-link scrollto <?php echo e(($title === "Layanan") ? 'active' : ''); ?> " href="/home/layanan">Layanan</a></li>
-          <li><a class="nav-link scrollto <?php echo e(($title === "Data PDLN") ? 'active' : ''); ?>" href="/home/pdln">Data PDLN</a></li>
-          <li><a class="nav-link  scrollto <?php echo e(($title === "Data Mitra") ? 'active' : ''); ?> " href="/home/mitra">Mitra</a></li>
+          <li><a class="nav-link scrollto <?php echo e(($title === "Data PDLN") ? 'active' : ''); ?>" href="/home/pdln-mahasiswa">Data PDLN</a></li>
+          <li><a class="nav-link  scrollto <?php echo e(($title === "Data Mitra") ? 'active' : ''); ?> " href="/home/mitra-cv">Mitra</a></li>
           <li><a class="nav-link  scrollto <?php echo e(($title === "FAQ") ? 'active' : ''); ?> " href="/home/faq">FAQ</a></li>
           <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down <?php echo e(($title === "Informasi") ? 'active' : ''); ?>"></i></a>
             <ul>

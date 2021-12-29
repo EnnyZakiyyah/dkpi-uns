@@ -96,7 +96,7 @@
               <tbody>
                 @foreach($pimpinans as $pimpinan)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $pimpinans->firstItem() + $loop->index }}</th>
                   <td>{{ $pimpinan->nama }}</td>
                   <td>{{ $pimpinan->unit_kerja }}</td>
                   <td>{{ $pimpinan->negara }}</td>

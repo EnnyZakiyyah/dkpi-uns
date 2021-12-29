@@ -110,7 +110,7 @@
               <tbody>
                 @foreach($internasionals as $internasional)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $internasionals->firstItem() + $loop->index }}</th>
                   <td>{{ $internasional->nama_instansi }}</td>
                   <td>{{ $internasional->ruang_lingkup }}</td>
                   <td>{{ $date = empty(strtotime($internasional->jangka_waktu_awal)) ? $internasional->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($internasional->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
