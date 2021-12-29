@@ -16,8 +16,14 @@ class PdlnController extends Controller
 
     public function __construct()
     {
+<<<<<<< Updated upstream
         $title = ['title' => 'Data PDLN'];
         return $title;
+=======
+        // $status = ['status'=> 'tidak berlaku'];
+        // $pdln = Pdln::whereDate('jangka_waktu_akhir', '>=', today())->update($status);
+        // return $pdln;
+>>>>>>> Stashed changes
     }
     /**
      * Display a listing of the resource.
@@ -28,6 +34,10 @@ class PdlnController extends Controller
     {
         // $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
         // $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         $pdln = Pdln::latest()->filter(request(['nama']))->paginate(5)->withQueryString();
 
 
@@ -64,6 +74,7 @@ class PdlnController extends Controller
         $file_belmawa = $request->file('file_belmawa')->store('file_belmawa');
         $file_ktln = $request->file('file_ktln')->store('file_ktln');
 
+        Excel::import(new PdlnImport, request()->file('file_surat_uns'));
         $validatedData = $request->validate([
             'jenis' => 'required',
             'nama' => 'required',
@@ -184,7 +195,7 @@ class PdlnController extends Controller
     public function import()
     {
         // Excel::import(new PdlnImport, 'pdln.xlsx');
-        Excel::import(new PdlnImport, 'pdln.xlsx');
+        Excel::import(new PdlnImport, 'pdlns.xlsx');
 
 
         return redirect('/pdln')->with('success', 'All good!');

@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Database pdln'); ?>
 
 <?php $__env->startSection('container'); ?>
@@ -35,6 +37,10 @@
         </div>
     </div>
     <!-- Page content -->
+    <?php
+        use Carbon\Carbon;
+        $today_date = Carbon::today()->isoFormat('D MMMM Y');
+    ?>
     <div class="container-fluid mt--6">
         <div class="row">
             <div class="col">
@@ -53,7 +59,7 @@
                             <p class="card-text">Unit Kerja: <?php echo e($pdln->unit_kerja); ?></p>
                             <p class="card-text">Tujuan: <?php echo e($pdln->tujuan); ?></p>
                             <p class="card-text">Negara: <?php echo e($pdln->negara); ?></p>
-                            <p class="card-text">Awal: <?php echo e($pdln->jangka_waktu_awal); ?></p>
+                            <p class="card-text">Awal: <?php echo e(date('d F, Y',strtotime($pdln->jangka_waktu_awal))); ?></p>
                             <p class="card-text">Akhir:<?php echo e($pdln->jangka_waktu_akhir); ?></p>
                             <p class="card-text">Nomor surat UNS:<?php echo e($pdln->surat_uns); ?></p>
                             <p class="card-text">Catatan UNS<?php echo e($pdln->catatan_uns); ?></p>
@@ -66,7 +72,7 @@
                             <form action="<?php echo e($pdln->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                             </form>
                             <a href="/pdln" class="card-link ml-5">Kembali</a>
                         </div>
