@@ -107,14 +107,11 @@ Route::middleware('auth')->group(function () {
 
     //download
     Route::get('/mitra/download/mou/{id}', [MitraController::class, 'mou']);
-<<<<<<< HEAD
-=======
+
+
     Route::get('/pdln/download/uns/{id}', [PdlnController::class, 'uns']);
     Route::get('/pdln/download/belmawa/{id}', [PdlnController::class, 'belmawa']);
     Route::get('/pdln/download/ktln/{id}', [PdlnController::class, 'ktln']);
-
-
->>>>>>> d49fb375fb9b99003ff0349a718221a418e5b603
 });
 
 //email
