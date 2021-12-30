@@ -77,6 +77,7 @@
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">status</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
@@ -91,6 +92,7 @@
                   <td><?php echo e($pdln->negara); ?></td>
                   <td><?php echo e(empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e(empty(strtotime($pdln->jangka_waktu_akhir)) ?  $pdln->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e($pdln->status); ?></td>
                   <td>
                     <a href="/pdln/<?php echo e($pdln->id); ?>" class="badge badge-info">Detail</a>
                   </td>
@@ -113,7 +115,7 @@
           </div>
         </div>
       </div>
-    </div> 
+    </div>
   </div>
 
   <!-- End Main content -->

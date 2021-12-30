@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Database mitra'); ?>
 
 <?php $__env->startSection('container'); ?>
@@ -57,6 +55,7 @@
                             <p class="card-text">Awal Masa Berlaku: <?php echo e($mitra->jangka_waktu_awal); ?></p>
                             <p class="card-text">Akhir Masa Berlaku: <?php echo e($mitra->jangka_waktu_akhir); ?></p>
                             <p class="card-text">Pejabat Penandatangan: <?php echo e($mitra->pejabat_penandatangan); ?></p>
+                            <a href="download/mou/<?php echo e($mitra->id); ?>" class="btn btn-primary">download</a>
                             <a href="<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
                             <form action="<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>

@@ -72,7 +72,7 @@
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
                   <td><a href="/mitra/{{ $mitra->id }}">{{ $mitra->nama_instansi }}</a></td>
-                  <td><a href="/data/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></td>
+                  <td><a href="/data/mitra/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></td>
                   <td>{{ $mitra->no_mou_uns }}</td>
                   <td>{{ $mitra->no_mou_mitra }}</td>
                   <td>{{ empty(strtotime($mitra->jangka_waktu_awal)) ? $mitra->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($mitra->jangka_waktu_awal)))->isoFormat('D MMMM Y') }}</td>

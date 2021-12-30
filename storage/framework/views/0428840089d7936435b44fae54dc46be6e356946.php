@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Tambah Data PDLN'); ?>
 
 <?php $__env->startSection('container'); ?>
@@ -49,30 +47,6 @@
                     <form method="POST" action="/pdln" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="form-group ml-5 mr-5">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control  <?php $__errorArgs = ['nama'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" id="nama" placeholder="Nama" name="nama" value="<?php echo e(old('nama')); ?>">
-                            <?php $__errorArgs = ['nama'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                            <div class="invalid-feedback">
-                                <?php echo e($message); ?>
-
-                            </div>
-                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                        </div>
-                        <div class="form-group ml-5 mr-5">
                             <label for="jenis" class="form-select" >jenis</label>
                             <select class="form-select  <?php $__errorArgs = ['jenis'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -102,6 +76,30 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control  <?php $__errorArgs = ['nama'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="nama" placeholder="Tulis semua nama perserta" name="nama" value="<?php echo e(old('nama')); ?>">
+                            <?php $__errorArgs = ['nama'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="invalid-feedback">
+                                <?php echo e($message); ?>
+
+                            </div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                        <div class="form-group ml-5 mr-5">
                             <label for="jumlah_orang">Jumlah orang</label>
                             <input type="text" class="form-control <?php $__errorArgs = ['jumlah_orang'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -110,7 +108,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="jumlah_orang" placeholder="jumlah orang" name="jumlah_orang" value="<?php echo e(old('kapaitas_ruang')); ?>">
+unset($__errorArgs, $__bag); ?>" id="jumlah_orang" placeholder="dalam format angka -cth: 6 " name="jumlah_orang" value="<?php echo e(old('kapaitas_ruang')); ?>">
                             <?php $__errorArgs = ['jumlah_orang'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

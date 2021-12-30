@@ -16,9 +16,9 @@ class PdlnController extends Controller
 
     public function __construct()
     {
-        // $status = ['status'=> 'tidak berlaku'];
-        // $pdln = Pdln::whereDate('jangka_waktu_akhir', '>=', today())->update($status);
-        // return $pdln;
+        $status = ['status'=>'tidak berlaku'];
+        $pdln = Pdln::where('status','berlaku')->whereDate('jangka_waktu_akhir', '<=', today())->update($status);
+        return $pdln;
     }
     /**
      * Display a listing of the resource.
@@ -65,7 +65,7 @@ class PdlnController extends Controller
         $file_belmawa = $request->file('file_belmawa')->store('file_belmawa');
         $file_ktln = $request->file('file_ktln')->store('file_ktln');
 
-        Excel::import(new PdlnImport, request()->file('file_surat_uns'));
+        // Excel::import(new PdlnImport, request()->file('file_surat_uns'));
         $validatedData = $request->validate([
             'jenis' => 'required',
             'nama' => 'required',
@@ -113,6 +113,9 @@ class PdlnController extends Controller
             // 'file_belmawa' => $file_belmawa,
             // 'file_ktln' => $file_ktln
         ]);
+
+
+        // return $pdln;
     }
 
     /**

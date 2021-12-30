@@ -52,17 +52,8 @@
                     <form method="POST" action="/pdln" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ml-5 mr-5">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control  @error('nama') is-invalid @enderror" id="nama" placeholder="Nama" name="nama" value="{{ old('nama') }}">
-                            @error('nama')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                        <div class="form-group ml-5 mr-5">
-                            <label for="jenis">Jenis</label>
-                            <select class="form-control  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis" aria-label="Default select example">
+                            <label for="jenis" class="form-select" >jenis</label>
+                            <select class="form-select  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis">
                             <option value="mahasiswa">Mahasiswa</option>
                             <option value="dosen">Dosen</option>
                             <option value="pimpinan">Pimpinan</option>
@@ -75,8 +66,17 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control  @error('nama') is-invalid @enderror" id="nama" placeholder="Tulis semua nama perserta" name="nama" value="{{ old('nama') }}">
+                            @error('nama')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
                             <label for="jumlah_orang">Jumlah orang</label>
-                            <input type="text" class="form-control @error('jumlah_orang') is-invalid @enderror" id="jumlah_orang" placeholder="jumlah orang" name="jumlah_orang" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('jumlah_orang') is-invalid @enderror" id="jumlah_orang" placeholder="dalam format angka -cth: 6 " name="jumlah_orang" value="{{ old('kapaitas_ruang') }}">
                             @error('jumlah_orang')
                             <div class="invalid-feedback">
                                 {{ $message }}

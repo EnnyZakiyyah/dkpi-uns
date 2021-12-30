@@ -7,8 +7,7 @@ use App\Models\Mitra;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
-
-
+use Illuminate\Support\Facades\Storage;
 
 class MitraController extends Controller
 {
@@ -19,7 +18,7 @@ class MitraController extends Controller
      */
     public function index()
     {
-        $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5);
+        $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5)->withQueryString();
 
         return view('mitra.index', [
             'title' => 'Data Mitra',
@@ -62,8 +61,8 @@ class MitraController extends Controller
     public function store(Request $request)
     {
         //
-        // $file_mou = $request->file('file_mou')->store('file_mou');
-
+        //
+        $file_mou = $request->file('file_mou')->store('file_mou');
         $validatedData = $request->validate([
             'instansi' => 'required',
             'nama_instansi' => 'required',
@@ -73,9 +72,11 @@ class MitraController extends Controller
             'jangka_waktu_awal' => 'required',
             'jangka_waktu_akhir' => 'required',
             'pejabat_penandatangan' => 'required',
-            // 'file_mou' =>'',
+            'file_mou' =>''
             // 'status_hidden' =>''
         ]);
+        $validatedData['file_mou'] = $file_mou;
+
 
 
         Mitra::create($validatedData);
@@ -159,10 +160,12 @@ class MitraController extends Controller
 
     public function instansi($instansi)
     {
-        $instansi = Mitra::where('instansi', $instansi)->latest()->get();
+        $instansi = Mitra::where('instansi', $instansi)->latest()->paginate(5)->withQueryString();
         return view('mitra.index', [
+            'title' => 'Data Mitra',
             'mitras' => $instansi
         ]);
+        // return $instansi;
     }
 
     public function import()
@@ -172,6 +175,14 @@ class MitraController extends Controller
 
 
         return redirect('/mitra')->with('success', 'All good!');
+    }
+    public function mou($id)
+    {
+        $file = Mitra::find($id);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+         ];
+        return Storage::download($file->file_mou);
     }
 
 

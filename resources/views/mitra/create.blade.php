@@ -50,7 +50,7 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/mitra">
+                    <form method="POST" action="/mitra" enctype= multipart/form-data>
                         @csrf
                         <div class="form-group ml-5 mr-5">
                             <label for="nama_instansi">Nama Instansi</label>
@@ -144,7 +144,17 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="file_mou">file mou</label>
+                            <input type="file" class="form-control @error('file_mou') is-invalid @enderror" id="file_mou" placeholder="catatan" name="file_mou" value="{{ old('kapaitas_ruang') }}">
+                            @error('file_mou')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->
