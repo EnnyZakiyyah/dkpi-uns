@@ -52,6 +52,7 @@ Route::get('/home/mitra-cv', [HomeController::class, 'cv']);
 Route::get('/home/mitra-internasional', [HomeController::class, 'internasional']);
 Route::get('/home/mitra-jasaKeuangan', [HomeController::class, 'jasaKeuangan']);
 Route::get('/home/mitra-pemerintah', [HomeController::class, 'pemerintah']);
+Route::get('/home/mitra/{id}/delete', [HomeController::class, 'mitradelete']);
 
 Route::get('/home/thes', [HomeController::class, 'thes']);
 Route::get('/home/qstar', [HomeController::class, 'qstar']);

@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -104,7 +103,7 @@
                     <a href="/home/pdln/<?php echo e($mahasiswa->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
                     <a href="/pdln/<?php echo e($mahasiswa->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="/pdln/<?php echo e($mahasiswa->id); ?>" method="POST" class="d-inline">
+                    <form action="/pdln/<?php echo e($mahasiswa->id); ?>/delete" method="POST" class="d-inline">
                         <?php echo method_field('delete'); ?>
                         <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>

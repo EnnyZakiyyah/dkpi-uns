@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -15,9 +14,11 @@
                       <div class="container">
 
                         <ol>
-                          <li><a href="/home/mitra">Mitra</a></li>
-                          <li>Mitra Details</li>
+                          <li><a href="/home/pdln-mahasiswa">PDLN</a></li>
+                          <li>PDLN Details</li>
+
                         </ol>
+                        <h3 class="badge bg-info"><?php echo e($pdln->status); ?></h3>
                         <h2><?php echo e($pdln->instansi); ?></h2>
                         <h2><?php echo e($pdln->nama_instansi); ?></h2>
 
