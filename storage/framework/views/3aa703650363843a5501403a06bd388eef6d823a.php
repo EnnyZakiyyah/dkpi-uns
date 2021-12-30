@@ -162,7 +162,7 @@
               </div>
               <p class="mt-3 mb-0 text-sm">
                 
-                <a class="text-nowrap text-primary" href="/galeri">Meliputi isi Galeri DKPI</a>
+                <a class="text-nowrap text-primary" href="/gallery">Meliputi isi Galeri DKPI</a>
               </p>
             </div>
              <!-- END Card body -->
@@ -237,7 +237,7 @@
                    <!-- END Card body -->
               </div>
             </div>
-      
+
   </div>
   </div>
 
