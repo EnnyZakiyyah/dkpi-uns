@@ -71,6 +71,7 @@
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">status</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
@@ -83,8 +84,9 @@
                   {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}
                   <td>{{ $pdln->unit_kerja }}</td>
                   <td>{{ $pdln->negara }}</td>
-                  <td>{{ $pdln->jangka_waktu_awal }}</td>
-                  <td>{{ $pdln->jangka_waktu_akhir }}</td>
+                  <td>{{ empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y') }}</td>
+                  <td>{{ empty(strtotime($pdln->jangka_waktu_akhir)) ?  $pdln->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_akhir)))->isoFormat('D MMMM Y') }}</td>
+                  <td>{{ $pdln->status }}</td>
                   <td>
                     <a href="/pdln/{{ $pdln->id }}" class="badge badge-info">Detail</a>
                   </td>
@@ -106,7 +108,7 @@
           </div>
         </div>
       </div>
-    </div> 
+    </div>
   </div>
 
   <!-- End Main content -->
