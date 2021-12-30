@@ -113,7 +113,7 @@ class BeritaController extends Controller
         // $validatedData['gambar'] = request()->file('gambar')->store('gambar');
         $validatedData = $request->validate([
             'judul' => 'required',
-            'gambar' => 'image|file|max:1024',
+            // 'gambar' => 'image|file|max:1024',
             'excerpt' => 'required',
             'body' => 'required',
             'published_at' => 'required'

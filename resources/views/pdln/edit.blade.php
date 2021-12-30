@@ -53,6 +53,20 @@
                         @method('put')
                         @csrf
                         <div class="form-group ml-5 mr-5">
+                            <label for="jenis" class="form-select" >Jenis</label>
+                            <select class="form-control  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis"  value="{{ old('jenis', $pdln->jenis) }}">
+                            <option value="mahasiswa">Mahasiswa</option>
+                            <option value="dosen">Dosen</option>
+                            <option value="pimpinan">Pimpinan</option>
+                            </select>
+
+                            @error('jenis')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control  @error('nama') is-invalid @enderror" id="nama" placeholder="Nama jenis" name="nama" value="{{ old('nama', $pdln->nama) }}">
                             @error('nama')
@@ -62,11 +76,11 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jenis" class="form-select" >Jenis</label>
-                            <select class="form-control @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis" value="{{ old('jenis', $pdln->jenis) }}">
-                            <option value="mahasiswa">mahasiswa</option>
-                            <option value="dosen">dosen</option>
-                            <option value="pimppinan">internasional</option>
+                            <label for="jenis" class="form-select" >Status</label>
+                            <select class="form-control  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis"  value="{{ old('jenis', $pdln->jenis) }}">
+                            <option value="diterima">Diterima</option>
+                            <option value="proses UNS">Proses UNS</option>
+                            <option value="proses dikti">Proses Dikti</option>
                             </select>
 
                             @error('jenis')

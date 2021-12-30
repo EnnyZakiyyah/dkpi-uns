@@ -20,6 +20,7 @@
                         </ol>
                         <h2>{{ $mitra->instansi }}</h2>
                         <h2>{{ $mitra->nama_instansi }}</h2>
+                        <h3 class="badge bg-info">{{ $mitra->status }}</h3>
 
                       </div>
                     </section><!-- End Breadcrumbs -->
@@ -38,14 +39,14 @@
                                 <p class="card-text">Akhir Masa Berlaku: {{ $mitra->jangka_waktu_akhir }}</p>
                                 <p class="card-text">Pejabat Penandatangan: {{ $mitra->pejabat_penandatangan }}</p>
                                 @if(Auth::check())
-                                <a href="{{ $mitra->id }}/edit" class="btn btn-primary">Edit</a>
+                                <a href="/mitra/{{ $mitra->id }}/edit" class="btn btn-primary">Edit</a>
                                 <form action="{{ $mitra->id }}" method="POST" class="d-inline">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
                                 @endif
-                                <a href="/home/mitra" class="btn btn-primary">Kembali</a>
+                                <a href="/home/mitra-cv" class="btn btn-primary">Kembali</a>
                             </div>
                         </div>
             </div>

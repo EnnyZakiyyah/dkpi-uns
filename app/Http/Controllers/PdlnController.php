@@ -87,7 +87,7 @@ class PdlnController extends Controller
         $validatedData['file_belmawa'] = $file_belmawa;
         $validatedData['file_ktln'] = $file_ktln;
         $validatedData['status_hidden'] = 'berlaku';
-        $validatedData['status'] = 'berlaku';
+        $validatedData['status'] = 'diterima';
 
         Pdln::create($validatedData);
 
@@ -151,12 +151,13 @@ class PdlnController extends Controller
             'jangka_waktu_akhir' => 'required',
             'tujuan' => 'required',
             'negara' => 'required',
-            'surat_uns' => 'required',
-            'catatan_uns' => 'required',
-            'belmawa' => 'required',
-            'catatan_belmawa' => 'required',
-            'ktln_kemensetneg' => 'required',
-            'catatan_setneg' => 'required'
+            'surat_uns' => '',
+            'catatan_uns' => '',
+            'belmawa' => '',
+            'catatan_belmawa' => '',
+            'ktln_kemensetneg' => '',
+            'catatan_setneg' => '',
+            'status' => 'required'
         ]);
 
         Pdln::where('id', $pdln->id)->update($validatedData);
@@ -193,5 +194,29 @@ class PdlnController extends Controller
 
 
         return redirect('/pdln')->with('success', 'All good!');
+    }
+    public function uns($id)
+    {
+        $file = Pdln::find($id);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+         ];
+        return Storage::download($file->file_surat_uns);
+    }
+    public function belmawa($id)
+    {
+        $file = Pdln::find($id);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+         ];
+        return Storage::download($file->file_belmawa);
+    }
+    public function ktln($id)
+    {
+        $file = Pdln::find($id);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+         ];
+        return Storage::download($file->file_ktln);
     }
 }

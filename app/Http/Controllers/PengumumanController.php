@@ -99,13 +99,13 @@ class PengumumanController extends Controller
      * @param  \App\Models\Pengumuman  $pengumuman
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pengumuman $pengumuman)
+    public function update(Request $request, $pengumuman)
     {
         //
         $validatedData = $request->validate([
             'pengumuman'=>'required',
             'berlaku'=>'required',
-            'link'=>'required',
+            'link'=>'required'
 
         ]);
         Pengumuman::where('id', $pengumuman)->update($validatedData);

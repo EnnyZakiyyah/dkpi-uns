@@ -229,6 +229,12 @@ class HomeController extends Controller
         ]);
         // return $yayasan;
     }
+    public function mitradelete($id)
+    {
+        //
+        Mitra::destroy($id);
+        return redirect('home/mitra-cv')->with('status', 'data berhasil dihapus');
+    }
     public function mahasiswa()
     {
         // $date = empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y');
@@ -256,6 +262,12 @@ class HomeController extends Controller
             'title' => 'PDLN-Pimpinan',
             'pimpinans' => $pimpinan
         ]);
+    }
+    public function pdlndelete($id)
+    {
+        //
+        Pdln::destroy($id);
+        return redirect('home/pdln-mahasiswa')->with('status', 'data berhasil dihapus');
     }
 
     public function thes()

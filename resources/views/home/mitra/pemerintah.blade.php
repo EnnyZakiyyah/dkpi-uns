@@ -100,7 +100,7 @@
                     <a href="/home/mitra/{{ $pemerintah->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())
                     <a href="/mitra/{{ $pemerintah->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="/mitra/{{ $pemerintah->id }}" method="POST" class="d-inline">
+                    <form action="/mitra/{{ $pemerintah->id }}/delete" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>

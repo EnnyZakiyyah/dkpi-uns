@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -91,7 +92,7 @@
               <tbody>
                 <?php $__currentLoopData = $mahasiswas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mahasiswa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($attend->firstItem() + $loop->index); ?></th>
+                  <th scope="row"><?php echo e($mahasiswas->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($mahasiswa->nama); ?></td>
                   <td><?php echo e($mahasiswa->unit_kerja); ?></td>
                   <td><?php echo e($mahasiswa->negara); ?></td>

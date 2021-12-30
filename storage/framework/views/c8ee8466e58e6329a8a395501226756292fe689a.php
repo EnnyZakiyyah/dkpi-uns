@@ -22,7 +22,7 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Ubah Data Mitra</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Data Mitra</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
@@ -151,7 +151,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                     </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_awal">Awal</label>
+                            <label for="jangka_waktu_awal">Jangka Waktu Awal</label>
                             <input type="date" class="form-control <?php $__errorArgs = ['jangka_waktu_awal'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -175,7 +175,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_akhir">Akhir</label>
+                            <label for="jangka_waktu_akhir">Jangka Waktu Akhir</label>
                             <input type="date" class="form-control <?php $__errorArgs = ['jangka_waktu_akhir'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -199,7 +199,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="pejabat_penandatangan">pejabat penandatangan</label>
+                            <label for="pejabat_penandatangan">Pejabat Penandatangan</label>
                             <input type="text" class="form-control <?php $__errorArgs = ['pejabat_penandatangan'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -222,7 +222,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->
