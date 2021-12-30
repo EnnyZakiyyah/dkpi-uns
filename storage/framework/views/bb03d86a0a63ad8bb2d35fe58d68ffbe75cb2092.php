@@ -33,7 +33,7 @@
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
             <form class="row g-3 needs-validation" action="/home/mitra-yayasan" method="GET">
-           
+
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
                 <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>" required>
@@ -41,8 +41,8 @@
                   Looks good!
                 </div>
               </div>
-            
-            
+
+
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
                 <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="<?php echo e(request('jangka_waktu_awal')); ?>" required>
@@ -50,7 +50,7 @@
                   Looks good!
                 </div>
               </div>
-              
+
 
               
               <div class="col-md-6">
@@ -99,11 +99,16 @@
               <tbody>
                 <?php $__currentLoopData = $yayasans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $yayasan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($yayasans->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($yayasan->nama_instansi); ?></td>
                   <td><?php echo e($yayasan->ruang_lingkup); ?></td>
+<<<<<<< Updated upstream
                   <td><?php echo e($yayasan->jangka_waktu_awal); ?></td>
                   <td><?php echo e($yayasan->jangka_waktu_akhir); ?></td>
+=======
+                  <td><?php echo e($date = empty(strtotime( $yayasan->jangka_waktu_awal)) ? $yayasan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e($date = empty(strtotime($yayasan->jangka_waktu_akhir)) ? $yayasan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
+>>>>>>> Stashed changes
                   <td><?php echo e($yayasan->pejabat_penandatangan); ?></td>
                   <td><?php echo e($yayasan->status); ?></td>
                   <td>

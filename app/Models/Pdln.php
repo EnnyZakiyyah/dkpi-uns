@@ -14,20 +14,8 @@ class Pdln extends Model
 
     public function scopeFilter($query, array $filters)
     {   
-        // if(isset($filters['nama_instansi']) ? $filters['nama_instansi'] : false){
-        //     return $query->where('nama_instansi', 'like', '%' . $filters['nama_instansi']. '%');
-        // }
-        $query->when($filters['nama'] ?? false, function($query, $nama){
-            return $query->where('nama', 'like', '%' . $nama. '%');
-        });
-        $query->when($filters['jangka_waktu_awal'] ?? false, function($query, $jangka_waktu_awal){
-            return $query->where('jangka_waktu_awal', 'like', '%' . $jangka_waktu_awal. '%');
-        });
-        $query->when($filters['jangka_waktu_akhir'] ?? false, function($query, $jangka_waktu_akhir){
-            return $query->where('jangka_waktu_akhir', 'like', '%' . $jangka_waktu_akhir. '%');
-        });
-        $query->when($filters['negara'] ?? false, function($query, $negara){
-            return $query->where('negara', 'like', '%' . $negara. '%');
+        $query->when($filters['judul'] ?? false, function($query, $judul){
+            return $query->where('judul', 'like', '%' . $judul. '%');
         });
         
     }

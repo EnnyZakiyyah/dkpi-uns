@@ -17,27 +17,22 @@
                 <li data-filter=".filter-mou">MoU</li>
               </ul>
 
+             
+
+
               <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                <?php $__currentLoopData = $galleries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galeri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <!-- CV/PT -->
               <div class="col-lg-6 col-md-6 portfolio-item filter-mou">
-                <div class="portfolio-img"><iframe width="650" height="370" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="portfolio-img"><iframe width="620" height="350" src="<?php echo e($galeri->link); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                 <div class="portfolio-info">
-                  <h4>Penandatanganan MoU Universitas Sebelas Maret</h4>
-                  <p>Bank Syariah Indonesia</p>
-                  <a href="https://www.youtube.com/embed/YHyO-N8OkSQ" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Penandatanganan MoU Universitas Sebelas Maret"><i class="bx bx-plus"></i></a>
-                  <a href="/galeri/more-details" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                  <h4><?php echo e($galeri->judul); ?></h4>
+                  <p><?php echo $galeri->caption; ?></p>
+                  <a href="<?php echo e($galeri->link); ?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?php echo e($galeri->judul); ?>"><i class="bx bx-plus"></i></a>
+                  <a href="/home/galeridetails/<?php echo e($galeri->id); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6 portfolio-item filter-mou">
-                <div class="portfolio-img"><iframe width="650" height="370" src="https://www.youtube.com/embed/QvqNUeE7A74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                <div class="portfolio-info">
-                  <h4>Penandatanganan MoU Universitas Sebelas Maret</h4>
-                  <p>University of Panama</p>
-                  <a href="https://www.youtube.com/embed/QvqNUeE7A74" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Penandatanganan MoU Universitas Sebelas Maret"><i class="bx bx-plus"></i></a>
-                  <a href="/galeri/more-details" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
   </div>

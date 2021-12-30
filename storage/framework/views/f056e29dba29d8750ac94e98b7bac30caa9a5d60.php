@@ -92,15 +92,25 @@
               <tbody>
                 <?php $__currentLoopData = $mahasiswas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mahasiswa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($mahasiswas->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($mahasiswa->nama); ?></td>
                   <td><?php echo e($mahasiswa->unit_kerja); ?></td>
                   <td><?php echo e($mahasiswa->negara); ?></td>
                   <td><?php echo e($mahasiswa->tujuan); ?></td>
-                  <td><?php echo e($mahasiswa->jangka_waktu_awal); ?></td>
-                  <td><?php echo e($mahasiswa->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($date = empty(strtotime($mahasiswa->jangka_waktu_awal)) ? $mahasiswa->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($mahasiswa->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e($date = empty(strtotime($mahasiswa->jangka_waktu_akhir)) ? $mahasiswa->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($mahasiswa->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($mahasiswa->status); ?></td>
-                  <td></td>
+                  <td>
+                    <a href="/home/pdln/<?php echo e($mahasiswa->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    <?php if(Auth::check()): ?>
+                    <a href="/pdln/<?php echo e($mahasiswa->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="/pdln/<?php echo e($mahasiswa->id); ?>" method="POST" class="d-inline">
+                        <?php echo method_field('delete'); ?>
+                        <?php echo csrf_field(); ?>
+                        <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                    </form>
+                    <?php endif; ?>
+                </td>
                 </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>

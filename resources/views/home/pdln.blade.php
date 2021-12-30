@@ -101,8 +101,8 @@
                   <td>{{ $mahasiswa->unit_kerja }}</td>
                   <td>{{ $mahasiswa->negara }}</td>
                   <td>{{ $mahasiswa->tujuan }}</td>
-                  <td>{{ $mahasiswa->jangka_waktu_awal }}</td>
-                  <td>{{ $mahasiswa->jangka_waktu_akhir }}</td>
+                  <td>{{ $date = empty(strtotime($mahasiswa->jangka_waktu_awal)) ? $mahasiswa->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($mahasiswa->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
+                  <td>{{ $date = empty(strtotime($mahasiswa->jangka_waktu_akhir)) ? $mahasiswa->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($mahasiswa->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $mahasiswa->status }}</td>
                   <td></td>
                 </tr>
@@ -143,8 +143,8 @@
                       <td>{{ $dosen->unit_kerja }}</td>
                       <td>{{ $dosen->negara }}</td>
                       <td>{{ $dosen->tujuan }}</td>
-                      <td>{{ $dosen->jangka_waktu_awal }}</td>
-                      <td>{{ $dosen->jangka_waktu_akhir }}</td>
+                      <td>{{ $date = empty(strtotime($dosen->jangka_waktu_awal)) ? $dosen->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($dosen->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }} }}</td>
+                      <td>{{ $date = empty(strtotime($dosen->jangka_waktu_akhir)) ? $dosen->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($dosen->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }} }}</td>
                       <td>{{ $dosen->status }}</td>
                       <td></td>
                     </tr>
@@ -185,8 +185,8 @@
                           <td>{{ $pimpinan->unit_kerja }}</td>
                           <td>{{ $pimpinan->negara }}</td>
                           <td>{{ $pimpinan->tujuan }}</td>
-                          <td>{{ $pimpinan->jangka_waktu_awal }}</td>
-                          <td>{{ $pimpinan->jangka_waktu_akhir }}</td>
+                          <td>{{ $date = empty(strtotime($pimpinan->jangka_waktu_awal)) ? $pimpinan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pimpinan->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }} }}</td>
+                          <td>{{ $date = empty(strtotime($pimpinan->jangka_waktu_akhir)) ? $pimpinan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pimpinan->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }} }}</td>
                           <td>{{ $pimpinan->status }}</td>
                           <td></td>
                         </tr>

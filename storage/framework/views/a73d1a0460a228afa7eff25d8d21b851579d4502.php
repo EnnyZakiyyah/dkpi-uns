@@ -31,14 +31,9 @@
         </div>
 
         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <?php if(session()->has('success')): ?>
-          <div class="alert alert-success">
-              <?php echo e(session()->get('success')); ?>
-
-          </div>
-      <?php endif; ?>
-          <form action="<?php echo e(route('contact.save')); ?>" method="post" role="form" class="php-email-form">
-            <?php echo csrf_field(); ?>
+         
+          <form action="<?php echo e(route('contact.save')); ?>" method="post" role="form" class="php-email-form2">
+             <?php echo csrf_field(); ?>
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="name">Your Name</label>
@@ -73,7 +68,7 @@ unset($__errorArgs, $__bag); ?>
           <div class="row">
           <div class="form-group col-md-6">
             <label for="name">Your Phone</label>
-            <input type="number" class="form-control" name="phone" id="phone" required>
+            <input type="number" class="form-control" name="phone" id="phone" max="13" required>
             <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -115,12 +110,19 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
             </div>
+            <?php if(session()->has('success')): ?>
+            <div class="alert alert-success">
+                <?php echo e(session()->get('success')); ?>
+
+            </div>
+        <?php endif; ?>
             <div class="my-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
+           
           </form>
         </div>
 

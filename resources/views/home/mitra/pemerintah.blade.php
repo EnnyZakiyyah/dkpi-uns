@@ -113,8 +113,8 @@
                   <th scope="row">{{ $pemerintahs->firstItem() + $loop->index }}</th>
                   <td>{{ $pemerintah->nama_instansi }}</td>
                   <td>{{ $pemerintah->ruang_lingkup }}</td>
-                  <td>{{ $pemerintah->jangka_waktu_awal }}</td>
-                  <td>{{ $pemerintah->jangka_waktu_akhir }}</td>
+                  <td>{{ $date = empty(strtotime($pemerintah->jangka_waktu_awal)) ? $pemerintah->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pemerintah->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
+                  <td>{{ $date = empty(strtotime($pemerintah->jangka_waktu_akhir)) ? $pemerintah->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pemerintah->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $pemerintah->pejabat_penandatangan }}</td>
                   <td>{{ $pemerintah->status }}</td>
                   <td>

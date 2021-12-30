@@ -49,6 +49,12 @@
     </div>
   </div>
   <!-- Page content -->
+  <?php
+        // use Carbon\Carbon;
+        // $today_date = Carbon::today()->isoFormat('D MMMM Y');
+        // $today = Carbon::now()->isoFormat('D MMMM Y');
+        // setlocale(LC_TIME, 'id_ID');
+    ?>
   <div class="container-fluid mt--6">
     <div class="row">
       <div class="col">
@@ -79,12 +85,12 @@
                 <tr>
                   <th scope="row"><?php echo e($loop->iteration); ?></th>
                   <td><a href="/pdln/<?php echo e($pdln->id); ?>"><?php echo e($pdln->nama); ?></a></td>
-                  <td><a href="/pdln/data/<?php echo e($pdln->jenis); ?>"><?php echo e($pdln->jenis); ?></a></td>
+                  <td><a href="/data/<?php echo e($pdln->jenis); ?>"><?php echo e($pdln->jenis); ?></a></td>
                   
                   <td><?php echo e($pdln->unit_kerja); ?></td>
                   <td><?php echo e($pdln->negara); ?></td>
-                  <td><?php echo e($pdln->jangka_waktu_awal); ?></td>
-                  <td><?php echo e($pdln->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e(empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e(empty(strtotime($pdln->jangka_waktu_akhir)) ?  $pdln->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td>
                     <a href="/pdln/<?php echo e($pdln->id); ?>" class="badge badge-info">Detail</a>
                   </td>

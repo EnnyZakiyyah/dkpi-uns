@@ -37,13 +37,15 @@
                                 <p class="card-text">Awal Masa Berlaku: <?php echo e($mitra->jangka_waktu_awal); ?></p>
                                 <p class="card-text">Akhir Masa Berlaku: <?php echo e($mitra->jangka_waktu_akhir); ?></p>
                                 <p class="card-text">Pejabat Penandatangan: <?php echo e($mitra->pejabat_penandatangan); ?></p>
+                                <?php if(Auth::check()): ?>
                                 <a href="<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
                                 <form action="<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
                                     <?php echo method_field('delete'); ?>
                                     <?php echo csrf_field(); ?>
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
-                                <a href="/mitra" class="card-link ml-5">Kembali</a>
+                                <?php endif; ?>
+                                <a href="/home/mitra" class="btn btn-primary">Kembali</a>
                             </div>
                         </div>
             </div>

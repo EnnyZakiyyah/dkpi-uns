@@ -92,11 +92,11 @@
               <tbody>
                 <?php $__currentLoopData = $internasionals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $internasional): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($internasionals->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($internasional->nama_instansi); ?></td>
                   <td><?php echo e($internasional->ruang_lingkup); ?></td>
-                  <td><?php echo e($internasional->jangka_waktu_awal); ?></td>
-                  <td><?php echo e($internasional->jangka_waktu_akhir); ?></td>
+                  <td><?php echo e($date = empty(strtotime($internasional->jangka_waktu_awal)) ? $internasional->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($internasional->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e($date = empty(strtotime($internasional->jangka_waktu_akhir)) ? $internasional->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($internasional->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($internasional->pejabat_penandatangan); ?></td>
                   <td><?php echo e($internasional->status); ?></td>
                   <td>

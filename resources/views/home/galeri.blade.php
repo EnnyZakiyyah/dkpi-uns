@@ -17,13 +17,14 @@
                 <li data-filter=".filter-mou">MoU</li>
               </ul>
 
-              @foreach ($galleries as $galeri)
+             
 
 
               <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                @foreach ($galleries as $galeri)
               <!-- CV/PT -->
               <div class="col-lg-6 col-md-6 portfolio-item filter-mou">
-                <div class="portfolio-img"><iframe width="650" height="370" src="{{ $galeri->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="portfolio-img"><iframe width="620" height="350" src="{{ $galeri->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                 <div class="portfolio-info">
                   <h4>{{ $galeri->judul }}</h4>
                   <p>{!! $galeri->caption !!}</p>

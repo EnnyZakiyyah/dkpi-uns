@@ -49,6 +49,12 @@
     </div>
   </div>
   <!-- Page content -->
+  @php
+        // use Carbon\Carbon;
+        // $today_date = Carbon::today()->isoFormat('D MMMM Y');
+        // $today = Carbon::now()->isoFormat('D MMMM Y');
+        // setlocale(LC_TIME, 'id_ID');
+    @endphp
   <div class="container-fluid mt--6">
     <div class="row">
       <div class="col">
