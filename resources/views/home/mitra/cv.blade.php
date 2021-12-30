@@ -35,14 +35,14 @@
             <form class="row g-3 needs-validation" action="/home/mitra-cv">
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
-                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="{{ request('nama_instansi') }}" required>
+                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="{{ request('nama_instansi') }}">
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
-                <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="{{ request('jangka_waktu_awal') }}" required>
+                <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="{{ request('jangka_waktu_awal') }}">
                 <div class="valid-feedback">
                   Looks good!
                 </div>
@@ -56,7 +56,7 @@
               </div> --}}
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
-                <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="{{ request('jangka_waktu_akhir') }}" required>
+                <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="{{ request('jangka_waktu_akhir') }}">
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
@@ -70,7 +70,7 @@
               </div> --}}
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
-                <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="{{ request('pejabat_penandatangan') }}" required>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="{{ request('pejabat_penandatangan') }}">
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
@@ -113,9 +113,9 @@
                   <th scope="row">{{ $cvs->firstItem() + $loop->index }}</th>
                   <td>{{ $cv->nama_instansi }}</td>
                   <td>{{ $cv->ruang_lingkup }}</td>
-                  <td>{{ $cv->jangka_waktu_awal }}</td>
-                  <td>{{ $date = empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
-                  <td>{{ $date = empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
+                  <td>{{ empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y') }}</td>
+                  <td>{{ empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
+                  <td>{{ $cv->pejabat_penandatangan }}</td>
                   <td>{{ $cv->status }}</td>
                   <td>
                     <a href="/home/mitra/{{ $cv->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>

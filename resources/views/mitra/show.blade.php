@@ -60,7 +60,7 @@
                             <p class="card-text">Awal Masa Berlaku: {{ $mitra->jangka_waktu_awal }}</p>
                             <p class="card-text">Akhir Masa Berlaku: {{ $mitra->jangka_waktu_akhir }}</p>
                             <p class="card-text">Pejabat Penandatangan: {{ $mitra->pejabat_penandatangan }}</p>
-                            <a href="download/mou/{{ $mitra->id }}" class="btn btn-primary">download</a>
+                            <a href="download/mou/{{ $mitra->id }}" class="btn btn-warning">Download File MoU</a>
                             <a href="{{ $mitra->id }}/edit" class="btn btn-primary">Edit</a>
                             <form action="{{ $mitra->id }}" method="POST" class="d-inline">
                                 @method('delete')

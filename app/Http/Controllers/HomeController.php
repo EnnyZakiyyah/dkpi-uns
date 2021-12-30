@@ -41,7 +41,7 @@ class HomeController extends Controller
     public function pdln()
     {
 
-        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->paginate(5);
+        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->paginate(5);
         $dosen = Pdln::where('jenis', 'dosen')->latest()->paginate(5);
         $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->paginate(5);
 
@@ -58,7 +58,7 @@ class HomeController extends Controller
 
         return view('home.pdlndetails', [
             'title' => 'Details PDLN',
-            'pdlns' => $pdln
+            'pdln' => $pdln
         ]);
     }
 
@@ -180,18 +180,18 @@ class HomeController extends Controller
 
     public function yayasan()
     {
-        
-        $yayasan = Mitra::latest()->where('instansi', 'yayasan')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+
+        $yayasan = Mitra::latest()->where('instansi', 'yayasan')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
         return view('home.mitra.yayasan', [
             'title' => 'Sekolah/Yayasan',
             'yayasans' => $yayasan
-            
+
 
         ]);
     }
     public function internasional()
     {
-        $internasional = Mitra::where('instansi', 'internasional')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+        $internasional = Mitra::where('instansi', 'internasional')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
         return view('home.mitra.internasional', [
             'title' => 'Internasional',
@@ -201,7 +201,7 @@ class HomeController extends Controller
     }
     public function cv()
     {
-        $cv = Mitra::where('instansi', 'cv')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+        $cv = Mitra::where('instansi', 'cv')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
         return view('home.mitra.cv', [
             'title' => 'CV/PT',
@@ -211,7 +211,7 @@ class HomeController extends Controller
     }
     public function jasaKeuangan()
     {
-        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
         return view('home.mitra.jasaKeuangan', [
             'title' => 'Jasa Keuangan',
@@ -221,7 +221,7 @@ class HomeController extends Controller
     }
     public function pemerintah()
     {
-        $pemerintah = Mitra::where('instansi', 'pemerintah')->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+        $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
         return view('home.mitra.pemerintah', [
             'title' => 'Pemerintah',
@@ -232,7 +232,7 @@ class HomeController extends Controller
     public function mahasiswa()
     {
         // $date = empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y');
-        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->filter(request(['nama','jangka_waktu_awal','jangka_waktu_akhir','negara']))->paginate(5)->withQueryString();;
+        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->filter(request(['nama', 'jangka_waktu_awal', 'jangka_waktu_akhir', 'negara']))->paginate(5)->withQueryString();;
 
         return view('home.pdln.mahasiswa', [
             'title' => 'PDLN-Mahasiswa',
@@ -241,7 +241,7 @@ class HomeController extends Controller
     }
     public function dosen()
     {
-        $dosen = Pdln::where('jenis', 'dosen')->filter(request(['nama','jangka_waktu_awal','jangka_waktu_akhir','negara']))->paginate(5)->withQueryString();;
+        $dosen = Pdln::where('jenis', 'dosen')->latest()->filter(request(['nama', 'jangka_waktu_awal', 'jangka_waktu_akhir', 'negara']))->paginate(5)->withQueryString();;
 
         return view('home.pdln.dosen', [
             'title' => 'PDLN-Dosen',
@@ -250,11 +250,28 @@ class HomeController extends Controller
     }
     public function pimpinan()
     {
-        $pimpinan = Pdln::where('jenis', 'pimpinan')->filter(request(['nama','jangka_waktu_awal','jangka_waktu_akhir','negara']))->paginate(5)->withQueryString();;
+        $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->filter(request(['nama', 'jangka_waktu_awal', 'jangka_waktu_akhir', 'negara']))->paginate(5)->withQueryString();;
 
         return view('home.pdln.pimpinan', [
             'title' => 'PDLN-Pimpinan',
             'pimpinans' => $pimpinan
+        ]);
+    }
+
+    public function thes()
+    {
+        $thes = Peringkat::where('jenis', 'THES')->latest()->get();
+        return view('home.peringkat.thes', [
+            'title' => 'Peringkat-THES',
+            'thess' => $thes
+        ]);
+    }
+    public function qstar()
+    {
+        $qs = Peringkat::where('jenis', 'QSstar')->latest()->get();
+        return view('home.peringkat.qstar', [
+            'title' => 'Peringkat-QStar',
+            'qss' => $qs
         ]);
     }
 }

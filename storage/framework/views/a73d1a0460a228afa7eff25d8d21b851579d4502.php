@@ -68,7 +68,7 @@ unset($__errorArgs, $__bag); ?>
           <div class="row">
           <div class="form-group col-md-6">
             <label for="name">Your Phone</label>
-            <input type="number" class="form-control" name="phone" id="phone" max="13" required>
+            <input type="number" class="form-control" name="phone" id="phone" min="8" required>
             <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

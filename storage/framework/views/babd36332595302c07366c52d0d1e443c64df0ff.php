@@ -11,7 +11,7 @@
               <li><a href="/home/galeri">Galeri</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto <?php echo e(($title === "Peringkat") ? 'active' : ''); ?>" href="/home/peringkat">Peringkat</a></li>
+          <li><a class="nav-link scrollto <?php echo e(($title === "Peringkat") ? 'active' : ''); ?>" href="/home/thes">Peringkat</a></li>
           <li><a class="nav-link scrollto <?php echo e(($title === "Pengumuman") ? 'active' : ''); ?>" href="/home/pengumuman">Pengumuman</a></li>
           <li><a class="bi bi-box-arrow-in-right" href="/login"></a></li>
         </ul>

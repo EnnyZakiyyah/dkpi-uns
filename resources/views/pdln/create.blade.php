@@ -52,8 +52,8 @@
                     <form method="POST" action="/pdln" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ml-5 mr-5">
-                            <label for="jenis" class="form-select" >jenis</label>
-                            <select class="form-select  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis">
+                            <label for="jenis" class="form-select" >Jenis</label>
+                            <select class="form-control  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis">
                             <option value="mahasiswa">Mahasiswa</option>
                             <option value="dosen">Dosen</option>
                             <option value="pimpinan">Pimpinan</option>

@@ -47,7 +47,7 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/mitra">
+                    <form method="POST" action="/mitra" enctype= multipart/form-data>
                         <?php echo csrf_field(); ?>
                         <div class="form-group ml-5 mr-5">
                             <label for="nama_instansi">Nama Instansi</label>
@@ -250,6 +250,31 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="file_mou">file mou</label>
+                            <input type="file" class="form-control <?php $__errorArgs = ['file_mou'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="file_mou" placeholder="catatan" name="file_mou" value="<?php echo e(old('kapaitas_ruang')); ?>">
+                            <?php $__errorArgs = ['file_mou'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="invalid-feedback">
+                                <?php echo e($message); ?>
+
+                            </div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+
                         <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 

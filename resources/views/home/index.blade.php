@@ -221,27 +221,27 @@
           <div class="col-xl-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-people-fill"></i></div>
-              <h4><a href="/home/pdln">Mahasiswa</a></h4>
+              <h4><a href="/home/pdln-mahasiswa">Mahasiswa</a></h4>
               <p>Data mahasiswa yang melakukan perjalanan dinas ke luar negeri dalam rangka tugas belajar maupun tugas lainnya dapat dilihat disini</p>
-              <a href="/home/pdln" class="btn-learn-more">Baca Selengkapnya</a>
+              <a href="/home/pdln-mahasiswa" class="btn-learn-more">Baca Selengkapnya</a>
             </div>
           </div>
 
           <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="/home/pdln">Dosen</a></h4>
+              <h4><a href="/home/pdln-dosen">Dosen</a></h4>
               <p>Data Dosen yang melakukan perjalanan dinas ke luar negeri dalam rangka tugas belajar, penelitian, maupun tugas lainnya dapat dilihat disini</p>
-              <a href="/home/pdln" class="btn-learn-more">Baca Selengkapnya</a>
+              <a href="/home/pdln-dosen" class="btn-learn-more">Baca Selengkapnya</a>
             </div>
           </div>
 
           <div  class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-user"></i></div>
-              <h4><a href="/home/pdln">Pimpinan</a></h4>
+              <h4><a href="/home/pdln-pimpinan">Pimpinan</a></h4>
               <p>Data pejabat UNS yang melakukan perjalanan dinas ke luar negeri dalam rangka diplomasi maupun tugas lainnya dapat dilihat disini</p>
-              <a href="/home/pdln" class="btn-learn-more">Baca Selengkapnya</a>
+              <a href="/home/pdln-pimpinan" class="btn-learn-more">Baca Selengkapnya</a>
             </div>
           </div>
 

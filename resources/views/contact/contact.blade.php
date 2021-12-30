@@ -65,7 +65,7 @@
           <div class="row">
           <div class="form-group col-md-6">
             <label for="name">Your Phone</label>
-            <input type="number" class="form-control" name="phone" id="phone" max="13" required>
+            <input type="number" class="form-control" name="phone" id="phone" min="8" required>
             @error('phone')
             <span class="text-danger"> {{ $message }} </span>
             @enderror

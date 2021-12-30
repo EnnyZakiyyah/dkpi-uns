@@ -39,28 +39,28 @@
       <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-6">
           <label for="validationCustom01" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="validationCustom01" name="nama" value="{{ request('nama') }}"required>
+          <input type="text" class="form-control" id="validationCustom01" name="nama" value="{{ request('nama') }}">
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-6">
             <label for="validationCustom02" class="form-label">Waktu Mulai</label>
-            <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="{{ request('jangka_waktu_awal') }}" required>
+            <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="{{ request('jangka_waktu_awal') }}" >
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="validationCustom03" class="form-label">Waktu Berakhir</label>
-            <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="{{ request('jangka_waktu_akhir') }}" required>
+            <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="{{ request('jangka_waktu_akhir') }}">
             <div class="invalid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="validationCustom03" class="form-label">Negara</label>
-            <input type="text" class="form-control" id="validationCustom03" name="negara" value="{{ request('negara') }}" required>
+            <input type="text" class="form-control" id="validationCustom03" name="negara" value="{{ request('negara') }}" >
             <div class="invalid-feedback">
               Looks good!
             </div>
