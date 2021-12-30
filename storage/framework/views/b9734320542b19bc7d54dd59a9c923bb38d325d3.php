@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Data Mitra'); ?>
 <?php $__env->startSection('search'); ?>
 <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main" action="/mitra">
@@ -72,7 +70,7 @@
                 <tr>
                   <th scope="row"><?php echo e($loop->iteration); ?></th>
                   <td><a href="/mitra/<?php echo e($mitra->id); ?>"><?php echo e($mitra->nama_instansi); ?></a></td>
-                  <td><a href="/data/<?php echo e($mitra->instansi); ?>"><?php echo e($mitra->instansi); ?></a></td>
+                  <td><a href="/data/mitra/<?php echo e($mitra->instansi); ?>"><?php echo e($mitra->instansi); ?></a></td>
                   <td><?php echo e($mitra->no_mou_uns); ?></td>
                   <td><?php echo e($mitra->no_mou_mitra); ?></td>
                   <td><?php echo e(empty(strtotime($mitra->jangka_waktu_awal)) ? $mitra->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($mitra->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
