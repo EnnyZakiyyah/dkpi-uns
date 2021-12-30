@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -35,7 +36,7 @@
 
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
-                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>" required>
+                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>">
                 <div class="valid-feedback">
                   Looks good!
                 </div>
@@ -44,32 +45,25 @@
 
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
-                <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="<?php echo e(request('jangka_waktu_awal')); ?>" required>
+                <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="<?php echo e(request('jangka_waktu_awal')); ?>">
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
-
-
-              
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
-                <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="<?php echo e(request('jangka_waktu_akhir')); ?>" required>
+                <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="<?php echo e(request('jangka_waktu_akhir')); ?>" >
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
-              
-              
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
-                <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="<?php echo e(request('pejabat_penandatangan')); ?>" required>
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="<?php echo e(request('pejabat_penandatangan')); ?>">
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
-              
-              
               <div class="col-12">
                 <button class="btn btn-warning" type="submit">Cari Data</button>
               </div>
@@ -101,11 +95,7 @@
                   <th scope="row"><?php echo e($yayasans->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($yayasan->nama_instansi); ?></td>
                   <td><?php echo e($yayasan->ruang_lingkup); ?></td>
-<<<<<<< Updated upstream
-                  <td><?php echo e($date = empty(strtotime($mahasiswa->jangka_waktu_awal)) ? $yayasan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
-=======
                   <td><?php echo e($date = empty(strtotime( $yayasan->jangka_waktu_awal)) ? $yayasan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
->>>>>>> Stashed changes
                   <td><?php echo e($date = empty(strtotime($yayasan->jangka_waktu_akhir)) ? $yayasan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($yayasan->pejabat_penandatangan); ?></td>
                   <td><?php echo e($yayasan->status); ?></td>

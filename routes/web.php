@@ -52,6 +52,7 @@ Route::get('/home/mitra-cv', [HomeController::class, 'cv']);
 Route::get('/home/mitra-internasional', [HomeController::class, 'internasional']);
 Route::get('/home/mitra-jasaKeuangan', [HomeController::class, 'jasaKeuangan']);
 Route::get('/home/mitra-pemerintah', [HomeController::class, 'pemerintah']);
+Route::get('/home/mitra/{id}/delete', [HomeController::class, 'mitradelete']);
 
 Route::get('/home/thes', [HomeController::class, 'thes']);
 Route::get('/home/qstar', [HomeController::class, 'qstar']);
@@ -102,6 +103,9 @@ Route::middleware('auth')->group(function () {
 
     //download
     Route::get('/mitra/download/mou/{id}', [MitraController::class, 'mou']);
+    Route::get('/pdln/download/uns/{id}', [PdlnController::class, 'uns']);
+    Route::get('/pdln/download/belmawa/{id}', [PdlnController::class, 'belmawa']);
+    Route::get('/pdln/download/ktln/{id}', [PdlnController::class, 'ktln']);
 
 
 });

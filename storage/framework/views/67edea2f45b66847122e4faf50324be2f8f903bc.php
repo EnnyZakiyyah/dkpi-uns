@@ -75,7 +75,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="berlaku">berlaku hingga</label>
+                            <label for="berlaku">Berlaku Hingga</label>
                             <input type="date" class="form-control  <?php $__errorArgs = ['berlaku'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -99,7 +99,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link</label>
+                            <label for="link"> Link</label>
                             <input type="text" class="form-control  <?php $__errorArgs = ['link'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -122,7 +122,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

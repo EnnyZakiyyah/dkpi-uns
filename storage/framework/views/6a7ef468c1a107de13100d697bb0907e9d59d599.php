@@ -7,21 +7,9 @@
 <br />
 <br />
 
-<?php if(session()->has('success')): ?>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    <?php echo e(session('success')); ?>
 
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-</div>  
-<?php endif; ?>
 
-<?php if(session()->has('loginError')): ?>
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <?php echo e(session('loginError')); ?>
 
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-</div>  
-<?php endif; ?>
 
  <!-- Sing in  Form -->
  <section class="sign-in">
@@ -64,6 +52,20 @@ unset($__errorArgs, $__bag); ?>
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="password" placeholder="Password" required/>
                             </div>
+                            <?php if(session()->has('success')): ?>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <?php echo e(session('success')); ?>
+
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+</div>  
+<?php endif; ?>
+                            <?php if(session()->has('loginError')): ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?php echo e(session('loginError')); ?>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                            </div>  
+                            <?php endif; ?>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
                             </div>

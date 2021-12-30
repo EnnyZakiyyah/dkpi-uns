@@ -50,7 +50,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail Data Pdln</h3>
+                        <h3 class="mb-0">Detail Data Pdln</h3><h4 class="badge badge-info">{{ $pdln->status }}</h4>
                     </div>
 
                     <!-- body card -->
@@ -70,6 +70,9 @@
                             <p class="card-text">Catatan Belmawa : {{ $pdln->catatan_belmawa }}</p>
                             <p class="card-text">Nomor Ktln : {{ $pdln->ktln_kemensetneg }}</p>
                             <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
+                            <a href="download/uns/{{ $pdln->id }}" class="btn btn-warning">Download surat UNS</a>
+                            <a href="download/belmawa/{{ $pdln->id }}" class="btn btn-warning">Download surat belmawa</a>
+                            <a href="download/ktln/{{ $pdln->id }}" class="btn btn-warning">Download surat UNS</a>
                             {{-- <p class="card-text">{{ $file_uns }}</p>
                             <p class="card-text" >{{ $file_ktln }}</p>
                             <p class="card-text">{{ $file_belmawa }}</p> --}}

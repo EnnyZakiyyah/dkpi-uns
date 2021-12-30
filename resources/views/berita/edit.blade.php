@@ -102,7 +102,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="published_at"> Published</label>
-                            <input id="published_at" type="date" name="created_at" class="form-control  @error('created_at') is-invalid @enderror" id="created_at" placeholder="publsihed berita" name="created_at" value="{{ old('created_at', $berita->created_at) }}">
+                            <input id="published_at" type="date" name="published_at" class="form-control  @error('published_at') is-invalid @enderror" id="published_at" placeholder="berita" name="published_at" value="{{ old('published_at', $berita->published_at) }}">
                             @error('published_at')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -121,16 +121,16 @@
         function previewImage(){
             const image = document.querySelector('#image');
             const imgPreview = document.querySelector('.img-preview');
-    
+
             imgPreview.style.display = 'block';
-    
+
             const ofReader = new FileReader();
             ofReader.readAsDataURL(image.files[0]);
-    
+
             ofReader.onload = function(ofREvent){
                 imgPreview.src = ofReader.target.result;
             }
-    
+
         }
     </script>
     <!-- End Main content -->
