@@ -36,9 +36,10 @@
 
                         <h2>{{ $thes->judul }}</h2>
 
-                            <strong>Kategori</strong>&nbsp;:{{ $thes->jenis }}<br/>
-                            <strong>Peringkat</strong>&nbsp;: {{ $thes->peringkat }}<br/>
-                            <strong>dimuat</strong>&nbsp;: {{ $thes->created_at }}<br/>
+                            <strong>Kategori</strong>&nbsp;:&nbsp;{{ $thes->jenis }}<br/>
+                            <strong>Peringkat</strong>&nbsp;:&nbsp; {{ $thes->peringkat }}<br/>
+                            <strong>Update</strong>&nbsp;:&nbsp; {{ $thes->updated_at }}<br/>
+                            <strong>Sumber</strong>&nbsp;: <a href="{{ $thes->link }}">{{ $thes->link }}</a><br/>
                             {{-- <strong>Project URL</strong>&nbsp;: <a href="{{ $thes->link }}">selengkapnya</a><br/> --}}
                             <p>
                                 {!! $thes->berita !!}
@@ -65,13 +66,15 @@
 
                             <h2>{{ $qs->judul }}</h2>
 
-                                <strong>Kategori</strong>&nbsp;:{{ $qs->jenis }}<br/>
-                                <strong>Peringkat</strong>&nbsp;: {{ $qs->peringkat }}<br/>
-                                <strong>Dimuat</strong>&nbsp;: {{ $qs->created_at }}<br/>
+                                <strong>Kategori</strong>&nbsp;:&nbsp;{{ $qs->jenis }}<br/>
+                                <strong>Peringkat</strong>&nbsp;:&nbsp; {{ $qs->peringkat }}<br/>
+                                <strong>Update</strong>&nbsp;:&nbsp; {{ $qs->updated_at }}<br/>
+                                 <strong>Sumber</strong>&nbsp;:&nbsp; <a href="{{ $qs->link }}">{{ $qs->link }}</a><br/><br/>
                                 {{-- <strong>Project URL</strong>&nbsp;: <a href="{{ $qs->link }}">selengkapnya</a><br/> --}}
                                 <p>
                                     {!! $qs->berita !!}
                                   </p>
+                                 
                                   @endforeach
                         </div>
                       </p>

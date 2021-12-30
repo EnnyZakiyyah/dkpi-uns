@@ -22,12 +22,12 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah galeri</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Galeri</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/gallery"> galeri</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
+                                <li class="breadcrumb-item active" aria-current="page"> Edit</li>
                             </ol>
                         </nav>
                     </div>
@@ -46,7 +46,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">edit video</h3>
+                        <h3 class="mb-0">Edit Video</h3>
                     </div>
                     @if (session('success'))
                     <div class="alert-success">
@@ -58,7 +58,7 @@
                         @method('put')
                         @csrf
                         <div class="form-group ml-5 mr-5">
-                            <label for="link">link</label>
+                            <label for="link">Link</label>
                             <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" placeholder="Link embed youtube" name="link" value="{{ old('link',$galeri->link) }}">
                             @error('link')
                             <div class="invalid-feedback">
@@ -67,7 +67,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="judul">judul</label>
+                            <label for="judul">Judul</label>
                             <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" placeholder="Judul Video" name="judul" value="{{ old('judul',$galeri->judul) }}">
                             @error('judul')
                             <div class="invalid-feedback">
@@ -96,9 +96,10 @@
                             </div>
                             @enderror
                         </div>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </div>
 
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        
                     </form>
 
                 </div>

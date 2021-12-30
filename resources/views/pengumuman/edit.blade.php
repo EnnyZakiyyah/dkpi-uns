@@ -22,12 +22,12 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah pengumuman</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Pengumuman</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/oengumuman"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/pengumuman"> Pengumuman</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
+                                <li class="breadcrumb-item active" aria-current="page"> Edit</li>
                             </ol>
                         </nav>
                     </div>
@@ -46,7 +46,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah Pengumuman</h3>
+                        <h3 class="mb-0">Edit Pengumuman</h3>
                     </div>
 
                     <!-- body card -->
@@ -64,7 +64,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="berlaku">berlaku hingga</label>
+                            <label for="berlaku">Berlaku Hingga</label>
                             <input type="date" class="form-control  @error('berlaku') is-invalid @enderror" id="berlaku" placeholder="berlaku hingga" name="berlaku" value="{{ old('berlaku',$pengumuman->berlaku) }}">
                             @error('berlaku')
                             <div class="invalid-feedback">
@@ -73,7 +73,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link</label>
+                            <label for="link"> Link</label>
                             <input type="text" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link" name="link" value="{{ old('link', $pengumuman->link) }}">
                             @error('link')
                             <div class="invalid-feedback">
@@ -81,7 +81,7 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

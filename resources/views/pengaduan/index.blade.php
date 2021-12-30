@@ -82,7 +82,7 @@
           <!-- Card footer -->
           <div class="card-footer py-4">
             <nav aria-label="...">
-              <a href="{{'/pdln/create'}}" class="btn btn-primary">Tambah Data</a>
+              {{-- <a href="{{'/pengaduan/create'}}" class="btn btn-primary">Tambah Data</a> --}}
               <ul class="pagination justify-content-end mb-0">
                 <li class="page-item">
                   {{ $pengaduans->links() }}

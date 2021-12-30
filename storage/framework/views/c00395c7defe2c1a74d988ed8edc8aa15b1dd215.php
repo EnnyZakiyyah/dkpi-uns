@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/pengaduan/create.blade.php ENDPATH**/ ?>

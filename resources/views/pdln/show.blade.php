@@ -22,7 +22,7 @@
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
                         <h6 class="h2 text-white d-inline-block mb-0">Detail PDLN</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/pdln"> PDLN</a></li>
@@ -56,20 +56,20 @@
                     <!-- body card -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Nama:{{ $pdln->nama}}</h5>
-                            <h6 class="card-subtitle mb-3 text-muted">Kategori: {{ $pdln->jenis}}</h6>
-                            <p class="card-text">Jumlah Orang: {{ $pdln->jumlah_orang }}</p>
-                            <p class="card-text">Unit Kerja: {{ $pdln->unit_kerja }}</p>
-                            <p class="card-text">Tujuan: {{ $pdln->tujuan }}</p>
-                            <p class="card-text">Negara: {{ $pdln->negara }}</p>
-                            <p class="card-text">Awal: {{ date('d F, Y',strtotime($pdln->jangka_waktu_awal))}}</p>
-                            <p class="card-text">Akhir:{{ $pdln->jangka_waktu_akhir }}</p>
-                            <p class="card-text">Nomor surat UNS:{{ $pdln->surat_uns }}</p>
-                            <p class="card-text">Catatan UNS{{ $pdln->catatan_uns }}</p>
-                            <p class="card-text">Nomor Surat Belmawa: {{ $pdln->belmawa }}</p>
-                            <p class="card-text">Catatan Belmawa: {{ $pdln->catatan_belmawa }}</p>
-                            <p class="card-text">nomor ktln: {{ $pdln->ktln_kemensetneg }}</p>
-                            <p class="card-text">catatan Ktln: {{ $pdln->catatan_setneg }}</p>
+                            <h5 class="card-title">Nama : {{ $pdln->nama}}</h5>
+                            <h6 class="card-subtitle mb-3 text-muted">Kategori : {{ $pdln->jenis}}</h6>
+                            <p class="card-text">Jumlah Orang : {{ $pdln->jumlah_orang }}</p>
+                            <p class="card-text">Unit Kerja : {{ $pdln->unit_kerja }}</p>
+                            <p class="card-text">Tujuan : {{ $pdln->tujuan }}</p>
+                            <p class="card-text">Negara : {{ $pdln->negara }}</p>
+                            <p class="card-text">Awal : {{ date('d F, Y',strtotime($pdln->jangka_waktu_awal))}}</p>
+                            <p class="card-text">Akhir : {{ $pdln->jangka_waktu_akhir }}</p>
+                            <p class="card-text">Nomor Surat UNS :{{ $pdln->surat_uns }}</p>
+                            <p class="card-text">Catatan UNS : {{ $pdln->catatan_uns }}</p>
+                            <p class="card-text">Nomor Surat Belmawa : {{ $pdln->belmawa }}</p>
+                            <p class="card-text">Catatan Belmawa : {{ $pdln->catatan_belmawa }}</p>
+                            <p class="card-text">Nomor Ktln : {{ $pdln->ktln_kemensetneg }}</p>
+                            <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
                             {{-- <p class="card-text">{{ $file_uns }}</p>
                             <p class="card-text" >{{ $file_ktln }}</p>
                             <p class="card-text">{{ $file_belmawa }}</p> --}}

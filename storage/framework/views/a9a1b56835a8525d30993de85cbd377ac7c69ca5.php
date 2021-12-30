@@ -22,12 +22,12 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah berita</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Berita</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/berita"> berita</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
+                                <li class="breadcrumb-item"><a href="/berita">Berita</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Edit</li>
                             </ol>
                         </nav>
                     </div>
@@ -43,7 +43,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">edit Berita</h3>
+                        <h3 class="mb-0">Edit Berita</h3>
                     </div>
                     
 
@@ -54,7 +54,7 @@
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="judul"> judul</label>
+                            <label for="judul"> Judul</label>
                             <input type="textarea" class="form-control  <?php $__errorArgs = ['judul'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -78,7 +78,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="excerpt"> Excerpt</label>
+                            <label for="excerpt"> Kutipan</label>
                             <input id="excerpt" type="text" name="excerpt" class="form-control  <?php $__errorArgs = ['excerpt'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -103,7 +103,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="body"> isi Berita</label>
+                            <label for="body"> Isi Berita</label>
                             <textarea  id="editor" type="hidden" name="body" class="form-control  <?php $__errorArgs = ['body'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -130,7 +130,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="gambar"> ganti gambar</label>
+                            <label for="gambar"> Ganti Gambar</label>
                               <?php if($berita->gambar): ?>
                                 <img src="<?php echo e(asset('storage/' . $berita->gambar)); ?>" class="img-preview img-fluid mb-3 col-sm-5 d-block">
                             <?php else: ?>
@@ -160,14 +160,14 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="published_at"> Published</label>
-                            <input id="published_at" type="date" name="published_at" class="form-control  <?php $__errorArgs = ['published_at'];
+                            <input id="published_at" type="date" name="created_at" class="form-control  <?php $__errorArgs = ['created_at'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="published_at" placeholder="publsihed berita" name="published_at" value="<?php echo e(old('published_at', $berita->published_at)); ?>">
+unset($__errorArgs, $__bag); ?>" id="created_at" placeholder="publsihed berita" name="created_at" value="<?php echo e(old('created_at', $berita->created_at)); ?>">
                             <?php $__errorArgs = ['published_at'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -182,8 +182,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
-                        <a href="/berita" class="card-link ml-5">Kembali</a>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
 

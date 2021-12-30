@@ -56,9 +56,9 @@
               <thead class="thead-light">
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
-                  <th scope="col" class="sort" data-sort="nim">pengumuman</th>
-                  <th scope="col" class="sort" data-sort="nama">aktif</th>
-                  <th scope="col" class="sort" data-sort="berlaku">Berlaku</th>
+                  <th scope="col" class="sort" data-sort="nim">Pengumuman</th>
+                  <th scope="col" class="sort" data-sort="nama">Berlaku Sampai</th>
+                  <th scope="col" class="sort" data-sort="berlaku">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">

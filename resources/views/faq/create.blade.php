@@ -26,7 +26,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/faq"> berita</a></li>
+                                <li class="breadcrumb-item"><a href="/faq"> FAQ</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
                             </ol>
                         </nav>
@@ -54,7 +54,7 @@
                         @csrf
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="pertanyaan"> pertanyaan</label>
+                            <label for="pertanyaan"> Pertanyaan</label>
                             <textarea  id="editor" type="hidden" name="pertanyaan" class="form-control  @error('pertanyaan') is-invalid @enderror" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="{{ old('pertanyaan') }}">
 
                             </textarea>
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="jawaban"> jawaban</label>
+                            <label for="jawaban"> Jawaban</label>
                             <textarea  id="editor" type="hidden" name="jawaban" class="form-control  @error('jawaban') is-invalid @enderror" id="jawaban" placeholder="jawaban" name="jawaban" value="{{ old('jawaban') }}">
 
                             </textarea>
@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link DKPI</label>
+                            <label for="link"> Link</label>
                             <input type="textarea" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="cth: /home/layanan" name="link" value="{{ old('link') }}">
                             @error('link')
                             <div class="invalid-feedback">
@@ -86,7 +86,7 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

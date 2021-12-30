@@ -61,6 +61,8 @@
                   <th scope="col" class="sort" data-sort="nama">MoU UNS</th>
                   <th scope="col" class="sort" data-sort="nama">MoU Mitra</th>
                   
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
                   <th scope="col" class="sort" data-sort="namaruang">pejabat</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
@@ -73,7 +75,8 @@
                   <td><a href="/data/<?php echo e($mitra->instansi); ?>"><?php echo e($mitra->instansi); ?></a></td>
                   <td><?php echo e($mitra->no_mou_uns); ?></td>
                   <td><?php echo e($mitra->no_mou_mitra); ?></td>
-                  
+                  <td><?php echo e(empty(strtotime($mitra->jangka_waktu_awal)) ? $mitra->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($mitra->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e(empty(strtotime($mitra->jangka_waktu_akhir)) ? $mitra->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($mitra->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($mitra->pejabat_penandatangan); ?></td>
 
                   <td>

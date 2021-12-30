@@ -75,7 +75,7 @@
                     <li class="nav-item">
                         <a class="nav-link <?php echo e(($title === "Data Mitra") ? 'active' : ''); ?>" href="<?php echo e(url('/mitra')); ?>">
                             <i class="ni ni-folder-17 text-info"></i>
-                            <span class="nav-link-text">Data mitra</span>
+                            <span class="nav-link-text">Data Mitra</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -91,7 +91,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo e(($title === "Galeri") ? 'active' : ''); ?>" href="<?php echo e(url('/gallery')); ?>">
+                        <a class="nav-link <?php echo e(($title === "galeri") ? 'active' : ''); ?>" href="<?php echo e(url('/gallery')); ?>">
                             <i class="ni ni-image text-primary"></i>
                             <span class="nav-link-text">Galeri</span>
                         </a>

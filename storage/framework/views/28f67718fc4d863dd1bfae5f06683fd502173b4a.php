@@ -53,12 +53,14 @@
                     <!-- body card -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Judul Berita: <?php echo e($berita->judul); ?></h5>
-                            <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" class="img-fluid mb-3 col-sm-5 d-block" alt="...">
-                            <p class="card-text"><?php echo e($berita->excerpt); ?></p>
-                            <p class="card-text"><?php echo e($berita->body); ?></p>
-                            <p class="card-text"><?php echo e($berita->published_at); ?></p>
-                            <p class="card-text"><?php echo e($berita->created_at); ?></p>
+                            <h5 class="card-title">Judul Berita : <?php echo e($berita->judul); ?></h5>
+                            <p class="card-text">Gambar Pendukung <br/><br/>
+                                <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" class="img-fluid mb-3 col-sm-5 d-block" alt="...">
+                            </p>
+                            <p class="card-text">Kutipan Berita : <?php echo e($berita->excerpt); ?></p>
+                            <p class="card-text">Isi Berita : <?php echo e($berita->body); ?></p>
+                            
+                            <p class="card-text">Dibuat Tanggal : <?php echo e($berita->created_at); ?></p>
                             <a href="/berita/<?php echo e($berita->id); ?>/edit" class="btn btn-primary">Edit</a>
                             <form action="/berita/<?php echo e($berita->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>

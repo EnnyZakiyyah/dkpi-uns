@@ -63,7 +63,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="berlaku">berlaku hingga</label>
+                            <label for="berlaku">Berlaku Hingga</label>
                             <input type="date" class="form-control  @error('berlaku') is-invalid @enderror" id="berlaku" placeholder="berlaku hingga" name="berlaku" value="{{ old('berlaku') }}">
                             @error('berlaku')
                             <div class="invalid-feedback">
@@ -72,7 +72,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link</label>
+                            <label for="link"> Link</label>
                             <input type="text" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link" name="link" value="{{ old('link') }}">
                             @error('link')
                             <div class="invalid-feedback">
@@ -80,7 +80,7 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

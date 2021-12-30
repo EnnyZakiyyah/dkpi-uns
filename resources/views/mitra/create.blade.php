@@ -63,14 +63,14 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="instansi" class="form-select" >Jenis Instansi</label>
-                            <select class="form-select  @error('instansi') is-invalid @enderror" id="instansi" placeholder="jenis instansi" name="instansi">
-                            <option value="yayasan">yayasan/sekolah</option>
+                            <select class="form-control  @error('instansi') is-invalid @enderror" id="instansi" placeholder="jenis instansi" name="instansi">
+                            <option value="yayasan">Yayasan/Sekolah</option>
                             <option value="cv">CV/PT</option>
-                            <option value="internasional">internasional</option>
-                            <option value="pemerintah">pemerintah</option>
-                            <option value="jasaKeuangan">jasa keuangan</option>
+                            <option value="internasional">Internasional</option>
+                            <option value="pemerintah">Pemerintah</option>
+                            <option value="jasaKeuangan">Jasa keuangan</option>
 
-
+                            </select>
                             @error('instansi')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -117,30 +117,8 @@
                             </div>
                             @enderror
                         </div>
-                        {{-- <div class="form-group ml-5 mr-5">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                                </div>
-                                <input class="form-control datepicker" placeholder="Select date" type="text" value="06/20/2020">
-                            </div>
-                        </div> --}}
-                        {{-- <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_awal">Awal</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                                </div>
-                                <input type="date" class="form-control datepicker @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal') }}">
-                                @error('jangka_waktu_awal')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                        </div> --}}
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_awal">Awal</label>
+                            <label for="jangka_waktu_awal">Jangka Waktu Awal</label>
                             <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal') }}">
                             @error('jangka_waktu_awal')
                             <div class="invalid-feedback">
@@ -149,7 +127,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_akhir">Akhir</label>
+                            <label for="jangka_waktu_akhir">Jangka Waktu Akhir</label>
                             <input type="date" class="form-control @error('jangka_waktu_akhir') is-invalid @enderror" id="jangka_waktu_akhir" placeholder="Jangka Waktu Akhir" name="jangka_waktu_akhir" value="{{ old('jangka_waktu_akhir') }}">
                             @error('jangka_waktu_akhir')
                             <div class="invalid-feedback">
@@ -158,7 +136,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="pejabat_penandatangan">pejabat penandatangan</label>
+                            <label for="pejabat_penandatangan">Pejabat Penandatangan</label>
                             <input type="text" class="form-control @error('pejabat_penandatangan') is-invalid @enderror" id="pejabat_penandatangan" placeholder="nama pejabat pendandatangan" name="pejabat_penandatangan" value="{{ old('pejabat_penandatangan') }}">
                             @error('pejabat_penandatangan')
                             <div class="invalid-feedback">
@@ -166,7 +144,7 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

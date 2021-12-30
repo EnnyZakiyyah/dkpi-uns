@@ -57,7 +57,7 @@
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">Judul</th>
-                  <th scope="col" class="sort" data-sort="nama">Exceprt</th>
+                  <th scope="col" class="sort" data-sort="nama">Kutipan</th>
                   <th scope="col" class="sort" data-sort="nama">Dibuat</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>

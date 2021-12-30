@@ -22,7 +22,7 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Ubah Data Mitra</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Data Mitra</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
@@ -119,7 +119,7 @@
                         @enderror
                     </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_awal">Awal</label>
+                            <label for="jangka_waktu_awal">Jangka Waktu Awal</label>
                             <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal',$mitra->jangka_waktu_awal) }}">
                             @error('jangka_waktu_awal')
                             <div class="invalid-feedback">
@@ -128,7 +128,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_akhir">Akhir</label>
+                            <label for="jangka_waktu_akhir">Jangka Waktu Akhir</label>
                             <input type="date" class="form-control @error('jangka_waktu_akhir') is-invalid @enderror" id="jangka_waktu_akhir" placeholder="Jangka Waktu Akhir" name="jangka_waktu_akhir" value="{{ old('jangka_waktu_akhir',$mitra->jangka_waktu_akhir) }}">
                             @error('jangka_waktu_akhir')
                             <div class="invalid-feedback">
@@ -137,7 +137,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="pejabat_penandatangan">pejabat penandatangan</label>
+                            <label for="pejabat_penandatangan">Pejabat Penandatangan</label>
                             <input type="text" class="form-control @error('pejabat_penandatangan') is-invalid @enderror" id="pejabat_penandatangan" placeholder="nama pejabat pendandatangan" name="pejabat_penandatangan" value="{{ old('pejabat_pendandatangan',$mitra->pejabat_penandatangan) }}">
                             @error('pejabat_penandatangan')
                             <div class="invalid-feedback">
@@ -145,7 +145,7 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

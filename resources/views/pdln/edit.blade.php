@@ -21,12 +21,12 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah Data PDLN</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Data PDLN</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/pdln"> PDLN</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+                                <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
                             </ol>
                         </nav>
                     </div>
@@ -45,7 +45,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">edit Data PDLN</h3>
+                        <h3 class="mb-0">Edit Data PDLN</h3>
                     </div>
 
                     <!-- body card -->
@@ -62,12 +62,12 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jenis" class="form-select" >jenis</label>
-                            <select class="form-select  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis" value="{{ old('jenis', $pdln->jenis) }}">
+                            <label for="jenis" class="form-select" >Jenis</label>
+                            <select class="form-control @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis" value="{{ old('jenis', $pdln->jenis) }}">
                             <option value="mahasiswa">mahasiswa</option>
                             <option value="dosen">dosen</option>
                             <option value="pimppinan">internasional</option>
-
+                            </select>
 
                             @error('jenis')
                             <div class="invalid-feedback">
@@ -76,7 +76,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jumlah_orang">Jumlah orang</label>
+                            <label for="jumlah_orang">Jumlah Orang</label>
                             <input type="text" class="form-control @error('jumlah_orang') is-invalid @enderror" id="jumlah_orang" placeholder="nomor surat" name="jumlah_orang" value="{{ old('jumlah_orang', $pdln->jumlah_orang) }}">
                             @error('jumlah_orang')
                             <div class="invalid-feedback">
@@ -94,7 +94,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_awal">Awal</label>
+                            <label for="jangka_waktu_awal">Jangka Waktu Awal</label>
                             <input type="date" class="form-control @error('jangka_waktu_awal') is-invalid @enderror" id="jangka_waktu_awal" placeholder="jangka waktu Awal" name="jangka_waktu_awal" value="{{ old('jangka_waktu_awal', $pdln->jangka_waktu_awal) }}">
                             @error('jangka_waktu_awal')
                             <div class="invalid-feedback">
@@ -103,7 +103,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_akhir">Akhir</label>
+                            <label for="jangka_waktu_akhir">Jangka Waktu Akhir</label>
                             <input type="date" class="form-control @error('jangka_waktu_akhir') is-invalid @enderror" id="jangka_waktu_akhir" placeholder="Jangka Waktu Akhir" name="jangka_waktu_akhir" value="{{ old('jangka_waktu_akhir', $pdln->jangka_waktu_akhir) }}">
                             @error('jangka_waktu_akhir')
                             <div class="invalid-feedback">
@@ -112,7 +112,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="tujuan">tujuan</label>
+                            <label for="tujuan">Tujuan</label>
                             <input type="text"
                             class="form-control @error('tujuan') is-invalid @enderror"
                             id="tujuan"
@@ -126,7 +126,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="negara">negara</label>
+                            <label for="negara">Negara</label>
                             <input type="text"
                             class="form-control @error('negara') is-invalid @enderror"
                             id="negara"
@@ -140,7 +140,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="surat_uns">surat UNS</label>
+                            <label for="surat_uns">Surat UNS</label>
                             <input type="text"
                             class="form-control @error('surat_uns') is-invalid @enderror"
                             id="surat_uns"
@@ -154,7 +154,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="catatan_uns">catatan UNS</label>
+                            <label for="catatan_uns">Catatan UNS</label>
                             <input type="textarea"
                             class="form-control @error('catatan_uns') is-invalid @enderror"
                             id="catatan_uns"
@@ -168,7 +168,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="belmawa">nomor belmawa</label>
+                            <label for="belmawa">Nomor Belmawa</label>
                             <input type="text"
                             class="form-control @error('belmawa') is-invalid @enderror"
                             id="belmawa"
@@ -182,7 +182,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="catatan_belmawa">catatan Belmawa</label>
+                            <label for="catatan_belmawa">Catatan Belmawa</label>
                             <input type="text"
                             class="form-control @error('catatan_belmawa') is-invalid @enderror"
                             id="catatan_belmawa"
@@ -198,7 +198,7 @@
 
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="ktln_kemensetneg">ktln kemensetneg</label>
+                            <label for="ktln_kemensetneg">Ktln Kemensetneg</label>
                             <input type="text" class="form-control @error('ktln_kemensetneg') is-invalid @enderror" id="ktln_kemensetneg" placeholder="nomor surat kemensetneg" name="ktln_kemensetneg" value="{{ old('ktln_kemensetneg', $pdln->ktln_kemensetneg) }}">
                             @error('ktln_kemensetneg')
                             <div class="invalid-feedback">
@@ -207,7 +207,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="catatan_setneg">catatan setneg</label>
+                            <label for="catatan_setneg">Catatan Setneg</label>
                             <input type="textarea" class="form-control @error('catatan_setneg') is-invalid @enderror" id="catatan_setneg" placeholder="catatan" name="catatan_setneg" value="{{ old('catatan_setneg', $pdln->catatan_setneg) }}">
                             @error('catatan_setneg')
                             <div class="invalid-feedback">
@@ -216,7 +216,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="file_surat_uns">file surat uns</label>
+                            <label for="file_surat_uns">File Surat UNS</label>
                             <input type="file" class="form-control @error('file_surat_uns') is-invalid @enderror" id="file_surat_uns" placeholder="catatan" name="file_surat_uns" value="{{ old('file_surat_uns') }}">
                             @error('file_surat_uns')
                             <div class="invalid-feedback">
@@ -225,7 +225,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="file_belmawa">file belmawa</label>
+                            <label for="file_belmawa">File Belmawa</label>
                             <input type="file" class="form-control @error('file_belmawa') is-invalid @enderror" id="file_belmawa" placeholder="catatan" name="file_belmawa" value="{{ old('file_belmawa') }}">
                             @error('file_belmawa')
                             <div class="invalid-feedback">
@@ -234,7 +234,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="file_ktln">file ktln</label>
+                            <label for="file_ktln">File Ktln</label>
                             <input type="file" class="form-control @error('file_ktln') is-invalid @enderror" id="file_ktln" placeholder="catatan" name="file_ktln" value="{{ old('file_ktln') }}">
                             @error('file_ktln')
                             <div class="invalid-feedback">
@@ -243,7 +243,7 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

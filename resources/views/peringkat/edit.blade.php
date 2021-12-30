@@ -46,18 +46,18 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">edit peringkat</h3>
+                        <h3 class="mb-0">Edit Peringkat</h3>
                     </div>
                     {{-- <img src="storage/app/{{ $peringkat->gambar }}" > --}}
 
 
                     <!-- body card -->
-                    <form method="POST" action="/peringkat/{{ $peringkat->id }}">
+                    <div method="POST" action="/peringkat/{{ $peringkat->id }}" enctype="multipart/form-data>
                         @method('put')
                         @csrf
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="judul"> judul</label>
+                            <label for="judul"> Judul</label>
                             <input type="textarea" class="form-control  @error('judul') is-invalid @enderror" id="judul" placeholder="judul peringkat" name="judul" value="{{ old('judul', $peringkat->judul) }}">
                             @error('judul')
                             <div class="invalid-feedback">
@@ -66,7 +66,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="peringkat"> ganti peringkat</label>
+                            <label for="peringkat"> Ganti Peringkat</label>
                             <input id="peringkat" type="text" name="peringkat" class="form-control  @error('peringkat') is-invalid @enderror" id="peringkat" placeholder="peringkat peringkat" name="peringkat" value="{{ old('peringkat', $peringkat->peringkat) }}">
                             @error('peringkat')
                             <div class="invalid-feedback">
@@ -75,7 +75,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link peringkat</label>
+                            <label for="link"> Link Peringkat</label>
                             <input id="link" type="text" name="link" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link peringkat" name="link" value="{{ old('link',$peringkat->link) }}">
                             @error('link')
                             <div class="invalid-feedback">
@@ -85,7 +85,7 @@
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="berita"> berita peringkat</label>
+                            <label for="berita"> Berita Peringkat</label>
                             <textarea  id="editor" type="hidden" name="berita" class="form-control  @error('berita') is-invalid @enderror" id="berita" placeholder="berita berita" name="berita" value="{{ old('berita') }}">
                                     {{ $peringkat->berita }}
                             </textarea>
@@ -95,9 +95,8 @@
                             </div>
                             @enderror
                         </div>
-
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
-                        <a href="/peringkat" class="card-link ml-5">Kembali</a>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
+                    </div>
                     </form>
 
 

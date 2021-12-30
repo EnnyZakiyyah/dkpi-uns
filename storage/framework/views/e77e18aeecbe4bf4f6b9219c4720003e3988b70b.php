@@ -51,7 +51,7 @@
                         <h2><?php echo e($berita->judul); ?></h2>
 
                             
-                            <strong>dirilis</strong>&nbsp;: <?php echo e($berita->published_at); ?><br/>
+                            <strong>dirilis</strong>&nbsp;: <?php echo e($berita->created_at); ?><br/>
                             
                             <p>
                                 <?php echo $berita->body; ?>

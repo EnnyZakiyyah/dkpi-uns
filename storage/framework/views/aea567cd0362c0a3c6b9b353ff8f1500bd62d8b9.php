@@ -26,7 +26,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/faq"> berita</a></li>
+                                <li class="breadcrumb-item"><a href="/faq"> FAQ</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
                             </ol>
                         </nav>
@@ -51,7 +51,7 @@
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="pertanyaan"> pertanyaan</label>
+                            <label for="pertanyaan"> Pertanyaan</label>
                             <textarea  id="editor" type="hidden" name="pertanyaan" class="form-control  <?php $__errorArgs = ['pertanyaan'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -78,7 +78,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="jawaban"> jawaban</label>
+                            <label for="jawaban"> Jawaban</label>
                             <textarea  id="editor" type="hidden" name="jawaban" class="form-control  <?php $__errorArgs = ['jawaban'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -105,7 +105,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link DKPI</label>
+                            <label for="link"> Link</label>
                             <input type="textarea" class="form-control  <?php $__errorArgs = ['link'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -128,7 +128,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

@@ -46,18 +46,18 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail pengaduan</h3>
+                        <h3 class="mb-0">Detail Pengaduan</h3>
                     </div>
 
                     <!-- body card -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $pengaduan->name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ $pengaduan->email}}</h6>
-                            <p class="card-text">{{ $pengaduan->subject }}</p>
-                            <p class="card-text">{{ $pengaduan->pesan }}</p>
-                            <p class="card-text">{{ $pengaduan->created_at }}</p>
-                            <a href="{{ $pengaduan->id }}/edit" class="btn btn-primary">Edit</a>
+                            <h5 class="card-title">Nama Pengirim : {{ $pengaduan->name}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Email Pengirim : {{ $pengaduan->email}}</h6>
+                            <p class="card-text">Subject : {{ $pengaduan->subject }}</p>
+                            <p class="card-text">Tanggal : {{ $pengaduan->pesan }}</p>
+                            <p class="card-text">Dikirim Tgl : {{ $pengaduan->created_at }}</p>
+                            {{-- <a href="{{ $pengaduan->id }}/edit" class="btn btn-primary">Edit</a> --}}
                             <form action="{{ $pengaduan->id }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf

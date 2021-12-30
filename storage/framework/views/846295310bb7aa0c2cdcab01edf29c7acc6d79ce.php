@@ -21,8 +21,8 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Data  mitra</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <h6 class="h2 text-white d-inline-block mb-0">Data Mitra</h6>
+                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/mitra"> Mitra</a></li>
@@ -49,14 +49,14 @@
                     <!-- body card -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Nama instansi: <?php echo e($mitra->nama_instansi); ?></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"> jenis Instansi: <?php echo e($mitra->instansi); ?></h6>
-                            <p class="card-text">Nomor MoU UNS: <?php echo e($mitra->no_mou_uns); ?></p>
-                            <p class="card-text">Nomor MoU Mitra: <?php echo e($mitra->no_mou_mitra); ?></p>
-                            <p class="card-text">Ruang Lingkup: <?php echo e($mitra->ruang_lingkup); ?></p>
-                            <p class="card-text">Awal Masa Berlaku: <?php echo e($mitra->jangka_waktu_awal); ?></p>
-                            <p class="card-text">Akhir Masa Berlaku: <?php echo e($mitra->jangka_waktu_akhir); ?></p>
-                            <p class="card-text">Pejabat Penandatangan: <?php echo e($mitra->pejabat_penandatangan); ?></p>
+                            <h5 class="card-title">Nama Instansi : <?php echo e($mitra->nama_instansi); ?></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"> Jenis Instansi : <?php echo e($mitra->instansi); ?></h6>
+                            <p class="card-text">Nomor MoU UNS : <?php echo e($mitra->no_mou_uns); ?></p>
+                            <p class="card-text">Nomor MoU Mitra : <?php echo e($mitra->no_mou_mitra); ?></p>
+                            <p class="card-text">Ruang Lingkup : <?php echo e($mitra->ruang_lingkup); ?></p>
+                            <p class="card-text">Awal Masa Berlaku : <?php echo e($mitra->jangka_waktu_awal); ?></p>
+                            <p class="card-text">Akhir Masa Berlaku : <?php echo e($mitra->jangka_waktu_akhir); ?></p>
+                            <p class="card-text">Pejabat Penandatangan : <?php echo e($mitra->pejabat_penandatangan); ?></p>
                             <a href="<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
                             <form action="<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>

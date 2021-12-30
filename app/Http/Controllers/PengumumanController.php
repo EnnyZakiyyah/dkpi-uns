@@ -35,7 +35,7 @@ class PengumumanController extends Controller
     public function create()
     {
         return view('pengumuman.create',[
-            'title' => 'Pengaduan'
+            'title' => 'Pengumuman'
         ]);
     }
 
@@ -72,7 +72,7 @@ class PengumumanController extends Controller
     {
         //
         return view('pengumuman.show', [
-            'title' => 'Pengaduan',
+            'title' => 'Pengumuman',
             'pengumuman' => $pengumuman
         ]);
     }

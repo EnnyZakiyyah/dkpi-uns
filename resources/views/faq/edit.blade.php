@@ -22,12 +22,12 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah FAQ</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Form Edit FAQ</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/faq"> berita</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
+                                <li class="breadcrumb-item"><a href="/faq"> FAQ</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"> Edit</li>
                             </ol>
                         </nav>
                     </div>
@@ -46,7 +46,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah FAQ</h3>
+                        <h3 class="mb-0">Edit FAQ</h3>
                     </div>
 
                     <!-- body card -->
@@ -55,7 +55,7 @@
                         @csrf
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="pertanyaan"> pertanyaan</label>
+                            <label for="pertanyaan"> Pertanyaan</label>
                             <textarea  id="editor" type="hidden" name="pertanyaan" class="form-control  @error('pertanyaan') is-invalid @enderror" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="{{ old('pertanyaan', $faq->pertanyaan) }}">
                                 {{ $faq->pertanyaan }}
                             </textarea>
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="jawaban"> jawaban</label>
+                            <label for="jawaban"> Jawaban</label>
                             <textarea  id="editor" type="hidden" name="jawaban" class="form-control  @error('jawaban') is-invalid @enderror" id="jawaban" placeholder="jawaban" name="jawaban" value="{{ old('jawaban', $faq->jawaban) }}">
                                 {{ $faq->jawaban }}
                             </textarea>
@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link DKPI</label>
+                            <label for="link"> Link</label>
                             <input type="textarea" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="cth: /home/layanan" name="link" value="{{ old('link',$faq->link) }}">
                             @error('link')
                             <div class="invalid-feedback">
@@ -87,7 +87,7 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

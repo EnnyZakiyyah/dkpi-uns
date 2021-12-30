@@ -22,12 +22,12 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Form Tambah berita</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Berita</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/berita"> berita</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
+                                <li class="breadcrumb-item"><a href="/berita">Berita</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Edit</li>
                             </ol>
                         </nav>
                     </div>
@@ -46,7 +46,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">edit Berita</h3>
+                        <h3 class="mb-0">Edit Berita</h3>
                     </div>
                     {{-- <img src="storage/app/{{ $berita->gambar }}" > --}}
 
@@ -57,7 +57,7 @@
                         @csrf
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="judul"> judul</label>
+                            <label for="judul"> Judul</label>
                             <input type="textarea" class="form-control  @error('judul') is-invalid @enderror" id="judul" placeholder="judul berita" name="judul" value="{{ old('judul', $berita->judul) }}">
                             @error('judul')
                             <div class="invalid-feedback">
@@ -66,7 +66,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="excerpt"> Excerpt</label>
+                            <label for="excerpt"> Kutipan</label>
                             <input id="excerpt" type="text" name="excerpt" class="form-control  @error('excerpt') is-invalid @enderror" id="excerpt" placeholder="excerpt berita" name="excerpt" value="{{ old('excerpt', $berita->excerpt) }}">
                             @error('excerpt')
                             <div class="invalid-feedback">
@@ -76,7 +76,7 @@
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="body"> isi Berita</label>
+                            <label for="body"> Isi Berita</label>
                             <textarea  id="editor" type="hidden" name="body" class="form-control  @error('body') is-invalid @enderror" id="body" placeholder="isi berita" name="body" value="{{ old('body') }}">
                                     {{ $berita->body }}
                             </textarea>
@@ -87,7 +87,7 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="gambar"> ganti gambar</label>
+                            <label for="gambar"> Ganti Gambar</label>
                               @if($berita->gambar)
                                 <img src="{{ asset('storage/' . $berita->gambar) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
                             @else
@@ -102,15 +102,14 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="published_at"> Published</label>
-                            <input id="published_at" type="date" name="published_at" class="form-control  @error('published_at') is-invalid @enderror" id="published_at" placeholder="publsihed berita" name="published_at" value="{{ old('published_at', $berita->published_at) }}">
+                            <input id="published_at" type="date" name="created_at" class="form-control  @error('created_at') is-invalid @enderror" id="created_at" placeholder="publsihed berita" name="created_at" value="{{ old('created_at', $berita->created_at) }}">
                             @error('published_at')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
-                        <a href="/berita" class="card-link ml-5">Kembali</a>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
 

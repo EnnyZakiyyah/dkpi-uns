@@ -16,14 +16,9 @@ class PdlnController extends Controller
 
     public function __construct()
     {
-<<<<<<< Updated upstream
-        $title = ['title' => 'Data PDLN'];
-        return $title;
-=======
         // $status = ['status'=> 'tidak berlaku'];
         // $pdln = Pdln::whereDate('jangka_waktu_akhir', '>=', today())->update($status);
         // return $pdln;
->>>>>>> Stashed changes
     }
     /**
      * Display a listing of the resource.
@@ -34,10 +29,6 @@ class PdlnController extends Controller
     {
         // $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
         // $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         $pdln = Pdln::latest()->filter(request(['nama']))->paginate(5)->withQueryString();
 
 

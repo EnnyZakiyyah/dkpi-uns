@@ -14,14 +14,13 @@ class PeringkatController extends Controller
      */
     public function index()
     {
-        $thes =  Peringkat::where('jenis','THES')->get();
-        $qs = Peringkat::where('jenis','QSstar')->get();
-        return view('peringkat.index',[
+        $thes =  Peringkat::where('jenis', 'THES')->get();
+        $qs = Peringkat::where('jenis', 'QSstar')->get();
+        return view('peringkat.index', [
             'title' => 'Peringkat',
             'thes' => $thes,
             'qs' => $qs
         ]);
-
     }
 
     /**
@@ -32,8 +31,8 @@ class PeringkatController extends Controller
     public function create()
     {
         //
-        return view('peringkat.create',[
-            'title' => 'Pengaduan'
+        return view('peringkat.create', [
+            'title' => 'Peringkat'
         ]);
     }
 
@@ -58,7 +57,7 @@ class PeringkatController extends Controller
     {
         //
         return view('peringkat.show', [
-            'title' => 'Pengaduan',
+            'title' => 'Peringkat',
             'peringkat' => $peringkat
         ]);
     }
@@ -74,7 +73,7 @@ class PeringkatController extends Controller
         //
 
         return view('peringkat.edit', [
-            'title' => 'Pengaduan',
+            'title' => 'Peringkat',
             'peringkat' => $peringkat
         ]);
     }
@@ -89,12 +88,12 @@ class PeringkatController extends Controller
     public function update(Request $request, Peringkat $peringkat)
     {
         $validatedData = $request->validate([
-            'judul'=>'required',
-            'berita' =>'required',
-            'link' =>'',
-            'peringkat'=>'required'
+            'judul' => 'required',
+            'berita' => 'required',
+            'link' => '',
+            'peringkat' => 'required'
         ]);
-        Peringkat::where('id',$peringkat->id)->update($validatedData);
+        Peringkat::where('id', $peringkat->id)->update($validatedData);
         return redirect('/peringkat');
     }
 
@@ -110,6 +109,6 @@ class PeringkatController extends Controller
         Peringkat::destroy($peringkat);
 
         return redirect('/peri$peringkat')
-        ->with('success', 'data berhasil dihapus');
+            ->with('success', 'data berhasil dihapus');
     }
 }

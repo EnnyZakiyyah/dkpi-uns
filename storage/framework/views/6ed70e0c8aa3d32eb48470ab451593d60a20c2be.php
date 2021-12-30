@@ -32,9 +32,10 @@
 
                         <h2><?php echo e($thes->judul); ?></h2>
 
-                            <strong>Kategori</strong>&nbsp;:<?php echo e($thes->jenis); ?><br/>
-                            <strong>Peringkat</strong>&nbsp;: <?php echo e($thes->peringkat); ?><br/>
-                            <strong>dimuat</strong>&nbsp;: <?php echo e($thes->created_at); ?><br/>
+                            <strong>Kategori</strong>&nbsp;:&nbsp;<?php echo e($thes->jenis); ?><br/>
+                            <strong>Peringkat</strong>&nbsp;:&nbsp; <?php echo e($thes->peringkat); ?><br/>
+                            <strong>Update</strong>&nbsp;:&nbsp; <?php echo e($thes->updated_at); ?><br/>
+                            <strong>Sumber</strong>&nbsp;: <a href="<?php echo e($thes->link); ?>"><?php echo e($thes->link); ?></a><br/>
                             
                             <p>
                                 <?php echo $thes->berita; ?>
@@ -62,14 +63,16 @@
 
                             <h2><?php echo e($qs->judul); ?></h2>
 
-                                <strong>Kategori</strong>&nbsp;:<?php echo e($qs->jenis); ?><br/>
-                                <strong>Peringkat</strong>&nbsp;: <?php echo e($qs->peringkat); ?><br/>
-                                <strong>Dimuat</strong>&nbsp;: <?php echo e($qs->created_at); ?><br/>
+                                <strong>Kategori</strong>&nbsp;:&nbsp;<?php echo e($qs->jenis); ?><br/>
+                                <strong>Peringkat</strong>&nbsp;:&nbsp; <?php echo e($qs->peringkat); ?><br/>
+                                <strong>Update</strong>&nbsp;:&nbsp; <?php echo e($qs->updated_at); ?><br/>
+                                 <strong>Sumber</strong>&nbsp;:&nbsp; <a href="<?php echo e($qs->link); ?>"><?php echo e($qs->link); ?></a><br/><br/>
                                 
                                 <p>
                                     <?php echo $qs->berita; ?>
 
                                   </p>
+                                 
                                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
                       </p>

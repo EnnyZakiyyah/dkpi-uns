@@ -68,7 +68,7 @@ class GalleryController extends Controller
     public function show(Gallery $gallery)
     {
         return view('gallery.show', [
-            'title' => 'data galeri ',
+            'title' => 'galeri ',
             'gallery' => $gallery
         ]);
     }
@@ -83,7 +83,7 @@ class GalleryController extends Controller
     {
         //
         return view('gallery.edit', [
-            'title' => 'edit galeri',
+            'title' => 'galeri',
             'galeri' => $gallery
         ]);
     }
