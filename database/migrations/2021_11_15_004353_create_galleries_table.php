@@ -16,8 +16,10 @@ class CreateGalleriesTable extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->text('judul');
+            $table->enum('jenis', ['video', 'gambar']);
             $table->text('caption');
-            $table->string('link');
+            $table->string('link')->nullable();
+            $table->string('gambar')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

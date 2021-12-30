@@ -56,6 +56,9 @@ Route::get('/home/mitra-pemerintah', [HomeController::class, 'pemerintah']);
 Route::get('/home/thes', [HomeController::class, 'thes']);
 Route::get('/home/qstar', [HomeController::class, 'qstar']);
 
+Route::get('/home/galeri/gambar', [HomeController::class, 'gambar']);
+Route::get('/home/galeri/video', [HomeController::class, 'video']);
+
 Route::get('/home/pdln-mahasiswa', [HomeController::class, 'mahasiswa']);
 Route::get('/home/pdln-dosen', [HomeController::class, 'dosen']);
 Route::get('/home/pdln-pimpinan', [HomeController::class, 'pimpinan']);
@@ -95,6 +98,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/data/pdln/{jenis}', [PdlnController::class, 'jenis']);
     Route::get('/data/mitra/{instansi}', [MitraController::class, 'instansi']);
+    Route::get('/data/galeri/{jenis}', [GalleryController::class, 'jenis']);
 
     // import
     Route::get('/import/pdln', [PdlnController::class, 'import']);
@@ -102,8 +106,6 @@ Route::middleware('auth')->group(function () {
 
     //download
     Route::get('/mitra/download/mou/{id}', [MitraController::class, 'mou']);
-
-
 });
 
 //email
@@ -124,25 +126,4 @@ Route::get('books/{uuid}/download', 'FileController@download')->name('file.downl
 
 
 
-Route::get('/blog', function () {
-    $berita = [
-        [
-            "title" => "Judul Pertama",
-            "slug" => "judul-post-pertama",
-            "author" => "Enny Zakiyyah",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque earum id ducimus amet sequi eius quidem ipsum impedit eos ea, optio incidunt at, necessitatibus accusantium? Animi quam odio ut sequi?"
-        ], [
-            "title" => "Judul Kedua",
-            "author" => "Enny Zakiyyah",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque earum id ducimus amet sequi eius quidem ipsum impedit eos ea, optio incidunt at, necessitatibus accusantium? Animi quam odio ut sequi?"
-        ]
-    ];
-    return view('posts', [
-        "title" => "Posts",
-        "posts" => $berita
-    ]);
-});
 
-Route::get('berita/{slug}', function ($slug) {
-    return view('post');
-});

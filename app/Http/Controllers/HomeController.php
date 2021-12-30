@@ -141,7 +141,7 @@ class HomeController extends Controller
     public function galeri()
     {
         $gallery =  Gallery::get();
-        return view('home.galeri', [
+        return view('home.galeri.gambar', [
             'title' => 'Galeri',
             'galleries' => $gallery
         ]);
@@ -272,6 +272,24 @@ class HomeController extends Controller
         return view('home.peringkat.qstar', [
             'title' => 'Peringkat-QStar',
             'qss' => $qs
+        ]);
+    }
+    public function gambar()
+    {
+        $galeri = Gallery::where('jenis', 'gambar')->latest()->get();
+        // return $galeri;
+        return view('home.galeri.gambar', [
+            'title' => 'Galeri-Gambar',
+            'galleries' => $galeri
+        ]);
+    }
+    public function video()
+    {
+        $galeri = Gallery::where('jenis', 'video')->latest()->get();
+        // return $galeri;
+        return view('home.galeri.video', [
+            'title' => 'Galeri-Video',
+            'galleries' => $galeri
         ]);
     }
 }

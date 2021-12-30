@@ -46,7 +46,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah video</h3>
+                        <h3 class="mb-0">Tambah Galeri</h3>
                     </div>
                     @if (session('success'))
                     <div class="alert-success">
@@ -57,7 +57,7 @@
                     <form method="POST" action="/gallery" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ml-5 mr-5">
-                            <label for="link">link</label>
+                            <label for="link">Link</label>
                             <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" placeholder="Link embed youtube" name="link" value="{{ old('link') }}">
                             @error('link')
                             <div class="invalid-feedback">
@@ -66,9 +66,33 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="judul">judul</label>
+                            <label for="judul">Judul</label>
                             <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" placeholder="Judul Video" name="judul" value="{{ old('judul') }}">
                             @error('judul')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="jenis" class="form-select" >Jenis</label>
+                            <select class="form-control  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis">
+                            <option value="video">Video</option>
+                            <option value="gambar">Gambar</option>
+                            </select>
+
+                            @error('jenis')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="gambar"> Gambar Pendukung</label>
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar berita" name="gambar">
+                            {{-- <trix-editor input="gambar"></trix-editor> --}}
+                            @error('gambar')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

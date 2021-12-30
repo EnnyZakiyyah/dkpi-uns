@@ -70,14 +70,14 @@
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">Nama</th>
-                  <th scope="col" class="sort" data-sort="nama">kategori</th>
+                  <th scope="col" class="sort" data-sort="nama">Kategori</th>
                   
-                  <th scope="col" class="sort" data-sort="nama">unit</th>
+                  <th scope="col" class="sort" data-sort="nama">Unit</th>
                   
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">status</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Awal</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Akhir</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Status</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>

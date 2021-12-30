@@ -16,8 +16,8 @@ class GalleryController extends Controller
     {
         //
         $gallery =  Gallery::latest()->filter(request(['judul']))->paginate(5)->withQueryString();
-        return view('gallery.index',[
-            'title'=>'galeri',
+        return view('gallery.index', [
+            'title' => 'galeri',
             'galleries' => $gallery
         ]);
     }
@@ -29,8 +29,8 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('gallery.create',[
-            'title'=>'galeri'
+        return view('gallery.create', [
+            'title' => 'galeri'
         ]);
     }
 
@@ -46,17 +46,19 @@ class GalleryController extends Controller
         // $gambar = $request->file('gambar')->store('gambar');
 
         $validatedData = $request->validate([
-        'judul' => 'required',
-        'caption' => 'required',
-        'link' =>'required'
+            'judul' => 'required',
+            'jenis' => 'required',
+            'gambar' => 'image|file|max:1024',
+            'caption' => 'required',
+            'link' => ''
         ]);
 
         // $validatedData['gambar'] = $gambar;
-
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('galeri-images');
+        }
         Gallery::create($validatedData);
         return redirect('/gallery')->with('success', 'Gambar berhasil ditambah!');
-
-
     }
 
     /**
@@ -95,31 +97,41 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$gallery)
+    public function update(Request $request, Gallery $gallery)
     {
         //
         $validatedData = $request->validate([
+            'jenis' => '',
             'judul' => 'required',
+            'gambar' => 'image|file|max:1024',
             'caption' => 'required',
-            'link' =>'required',
+            'link' => '',
             'published_at' => 'required'
-            ]);
+        ]);
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('galeri-images');
+        }
+        // $validatedData['gambar'] = $gambar;
 
-            // $validatedData['gambar'] = $gambar;
-
-            Gallery::where('id', $gallery)->update($validatedData);
-            return redirect('/gallery')->with('success', 'Gambar berhasil ditambah!');
-
-
+        Gallery::where('id', $gallery->id)->update($validatedData);
+        return redirect('/gallery')->with('success', 'Gallery berhasil ditambah!');
     }
-
+    public function jenis($jenis)
+    {
+        $jenis = Gallery::where('jenis', $jenis)->latest()->paginate(5)->withQueryString();
+        return view('mitra.index', [
+            'title' => 'Data Galeri',
+            'galleries' => $jenis
+        ]);
+        // return $instansi;
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $gallery)
+    public function destroy($gallery)
     {
         Gallery::destroy($gallery);
         return redirect('/gallery')->with('status', 'data berhasil dihapus');

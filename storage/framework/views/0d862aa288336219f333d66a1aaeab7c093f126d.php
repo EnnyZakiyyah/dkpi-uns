@@ -49,6 +49,7 @@
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">Judul</th>
+                  <th scope="col" class="sort" data-sort="nim">Kategori</th>
                   <th scope="col" class="sort" data-sort="nim">Link</th>
                   <th scope="col" class="sort" data-sort="nama">Caption</th>
                   <th scope="col" class="sort" data-sort="nama">Aksi</th>
@@ -59,6 +60,7 @@
                 <tr>
                   <th scope="row"><?php echo e($loop->iteration); ?></th>
                   <td><?php echo e($galeri->judul); ?></td>
+                  <td><?php echo e($galeri->jenis); ?></td>
                   <td><iframe width="350" height="150" src="<?php echo e($galeri->link); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                   <td><?php echo $galeri->caption; ?></td>
                   <td>

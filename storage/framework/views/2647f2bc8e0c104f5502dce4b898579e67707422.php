@@ -51,7 +51,7 @@
                     </div>
                     <?php endif; ?>
                     <!-- body card -->
-                    <form method="POST" action="/gallery/<?php echo e($galeri->id); ?>">
+                    <form method="POST" action="/gallery/<?php echo e($galeri->id); ?>" enctype="multipart/form-data">
                         <?php echo method_field('put'); ?>
                         <?php echo csrf_field(); ?>
                         <div class="form-group ml-5 mr-5">
@@ -79,6 +79,35 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
+                            <label for="gambar"> Ganti Gambar</label>
+                              <?php if($galeri->gambar): ?>
+                                <img src="<?php echo e(asset('storage/' . $galeri->gambar)); ?>" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                            <?php else: ?>
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                            <?php endif; ?>
+                            <input id="gambar" type="file" name="gambar" class="form-control  <?php $__errorArgs = ['gambar'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="gambar" placeholder="gambar galeri" name="gambar" value="<?php echo e(old('gambar', $galeri->gambar)); ?>">
+                            <?php $__errorArgs = ['gambar'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="invalid-feedback">
+                                <?php echo e($message); ?>
+
+                            </div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                        <div class="form-group ml-5 mr-5">
                             <label for="judul">Judul</label>
                             <input type="text" class="form-control <?php $__errorArgs = ['judul'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -89,6 +118,34 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="judul" placeholder="Judul Video" name="judul" value="<?php echo e(old('judul',$galeri->judul)); ?>">
                             <?php $__errorArgs = ['judul'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="invalid-feedback">
+                                <?php echo e($message); ?>
+
+                            </div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="jenis" class="form-select" >Jenis</label>
+                            <select class="form-control <?php $__errorArgs = ['jenis'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis" value="<?php echo e(old('jenis', $galeri->jenis)); ?>">
+                            <option value="video">Video</option>
+                            <option value="gambar">Gambar</option>
+                            </select>
+
+                            <?php $__errorArgs = ['jenis'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

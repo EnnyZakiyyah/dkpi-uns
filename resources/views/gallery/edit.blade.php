@@ -54,7 +54,7 @@
                     </div>
                     @endif
                     <!-- body card -->
-                    <form method="POST" action="/gallery/{{ $galeri->id }}">
+                    <form method="POST" action="/gallery/{{ $galeri->id }}" enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="form-group ml-5 mr-5">
@@ -67,9 +67,36 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
+                            <label for="gambar"> Ganti Gambar</label>
+                              @if($galeri->gambar)
+                                <img src="{{ asset('storage/' . $galeri->gambar) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                            @else
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                            @endif
+                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar galeri" name="gambar" value="{{ old('gambar', $galeri->gambar) }}">
+                            @error('gambar')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
                             <label for="judul">Judul</label>
                             <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" placeholder="Judul Video" name="judul" value="{{ old('judul',$galeri->judul) }}">
                             @error('judul')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="jenis" class="form-select" >Jenis</label>
+                            <select class="form-control @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis" value="{{ old('jenis', $galeri->jenis) }}">
+                            <option value="video">Video</option>
+                            <option value="gambar">Gambar</option>
+                            </select>
+
+                            @error('jenis')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
