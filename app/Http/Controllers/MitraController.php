@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Storage;
 
 class MitraController extends Controller
 {
+    public function __construct()
+    {
+        $status = ['status'=>'tidak berlaku'];
+        $mitra = Mitra::where(['status'=>'berlaku', 'status_hidden'=> 'new'])->whereDate('jangka_waktu_akhir', '<=', today())->update($status);
+        return $mitra;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -76,6 +82,9 @@ class MitraController extends Controller
             // 'status_hidden' =>''
         ]);
         $validatedData['file_mou'] = $file_mou;
+        $validatedData['status_hidden'] = 'new';
+        $validatedData['status'] = 'berlaku';
+
 
 
 

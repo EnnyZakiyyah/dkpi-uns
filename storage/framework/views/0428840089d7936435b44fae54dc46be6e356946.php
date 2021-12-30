@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Tambah Data PDLN'); ?>
 
 <?php $__env->startSection('container'); ?>
@@ -47,8 +49,8 @@
                     <form method="POST" action="/pdln" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jenis" class="form-select" >jenis</label>
-                            <select class="form-select  <?php $__errorArgs = ['jenis'];
+                            <label for="jenis" class="form-select" >Jenis</label>
+                            <select class="form-control  <?php $__errorArgs = ['jenis'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -59,7 +61,7 @@ unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis">
                             <option value="mahasiswa">Mahasiswa</option>
                             <option value="dosen">Dosen</option>
                             <option value="pimpinan">Pimpinan</option>
-
+                            </select>
 
                             <?php $__errorArgs = ['jenis'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -148,7 +150,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_awal">Awal</label>
+                            <label for="jangka_waktu_awal">Jangka Waktu Awal</label>
                             <input type="date" class="form-control <?php $__errorArgs = ['jangka_waktu_awal'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -172,7 +174,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jangka_waktu_akhir">Akhir</label>
+                            <label for="jangka_waktu_akhir">Jangka Waktu Akhir</label>
                             <input type="date" class="form-control <?php $__errorArgs = ['jangka_waktu_akhir'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -196,7 +198,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="tujuan">tujuan</label>
+                            <label for="tujuan">Tujuan</label>
                             <input type="text"
                             class="form-control <?php $__errorArgs = ['tujuan'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -225,7 +227,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="negara">negara</label>
+                            <label for="negara">Negara</label>
                             <input type="text"
                             class="form-control <?php $__errorArgs = ['negara'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -254,7 +256,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="surat_uns">surat UNS</label>
+                            <label for="surat_uns">Surat UNS</label>
                             <input type="text"
                             class="form-control <?php $__errorArgs = ['surat_uns'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -283,7 +285,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="catatan_uns">catatan UNS</label>
+                            <label for="catatan_uns">Catatan UNS</label>
                             <input type="textarea"
                             class="form-control <?php $__errorArgs = ['catatan_uns'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -312,7 +314,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="belmawa">nomor belmawa</label>
+                            <label for="belmawa">Nomor Belmawa</label>
                             <input type="text"
                             class="form-control <?php $__errorArgs = ['belmawa'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -341,7 +343,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="catatan_belmawa">catatan Belmawa</label>
+                            <label for="catatan_belmawa">Catatan Belmawa</label>
                             <input type="text"
                             class="form-control <?php $__errorArgs = ['catatan_belmawa'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -372,7 +374,7 @@ unset($__errorArgs, $__bag); ?>
 
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="ktln_kemensetneg">ktln kemensetneg</label>
+                            <label for="ktln_kemensetneg">Ktln Kemensetneg</label>
                             <input type="text" class="form-control <?php $__errorArgs = ['ktln_kemensetneg'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -420,7 +422,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="file_surat_uns">file surat uns</label>
+                            <label for="file_surat_uns">File Surat Uns</label>
                             <input type="file" class="form-control <?php $__errorArgs = ['file_surat_uns'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -444,7 +446,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="file_belmawa">file belmawa</label>
+                            <label for="file_belmawa">File Belmawa</label>
                             <input type="file" class="form-control <?php $__errorArgs = ['file_belmawa'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -468,7 +470,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="file_ktln">file ktln</label>
+                            <label for="file_ktln">File Ktln</label>
                             <input type="file" class="form-control <?php $__errorArgs = ['file_ktln'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -492,7 +494,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
 
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
                     <!-- Card footer -->

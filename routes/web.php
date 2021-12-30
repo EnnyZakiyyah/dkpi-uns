@@ -102,6 +102,9 @@ Route::middleware('auth')->group(function () {
 
     //download
     Route::get('/mitra/download/mou/{id}', [MitraController::class, 'mou']);
+    Route::get('/pdln/download/uns/{id}', [PdlnController::class, 'uns']);
+    Route::get('/pdln/download/belmawa/{id}', [PdlnController::class, 'belmawa']);
+    Route::get('/pdln/download/ktln/{id}', [PdlnController::class, 'ktln']);
 
 
 });
