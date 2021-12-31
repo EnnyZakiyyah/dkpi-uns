@@ -52,7 +52,9 @@ class GalleryController extends Controller
         ]);
 
         // $validatedData['gambar'] = $gambar;
-
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('gambar');
+        }
         Gallery::create($validatedData);
         return redirect('/gallery')->with('success', 'Gambar berhasil ditambah!');
 
@@ -106,10 +108,15 @@ class GalleryController extends Controller
             ]);
 
             // $validatedData['gambar'] = $gambar;
-
+            if ($request->file('gambar')) {
+                $validatedData['gambar'] = $request->file('gambar')->store('gambar');
+            }
             Gallery::where('id', $gallery)->update($validatedData);
             return redirect('/gallery')->with('success', 'Gambar berhasil ditambah!');
 
+        
+
+        // $validatedData['gambar'] = $gambar;
 
     }
 

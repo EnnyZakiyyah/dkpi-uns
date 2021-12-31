@@ -57,6 +57,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis"  value="<?php echo e(old('jenis', $pdln->jenis)); ?>">
+                            <option value="<?php echo e($pdln->jenis); ?>"><?php echo e($pdln->jenis); ?></option>
                             <option value="mahasiswa">Mahasiswa</option>
                             <option value="dosen">Dosen</option>
                             <option value="pimpinan">Pimpinan</option>
@@ -101,21 +102,22 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jenis" class="form-select" >Status</label>
-                            <select class="form-control  <?php $__errorArgs = ['jenis'];
+                            <label for="status" class="form-select" >Status</label>
+                            <select class="form-control  <?php $__errorArgs = ['status'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis"  value="<?php echo e(old('jenis', $pdln->jenis)); ?>">
+unset($__errorArgs, $__bag); ?>" id="status" placeholder="kategori" name="status"  value="<?php echo e(old('status', $pdln->status)); ?>">
+                            <option value="<?php echo e($pdln->status); ?>"><?php echo e($pdln->status); ?></option>
                             <option value="diterima">Diterima</option>
                             <option value="proses UNS">Proses UNS</option>
                             <option value="proses dikti">Proses Dikti</option>
                             </select>
 
-                            <?php $__errorArgs = ['jenis'];
+                            <?php $__errorArgs = ['status'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

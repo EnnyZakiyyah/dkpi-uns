@@ -55,6 +55,7 @@
                         <div class="form-group ml-5 mr-5">
                             <label for="jenis" class="form-select" >Jenis</label>
                             <select class="form-control  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis"  value="{{ old('jenis', $pdln->jenis) }}">
+                            <option value="{{ $pdln->jenis }}">{{ $pdln->jenis }}</option>
                             <option value="mahasiswa">Mahasiswa</option>
                             <option value="dosen">Dosen</option>
                             <option value="pimpinan">Pimpinan</option>
@@ -76,14 +77,15 @@
                             @enderror
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jenis" class="form-select" >Status</label>
-                            <select class="form-control  @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis"  value="{{ old('jenis', $pdln->jenis) }}">
+                            <label for="status" class="form-select" >Status</label>
+                            <select class="form-control  @error('status') is-invalid @enderror" id="status" placeholder="kategori" name="status"  value="{{ old('status', $pdln->status) }}">
+                            <option value="{{ $pdln->status }}">{{ $pdln->status }}</option>
                             <option value="diterima">Diterima</option>
                             <option value="proses UNS">Proses UNS</option>
                             <option value="proses dikti">Proses Dikti</option>
                             </select>
 
-                            @error('jenis')
+                            @error('status')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
