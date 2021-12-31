@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Data Mitra'); ?>
 <?php $__env->startSection('search'); ?>
 <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main" action="/mitra">

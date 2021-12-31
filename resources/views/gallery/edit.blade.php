@@ -92,6 +92,7 @@
                         <div class="form-group ml-5 mr-5">
                             <label for="jenis" class="form-select" >Jenis</label>
                             <select class="form-control @error('jenis') is-invalid @enderror" id="jenis" placeholder="kategori" name="jenis" value="{{ old('jenis', $galeri->jenis) }}">
+                            <option value="{{ $galeri->jenis }}">{{ $galeri->jenis }}</option>
                             <option value="video">Video</option>
                             <option value="gambar">Gambar</option>
                             </select>
@@ -126,7 +127,7 @@
                         <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </div>
 
-                        
+
                     </form>
 
                 </div>

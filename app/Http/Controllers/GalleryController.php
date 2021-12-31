@@ -55,7 +55,7 @@ class GalleryController extends Controller
 
         // $validatedData['gambar'] = $gambar;
         if ($request->file('gambar')) {
-            $validatedData['gambar'] = $request->file('gambar')->store('galeri-images');
+            $validatedData['gambar'] = $request->file('gambar')->store('gambar');
         }
         Gallery::create($validatedData);
         return redirect('/gallery')->with('success', 'Gambar berhasil ditambah!');

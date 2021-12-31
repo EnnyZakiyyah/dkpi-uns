@@ -67,8 +67,9 @@ class MitraController extends Controller
     public function store(Request $request)
     {
         //
-        //
+         if ($request->file('file_mou')){
         $file_mou = $request->file('file_mou')->store('file_mou');
+        }
         $validatedData = $request->validate([
             'instansi' => 'required',
             'nama_instansi' => 'required',

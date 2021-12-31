@@ -62,6 +62,23 @@
                             </div>
                             @enderror
                         </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="instansi" class="form-select" >Jenis Instansi</label>
+                            <select class="form-control  @error('instansi') is-invalid @enderror" id="instansi" placeholder="jenis instansi" name="instansi">
+                            <option value="{{ $mitra->instansi }}">{{ $mitra->instansi }}</option>
+                            <option value="yayasan">Yayasan/Sekolah</option>
+                            <option value="cv">CV/PT</option>
+                            <option value="internasional">Internasional</option>
+                            <option value="pemerintah">Pemerintah</option>
+                            <option value="jasaKeuangan">Jasa keuangan</option>
+
+                            </select>
+                            @error('instansi')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                         {{-- <div class="form-group ml-5 mr-5">
                             <label for="instansi" class="form-select" >Jenis Instansi</label> --}}
                             {{-- <select class="form-select  @error('instansi') is-invalid @enderror" id="instansi" placeholder="jenis instansi" name="instansi" value="{{ old('instansi') }}">

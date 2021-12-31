@@ -61,10 +61,15 @@ class PdlnController extends Controller
      */
     public function store(Request $request)
     {
-        $file_surat_uns = $request->file('file_surat_uns')->store('file_surat_uns');
-        $file_belmawa = $request->file('file_belmawa')->store('file_belmawa');
-        $file_ktln = $request->file('file_ktln')->store('file_ktln');
-
+        if ($request->file('file_surat_uns')){
+        $validatedData['file_surat_uns'] = $request->file('file_surat_uns')->store('file_surat_uns');
+        }
+        if ($request->file('file_belmawa')){
+        $validatedData['file_belmawa']  = $request->file('file_belmawa')->store('file_belmawa');
+        }
+        if ($request->file('file_ktln')){
+        $validatedData['file_ktln'] = $request->file('file_ktln')->store('file_ktln');
+        }
         // Excel::import(new PdlnImport, request()->file('file_surat_uns'));
         $validatedData = $request->validate([
             'jenis' => 'required',
@@ -83,9 +88,9 @@ class PdlnController extends Controller
             'catatan_setneg'=> ''
         ]);
 
-        $validatedData['file_surat_uns'] = $file_surat_uns;
-        $validatedData['file_belmawa'] = $file_belmawa;
-        $validatedData['file_ktln'] = $file_ktln;
+        // $validatedData['file_surat_uns'] = $file_surat_uns;
+        // $validatedData['file_belmawa'] = $file_belmawa;
+        // $validatedData['file_ktln'] = $file_ktln;
         $validatedData['status_hidden'] = 'berlaku';
         $validatedData['status'] = 'diterima';
 
@@ -140,7 +145,7 @@ class PdlnController extends Controller
      * @param  \App\Models\Pdln  $pdln
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pdln $pdln)
+    public function update(Request $request, $pdln)
     {
         $validatedData = $request->validate([
             'jenis' => '',
@@ -159,8 +164,17 @@ class PdlnController extends Controller
             'catatan_setneg' => '',
             'status' => 'required'
         ]);
+        if ($request->file('file_surat_uns')){
+            $validatedData['file_surat_uns'] = $request->file('file_surat_uns')->store('file_surat_uns');
+            }
+            if ($request->file('file_belmawa')){
+            $validatedData['file_belmawa']  = $request->file('file_belmawa')->store('file_belmawa');
+            }
+            if ($request->file('file_ktln')){
+            $validatedData['file_ktln'] = $request->file('file_ktln')->store('file_ktln');
+            }
 
-        Pdln::where('id', $pdln->id)->update($validatedData);
+        Pdln::where('id', $pdln)->update($validatedData);
         return redirect('/pdln')->with('status', 'data berhasil diubah');
     }
 
