@@ -114,14 +114,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/pdln/download/ktln/{id}', [PdlnController::class, 'ktln']);
 });
 
-//email
-// Route::get('/contact', '@showContactForm');
-// Route::post('/contact', 'EmailController@sendMail')->name('send.email');
-
-//Route::get('/email', 'EmailController@create');
-//Route::get('/send-email', '@showContactForm');
-//Route::get('/send-email', 'EmailController@create');
-//Route::post('/send-email', 'EmailController@sendEmail')->name('send.email');
 
 Route::get('/contact-form', [ContactController::class, 'showForm']);
 

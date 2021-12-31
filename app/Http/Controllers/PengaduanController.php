@@ -17,7 +17,6 @@ class PengaduanController extends Controller
      */
     public function index()
     {
-        //
         $pengaduan = ContactUs::latest()->filter(request(['name']))->paginate(5)->withQueryString();
 
         return view('pengaduan.index',[
@@ -33,7 +32,6 @@ class PengaduanController extends Controller
      */
     public function create()
     {
-        //
         return view('pengaduan.create',[
             'title' => 'Pengaduan'
         ]);
@@ -56,11 +54,7 @@ class PengaduanController extends Controller
             ]);
 
             Pengaduan::create($validatedData);
-
             return redirect('/');
-            // ->with('success', 'Data berhasil ditambah!');
-
-
     }
 
     /**

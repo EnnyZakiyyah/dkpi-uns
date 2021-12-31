@@ -30,19 +30,6 @@ class MitraController extends Controller
             'title' => 'Data Mitra',
             'mitras' => $mitra
         ]);
-        // $yayasan = Mitra::where('jenis', 'yayasan')->latest()->get();
-        // $cv = Mitra::where('jenis', 'cv')->latest()->get();
-        // $internasional = Mitra::where('jenis', 'internasional')->latest()->get();
-        // $jasa_keuangan = Mitra::where('jenis', 'jasa_keuangan')->latest()->get();
-        // $pemerintah = Mitra::where('jenis', 'pemerintah')->latest()->get();
-
-        // return view('mitra.index',[
-        //     'yayasan' => $yayasan,
-        //     'cv' => $cv,
-        //     'internasional' => $internasional,
-        //     'jasa_keuangan' => $jasa_keuangan,
-        //     'pemerintah' => $pemerintah
-        // ]);
     }
 
     /**
@@ -52,7 +39,6 @@ class MitraController extends Controller
      */
     public function create()
     {
-        //
         return view('mitra.create',[
             'title' => 'Data Mitra'
         ]);
@@ -80,14 +66,10 @@ class MitraController extends Controller
             'jangka_waktu_akhir' => 'required',
             'pejabat_penandatangan' => 'required',
             'file_mou' =>''
-            // 'status_hidden' =>''
         ]);
         $validatedData['file_mou'] = $file_mou;
         $validatedData['status_hidden'] = 'new';
         $validatedData['status'] = 'berlaku';
-
-
-
 
         Mitra::create($validatedData);
 
@@ -118,7 +100,6 @@ class MitraController extends Controller
      */
     public function edit($mitra)
     {
-        //
         $data = Mitra::find($mitra);
         return view('mitra.edit', [
             'title' => 'Data Mitra',
@@ -135,7 +116,6 @@ class MitraController extends Controller
      */
     public function update($mitra)
     {
-        //
         $validatedData = request()->validate([
             'instansi' => '',
             'nama_instansi' => 'required',
@@ -149,8 +129,6 @@ class MitraController extends Controller
             'status_hidden' => '',
             'status' => ''
         ]);
-
-
         Mitra::where('id', $mitra)->update($validatedData);
         return redirect('/mitra')->with('success', 'Data berhasil diubah!');
     }
@@ -163,7 +141,6 @@ class MitraController extends Controller
      */
     public function destroy($mitra)
     {
-        //
         Mitra::destroy($mitra);
         return redirect('/mitra')->with('status', 'data berhasil dihapus');
     }
@@ -175,15 +152,11 @@ class MitraController extends Controller
             'title' => 'Data Mitra',
             'mitras' => $instansi
         ]);
-        // return $instansi;
     }
 
     public function import()
     {
-        // Excel::import(new PdlnImport, 'pdln.xlsx');
         Excel::import(new MitraImport, 'mitra.xlsx');
-
-
         return redirect('/mitra')->with('success', 'All good!');
     }
     public function mou($id)
@@ -194,50 +167,4 @@ class MitraController extends Controller
          ];
         return Storage::download($file->file_mou);
     }
-
-
-
-
-
-    // public function cv(){
-
-    //     $cv = Mitra::where('instansi', 'cv')->latest()->get();
-
-    //     return view('mitra.index',[
-    //         'mitra' => $cv
-    //     ]);
-    // }
-    // public function yayasan(){
-
-    //     $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
-
-    //     return view('mitra.index',[
-    //         'mitra' => $yayasan
-    //     ]);
-    // }
-    // public function internasional(){
-
-    //     $internasional = Mitra::where('instansi', 'internasional')->latest()->get();
-
-    //     return view('mitra.index',[
-    //         'mitra' => $internasional
-    //     ]);
-    // }
-    // public function jasaKeuangan(){
-
-    //     $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->get();
-
-    //     return view('mitra.index',[
-    //         'mitra' => $jasaKeuangan
-    //     ]);
-    // }
-    // public function pemerintah(){
-
-    //     $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->get();
-
-    //     return view('mitra.index',[
-    //         'mitra' => $pemerintah
-    //     ]);
-    // }
-
 }

@@ -18,9 +18,7 @@ class BeritaController extends Controller
         $berita = Berita::latest()->filter(request(['judul']))->paginate(5)->withQueryString();
         return view('berita.index', [
             'title' => 'Berita',
-            'beritas' => $berita,
-            // 'slug' => 'judul-post-pertama'
-            // 'berita' => Berita::latest()->get
+            'beritas' => $berita
         ]);
     }
 
@@ -31,7 +29,6 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
         return view('berita.create',[
             'title' => 'Berita'
         ]);
@@ -45,7 +42,6 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->file('gambar')->store('berita-images');
         $validatedData = $request->validate([
             'judul' => 'required',
             'gambar' => 'image|file|max:1024',
@@ -56,17 +52,9 @@ class BeritaController extends Controller
         if ($request->file('gambar')) {
             $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
         }
-        // $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
         Berita::create($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
     }
-    // public static function find($id)
-    // {
-    //     return view('beritadetails', [
-    //         "judul" => "pertama",
-    //         "berita" => "Berita::find($id)"
-    //     ]);
-    // }
     /**
      * Display the specified resource.
      *
@@ -80,8 +68,6 @@ class BeritaController extends Controller
             'title' => 'Berita',
             'berita' => $berita
         ]);
-
-        //  return $berita;
     }
 
     /**
@@ -92,7 +78,6 @@ class BeritaController extends Controller
      */
     public function edit($id)
     {
-        //
         $berita = Berita::find($id);
         return view('berita.edit', [
             'title' => 'Berita',
@@ -109,8 +94,6 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        // $validatedData['gambar'] = request()->file('gambar')->store('gambar');
         $validatedData = $request->validate([
             'judul' => 'required',
             // 'gambar' => 'image|file|max:1024',
@@ -134,8 +117,6 @@ class BeritaController extends Controller
      */
     public function destroy($berita)
     {
-        // //
-        // $post = Berita::find($berita);
         Berita::destroy($berita);
         return redirect('/berita')->with('success', 'data berhasil dihapus');
     }

@@ -16,7 +16,6 @@ class PengumumanController extends Controller
     public function index()
     {
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->filter(request(['pengumuman']))->paginate(5)->withQueryString();
-
         $expired = Pengumuman::whereDate('berlaku', '<', today())->latest()->filter(request(['pengumuman']))->paginate(5)->withQueryString();
 
         return view('pengumuman.index',[
@@ -24,7 +23,6 @@ class PengumumanController extends Controller
             'active' => $pengumuman,
             'expired'=> $expired
         ]);
-        // return $pengumuman;
     }
 
     /**
@@ -57,9 +55,6 @@ class PengumumanController extends Controller
         Pengumuman::create($validatedData);
 
         return redirect('/pengumuman')->with('success', 'Data berhasil ditambah!');
-
-
-
     }
 
     /**
@@ -70,7 +65,6 @@ class PengumumanController extends Controller
      */
     public function show(Pengumuman $pengumuman)
     {
-        //
         return view('pengumuman.show', [
             'title' => 'Pengumuman',
             'pengumuman' => $pengumuman
@@ -85,7 +79,6 @@ class PengumumanController extends Controller
      */
     public function edit(Pengumuman $pengumuman)
     {
-
         return view('pengumuman.edit', [
             'title' => 'Pengaduan',
             'pengumuman' => $pengumuman
@@ -101,7 +94,6 @@ class PengumumanController extends Controller
      */
     public function update(Request $request, $pengumuman)
     {
-        //
         $validatedData = $request->validate([
             'pengumuman'=>'required',
             'berlaku'=>'required',
@@ -122,7 +114,6 @@ class PengumumanController extends Controller
      */
     public function destroy($pengumuman)
     {
-        //
         Pengumuman::destroy($pengumuman);
 
         return redirect('/pengumuman')

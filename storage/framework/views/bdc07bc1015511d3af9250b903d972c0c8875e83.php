@@ -34,15 +34,15 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="<?php echo e(asset('assets/img/THES.jpeg')); ?>" alt="">
+                  <img src="<?php echo e(asset('assets/img/THES.jpg')); ?>" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="<?php echo e(asset('assets/img/THES.jpeg')); ?>" alt="">
+                  <img src="<?php echo e(asset('assets/img/THES.jpg')); ?>" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="<?php echo e(asset('assets/img/THES.jpeg')); ?>" alt="">
+                  <img src="<?php echo e(asset('assets/img/THES.jpg')); ?>" alt="">
                 </div>
 
               </div>

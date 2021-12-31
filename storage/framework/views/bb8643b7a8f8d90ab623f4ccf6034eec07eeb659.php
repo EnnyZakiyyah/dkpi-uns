@@ -47,7 +47,6 @@
                   Looks good!
                 </div>
               </div>
-              
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
                 <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="<?php echo e(request('jangka_waktu_akhir')); ?>">
@@ -55,7 +54,6 @@
                   Please provide a valid city.
                 </div>
               </div>
-              
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
                 <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="<?php echo e(request('pejabat_penandatangan')); ?>">
@@ -63,7 +61,6 @@
                   Please provide a valid city.
                 </div>
               </div>
-              
               <div class="col-12">
                 <button class="btn btn-warning" type="submit">Cari Data</button>
               </div>

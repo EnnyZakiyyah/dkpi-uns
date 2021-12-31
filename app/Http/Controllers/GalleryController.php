@@ -14,7 +14,6 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
         $gallery =  Gallery::latest()->filter(request(['judul']))->paginate(5)->withQueryString();
         return view('gallery.index', [
             'title' => 'galeri',
@@ -42,9 +41,6 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        // $gambar = $request->file('gambar')->store('gambar');
-
         $validatedData = $request->validate([
             'judul' => 'required',
             'jenis' => 'required',
@@ -52,8 +48,6 @@ class GalleryController extends Controller
             'caption' => 'required',
             'link' => ''
         ]);
-
-        // $validatedData['gambar'] = $gambar;
         if ($request->file('gambar')) {
             $validatedData['gambar'] = $request->file('gambar')->store('gambar');
         }
@@ -83,7 +77,6 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        //
         return view('gallery.edit', [
             'title' => 'galeri',
             'galeri' => $gallery
@@ -99,7 +92,6 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
-        //
         $validatedData = $request->validate([
             'jenis' => '',
             'judul' => 'required',
@@ -111,8 +103,6 @@ class GalleryController extends Controller
         if ($request->file('gambar')) {
             $validatedData['gambar'] = $request->file('gambar')->store('galeri-images');
         }
-        // $validatedData['gambar'] = $gambar;
-
         Gallery::where('id', $gallery->id)->update($validatedData);
         return redirect('/gallery')->with('success', 'Gallery berhasil ditambah!');
     }
@@ -123,7 +113,6 @@ class GalleryController extends Controller
             'title' => 'Data Galeri',
             'galleries' => $jenis
         ]);
-        // return $instansi;
     }
     /**
      * Remove the specified resource from storage.

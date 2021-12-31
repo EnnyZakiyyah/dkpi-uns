@@ -48,13 +48,6 @@
                   Looks good!
                 </div>
               </div>
-              {{-- <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Nomor MoU UNS</label>
-                <input type="text" class="form-control" id="validationCustom03" name="nomor_mou"required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div> --}}
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
                 <input type="date" class="form-control" id="validationCustom03" name="waktu_berakhir" value="{{ request('waktu_berakhir') }}" required>
@@ -62,13 +55,6 @@
                   Please provide a valid city.
                 </div>
               </div>
-              {{-- <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Nomor MoU Mitra</label>
-                <input type="text" class="form-control" id="validationCustom03" name="nomor_mitra" required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div> --}}
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
                 <input type="text" class="form-control" id="validationCustom03" name="pejabat" value="{{ request('pejabat') }}" required>
@@ -76,13 +62,6 @@
                   Please provide a valid city.
                 </div>
               </div>
-              {{-- <div class="col-md-3">
-                <label for="validationCustom04" class="form-label">Tahun</label>
-                <input type="text" class="form-control" id="validationCustom03" name="tahun" required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div> --}}
               <div class="col-12">
                 <button class="btn btn-warning" type="submit">Cari Data</button>
               </div>

@@ -64,10 +64,6 @@ class HomeController extends Controller
 
     public function mitra()
     {
-        // $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
-        // $mitras = Mitra::latest();
-        // dd(request('nama_instansi'));
-
         $cv = Mitra::where('instansi', 'cv')->latest()->paginate(5)->withQueryString();
         $yayasan = Mitra::where('instansi', 'yayasan')->latest()->paginate(5)->withQueryString();
         $internasional = Mitra::where('instansi', 'internasional')->latest()->paginate(5)->withQueryString();
@@ -76,7 +72,6 @@ class HomeController extends Controller
 
         return view('home.mitra', [
             'title' => 'Data Mitra',
-            // 'mitras' => $mitras->get(),
             'yayasans' => $yayasan,
             'cvs' => $cv,
             'internasionals' => $internasional,
@@ -92,7 +87,6 @@ class HomeController extends Controller
             'title' => 'Detail Mitra',
             'mitra' => $mitra
         ]);
-        // return $mitra;
     }
 
     public function layanan()
@@ -116,7 +110,6 @@ class HomeController extends Controller
             'title' => 'Detail Galeri',
             'galeri' => $galeri
         ]);
-        // return $galeri;
     }
 
     public function berita()
@@ -135,7 +128,6 @@ class HomeController extends Controller
             'title' => 'Detail Berita',
             'berita' => $berita
         ]);
-        // return $berita;
     }
 
     public function galeri()
@@ -180,13 +172,10 @@ class HomeController extends Controller
 
     public function yayasan()
     {
-
         $yayasan = Mitra::latest()->where('instansi', 'yayasan')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
         return view('home.mitra.yayasan', [
             'title' => 'Data Mitra',
             'yayasans' => $yayasan
-
-
         ]);
     }
     public function internasional()
@@ -197,7 +186,6 @@ class HomeController extends Controller
             'title' => 'Data Mitra',
             'internasionals' => $internasional
         ]);
-        // return $yayasan;
     }
     public function cv()
     {
@@ -207,7 +195,6 @@ class HomeController extends Controller
             'title' => 'Data Mitra',
             'cvs' => $cv
         ]);
-        // return $yayasan;
     }
     public function jasaKeuangan()
     {
@@ -217,7 +204,6 @@ class HomeController extends Controller
             'title' => 'Data Mitra',
             'jasaKeuangans' => $jasaKeuangan
         ]);
-        // return $yayasan;
     }
     public function pemerintah()
     {
@@ -227,7 +213,6 @@ class HomeController extends Controller
             'title' => 'Data Mitra',
             'pemerintahs' => $pemerintah
         ]);
-        // return $yayasan;
     }
     public function mitradelete($id)
     {
@@ -237,9 +222,7 @@ class HomeController extends Controller
     }
     public function mahasiswa()
     {
-        // $date = empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y');
-        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->filter(request(['nama', 'jangka_waktu_awal', 'jangka_waktu_akhir', 'negara']))->paginate(5)->withQueryString();;
-
+        $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->filter(request(['nama', 'jangka_waktu_awal', 'jangka_waktu_akhir', 'negara']))->paginate(5)->withQueryString();
         return view('home.pdln.mahasiswa', [
             'title' => 'Data PDLN',
             'mahasiswas' => $mahasiswa
@@ -265,7 +248,6 @@ class HomeController extends Controller
     }
     public function pdlndelete($id)
     {
-        //
         Pdln::destroy($id);
         return redirect('home/pdln-mahasiswa')->with('status', 'data berhasil dihapus');
     }
@@ -298,7 +280,6 @@ class HomeController extends Controller
     public function video()
     {
         $galeri = Gallery::where('jenis', 'video')->latest()->get();
-        // return $galeri;
         return view('home.galeri.video', [
             'title' => 'Galeri-Video',
             'galleries' => $galeri
