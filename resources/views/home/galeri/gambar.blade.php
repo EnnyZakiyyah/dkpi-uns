@@ -22,11 +22,11 @@
               <!-- CV/PT -->
               <div class="col-lg-6 col-md-6 portfolio-item filter-mou">
                 {{-- <div class="portfolio-img"><iframe {{ $galeri->gambar }} src="{{ $galeri->gambar }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> --}}
-                <div class="portfolio-img"><img src="{{ $galeri->gambar }}" class="img-fluid" alt="" {{ $galeri->gambar }}></div>
+                <div class="portfolio-img"><img src="{{asset('storage/'. $galeri->gambar )}}" class="img-fluid" alt="" {{asset('storage/'. $galeri->gambar )}} width="620" height="350"></div>
                 <div class="portfolio-info">
                   <h4>{{ $galeri->judul }}</h4>
                   <p>{!! $galeri->caption !!}</p>
-                  <a href="{{ $galeri->gambar }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ $galeri->judul }}"><i class="bx bx-plus"></i></a>
+                  <a href="{{asset('storage/'. $galeri->gambar )}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ $galeri->judul }}"><i class="bx bx-plus"></i></a>
                   <a href="/home/galeridetails/{{ $galeri->id }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>

@@ -22,11 +22,11 @@
               <!-- CV/PT -->
               <div class="col-lg-6 col-md-6 portfolio-item filter-mou">
                 
-                <div class="portfolio-img"><img src="<?php echo e($galeri->gambar); ?>" class="img-fluid" alt="" <?php echo e($galeri->gambar); ?>></div>
+                <div class="portfolio-img"><img src="<?php echo e(asset('storage/'. $galeri->gambar )); ?>" class="img-fluid" alt="" <?php echo e(asset('storage/'. $galeri->gambar )); ?> width="620" height="350"></div>
                 <div class="portfolio-info">
                   <h4><?php echo e($galeri->judul); ?></h4>
                   <p><?php echo $galeri->caption; ?></p>
-                  <a href="<?php echo e($galeri->gambar); ?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?php echo e($galeri->judul); ?>"><i class="bx bx-plus"></i></a>
+                  <a href="<?php echo e(asset('storage/'. $galeri->gambar )); ?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?php echo e($galeri->judul); ?>"><i class="bx bx-plus"></i></a>
                   <a href="/home/galeridetails/<?php echo e($galeri->id); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>

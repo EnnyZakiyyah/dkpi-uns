@@ -8,7 +8,7 @@
           <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down {{ ($title === "Informasi") ? 'active' : '' }}"></i></a>
             <ul>
               <li><a href="/home/berita">Berita</a></li>
-              <li><a href="/home/galeri">Galeri</a></li>
+              <li><a href="/home/galeri/gambar">Galeri</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto {{ ($title === "Peringkat") ? 'active' : '' }}" href="/home/thes">Peringkat</a></li>

@@ -50,6 +50,35 @@
                         <?php echo method_field('put'); ?>
                         <?php echo csrf_field(); ?>
                         <div class="form-group ml-5 mr-5">
+                            <label for="jenis" class="form-select" >Jenis</label>
+                            <select class="form-control  <?php $__errorArgs = ['jenis'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis"  value="<?php echo e(old('jenis', $pdln->jenis)); ?>">
+                            <option value="mahasiswa">Mahasiswa</option>
+                            <option value="dosen">Dosen</option>
+                            <option value="pimpinan">Pimpinan</option>
+                            </select>
+
+                            <?php $__errorArgs = ['jenis'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="invalid-feedback">
+                                <?php echo e($message); ?>
+
+                            </div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                        <div class="form-group ml-5 mr-5">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control  <?php $__errorArgs = ['nama'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -74,18 +103,18 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="jenis" class="form-select" >Jenis</label>
-                            <select class="form-control <?php $__errorArgs = ['jenis'];
+                            <label for="jenis" class="form-select" >Status</label>
+                            <select class="form-control  <?php $__errorArgs = ['jenis'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis" value="<?php echo e(old('jenis', $pdln->jenis)); ?>">
-                            <option value="mahasiswa">mahasiswa</option>
-                            <option value="dosen">dosen</option>
-                            <option value="pimppinan">internasional</option>
+unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis"  value="<?php echo e(old('jenis', $pdln->jenis)); ?>">
+                            <option value="diterima">Diterima</option>
+                            <option value="proses UNS">Proses UNS</option>
+                            <option value="proses dikti">Proses Dikti</option>
                             </select>
 
                             <?php $__errorArgs = ['jenis'];

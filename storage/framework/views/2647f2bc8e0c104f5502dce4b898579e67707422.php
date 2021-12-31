@@ -141,6 +141,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis" value="<?php echo e(old('jenis', $galeri->jenis)); ?>">
+                            <option value="<?php echo e($galeri->jenis); ?>"><?php echo e($galeri->jenis); ?></option>
                             <option value="video">Video</option>
                             <option value="gambar">Gambar</option>
                             </select>
@@ -214,7 +215,7 @@ unset($__errorArgs, $__bag); ?>
                         <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </div>
 
-                        
+
                     </form>
 
                 </div>

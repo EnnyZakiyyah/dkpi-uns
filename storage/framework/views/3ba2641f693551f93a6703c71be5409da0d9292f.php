@@ -47,7 +47,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail Data Pdln</h3>
+                        <h3 class="mb-0">Detail Data Pdln</h3><h4 class="badge badge-info"><?php echo e($pdln->status); ?></h4>
                     </div>
 
                     <!-- body card -->
@@ -67,6 +67,9 @@
                             <p class="card-text">Catatan Belmawa : <?php echo e($pdln->catatan_belmawa); ?></p>
                             <p class="card-text">Nomor Ktln : <?php echo e($pdln->ktln_kemensetneg); ?></p>
                             <p class="card-text">Catatan Ktln : <?php echo e($pdln->catatan_setneg); ?></p>
+                            <a href="download/uns/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat UNS</a>
+                            <a href="download/belmawa/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat belmawa</a>
+                            <a href="download/ktln/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat UNS</a>
                             
                             <a href="<?php echo e($pdln->id); ?>/edit" class="btn btn-primary">Edit</a>
                             <form action="<?php echo e($pdln->id); ?>" method="POST" class="d-inline">
