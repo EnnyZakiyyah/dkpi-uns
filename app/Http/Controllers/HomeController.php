@@ -183,7 +183,7 @@ class HomeController extends Controller
 
         $yayasan = Mitra::latest()->where('instansi', 'yayasan')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
         return view('home.mitra.yayasan', [
-            'title' => 'Sekolah/Yayasan',
+            'title' => 'Data Mitra',
             'yayasans' => $yayasan
 
 
@@ -194,7 +194,7 @@ class HomeController extends Controller
         $internasional = Mitra::where('instansi', 'internasional')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
         return view('home.mitra.internasional', [
-            'title' => 'Internasional',
+            'title' => 'Data Mitra',
             'internasionals' => $internasional
         ]);
         // return $yayasan;
@@ -204,7 +204,7 @@ class HomeController extends Controller
         $cv = Mitra::where('instansi', 'cv')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
         return view('home.mitra.cv', [
-            'title' => 'CV/PT',
+            'title' => 'Data Mitra',
             'cvs' => $cv
         ]);
         // return $yayasan;
@@ -214,7 +214,7 @@ class HomeController extends Controller
         $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
         return view('home.mitra.jasaKeuangan', [
-            'title' => 'Jasa Keuangan',
+            'title' => 'Data Mitra',
             'jasaKeuangans' => $jasaKeuangan
         ]);
         // return $yayasan;
@@ -224,7 +224,7 @@ class HomeController extends Controller
         $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
         return view('home.mitra.pemerintah', [
-            'title' => 'Pemerintah',
+            'title' => 'Data Mitra',
             'pemerintahs' => $pemerintah
         ]);
         // return $yayasan;
@@ -241,7 +241,7 @@ class HomeController extends Controller
         $mahasiswa = Pdln::where('jenis', 'mahasiswa')->latest()->filter(request(['nama', 'jangka_waktu_awal', 'jangka_waktu_akhir', 'negara']))->paginate(5)->withQueryString();;
 
         return view('home.pdln.mahasiswa', [
-            'title' => 'PDLN-Mahasiswa',
+            'title' => 'Data PDLN',
             'mahasiswas' => $mahasiswa
         ]);
     }
@@ -250,7 +250,7 @@ class HomeController extends Controller
         $dosen = Pdln::where('jenis', 'dosen')->latest()->filter(request(['nama', 'jangka_waktu_awal', 'jangka_waktu_akhir', 'negara']))->paginate(5)->withQueryString();;
 
         return view('home.pdln.dosen', [
-            'title' => 'PDLN-Dosen',
+            'title' => 'Data PDLN',
             'dosens' => $dosen
         ]);
     }
@@ -259,7 +259,7 @@ class HomeController extends Controller
         $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->filter(request(['nama', 'jangka_waktu_awal', 'jangka_waktu_akhir', 'negara']))->paginate(5)->withQueryString();;
 
         return view('home.pdln.pimpinan', [
-            'title' => 'PDLN-Pimpinan',
+            'title' => 'Data Mitra',
             'pimpinans' => $pimpinan
         ]);
     }
@@ -274,7 +274,7 @@ class HomeController extends Controller
     {
         $thes = Peringkat::where('jenis', 'THES')->latest()->get();
         return view('home.peringkat.thes', [
-            'title' => 'Peringkat-THES',
+            'title' => 'Peringkat',
             'thess' => $thes
         ]);
     }
@@ -282,7 +282,7 @@ class HomeController extends Controller
     {
         $qs = Peringkat::where('jenis', 'QSstar')->latest()->get();
         return view('home.peringkat.qstar', [
-            'title' => 'Peringkat-QStar',
+            'title' => 'Peringkat',
             'qss' => $qs
         ]);
     }

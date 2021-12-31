@@ -103,7 +103,7 @@
                     <a href="/home/mitra/<?php echo e($yayasan->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
                     <a href="/mitra/<?php echo e($yayasan->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="/mitra/<?php echo e($yayasan->id); ?>" method="POST" class="d-inline">
+                    <form action="/mitra/<?php echo e($yayasan->id); ?>/delete" method="POST" class="d-inline">
                         <?php echo method_field('delete'); ?>
                         <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
