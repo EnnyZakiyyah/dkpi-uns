@@ -30,7 +30,7 @@
                             <div class="card-body">
                               <h5 class="card-title">{{ $pengumuman->judul }}</h5>
                               <p class="card-text">{{ $pengumuman->pengumuman }}</p>
-                              <a href="{{ $pengumuman->link }}">selengkapnya</a>
+                              <a href="{{ $pengumuman->link }}">Selengkapnya</a>
 
                             </div>
                             @endforeach

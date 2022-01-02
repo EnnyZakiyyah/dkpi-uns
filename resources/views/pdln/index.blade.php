@@ -84,7 +84,7 @@
               <tbody class="list">
                 @foreach($pdlns as $pdln)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $pdlns->firstItem() + $loop->index }}</th>
                   <td><a href="/pdln/{{ $pdln->id }}">{{ $pdln->nama }}</a></td>
                   <td><a href="/data/{{ $pdln->jenis }}">{{ $pdln->jenis }}</a></td>
                   {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}

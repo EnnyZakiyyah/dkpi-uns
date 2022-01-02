@@ -65,7 +65,7 @@
               <tbody class="list">
                 <?php $__currentLoopData = $beritas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($beritas->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($berita->judul); ?></td>
                   <td><?php echo e($berita->excerpt); ?></td>
                   <td><?php echo e($berita->created_at); ?></td>

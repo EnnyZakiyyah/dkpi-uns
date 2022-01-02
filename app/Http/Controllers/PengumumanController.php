@@ -49,7 +49,7 @@ class PengumumanController extends Controller
         $validatedData = $request->validate([
             'pengumuman'=>'required',
             'berlaku'=>'required',
-            'link'=>'required',
+            'link'=>'',
 
         ]);
         Pengumuman::create($validatedData);
@@ -97,7 +97,7 @@ class PengumumanController extends Controller
         $validatedData = $request->validate([
             'pengumuman'=>'required',
             'berlaku'=>'required',
-            'link'=>'required'
+            'link'=>''
 
         ]);
         Pengumuman::where('id', $pengumuman)->update($validatedData);

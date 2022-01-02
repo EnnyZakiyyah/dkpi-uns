@@ -18,7 +18,7 @@ class CreatePengumumenTable extends Migration
 
             $table->date('berlaku');
             $table->text('pengumuman');
-            $table->string('link');
+            $table->string('link')->nullable();
             // $table->boolean('isActive');
 
             $table->timestamps();
