@@ -12,12 +12,14 @@ use App\Http\Controllers\MitraController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PeringkatController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\DownloadFileController;
+use App\Models\Layanan;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,8 +69,8 @@ Route::get('/home/pdln-mahasiswa', [HomeController::class, 'mahasiswa']);
 Route::get('/home/pdln-dosen', [HomeController::class, 'dosen']);
 Route::get('/home/pdln-pimpinan', [HomeController::class, 'pimpinan']);
 
-Route::get('/mou-download', [DownloadFileController::class, 'mou']);
-Route::get('/pks-download', [DownloadFileController::class, 'pks']);
+Route::get('/download-mou', [LayananController::class, 'ketentuan_mou']);
+Route::get('/download-pks', [LayananController::class, 'ketentuan_pks']);
 
 
 // Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -98,6 +100,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/pengaduan', PengaduanController::class);
     Route::resource('/peringkat', PeringkatController::class);
     Route::resource('/faq', FaqController::class);
+    Route::resource('/layanan', LayananController::class);
 
 
     Route::get('/data/pdln/{jenis}', [PdlnController::class, 'jenis']);

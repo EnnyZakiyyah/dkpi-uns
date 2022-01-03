@@ -16,6 +16,7 @@ use App\Models\Pengumuman;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Layanan;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -131,8 +132,10 @@ class HomeController extends Controller
 
     public function legaldrafting()
     {
+        $file = Layanan::find(1);
         return view('home.layanan.legaldrafting', [
             "title" => "Legal Drafting",
+            'file' => '$file'
         ]);
     }
 
@@ -152,7 +155,7 @@ class HomeController extends Controller
             'title' => 'Detail Pengumuman',
             'pengumuman' => $pengumuman
         ]);
-      
+
     }
 
     public function berita()

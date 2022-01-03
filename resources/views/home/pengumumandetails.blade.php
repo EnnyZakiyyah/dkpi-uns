@@ -27,7 +27,9 @@
                               <h5 class="card-title">{{ $pengumuman->judul }}</h5>
                               <p class="card-text">{{ $pengumuman->pengumuman }}</p>
                               {{-- <a href="/home/pengumumandetails/{{ $pengumuman->id }}">Selengkapnya</a> --}}
+                                @if($pengumuman->link != 'null')
                               <a href="{{ $pengumuman->link }}">Download File</a>
+                              @endif
                             </div>
                             <!-- garis -->
               {{-- <hr />

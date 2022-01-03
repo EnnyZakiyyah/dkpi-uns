@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -117,14 +116,10 @@
           </div>
           <center><div class="d-grid gap-5 d-md-block">
             <a class="btn btn-secondary" type="button" href="/layanan">Kembali</a>
-            <a class="btn btn-primary" type="button" href="/mou-download"><i class="bi bi-download">&nbsp; Ketentuan MoU</i></a>
+            <a class="btn btn-primary" type="button" href="/download-mou"><i class="bi bi-download">&nbsp; Ketentuan MoU</i></a>
             <a class="btn btn-primary" type="button" href="/pks-download"><i class="bi bi-download">&nbsp; Ketentuan PKS</i></a>
             
           </div></center>
-
-
-
-          
 
         </div>
       </section><!-- End Services Section -->

@@ -5,10 +5,10 @@
           <li><a class="nav-link scrollto <?php echo e(($title === "Data PDLN") ? 'active' : ''); ?>" href="/home/pdln-mahasiswa">Data PDLN</a></li>
           <li><a class="nav-link  scrollto <?php echo e(($title === "Data Mitra") ? 'active' : ''); ?> " href="/home/mitra-cv">Mitra</a></li>
           <li><a class="nav-link  scrollto <?php echo e(($title === "FAQ") ? 'active' : ''); ?> " href="/home/faq">FAQ</a></li>
-          <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down <?php echo e(($title === "Informasi") ? 'active' : ''); ?>"></i></a>
+          <li class="dropdown"><a href="/home/berita"><span>Informasi</span> <i class="bi bi-chevron-down <?php echo e(($title === "Berita") ? 'active' : ''); ?>"></i></a>
             <ul>
               <li><a href="/home/berita">Berita</a></li>
-              <li><a href="/home/galeri">Galeri</a></li>
+              <li><a href="/home/galeri/gambar">Galeri</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto <?php echo e(($title === "Peringkat") ? 'active' : ''); ?>" href="/home/thes">Peringkat</a></li>

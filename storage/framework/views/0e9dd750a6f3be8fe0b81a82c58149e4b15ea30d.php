@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Dashboard'); ?>
 <?php $__env->startSection('search'); ?>
 <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main" action="/pdln">
@@ -74,16 +76,16 @@
                   
                   
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">status</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Awal</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Akhir</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Status</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
                 <?php $__currentLoopData = $pdlns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pdln): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($pdlns->firstItem() + $loop->index); ?></th>
                   <td><a href="/pdln/<?php echo e($pdln->id); ?>"><?php echo e($pdln->nama); ?></a></td>
                   <td><a href="/data/<?php echo e($pdln->jenis); ?>"><?php echo e($pdln->jenis); ?></a></td>
                   
