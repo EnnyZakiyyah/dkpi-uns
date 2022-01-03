@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BeritaController extends Controller
 {
@@ -45,15 +46,17 @@ class BeritaController extends Controller
         $validatedData = $request->validate([
             'judul' => 'required',
             'gambar' => 'image|file|max:1024',
-            'excerpt' => 'required',
             'body' => 'required',
             'published_at' => 'required'
         ]);
         if ($request->file('gambar')) {
             $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
-        }
+        } 
+
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
         Berita::create($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
+       
     }
     /**
      * Display the specified resource.
@@ -97,14 +100,14 @@ class BeritaController extends Controller
         $validatedData = $request->validate([
             'judul' => 'required',
             // 'gambar' => 'image|file|max:1024',
-            'excerpt' => 'required',
+            // 'excerpt' => 'required',
             'body' => 'required',
             'published_at' => 'required'
         ]);
         if ($request->file('gambar')) {
             $validatedData['gambar'] = $request->file('gambar')->store('berita-images');
         }
-
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
         Berita::where('id', $id)->update($validatedData);
         return redirect('/berita')->with('status', 'berita telah ditambahkan');
     }

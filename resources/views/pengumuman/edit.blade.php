@@ -55,6 +55,15 @@
                         @csrf
 
                         <div class="form-group ml-5 mr-5">
+                            <label for="judul">Isi judul</label>
+                            <input type="text" class="form-control  @error('judul') is-invalid @enderror" id="judul" placeholder="Isi judul" name="judul" value="{{ old('judul', $pengumuman->judul) }}">
+                            @error('judul')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
                             <label for="pengumuman">Isi Pengumuman</label>
                             <input type="textarea" class="form-control  @error('pengumuman') is-invalid @enderror" id="pengumuman" placeholder="Isi Pengumuman" name="pengumuman" value="{{ old('pengumuman', $pengumuman->pengumuman) }}">
                             @error('pengumuman')

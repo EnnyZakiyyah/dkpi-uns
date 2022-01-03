@@ -52,7 +52,8 @@
                     <!-- body card -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Pengumuman : {{ $pengumuman->pengumuman}}</h5>
+                            <h5 class="card-title">Judul : {{ $pengumuman->judul}}</h5>
+                            <p class="card-text">Pengumuman : {{ $pengumuman->pengumuman}}</p>
                             <p class="card-text">Link : {{ $pengumuman->link }}</p>
                             <p class="card-text">Berlaku Sampai : {{ $pengumuman->berlaku }}</p>
 

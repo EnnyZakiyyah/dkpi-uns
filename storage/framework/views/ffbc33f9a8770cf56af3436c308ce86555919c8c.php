@@ -56,6 +56,7 @@
               <thead class="thead-light">
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
+                  <th scope="col" class="sort" data-sort="no">Judul</th>
                   <th scope="col" class="sort" data-sort="nim">Pengumuman</th>
                   <th scope="col" class="sort" data-sort="nama">Berlaku Sampai</th>
                   <th scope="col" class="sort" data-sort="berlaku">Aksi</th>
@@ -65,6 +66,7 @@
                 <?php $__currentLoopData = $active; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                   <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($pengumuman->judul); ?></td>
                   <td><?php echo e($pengumuman->pengumuman); ?></td>
                   <td><?php echo e($pengumuman->berlaku); ?></td>
                   <td>
@@ -75,6 +77,7 @@
                 <?php $__currentLoopData = $expired; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                   <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <td><?php echo e($pengumuman->judul); ?></td>
                   <td><?php echo e($pengumuman->pengumuman); ?></td>
                   <td><?php echo e($pengumuman->berlaku); ?></td>
                   <td>

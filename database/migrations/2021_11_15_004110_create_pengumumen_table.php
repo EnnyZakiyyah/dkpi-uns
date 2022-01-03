@@ -15,12 +15,11 @@ class CreatePengumumenTable extends Migration
     {
         Schema::create('pengumumen', function (Blueprint $table) {
             $table->id();
-
+            $table->text('judul');
             $table->date('berlaku');
+            $table->text('excerpt');
             $table->text('pengumuman');
             $table->string('link')->nullable();
-            // $table->boolean('isActive');
-
             $table->timestamps();
         });
     }

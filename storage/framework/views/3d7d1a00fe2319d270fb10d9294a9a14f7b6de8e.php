@@ -25,7 +25,7 @@
                             <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title"><?php echo e($berita->judul); ?></h5>
-                              <p class="card-text"><?php echo e($berita->excerpt); ?>
+                              <p class="card-text"><?php echo $berita->excerpt; ?>
 
                                <left> <a href="/home/berita/beritadetails/<?php echo e($berita->id); ?>" class="btn-learn-more">Baca Selengkapnya...</a></left>
                               </p>

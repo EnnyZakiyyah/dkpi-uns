@@ -105,7 +105,7 @@
                           <img src="{{asset('storage/'. $berita->gambar )}}" class="card-img-top" alt="...">
                           <div class="card-body">
                             <h5 class="card-title">{{ $berita->judul }}</h5>
-                            <p class="card-text">{{ $berita->excerpt }}
+                            <p class="card-text">{!!$berita->excerpt!!}
                              <left> <a href="/home/berita/beritadetails/{{ $berita->id }}" class="btn-learn-more">Baca Selengkapnya...</a></left>
                             </p>
                           </div>
@@ -271,10 +271,14 @@
 
             <div class="card-body">
               <h5 class="card-title">{{ $pengumuman->judul }}</h5>
-              <p class="card-text">{{ $pengumuman->pengumuman }}</p>
+              <p class="card-text">{{ $pengumuman->excerpt }}</p>
+              <a href="{{ $pengumuman->link }}">Selengkapnya</a>
 
             </div>
+                <!-- garis -->
+              <hr />
             @endforeach
+         
           </div>
 
       </div>

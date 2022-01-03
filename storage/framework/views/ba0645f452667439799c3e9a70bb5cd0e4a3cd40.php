@@ -49,7 +49,8 @@
                     <!-- body card -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Pengumuman : <?php echo e($pengumuman->pengumuman); ?></h5>
+                            <h5 class="card-title">Judul : <?php echo e($pengumuman->judul); ?></h5>
+                            <p class="card-text">Pengumuman : <?php echo e($pengumuman->pengumuman); ?></p>
                             <p class="card-text">Link : <?php echo e($pengumuman->link); ?></p>
                             <p class="card-text">Berlaku Sampai : <?php echo e($pengumuman->berlaku); ?></p>
 

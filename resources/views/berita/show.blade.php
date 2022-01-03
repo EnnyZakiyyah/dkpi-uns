@@ -60,8 +60,7 @@
                             <p class="card-text">Gambar Pendukung <br/><br/>
                                 <img src="{{asset('storage/'. $berita->gambar )}}" class="img-fluid mb-3 col-sm-5 d-block" alt="...">
                             </p>
-                            <p class="card-text">Kutipan Berita : {{ $berita->excerpt }}</p>
-                            <p class="card-text">Isi Berita : {{ $berita->body }}</p>
+                            <p class="card-text">Isi Berita : {!!$berita->body!!}</p>
                             {{-- <p class="card-text">Di Publishe Tgl : {{ $berita->published_at }}</p> --}}
                             <p class="card-text">Dibuat Tanggal : {{ $berita->created_at }}</p>
                             <a href="/berita/{{ $berita->id }}/edit" class="btn btn-primary">Edit</a>

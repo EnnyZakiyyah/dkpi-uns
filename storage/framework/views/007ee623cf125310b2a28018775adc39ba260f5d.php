@@ -67,7 +67,7 @@
                 <tr>
                   <th scope="row"><?php echo e($beritas->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($berita->judul); ?></td>
-                  <td><?php echo e($berita->excerpt); ?></td>
+                  <td>  <?php echo $berita->body; ?></td>
                   <td><?php echo e($berita->created_at); ?></td>
                   <td>
                     <a href="/berita/<?php echo e($berita->id); ?>" class="badge badge-info">Detail</a>

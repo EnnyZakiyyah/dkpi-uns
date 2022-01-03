@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pengaduan;
 use App\Models\Pengumuman;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PengumumanController extends Controller
 {
@@ -16,6 +17,8 @@ class PengumumanController extends Controller
     public function index()
     {
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->filter(request(['pengumuman']))->paginate(5)->withQueryString();
+        // $pengumuman->pengumuman = Str::limit($pengumuman->pengumuman, 50);
+       
         $expired = Pengumuman::whereDate('berlaku', '<', today())->latest()->filter(request(['pengumuman']))->paginate(5)->withQueryString();
 
         return view('pengumuman.index',[
@@ -48,10 +51,12 @@ class PengumumanController extends Controller
         //
         $validatedData = $request->validate([
             'pengumuman'=>'required',
+            'judul'=>'required',
             'berlaku'=>'required',
             'link'=>'',
 
         ]);
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->pengumuman), 100);
         Pengumuman::create($validatedData);
 
         return redirect('/pengumuman')->with('success', 'Data berhasil ditambah!');
@@ -96,10 +101,12 @@ class PengumumanController extends Controller
     {
         $validatedData = $request->validate([
             'pengumuman'=>'required',
+            'judul'=>'required',
             'berlaku'=>'required',
             'link'=>''
 
         ]);
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->pengumuman), 100);
         Pengumuman::where('id', $pengumuman)->update($validatedData);
 
         return redirect('/pengumuman')->with('success', 'Data berhasil ditambah!');
