@@ -46,11 +46,18 @@
                             <p class="card-text">Nomor Ktln : {{ $pdln->ktln_kemensetneg }}</p>
                             <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
                             <br/>
-                                <p>download file</p>
-                                <form action="token/{{ $pdln->id }}" method="POST" class="d-inline">
+                                <p>Download File</p>
+                                <form action="token/{{ $pdln->id }}" method="POST" class="row g-3">
                                     @csrf
-                                    <input type="text" name='token' placeholder="input kode cth: 123456">
+                                    <div class="col-md-4">
+                                      <input type="text" name='token' class="form-control"  placeholder="Input kode cth: 123456">
+                                    </div>
+                                    <div class="col-md-4">
                                     <button type="submit" class="btn btn-primary">submit</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <a href="/home/pdln-mahasiswa" class="btn btn-secondary">Kembali</a>
+                                    </div>
                                 </form>
                                 @if(Auth::check())
                                 <a href="{{ $pdln->id }}/edit" class="btn btn-primary">Edit</a>
@@ -60,7 +67,7 @@
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
                                 @endif
-                                <a href="/home/pdln-mahasiswa" class="btn btn-primary">Kembali</a>
+                                
                             </div>
                         </div>
             </div>

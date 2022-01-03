@@ -20,6 +20,7 @@
                         </ol>
                         <h2><?php echo e($mitra->instansi); ?></h2>
                         <h2><?php echo e($mitra->nama_instansi); ?></h2>
+                        <h3 class="badge bg-info"><?php echo e($mitra->status); ?></h3>
 
                       </div>
                     </section><!-- End Breadcrumbs -->
@@ -37,15 +38,29 @@
                                 <p class="card-text">Awal Masa Berlaku: <?php echo e($mitra->jangka_waktu_awal); ?></p>
                                 <p class="card-text">Akhir Masa Berlaku: <?php echo e($mitra->jangka_waktu_akhir); ?></p>
                                 <p class="card-text">Pejabat Penandatangan: <?php echo e($mitra->pejabat_penandatangan); ?></p>
+                                <br/>
+                                <p>Download File</p>
+                                <form action="token/<?php echo e($mitra->id); ?>" method="POST" class="row g-3">
+                                    <?php echo csrf_field(); ?>
+                                    <div class="col-md-4">
+                                    <input type="text" name='token' class="form-control" placeholder="Input kode cth: 123456">
+                                    </div>
+                                    <div class="col-md-4">
+                                    <button type="submit" class="btn btn-primary">submit</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <a href="/home/mitra-cv" class="btn btn-secondary">Kembali</a>
+                                    </div>
+                                  </form>
                                 <?php if(Auth::check()): ?>
-                                <a href="<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
-                                <form action="<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
+                                <a href="/mitra/<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
+                                <form action="mitra/<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
                                     <?php echo method_field('delete'); ?>
                                     <?php echo csrf_field(); ?>
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
                                 <?php endif; ?>
-                                <a href="/home/mitra" class="btn btn-primary">Kembali</a>
+                               
                             </div>
                         </div>
             </div>
