@@ -50,7 +50,7 @@
                     </div>
 
                     <!-- body card -->
-                    <form method="POST" action="/pengumuman">
+                    <form method="POST" action="/pengumuman" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ml-5 mr-5">
                             <label for="judul">Judul</label>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="link"> Link</label>
-                            <input type="text" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link" name="link" value="{{ old('link') }}">
+                            <input type="file" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link" name="link" value="{{ old('link') }}">
                             @error('link')
                             <div class="invalid-feedback">
                                 {{ $message }}

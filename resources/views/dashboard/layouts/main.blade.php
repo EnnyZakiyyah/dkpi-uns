@@ -115,6 +115,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ ($title === "layanan") ? 'active' : '' }}" href="{{url('/layanan')}}">
+                            <i class="ni ni-chat-round text-success"></i>
+                            <span class="nav-link-text">Layanan</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ ($title === "Register Account") ? 'active' : '' }}" href="{{url('/register')}}">
                             <i class="ni ni-circle-08 text-pink"></i>
                             <span class="nav-link-text">Register Account</span>

@@ -50,9 +50,7 @@ class PengumumanController extends Controller
     public function store(Request $request)
     {
         //
-        // if ($request->file('file_download')) {
-        //     $file_download = $request->file('file_download')->store('file_download');
-        // }
+        $file_download = 'null';
         $validatedData = $request->validate([
             'pengumuman' => 'required',
             'judul' => 'required',
@@ -60,7 +58,10 @@ class PengumumanController extends Controller
             'link' => '',
             'file_download' => ''
         ]);
-        // $validatedData['file_download'] = $file_download;
+              if ($request->file('file_download')) {
+                $file_download = $request->file('file_download')->store('file_download');
+            }
+        $validatedData['file_download'] = $file_download;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->pengumuman), 100);
         Pengumuman::create($validatedData);
 
@@ -112,6 +113,10 @@ class PengumumanController extends Controller
             'file_download' => ''
 
         ]);
+        if ($request->file('file_download')) {
+            $file_download = $request->file('file_download')->store('file_download');
+            $validatedData['file_download'] = $file_download;
+        }
         $validatedData['excerpt'] = Str::limit(strip_tags($request->pengumuman), 100);
         Pengumuman::where('id', $pengumuman)->update($validatedData);
 
