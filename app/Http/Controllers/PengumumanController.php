@@ -55,13 +55,12 @@ class PengumumanController extends Controller
             'pengumuman' => 'required',
             'judul' => 'required',
             'berlaku' => 'required',
-            'link' => '',
-            'file_download' => ''
+            'link' => ''
         ]);
-              if ($request->file('file_download')) {
-                $file_download = $request->file('file_download')->store('file_download');
-            }
-        $validatedData['file_download'] = $file_download;
+        if ($request->file('file_download')) {
+            $validatedData['file_download'] = $request->file('file_download')->store('file_pengumuman');
+        }
+        // $validatedData['file_download'] = $file_download;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->pengumuman), 100);
         Pengumuman::create($validatedData);
 
@@ -109,14 +108,13 @@ class PengumumanController extends Controller
             'pengumuman' => 'required',
             'judul' => 'required',
             'berlaku' => 'required',
-            'link' => '',
-            'file_download' => ''
+            'link' => ''
 
         ]);
         if ($request->file('file_download')) {
-            $file_download = $request->file('file_download')->store('file_download');
-            $validatedData['file_download'] = $file_download;
+            $validatedData['file_download'] = $request->file('file_download')->store('file_pengumuman');
         }
+        // $validatedData['file_download'] = $file_download;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->pengumuman), 100);
         Pengumuman::where('id', $pengumuman)->update($validatedData);
 
@@ -137,6 +135,16 @@ class PengumumanController extends Controller
             ->with('success', 'data berhasil dihapus');
     }
     public function download($id)
+    {
+        $file = Pengumuman::find($id);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+            // 'Content-Disposition' => 'inline; filename="'.$id.'"'
+        ];
+        return Storage::download($file->file_download);
+    }
+
+    public function pengumuman($id)
     {
         $file = Pengumuman::find($id);
         $headers = [

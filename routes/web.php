@@ -72,6 +72,9 @@ Route::get('/home/pdln-pimpinan', [HomeController::class, 'pimpinan']);
 Route::get('/download-mou', [LayananController::class, 'ketentuan_mou']);
 Route::get('/download-pks', [LayananController::class, 'ketentuan_pks']);
 
+Route::get('/download-pengumuman/{id}', [PengumumanController::class, 'pengumuman']);
+
+
 
 // Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::get('/login', [LoginController::class, 'index'])->name('login');

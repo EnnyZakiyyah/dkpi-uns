@@ -66,7 +66,7 @@
               <tbody class="list">
                 <?php $__currentLoopData = $pengaduans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengaduan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($pengaduans->firstItem() + $loop->indexn); ?></th>
                   <td><?php echo e($pengaduan->name); ?></td>
                   <td><?php echo e($pengaduan->email); ?></td>
                   <td><?php echo e($pengaduan->subject); ?></td>

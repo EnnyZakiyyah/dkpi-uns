@@ -28,7 +28,9 @@
                               <p class="card-text">{{ $pengumuman->pengumuman }}</p>
                               {{-- <a href="/home/pengumumandetails/{{ $pengumuman->id }}">Selengkapnya</a> --}}
                                 @if($pengumuman->link != 'null')
-                              <a href="{{ $pengumuman->link }}">Download File</a>
+                                <a class="btn btn-primary" type="button" href="/download-pengumuman/{{ $pengumuman->id }}"><i class="bi bi-download">&nbsp; Download File</i></a>
+                              @else
+                              <a href="{{ $pengumuman->link }}">{{ $pengumuman->link }}</a>
                               @endif
                             </div>
                             <!-- garis -->

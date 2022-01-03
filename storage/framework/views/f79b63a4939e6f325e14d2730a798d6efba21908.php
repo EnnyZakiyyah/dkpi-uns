@@ -62,7 +62,7 @@
                 <?php $__currentLoopData = $faqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                   <th scope="row"><?php echo e($loop->iteration); ?></th>
-                  <td><?php echo e($faq->pertanyaan); ?></td>
+                  <td><?php echo $faq->pertanyaan; ?></td>
                   <td><?php echo e($faq->jawaban); ?></td>
                   <td>
                     <a href="/faq/<?php echo e($faq->id); ?>/edit" class="badge badge-info">Detail</a>

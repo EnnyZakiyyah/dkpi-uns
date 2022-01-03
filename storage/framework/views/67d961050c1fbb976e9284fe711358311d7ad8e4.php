@@ -46,7 +46,7 @@
                             <p class="card-text">Nomor Ktln : <?php echo e($pdln->ktln_kemensetneg); ?></p>
                             <p class="card-text">Catatan Ktln : <?php echo e($pdln->catatan_setneg); ?></p>
                             <br/>
-                                <p>download file</p>
+                                <p>Download File</p>
                                 <form action="token/<?php echo e($pdln->id); ?>" method="POST" class="row g-3">
                                     <?php echo csrf_field(); ?>
                                     <div class="col-md-4">

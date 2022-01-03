@@ -27,7 +27,11 @@
                               <h5 class="card-title"><?php echo e($pengumuman->judul); ?></h5>
                               <p class="card-text"><?php echo e($pengumuman->pengumuman); ?></p>
                               
-                              <a href="<?php echo e($pengumuman->link); ?>">Download File</a>
+                                <?php if($pengumuman->link != 'null'): ?>
+                                <a class="btn btn-primary" type="button" href="/download-pengumuman/<?php echo e($pengumuman->id); ?>"><i class="bi bi-download">&nbsp; Download File</i></a>
+                              <?php else: ?>
+                              <a href="<?php echo e($pengumuman->link); ?>"><?php echo e($pengumuman->link); ?></a>
+                              <?php endif; ?>
                             </div>
                             <!-- garis -->
               

@@ -331,4 +331,13 @@ class HomeController extends Controller
             'galleries' => $galeri
         ]);
     }
+    public function download($id)
+    {
+        $file = Pengumuman::find($id);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+            // 'Content-Disposition' => 'inline; filename="'.$id.'"'
+        ];
+        return Storage::download($file->file_download);
+    }
 }

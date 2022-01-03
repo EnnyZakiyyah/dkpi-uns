@@ -62,7 +62,7 @@
                 @foreach($faqs as $faq)
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
-                  <td>{{ $faq->pertanyaan }}</td>
+                  <td>{!! $faq->pertanyaan !!}</td>
                   <td>{{ $faq->jawaban }}</td>
                   <td>
                     <a href="/faq/{{ $faq->id }}/edit" class="badge badge-info">Detail</a>

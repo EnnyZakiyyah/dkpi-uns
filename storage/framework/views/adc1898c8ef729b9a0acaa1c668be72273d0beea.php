@@ -462,7 +462,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="file_surat_uns" placeholder="catatan" name="file_surat_uns" value="<?php echo e(old('file_surat_uns',$pdln->file_surat_uns)); ?>">
+unset($__errorArgs, $__bag); ?>" id="file_surat_uns" placeholder="catatan" name="file_surat_uns" value="<?php echo e(old('file_surat_uns')); ?>">
                             <?php $__errorArgs = ['file_surat_uns'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
