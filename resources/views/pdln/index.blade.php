@@ -70,9 +70,10 @@
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">Nama</th>
-                  <th scope="col" class="sort" data-sort="nama">Kategori</th>
+                  <th scope="col" class="sort" data-sort="nama">kategori</th>
+                  <th scope="col" class="sort" data-sort="nama">token</th>
                   {{-- <th scope="col" class="sort" data-sort="nim">jumlah</th> --}}
-                  <th scope="col" class="sort" data-sort="nama">Unit</th>
+                  {{-- <th scope="col" class="sort" data-sort="nama">unit</th> --}}
                   {{-- <th scope="col" class="sort" data-sort="nama">tujuan</th> --}}
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
                   <th scope="col" class="sort" data-sort="tanggalpengembalian">Awal</th>
@@ -88,7 +89,7 @@
                   <td><a href="/pdln/{{ $pdln->id }}">{{ $pdln->nama }}</a></td>
                   <td><a href="/data/{{ $pdln->jenis }}">{{ $pdln->jenis }}</a></td>
                   {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}
-                  <td>{{ $pdln->unit_kerja }}</td>
+                  <td>{{ $pdln->token }}</td>
                   <td>{{ $pdln->negara }}</td>
                   <td>{{ empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y') }}</td>
                   <td>{{ empty(strtotime($pdln->jangka_waktu_akhir)) ?  $pdln->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_akhir)))->isoFormat('D MMMM Y') }}</td>

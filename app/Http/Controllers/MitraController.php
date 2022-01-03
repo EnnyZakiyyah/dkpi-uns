@@ -71,6 +71,8 @@ class MitraController extends Controller
         $validatedData['status_hidden'] = 'new';
         $validatedData['status'] = 'berlaku';
 
+        $validatedData['token'] = $this->code();
+
         Mitra::create($validatedData);
 
         return redirect('/mitra')->with('success', 'Data berhasil ditambah!');
@@ -167,4 +169,59 @@ class MitraController extends Controller
          ];
         return Storage::download($file->file_mou);
     }
+
+    public function code()
+    {
+        do {
+            $code = random_int(100000, 999999);
+        } while (Mitra::where("token", "=", $code)->first());
+
+        return $code;
+    }
+
+
+
+
+
+    // public function cv(){
+
+    //     $cv = Mitra::where('instansi', 'cv')->latest()->get();
+
+    //     return view('mitra.index',[
+    //         'mitra' => $cv
+    //     ]);
+    // }
+    // public function yayasan(){
+
+    //     $yayasan = Mitra::where('instansi', 'yayasan')->latest()->get();
+
+    //     return view('mitra.index',[
+    //         'mitra' => $yayasan
+    //     ]);
+    // }
+    // public function internasional(){
+
+    //     $internasional = Mitra::where('instansi', 'internasional')->latest()->get();
+
+    //     return view('mitra.index',[
+    //         'mitra' => $internasional
+    //     ]);
+    // }
+    // public function jasaKeuangan(){
+
+    //     $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->get();
+
+    //     return view('mitra.index',[
+    //         'mitra' => $jasaKeuangan
+    //     ]);
+    // }
+    // public function pemerintah(){
+
+    //     $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->get();
+
+    //     return view('mitra.index',[
+    //         'mitra' => $pemerintah
+    //     ]);
+    // }
+
 }

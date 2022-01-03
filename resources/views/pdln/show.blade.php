@@ -70,9 +70,15 @@
                             <p class="card-text">Catatan Belmawa : {{ $pdln->catatan_belmawa }}</p>
                             <p class="card-text">Nomor Ktln : {{ $pdln->ktln_kemensetneg }}</p>
                             <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
+                            @if($pdln->file_surat_uns != 'null')
                             <a href="download/uns/{{ $pdln->id }}" class="btn btn-warning">Download surat UNS</a>
+                            @endif
+                            @if($pdln->file_belmawa != 'null')
                             <a href="download/belmawa/{{ $pdln->id }}" class="btn btn-warning">Download surat belmawa</a>
-                            <a href="download/ktln/{{ $pdln->id }}" class="btn btn-warning">Download surat UNS</a>
+                            @endif
+                            @if($pdln->file_ktln != 'null')
+                            <a href="download/ktln/{{ $pdln->id }}" class="btn btn-warning">Download surat ktln</a>
+                            @endif
                             {{-- <p class="card-text">{{ $file_uns }}</p>
                             <p class="card-text" >{{ $file_ktln }}</p>
                             <p class="card-text">{{ $file_belmawa }}</p> --}}

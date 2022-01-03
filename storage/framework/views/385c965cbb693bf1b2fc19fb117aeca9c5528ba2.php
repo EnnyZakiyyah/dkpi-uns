@@ -37,9 +37,16 @@
                                 <p class="card-text">Awal Masa Berlaku: <?php echo e($mitra->jangka_waktu_awal); ?></p>
                                 <p class="card-text">Akhir Masa Berlaku: <?php echo e($mitra->jangka_waktu_akhir); ?></p>
                                 <p class="card-text">Pejabat Penandatangan: <?php echo e($mitra->pejabat_penandatangan); ?></p>
+                                <br/>
+                                <p>download file</p>
+                                <form action="token/<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
+                                    <?php echo csrf_field(); ?>
+                                    <input type="text" name='token' placeholder="input kode cth: 123456">
+                                    <button type="submit" class="btn btn-primary">submit</button>
+                                </form>
                                 <?php if(Auth::check()): ?>
                                 <a href="/mitra/<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
-                                <form action="<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
+                                <form action="mitra/<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
                                     <?php echo method_field('delete'); ?>
                                     <?php echo csrf_field(); ?>
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>

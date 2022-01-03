@@ -54,16 +54,11 @@ class PdlnController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->file('file_surat_uns')){
-        $validatedData['file_surat_uns'] = $request->file('file_surat_uns')->store('file_surat_uns');
-        }
-        if ($request->file('file_belmawa')){
-        $validatedData['file_belmawa']  = $request->file('file_belmawa')->store('file_belmawa');
-        }
-        if ($request->file('file_ktln')){
-        $validatedData['file_ktln'] = $request->file('file_ktln')->store('file_ktln');
-        }
         // Excel::import(new PdlnImport, request()->file('file_surat_uns'));
+        $file_surat_uns = '';
+        $file_belmawa = '';
+        $file_ktln = '';
+
         $validatedData = $request->validate([
             'jenis' => 'required',
             'nama' => 'required',
@@ -80,6 +75,21 @@ class PdlnController extends Controller
             'ktln_kemensetneg'=> '',
             'catatan_setneg'=> ''
         ]);
+
+        $validatedData['token'] = $this->code();
+        if($request->file('file_surat_uns')){
+        $file_surat_uns = $request->file('file_surat_uns')->store('file_surat_uns');
+        }
+        if ($request->file('file_belmawa')){
+        $file_belmawa  = $request->file('file_belmawa')->store('file_belmawa');
+        }
+        if ($request->file('file_ktln')){
+        $file_ktln = $request->file('file_ktln')->store('file_ktln');
+        }
+
+        $validatedData['file_surat_uns'] = $file_surat_uns;
+        $validatedData['file_belmawa'] = $file_belmawa;
+        $validatedData['file_ktln'] = $file_ktln;
         $validatedData['status_hidden'] = 'berlaku';
         $validatedData['status'] = 'diterima';
 
@@ -145,10 +155,10 @@ class PdlnController extends Controller
         if ($request->file('file_surat_uns')){
             $validatedData['file_surat_uns'] = $request->file('file_surat_uns')->store('file_surat_uns');
             }
-            if ($request->file('file_belmawa')){
+        if ($request->file('file_belmawa')){
             $validatedData['file_belmawa']  = $request->file('file_belmawa')->store('file_belmawa');
             }
-            if ($request->file('file_ktln')){
+        if ($request->file('file_ktln')){
             $validatedData['file_ktln'] = $request->file('file_ktln')->store('file_ktln');
             }
 
@@ -207,5 +217,13 @@ class PdlnController extends Controller
             'Content-Type' => 'application/pdf',
          ];
         return Storage::download($file->file_ktln);
+    }
+    public function code()
+    {
+        do {
+            $code = random_int(100000, 999999);
+        } while (Pdln::where("token", "=", $code)->first());
+
+        return $code;
     }
 }

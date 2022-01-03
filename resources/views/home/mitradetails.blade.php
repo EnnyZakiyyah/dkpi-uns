@@ -38,9 +38,16 @@
                                 <p class="card-text">Awal Masa Berlaku: {{ $mitra->jangka_waktu_awal }}</p>
                                 <p class="card-text">Akhir Masa Berlaku: {{ $mitra->jangka_waktu_akhir }}</p>
                                 <p class="card-text">Pejabat Penandatangan: {{ $mitra->pejabat_penandatangan }}</p>
+                                <br/>
+                                <p>download file</p>
+                                <form action="token/{{ $mitra->id }}" method="POST" class="d-inline">
+                                    @csrf
+                                    <input type="text" name='token' placeholder="input kode cth: 123456">
+                                    <button type="submit" class="btn btn-primary">submit</button>
+                                </form>
                                 @if(Auth::check())
                                 <a href="/mitra/{{ $mitra->id }}/edit" class="btn btn-primary">Edit</a>
-                                <form action="{{ $mitra->id }}" method="POST" class="d-inline">
+                                <form action="mitra/{{ $mitra->id }}" method="POST" class="d-inline">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>

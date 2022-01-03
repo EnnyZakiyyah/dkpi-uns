@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Database pdln'); ?>
 
 <?php $__env->startSection('container'); ?>
@@ -67,9 +65,15 @@
                             <p class="card-text">Catatan Belmawa : <?php echo e($pdln->catatan_belmawa); ?></p>
                             <p class="card-text">Nomor Ktln : <?php echo e($pdln->ktln_kemensetneg); ?></p>
                             <p class="card-text">Catatan Ktln : <?php echo e($pdln->catatan_setneg); ?></p>
+                            <?php if($pdln->file_surat_uns != 'null'): ?>
                             <a href="download/uns/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat UNS</a>
+                            <?php endif; ?>
+                            <?php if($pdln->file_belmawa != 'null'): ?>
                             <a href="download/belmawa/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat belmawa</a>
-                            <a href="download/ktln/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat UNS</a>
+                            <?php endif; ?>
+                            <?php if($pdln->file_ktln != 'null'): ?>
+                            <a href="download/ktln/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat ktln</a>
+                            <?php endif; ?>
                             
                             <a href="<?php echo e($pdln->id); ?>/edit" class="btn btn-primary">Edit</a>
                             <form action="<?php echo e($pdln->id); ?>" method="POST" class="d-inline">

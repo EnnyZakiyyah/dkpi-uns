@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Dashboard'); ?>
 <?php $__env->startSection('search'); ?>
 <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main" action="/pdln">
@@ -70,14 +68,15 @@
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">Nama</th>
-                  <th scope="col" class="sort" data-sort="nama">Kategori</th>
+                  <th scope="col" class="sort" data-sort="nama">kategori</th>
+                  <th scope="col" class="sort" data-sort="nama">token</th>
                   
-                  <th scope="col" class="sort" data-sort="nama">Unit</th>
+                  
                   
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Awal</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Akhir</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Status</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">status</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
@@ -88,7 +87,7 @@
                   <td><a href="/pdln/<?php echo e($pdln->id); ?>"><?php echo e($pdln->nama); ?></a></td>
                   <td><a href="/data/<?php echo e($pdln->jenis); ?>"><?php echo e($pdln->jenis); ?></a></td>
                   
-                  <td><?php echo e($pdln->unit_kerja); ?></td>
+                  <td><?php echo e($pdln->token); ?></td>
                   <td><?php echo e($pdln->negara); ?></td>
                   <td><?php echo e(empty(strtotime($pdln->jangka_waktu_awal)) ? $pdln->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e(empty(strtotime($pdln->jangka_waktu_akhir)) ?  $pdln->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pdln->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
