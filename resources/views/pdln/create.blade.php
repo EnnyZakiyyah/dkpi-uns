@@ -198,7 +198,7 @@
 
                         <div class="form-group ml-5 mr-5">
                             <label for="ktln_kemensetneg">Ktln Kemensetneg</label>
-                            <input type="text" class="form-control @error('ktln_kemensetneg') is-invalid @enderror" id="ktln_kemensetneg" placeholder="nomor surat kemensetneg" name="ktln_kemensetneg" value="{{ old('kapaitas_ruang') }}">
+                            <input type="text" class="form-control @error('ktln_kemensetneg') is-invalid @enderror" id="ktln_kemensetneg" placeholder="nomor surat kemensetneg" name="ktln_kemensetneg" value="{{ old('ktln_kemensetneg') }}">
                             @error('ktln_kemensetneg')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -207,7 +207,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="catatan_setneg">catatan setneg</label>
-                            <input type="textarea" class="form-control @error('catatan_setneg') is-invalid @enderror" id="catatan_setneg" placeholder="catatan" name="catatan_setneg" value="{{ old('kapaitas_ruang') }}">
+                            <input type="textarea" class="form-control @error('catatan_setneg') is-invalid @enderror" id="catatan_setneg" placeholder="catatan" name="catatan_setneg" value="{{ old('catatan_setneg') }}">
                             @error('catatan_setneg')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -216,7 +216,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="file_surat_uns">File Surat Uns</label>
-                            <input type="file" class="form-control @error('file_surat_uns') is-invalid @enderror" id="file_surat_uns" placeholder="catatan" name="file_surat_uns" value="{{ old('kapaitas_ruang') }}">
+                            <input type="file" class="form-control @error('file_surat_uns') is-invalid @enderror" id="file_surat_uns" placeholder="catatan" name="file_surat_uns" value="{{ old('file_surat_uns') }}">
                             @error('file_surat_uns')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -225,7 +225,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="file_belmawa">File Belmawa</label>
-                            <input type="file" class="form-control @error('file_belmawa') is-invalid @enderror" id="file_belmawa" placeholder="catatan" name="file_belmawa" value="{{ old('kapaitas_ruang') }}">
+                            <input type="file" class="form-control @error('file_belmawa') is-invalid @enderror" id="file_belmawa" placeholder="catatan" name="file_belmawa" value="{{ old('file_belmawa') }}">
                             @error('file_belmawa')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -234,7 +234,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="file_ktln">File Ktln</label>
-                            <input type="file" class="form-control @error('file_ktln') is-invalid @enderror" id="file_ktln" placeholder="catatan" name="file_ktln" value="{{ old('kapaitas_ruang') }}">
+                            <input type="file" class="form-control @error('file_ktln') is-invalid @enderror" id="file_ktln" placeholder="catatan" name="file_ktln" value="{{ old('file_ktln') }}">
                             @error('file_ktln')
                             <div class="invalid-feedback">
                                 {{ $message }}

@@ -86,8 +86,7 @@ class MitraController extends Controller
         $validatedData['status_hidden'] = 'new';
         $validatedData['status'] = 'berlaku';
 
-
-
+        $validatedData['token'] = $this->code();
 
         Mitra::create($validatedData);
 
@@ -193,6 +192,15 @@ class MitraController extends Controller
             'Content-Type' => 'application/pdf',
          ];
         return Storage::download($file->file_mou);
+    }
+
+    public function code()
+    {
+        do {
+            $code = random_int(100000, 999999);
+        } while (Mitra::where("token", "=", $code)->first());
+
+        return $code;
     }
 
 

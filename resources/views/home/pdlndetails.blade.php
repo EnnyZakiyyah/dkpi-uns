@@ -45,6 +45,13 @@
                             <p class="card-text">Catatan Belmawa : {{ $pdln->catatan_belmawa }}</p>
                             <p class="card-text">Nomor Ktln : {{ $pdln->ktln_kemensetneg }}</p>
                             <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
+                            <br/>
+                                <p>download file</p>
+                                <form action="token/{{ $pdln->id }}" method="POST" class="d-inline">
+                                    @csrf
+                                    <input type="text" name='token' placeholder="input kode cth: 123456">
+                                    <button type="submit" class="btn btn-primary">submit</button>
+                                </form>
                                 @if(Auth::check())
                                 <a href="{{ $pdln->id }}/edit" class="btn btn-primary">Edit</a>
                                 <form action="{{ $pdln->id }}" method="POST" class="d-inline">

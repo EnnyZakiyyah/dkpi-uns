@@ -44,6 +44,8 @@ Route::get('/home/pengumuman', [HomeController::class, 'pengumuman']);
 Route::get('/home/galeridetails/{id}', [HomeController::class, 'galeridetails']);
 Route::get('/home/berita/beritadetails/{id}', [HomeController::class, 'beritadetails']);
 Route::get('/home/mitra/{id}', [HomeController::class, 'mitradetails']);
+Route::post('/home/mitra/token/{id}', [HomeController::class, 'mitratoken']);
+Route::post('/home/pdln/token/{id}', [HomeController::class, 'pdlntoken']);
 Route::get('/home/pdln/{id}', [HomeController::class, 'pdlndetails']);
 Route::get('/layanan/legaldrafting', [HomeController::class, 'legaldrafting']);
 

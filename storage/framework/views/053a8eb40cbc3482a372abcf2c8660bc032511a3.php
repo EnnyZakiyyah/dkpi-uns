@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -14,13 +15,13 @@
 
       <div class="faq-list">
         <ul>
-
+         
             <?php $__currentLoopData = $faqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-
-          <li data-aos="fade-up" data-aos-delay="<?php echo e($i = $loop->iteration); ?>00">
-        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-<?php echo e($i); ?>"><?php echo $faq->pertanyaan; ?><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-            <div id="faq-list-<?php echo e($i); ?>" class="collapse show" data-bs-parent=".faq-list">
+            
+          <li data-aos="fade-up" data-aos-delay="100">
+        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-<?php echo e($loop->iteration); ?>"><?php echo $faq->pertanyaan; ?><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-<?php echo e($loop->iteration); ?>" class="collapse show" data-bs-parent=".faq-list">
               <p><?php echo e($faq->jawaban); ?></p>
               <a href="<?php echo e($faq->link); ?>">selengkapnya</a>
             </div>

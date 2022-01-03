@@ -44,6 +44,13 @@
                             <p class="card-text">Catatan Belmawa : <?php echo e($pdln->catatan_belmawa); ?></p>
                             <p class="card-text">Nomor Ktln : <?php echo e($pdln->ktln_kemensetneg); ?></p>
                             <p class="card-text">Catatan Ktln : <?php echo e($pdln->catatan_setneg); ?></p>
+                            <br/>
+                                <p>download file</p>
+                                <form action="token/<?php echo e($pdln->id); ?>" method="POST" class="d-inline">
+                                    <?php echo csrf_field(); ?>
+                                    <input type="text" name='token' placeholder="input kode cth: 123456">
+                                    <button type="submit" class="btn btn-primary">submit</button>
+                                </form>
                                 <?php if(Auth::check()): ?>
                                 <a href="<?php echo e($pdln->id); ?>/edit" class="btn btn-primary">Edit</a>
                                 <form action="<?php echo e($pdln->id); ?>" method="POST" class="d-inline">
@@ -52,7 +59,7 @@
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
                                 <?php endif; ?>
-                                <a href="/home/pdln" class="btn btn-primary">Kembali</a>
+                                <a href="/home/pdln-mahasiswa" class="btn btn-primary">Kembali</a>
                             </div>
                         </div>
             </div>

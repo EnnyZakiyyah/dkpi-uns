@@ -14,8 +14,9 @@ use App\Models\Gallery;
 use App\Models\Peringkat;
 use App\Models\Pengumuman;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 
 class HomeController extends Controller
@@ -93,6 +94,38 @@ class HomeController extends Controller
             'mitra' => $mitra
         ]);
         // return $mitra;
+    }
+
+    public function mitratoken(Request $request, $id)
+    {
+        $code = $request->token;
+        $check = Mitra::find($id);
+
+        if($check->token == $code){
+        $headers = [
+            'Content-Type' => 'application/pdf',
+         ];
+        return Storage::download($check->file_mou);
+        }else{
+             return back()->with('gagal', 'kode salah');
+        }
+    }
+    public function pdlntoken(Request $request, $id)
+    {
+        $code = $request->token;
+        $check = Pdln::find($id);
+
+        if($check->token == $code){
+        $headers = [
+            'Content-Type' => 'application/pdf',
+         ];
+        Storage::download($check->file_surat_uns);
+        Storage::download($check->file_belmawa);
+        Storage::download($check->file_ktln);
+        return back();
+        }else{
+             return back()->with('gagal', 'kode salah');
+        }
     }
 
     public function layanan()
