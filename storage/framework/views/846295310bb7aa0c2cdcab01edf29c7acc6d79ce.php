@@ -43,7 +43,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail Mitra</h3>
+                        <h3 class="mb-0">Detail Mitra</h3><h4 class="badge badge-info"><?php echo e($mitra->status); ?></h4>
                     </div>
 
                     <!-- body card -->

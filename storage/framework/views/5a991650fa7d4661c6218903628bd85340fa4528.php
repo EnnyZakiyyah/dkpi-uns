@@ -74,6 +74,38 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="instansi" class="form-select" >Jenis Instansi</label>
+                            <select class="form-control  <?php $__errorArgs = ['instansi'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="instansi" placeholder="jenis instansi" name="instansi">
+                            <option value="<?php echo e($mitra->instansi); ?>"><?php echo e($mitra->instansi); ?></option>
+                            <option value="yayasan">Yayasan/Sekolah</option>
+                            <option value="cv">CV/PT</option>
+                            <option value="internasional">Internasional</option>
+                            <option value="pemerintah">Pemerintah</option>
+                            <option value="jasaKeuangan">Jasa keuangan</option>
+
+                            </select>
+                            <?php $__errorArgs = ['instansi'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="invalid-feedback">
+                                <?php echo e($message); ?>
+
+                            </div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
                         
                             
                         

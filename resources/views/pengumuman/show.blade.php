@@ -56,7 +56,7 @@
                             <p class="card-text">Pengumuman : {{ $pengumuman->pengumuman}}</p>
                             <p class="card-text">Link : {{ $pengumuman->link }}</p>
                             <p class="card-text">Berlaku Sampai : {{ $pengumuman->berlaku }}</p>
-
+                            <a href="/pengumuman/download/pengumuman/{{ $pengumuman->id }}" class="btn btn-warning">Download File Pengumuman</a>
                             <a href="{{ $pengumuman->id }}/edit" class="btn btn-primary">Edit</a>
                             <form action="{{ $pengumuman->id }}" method="POST" class="d-inline">
                                 @method('delete')
