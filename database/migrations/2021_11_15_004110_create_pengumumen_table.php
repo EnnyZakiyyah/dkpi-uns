@@ -20,6 +20,7 @@ class CreatePengumumenTable extends Migration
             $table->text('excerpt');
             $table->text('pengumuman');
             $table->string('link')->nullable();
+            // $table->string('file_pengumuman')->nullable();
             $table->timestamps();
         });
     }

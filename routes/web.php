@@ -41,6 +41,7 @@ Route::get('/home/berita', [HomeController::class, 'berita']);
 Route::get('/home/galeri', [HomeController::class, 'galeri']);
 Route::get('/home/peringkat', [HomeController::class, 'peringkat']);
 Route::get('/home/pengumuman', [HomeController::class, 'pengumuman']);
+Route::get('/home/pengumumandetails/{id}', [HomeController::class, 'pengumumandetails']);
 Route::get('/home/galeridetails/{id}', [HomeController::class, 'galeridetails']);
 Route::get('/home/berita/beritadetails/{id}', [HomeController::class, 'beritadetails']);
 Route::get('/home/mitra/{id}', [HomeController::class, 'mitradetails']);
@@ -107,6 +108,7 @@ Route::middleware('auth')->group(function () {
 
     //download
     Route::get('/mitra/download/mou/{id}', [MitraController::class, 'mou']);
+    Route::get('/mitra/download/pengumuman/{id}', [PengumumanController::class, 'download']);
 
 
     Route::get('/pdln/download/uns/{id}', [PdlnController::class, 'uns']);
@@ -121,7 +123,3 @@ Route::post('/contact-form', [ContactController::class, 'storeForm'])->name('con
 
 // download file
 Route::get('books/{uuid}/download', 'FileController@download')->name('file.download');
-
-
-
-

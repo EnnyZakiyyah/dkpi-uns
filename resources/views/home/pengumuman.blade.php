@@ -26,7 +26,7 @@
                             <div class="card-body">
                               <h5 class="card-title">{{ $pengumuman->judul }}</h5>
                               <p class="card-text">{{ $pengumuman->excerpt }}</p>
-                              <a href="{{ $pengumuman->link }}">Selengkapnya</a>
+                              <a href="/home/pengumumandetails/{{ $pengumuman->id }}">Selengkapnya</a>
                               {{-- <a href="{{ $pengumuman->link }}">Selengkapnya</a> --}}
                             </div>
                             <!-- garis -->

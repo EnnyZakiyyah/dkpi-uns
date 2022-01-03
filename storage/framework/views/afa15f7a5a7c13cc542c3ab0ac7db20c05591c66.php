@@ -26,7 +26,7 @@
                             <div class="card-body">
                               <h5 class="card-title"><?php echo e($pengumuman->judul); ?></h5>
                               <p class="card-text"><?php echo e($pengumuman->excerpt); ?></p>
-                              <a href="<?php echo e($pengumuman->link); ?>">Selengkapnya</a>
+                              <a href="/home/pengumumandetails/<?php echo e($pengumuman->id); ?>">Selengkapnya</a>
                               
                             </div>
                             <!-- garis -->

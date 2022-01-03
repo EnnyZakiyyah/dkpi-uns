@@ -112,6 +112,16 @@ class HomeController extends Controller
         ]);
     }
 
+    public function pengumumandetails($id )
+    {
+        $pengumuman = Pengumuman::find($id);
+        return view('home.pengumumandetails', [
+            'title' => 'Detail Pengumuman',
+            'pengumuman' => $pengumuman
+        ]);
+      
+    }
+
     public function berita()
     {
         $berita = Berita::latest()->paginate(3);
