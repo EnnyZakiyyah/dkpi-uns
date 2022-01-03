@@ -77,30 +77,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        <div class="form-group ml-5 mr-5">
-                            <label for="excerpt"> Kutipan</label>
-                            <input id="excerpt" type="text" name="excerpt" class="form-control  <?php $__errorArgs = ['excerpt'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" id="excerpt" placeholder="excerpt berita" name="excerpt" value="<?php echo e(old('excerpt', $berita->excerpt)); ?>">
-                            <?php $__errorArgs = ['excerpt'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                            <div class="invalid-feedback">
-                                <?php echo e($message); ?>
-
-                            </div>
-                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                        </div>
+                        
 
                         <div class="form-group ml-5 mr-5">
                             <label for="body"> Isi Berita</label>
@@ -160,14 +137,14 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="published_at"> Published</label>
-                            <input id="published_at" type="date" name="created_at" class="form-control  <?php $__errorArgs = ['created_at'];
+                            <input id="published_at" type="date" name="published_at" class="form-control  <?php $__errorArgs = ['published_at'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="created_at" placeholder="publsihed berita" name="created_at" value="<?php echo e(old('created_at', $berita->created_at)); ?>">
+unset($__errorArgs, $__bag); ?>" id="published_at" placeholder="berita" name="published_at" value="<?php echo e(old('published_at', $berita->published_at)); ?>">
                             <?php $__errorArgs = ['published_at'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -194,16 +171,16 @@ unset($__errorArgs, $__bag); ?>
         function previewImage(){
             const image = document.querySelector('#image');
             const imgPreview = document.querySelector('.img-preview');
-    
+
             imgPreview.style.display = 'block';
-    
+
             const ofReader = new FileReader();
             ofReader.readAsDataURL(image.files[0]);
-    
+
             ofReader.onload = function(ofREvent){
                 imgPreview.src = ofReader.target.result;
             }
-    
+
         }
     </script>
     <!-- End Main content -->

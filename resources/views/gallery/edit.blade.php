@@ -31,10 +31,6 @@
                             </ol>
                         </nav>
                     </div>
-                    {{-- <div class="col-lg-6 col-5 text-right">
-                        <a href="#" class="btn btn-sm btn-neutral">New</a>
-                        <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -54,13 +50,27 @@
                     </div>
                     @endif
                     <!-- body card -->
-                    <form method="POST" action="/gallery/{{ $galeri->id }}">
+                    <form method="POST" action="/gallery/{{ $galeri->id }}" enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="form-group ml-5 mr-5">
                             <label for="link">Link</label>
                             <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" placeholder="Link embed youtube" name="link" value="{{ old('link',$galeri->link) }}">
                             @error('link')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="gambar"> Ganti Gambar</label>
+                              @if($galeri->gambar)
+                                <img src="{{ asset('storage/' . $galeri->gambar) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                            @else
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                            @endif
+                            <input id="gambar" type="file" name="gambar" class="form-control  @error('gambar') is-invalid @enderror" id="gambar" placeholder="gambar galeri" name="gambar" value="{{ old('gambar', $galeri->gambar) }}">
+                            @error('gambar')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

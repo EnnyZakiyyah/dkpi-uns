@@ -41,6 +41,7 @@ Route::get('/home/berita', [HomeController::class, 'berita']);
 Route::get('/home/galeri', [HomeController::class, 'galeri']);
 Route::get('/home/peringkat', [HomeController::class, 'peringkat']);
 Route::get('/home/pengumuman', [HomeController::class, 'pengumuman']);
+Route::get('/home/pengumumandetails/{id}', [HomeController::class, 'pengumumandetails']);
 Route::get('/home/galeridetails/{id}', [HomeController::class, 'galeridetails']);
 Route::get('/home/berita/beritadetails/{id}', [HomeController::class, 'beritadetails']);
 Route::get('/home/mitra/{id}', [HomeController::class, 'mitradetails']);
@@ -58,6 +59,9 @@ Route::get('/home/mitra/{id}/delete', [HomeController::class, 'mitradelete']);
 
 Route::get('/home/thes', [HomeController::class, 'thes']);
 Route::get('/home/qstar', [HomeController::class, 'qstar']);
+
+Route::get('/home/galeri/gambar', [HomeController::class, 'gambar']);
+Route::get('/home/galeri/video', [HomeController::class, 'video']);
 
 Route::get('/home/pdln-mahasiswa', [HomeController::class, 'mahasiswa']);
 Route::get('/home/pdln-dosen', [HomeController::class, 'dosen']);
@@ -98,6 +102,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/data/pdln/{jenis}', [PdlnController::class, 'jenis']);
     Route::get('/data/mitra/{instansi}', [MitraController::class, 'instansi']);
+    Route::get('/data/galeri/{jenis}', [GalleryController::class, 'jenis']);
 
     // import
     Route::get('/import/pdln', [PdlnController::class, 'import']);
@@ -105,21 +110,14 @@ Route::middleware('auth')->group(function () {
 
     //download
     Route::get('/mitra/download/mou/{id}', [MitraController::class, 'mou']);
+    Route::get('/mitra/download/pengumuman/{id}', [PengumumanController::class, 'download']);
+
+
     Route::get('/pdln/download/uns/{id}', [PdlnController::class, 'uns']);
     Route::get('/pdln/download/belmawa/{id}', [PdlnController::class, 'belmawa']);
     Route::get('/pdln/download/ktln/{id}', [PdlnController::class, 'ktln']);
-
-
 });
 
-//email
-// Route::get('/contact', '@showContactForm');
-// Route::post('/contact', 'EmailController@sendMail')->name('send.email');
-
-//Route::get('/email', 'EmailController@create');
-//Route::get('/send-email', '@showContactForm');
-//Route::get('/send-email', 'EmailController@create');
-//Route::post('/send-email', 'EmailController@sendEmail')->name('send.email');
 
 Route::get('/contact-form', [ContactController::class, 'showForm']);
 
@@ -127,28 +125,3 @@ Route::post('/contact-form', [ContactController::class, 'storeForm'])->name('con
 
 // download file
 Route::get('books/{uuid}/download', 'FileController@download')->name('file.download');
-
-
-
-Route::get('/blog', function () {
-    $berita = [
-        [
-            "title" => "Judul Pertama",
-            "slug" => "judul-post-pertama",
-            "author" => "Enny Zakiyyah",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque earum id ducimus amet sequi eius quidem ipsum impedit eos ea, optio incidunt at, necessitatibus accusantium? Animi quam odio ut sequi?"
-        ], [
-            "title" => "Judul Kedua",
-            "author" => "Enny Zakiyyah",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque earum id ducimus amet sequi eius quidem ipsum impedit eos ea, optio incidunt at, necessitatibus accusantium? Animi quam odio ut sequi?"
-        ]
-    ];
-    return view('posts', [
-        "title" => "Posts",
-        "posts" => $berita
-    ]);
-});
-
-Route::get('berita/{slug}', function ($slug) {
-    return view('post');
-});

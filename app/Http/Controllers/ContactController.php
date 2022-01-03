@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContactUs;
-//use Mail;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -32,9 +31,6 @@ class ContactController extends Controller
             'subject' => $request->get('subject'),
             'pesan' => $request->get('pesan'),
         ];
-
-        // dd($data);
-
         ContactUs::create($request->all());
         Mail::send('contact.contact-template', $data, function ($message) use ($request) {
             $message->from($request->email);

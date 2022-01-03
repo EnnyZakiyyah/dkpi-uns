@@ -123,19 +123,6 @@
             <a href="/pks-download" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Ketentuan PKS</i></button> --}}
           </div></center>
 
-
-
-          {{-- <ol class="list-group list-group-numbered">
-            <h3><li><span class="badge bg-secondary">1</span></li></h3>fdfdf
-            <div class="ms-2 me-auto">
-              <div class="fw-bold">Subheading</div>
-              Cras justo odio
-            </div>
-          </ol>
-          <ol class="list-group list-group-numbered">
-            <h3><li><span class="badge bg-secondary">2</span></li></h3>
-          </ol> --}}
-
         </div>
       </section><!-- End Services Section -->
     </div>

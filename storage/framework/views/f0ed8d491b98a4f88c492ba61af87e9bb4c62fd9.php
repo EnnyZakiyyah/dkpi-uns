@@ -70,21 +70,21 @@
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">Nama</th>
-                  <th scope="col" class="sort" data-sort="nama">kategori</th>
+                  <th scope="col" class="sort" data-sort="nama">Kategori</th>
                   
-                  <th scope="col" class="sort" data-sort="nama">unit</th>
+                  <th scope="col" class="sort" data-sort="nama">Unit</th>
                   
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">status</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Awal</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Akhir</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Status</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
                 <?php $__currentLoopData = $pdlns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pdln): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($pdlns->firstItem() + $loop->index); ?></th>
                   <td><a href="/pdln/<?php echo e($pdln->id); ?>"><?php echo e($pdln->nama); ?></a></td>
                   <td><a href="/data/<?php echo e($pdln->jenis); ?>"><?php echo e($pdln->jenis); ?></a></td>
                   

@@ -65,7 +65,7 @@
                             </div>
                             @enderror
                         </div>
-                        <div class="form-group ml-5 mr-5">
+                        {{-- <div class="form-group ml-5 mr-5">
                             <label for="excerpt"> Kutipan</label>
                             <input id="excerpt" type="text" name="excerpt" class="form-control  @error('excerpt') is-invalid @enderror" id="excerpt" placeholder="excerpt berita" name="excerpt" value="{{ old('excerpt', $berita->excerpt) }}">
                             @error('excerpt')
@@ -73,7 +73,7 @@
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div>
+                        </div> --}}
 
                         <div class="form-group ml-5 mr-5">
                             <label for="body"> Isi Berita</label>

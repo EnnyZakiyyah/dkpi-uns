@@ -66,7 +66,7 @@
               <tbody class="list">
                 @foreach($pengaduans as $pengaduan)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $pengaduans->firstItem() + $loop->indexn }}</th>
                   <td>{{ $pengaduan->name }}</td>
                   <td>{{ $pengaduan->email }}</td>
                   <td>{{ $pengaduan->subject }}</td>

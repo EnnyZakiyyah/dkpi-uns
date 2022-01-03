@@ -1989,6 +1989,15 @@ button[data-filter="flies"]:focus~div:not([class*="flies"]) {
     -moz-border-radius: 5px;
 }
 
+.card .card-header {
+    background-color: red;
+    color: white;
+}
+
+.card .card-header .card-body h5{
+    font-weight: bold;
+}
+
 /* .d-block:hover {
     opacity: 1.2;
     width: 250px;

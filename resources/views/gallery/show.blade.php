@@ -56,10 +56,11 @@
                     <!-- body card -->
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Judul Video : {{ $gallery->judul}}</h5>
-
+                            <h5 class="card-title">Judul : {{ $gallery->judul}}</h5>
+                            <h6 class="card-subtitle mb-3 text-muted">Kategori : {{ $gallery->jenis}}</h6>
+                            <p class="card-text"><img src="{{asset('storage/'. $gallery->gambar )}}" class="img-fluid mb-3 col-sm-5 d-block" alt="..."></p>
                             <iframe  width="650" height="370" src="{{ $gallery->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <br/><br/><br/>
+                            <br/><br/>
                             <p class="card-text">Caption : {!! $gallery->caption !!}</p>
                             <p class="card-text">Tgl Dibuat : {{ $gallery->created_at }}</p>
                             <a href="/gallery/{{ $gallery->id }}/edit" class="btn btn-primary">Edit</a>

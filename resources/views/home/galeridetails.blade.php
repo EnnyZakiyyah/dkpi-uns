@@ -33,16 +33,14 @@
                           <div class="swiper-wrapper align-items-center">
 
                             <div class="swiper-slide">
+                              @if($galeri->jenis == 'video')
                                 <center><iframe  width="650" height="370" src="{{ $galeri->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                              @else{
+                               <div class="portfolio-img"><img src="{{asset('storage/'. $galeri->gambar )}}" class="img-fluid" alt="" {{asset('storage/'. $galeri->gambar )}} width="620" height="350"></div>
+                              }
+                              @endif
+                            
                             </div>
-{{--
-                            <div class="swiper-slide">
-                                <center><iframe  width="650" height="370" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <center><iframe  width="650" height="370" src="https://www.youtube.com/embed/YHyO-N8OkSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-                            </div> --}}
 
                           </div>
                           <div class="swiper-pagination"></div>

@@ -52,7 +52,15 @@
                     <!-- body card -->
                     <form method="POST" action="/pengumuman">
                         @csrf
-
+                        <div class="form-group ml-5 mr-5">
+                            <label for="judul">Judul</label>
+                            <input type="text" class="form-control  @error('judul') is-invalid @enderror" id="judul" placeholder="Isi judul" name="judul" value="{{ old('judul') }}">
+                            @error('judul')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="pengumuman">Isi Pengumuman</label>
                             <input type="textarea" class="form-control  @error('pengumuman') is-invalid @enderror" id="pengumuman" placeholder="Isi Pengumuman" name="pengumuman" value="{{ old('pengumuman') }}">
@@ -80,6 +88,15 @@
                             </div>
                             @enderror
                         </div>
+                        {{-- <div class="form-group ml-5 mr-5">
+                            <label for="file_download">File Download</label>
+                            <input type="file" class="form-control @error('file_download') is-invalid @enderror" id="file_download" placeholder="catatan" name="file_download" value="{{ old('kapasistas_ruang') }}">
+                            @error('file_download')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div> --}}
                         <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 

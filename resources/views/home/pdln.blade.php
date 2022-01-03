@@ -16,11 +16,6 @@
           {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
         </div>
 
-                {{-- <label for="tahun" class="form-label">Tampilkan Data Tahun</label>
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
-                  </div> --}}
 <div class="container">
   <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                     <a class="filter-active" href="/home/pdln-mahasiswa">Mahasiswa</a>

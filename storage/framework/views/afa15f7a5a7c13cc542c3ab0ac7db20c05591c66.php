@@ -21,18 +21,16 @@
 
 
                         <div class="card">
-                            <div class="card-header" style="background-color: rgb(214, 0, 0)" >
-                              <bold style="color: white">INFORMASI !!!</bold>
-                            </div>
+                            <h5 class="card-header">INFORMASI !!! </h5>
                             <?php $__currentLoopData = $pengumumans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-
                             <div class="card-body">
                               <h5 class="card-title"><?php echo e($pengumuman->judul); ?></h5>
-                              <p class="card-text"><?php echo e($pengumuman->pengumuman); ?></p>
-                              <a href="<?php echo e($pengumuman->link); ?>">selengkapnya</a>
-
+                              <p class="card-text"><?php echo e($pengumuman->excerpt); ?></p>
+                              <a href="/home/pengumumandetails/<?php echo e($pengumuman->id); ?>">Selengkapnya</a>
+                              
                             </div>
+                            <!-- garis -->
+              <hr />
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                           </div>
 

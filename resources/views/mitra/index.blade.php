@@ -71,7 +71,7 @@
               <tbody class="list">
                 @foreach($mitras as $mitra)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $mitras->firstItem() + $loop->index }}</th>
                   <td><a href="/mitra/{{ $mitra->id }}">{{ $mitra->nama_instansi }}</a></td>
                   <td><a href="/data/mitra/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></td>
                   <td>{{ $mitra->no_mou_uns }}</td>

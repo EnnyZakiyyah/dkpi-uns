@@ -21,18 +21,16 @@
 
 
                         <div class="card">
-                            <div class="card-header" style="background-color: rgb(214, 0, 0)" >
-                              <bold style="color: white">INFORMASI !!!</bold>
-                            </div>
+                            <h5 class="card-header">INFORMASI !!! </h5>
                             @foreach ($pengumumans as $pengumuman)
-
-
                             <div class="card-body">
                               <h5 class="card-title">{{ $pengumuman->judul }}</h5>
-                              <p class="card-text">{{ $pengumuman->pengumuman }}</p>
-                              <a href="{{ $pengumuman->link }}">selengkapnya</a>
-
+                              <p class="card-text">{{ $pengumuman->excerpt }}</p>
+                              <a href="/home/pengumumandetails/{{ $pengumuman->id }}">Selengkapnya</a>
+                              {{-- <a href="{{ $pengumuman->link }}">Selengkapnya</a> --}}
                             </div>
+                            <!-- garis -->
+              <hr />
                             @endforeach
                           </div>
 

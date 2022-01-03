@@ -49,11 +49,6 @@ class FaqController extends Controller
             'jawaban' => '',
             'link' => ''
         ]);
-        // $validatedData = [
-        //     'pertanyaan' => 'dsa',
-        //     'jawaban' => 'adfa',
-        //     'link' => 'asdfasdf'
-        // ];
 
         Faq::create($validatedData);
         return redirect('/faq');
@@ -81,9 +76,7 @@ class FaqController extends Controller
      */
     public function edit($faq)
     {
-        //
         $faq = Faq::find($faq);
-        // return $faq;
          return view('faq.edit', [
             'title' => 'FAQ',
             'faq' => $faq
@@ -99,7 +92,6 @@ class FaqController extends Controller
      */
     public function update(Request $request,$faq)
     {
-        //
         $validatedData = $request->validate([
             'pertanyaan' => '',
             'jawaban' => '',
@@ -119,7 +111,6 @@ class FaqController extends Controller
      */
     public function destroy(Faq $faq)
     {
-        //
         Faq::destroy($faq);
 
         return redirect('/faq')

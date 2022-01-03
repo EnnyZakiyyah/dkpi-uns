@@ -31,7 +31,6 @@
                             </ol>
                         </nav>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -43,7 +42,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tambah video</h3>
+                        <h3 class="mb-0">Tambah Galeri</h3>
                     </div>
                     <?php if(session('success')): ?>
                     <div class="alert-success">
@@ -54,7 +53,7 @@
                     <form method="POST" action="/gallery" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="form-group ml-5 mr-5">
-                            <label for="link">link</label>
+                            <label for="link">Link</label>
                             <input type="text" class="form-control <?php $__errorArgs = ['link'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -78,7 +77,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="judul">judul</label>
+                            <label for="judul">Judul</label>
                             <input type="text" class="form-control <?php $__errorArgs = ['judul'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -88,6 +87,60 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="judul" placeholder="Judul Video" name="judul" value="<?php echo e(old('judul')); ?>">
                             <?php $__errorArgs = ['judul'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="invalid-feedback">
+                                <?php echo e($message); ?>
+
+                            </div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="jenis" class="form-select" >Jenis</label>
+                            <select class="form-control  <?php $__errorArgs = ['jenis'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="jenis" placeholder="kategori" name="jenis">
+                            <option value="video">Video</option>
+                            <option value="gambar">Gambar</option>
+                            </select>
+
+                            <?php $__errorArgs = ['jenis'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="invalid-feedback">
+                                <?php echo e($message); ?>
+
+                            </div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                        <div class="form-group ml-5 mr-5">
+                            <label for="gambar"> Gambar Pendukung</label>
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                            <input id="gambar" type="file" name="gambar" class="form-control  <?php $__errorArgs = ['gambar'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="gambar" placeholder="gambar berita" name="gambar">
+                            
+                            <?php $__errorArgs = ['gambar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

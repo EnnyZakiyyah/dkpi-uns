@@ -55,7 +55,7 @@
                             <h5 class="card-title">Nama Pengirim : {{ $pengaduan->name}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Email Pengirim : {{ $pengaduan->email}}</h6>
                             <p class="card-text">Subject : {{ $pengaduan->subject }}</p>
-                            <p class="card-text">Tanggal : {{ $pengaduan->pesan }}</p>
+                            <p class="card-text">Pesan : {{ $pengaduan->pesan }}</p>
                             <p class="card-text">Dikirim Tgl : {{ $pengaduan->created_at }}</p>
                             {{-- <a href="{{ $pengaduan->id }}/edit" class="btn btn-primary">Edit</a> --}}
                             <form action="{{ $pengaduan->id }}" method="POST" class="d-inline">

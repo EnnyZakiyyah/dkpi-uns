@@ -65,9 +65,9 @@
               <tbody class="list">
                 @foreach($beritas as $berita)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $beritas->firstItem() + $loop->index }}</th>
                   <td>{{ $berita->judul }}</td>
-                  <td>{{ $berita->excerpt }}</td>
+                  <td>  {!!$berita->body!!}</td>
                   <td>{{ $berita->created_at }}</td>
                   <td>
                     <a href="/berita/{{ $berita->id }}" class="badge badge-info">Detail</a>

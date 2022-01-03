@@ -76,16 +76,16 @@
                   {{-- <th scope="col" class="sort" data-sort="nama">unit</th> --}}
                   {{-- <th scope="col" class="sort" data-sort="nama">tujuan</th> --}}
                   <th scope="col" class="sort" data-sort="nama">Negara</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">awal</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">akhir</th>
-                  <th scope="col" class="sort" data-sort="tanggalpengembalian">status</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Awal</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Akhir</th>
+                  <th scope="col" class="sort" data-sort="tanggalpengembalian">Status</th>
                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
                 @foreach($pdlns as $pdln)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $pdlns->firstItem() + $loop->index }}</th>
                   <td><a href="/pdln/{{ $pdln->id }}">{{ $pdln->nama }}</a></td>
                   <td><a href="/data/{{ $pdln->jenis }}">{{ $pdln->jenis }}</a></td>
                   {{-- <td>{{ $pdln->jumlah_orang}}</td> --}}

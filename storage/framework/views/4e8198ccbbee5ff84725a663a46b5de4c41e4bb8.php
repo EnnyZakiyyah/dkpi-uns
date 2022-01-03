@@ -104,7 +104,7 @@
                     <a href="/home/pdln/<?php echo e($dosen->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
                     <a href="/pdln/<?php echo e($dosen->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="/pdln/<?php echo e($dosen->id); ?>" method="POST" class="d-inline">
+                    <form action="/pdln/<?php echo e($dosen->id); ?>/delete" method="POST" class="d-inline">
                         <?php echo method_field('delete'); ?>
                         <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>

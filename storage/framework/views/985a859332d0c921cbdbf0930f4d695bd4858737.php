@@ -26,8 +26,8 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/berita"> berita</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Tambah</li>
+                                <li class="breadcrumb-item"><a href="/berita"> Berita</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"> Tambah Berita</li>
                             </ol>
                         </nav>
                     </div>
@@ -78,30 +78,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        <div class="form-group ml-5 mr-5">
-                            <label for="excerpt">Kutipan</label>
-                            <input id="" type="text" name="excerpt" class="form-control  <?php $__errorArgs = ['excerpt'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" id="excerpt" placeholder="kutipan berita" name="Excerpt" value="<?php echo e(old('excerpt')); ?>">
-                            <?php $__errorArgs = ['excerpt'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                            <div class="invalid-feedback">
-                                <?php echo e($message); ?>
-
-                            </div>
-                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                        </div>
+                        
                         <div class="form-group ml-5 mr-5">
                             <label for="gambar"> Gambar Pendukung</label>
                             <img class="img-preview img-fluid mb-3 col-sm-5">
@@ -209,5 +186,5 @@ unset($__errorArgs, $__bag); ?>
     <!-- End Main content -->
     <?php $__env->stopSection(); ?>
 
-    
+
 <?php echo $__env->make('dashboard/layouts/main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/berita/create.blade.php ENDPATH**/ ?>

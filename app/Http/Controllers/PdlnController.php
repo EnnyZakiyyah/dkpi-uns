@@ -27,17 +27,10 @@ class PdlnController extends Controller
      */
     public function index()
     {
-        // $dosen = Pdln::where('jenis', 'dosen')->latest()->get();
-        // $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->get();
         $pdln = Pdln::latest()->filter(request(['nama']))->paginate(5)->withQueryString();
-
-
         return view('pdln.index', [
             'title' => 'Data PDLN',
             'pdlns' => $pdln
-            // 'mahasiswa' => $mahasiswa,
-            // 'dosen' => $dosen,
-            // 'pimpinan' => $pimpinan
         ]);
     }
 
@@ -113,20 +106,10 @@ class PdlnController extends Controller
      */
     public function show(Pdln $pdln)
     {
-        // $file_surat_uns = Storage::get($pdln->file_surat_uns, $pdln->nama);
-        // $file_belmawa = Storage::get($pdln->file_belmawa, $pdln->nama);
-        // $file_ktln = Storage::get($pdln->file_ktln, $pdln->nama);
-
         return view('pdln.show', [
             'title' => 'Data PDLN',
             'pdln' => $pdln
-            // 'file_uns' => $file_surat_uns,
-            // 'file_belmawa' => $file_belmawa,
-            // 'file_ktln' => $file_ktln
         ]);
-
-
-        // return $pdln;
     }
 
     /**
@@ -137,7 +120,6 @@ class PdlnController extends Controller
      */
     public function edit(Pdln $pdln)
     {
-        //
         return view('pdln.edit', [
             'title' => 'Data PDLN',
             'pdln' => $pdln
@@ -209,10 +191,7 @@ class PdlnController extends Controller
     }
     public function import()
     {
-        // Excel::import(new PdlnImport, 'pdln.xlsx');
         Excel::import(new PdlnImport, 'pdlns.xlsx');
-
-
         return redirect('/pdln')->with('success', 'All good!');
     }
     public function uns($id)

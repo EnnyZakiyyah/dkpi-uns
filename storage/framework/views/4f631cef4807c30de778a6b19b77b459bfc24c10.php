@@ -33,9 +33,14 @@
                           <div class="swiper-wrapper align-items-center">
 
                             <div class="swiper-slide">
+                              <?php if($galeri->jenis == 'video'): ?>
                                 <center><iframe  width="650" height="370" src="<?php echo e($galeri->link); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                              <?php else: ?>{
+                               <div class="portfolio-img"><img src="<?php echo e(asset('storage/'. $galeri->gambar )); ?>" class="img-fluid" alt="" <?php echo e(asset('storage/'. $galeri->gambar )); ?> width="620" height="350"></div>
+                              }
+                              <?php endif; ?>
+                            
                             </div>
-
 
                           </div>
                           <div class="swiper-pagination"></div>
