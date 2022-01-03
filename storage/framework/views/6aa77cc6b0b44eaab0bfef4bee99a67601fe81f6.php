@@ -382,7 +382,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="ktln_kemensetneg" placeholder="nomor surat kemensetneg" name="ktln_kemensetneg" value="<?php echo e(old('kapaitas_ruang')); ?>">
+unset($__errorArgs, $__bag); ?>" id="ktln_kemensetneg" placeholder="nomor surat kemensetneg" name="ktln_kemensetneg" value="<?php echo e(old('ktln_kemensetneg')); ?>">
                             <?php $__errorArgs = ['ktln_kemensetneg'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -406,7 +406,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="catatan_setneg" placeholder="catatan" name="catatan_setneg" value="<?php echo e(old('kapaitas_ruang')); ?>">
+unset($__errorArgs, $__bag); ?>" id="catatan_setneg" placeholder="catatan" name="catatan_setneg" value="<?php echo e(old('catatan_setneg')); ?>">
                             <?php $__errorArgs = ['catatan_setneg'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -430,7 +430,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="file_surat_uns" placeholder="catatan" name="file_surat_uns" value="<?php echo e(old('kapaitas_ruang')); ?>">
+unset($__errorArgs, $__bag); ?>" id="file_surat_uns" placeholder="catatan" name="file_surat_uns" value="<?php echo e(old('file_surat_uns')); ?>">
                             <?php $__errorArgs = ['file_surat_uns'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -454,7 +454,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="file_belmawa" placeholder="catatan" name="file_belmawa" value="<?php echo e(old('kapaitas_ruang')); ?>">
+unset($__errorArgs, $__bag); ?>" id="file_belmawa" placeholder="catatan" name="file_belmawa" value="<?php echo e(old('file_belmawa')); ?>">
                             <?php $__errorArgs = ['file_belmawa'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -478,7 +478,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="file_ktln" placeholder="catatan" name="file_ktln" value="<?php echo e(old('kapaitas_ruang')); ?>">
+unset($__errorArgs, $__bag); ?>" id="file_ktln" placeholder="catatan" name="file_ktln" value="<?php echo e(old('file_ktln')); ?>">
                             <?php $__errorArgs = ['file_ktln'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

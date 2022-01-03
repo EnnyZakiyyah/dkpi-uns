@@ -141,6 +141,7 @@ class PengumumanController extends Controller
         $file = Pengumuman::find($id);
         $headers = [
             'Content-Type' => 'application/pdf',
+            // 'Content-Disposition' => 'inline; filename="'.$id.'"'
         ];
         return Storage::download($file->file_download);
     }

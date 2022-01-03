@@ -53,7 +53,7 @@
                             <p class="card-text">Pengumuman : <?php echo e($pengumuman->pengumuman); ?></p>
                             <p class="card-text">Link : <?php echo e($pengumuman->link); ?></p>
                             <p class="card-text">Berlaku Sampai : <?php echo e($pengumuman->berlaku); ?></p>
-
+                            <a href="/pengumuman/download/pengumuman/<?php echo e($pengumuman->id); ?>" class="btn btn-warning">Download File Pengumuman</a>
                             <a href="<?php echo e($pengumuman->id); ?>/edit" class="btn btn-primary">Edit</a>
                             <form action="<?php echo e($pengumuman->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>

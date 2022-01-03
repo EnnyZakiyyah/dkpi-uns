@@ -88,7 +88,7 @@
                             </div>
                             @enderror
                         </div>
-                        {{-- <div class="form-group ml-5 mr-5">
+                        <div class="form-group ml-5 mr-5">
                             <label for="file_download">File Download</label>
                             <input type="file" class="form-control @error('file_download') is-invalid @enderror" id="file_download" placeholder="catatan" name="file_download" value="{{ old('kapasistas_ruang') }}">
                             @error('file_download')
@@ -96,7 +96,7 @@
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div> --}}
+                        </div>
                         <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
 
