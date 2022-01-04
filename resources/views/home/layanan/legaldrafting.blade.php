@@ -118,7 +118,7 @@
           <center><div class="d-grid gap-5 d-md-block">
             <a class="btn btn-secondary" type="button" href="/layanan">Kembali</a>
             <a class="btn btn-primary" type="button" href="/download-mou"><i class="bi bi-download">&nbsp; Ketentuan MoU</i></a>
-            <a class="btn btn-primary" type="button" href="/pks-download"><i class="bi bi-download">&nbsp; Ketentuan PKS</i></a>
+            <a class="btn btn-primary" type="button" href="/download-pks"><i class="bi bi-download">&nbsp; Ketentuan PKS</i></a>
             {{-- <a href="/mou-download" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Ketentuan MoU</i></button>
             <a href="/pks-download" class="btn btn-primary" type="button"><i class="bi bi-download">&nbsp; Ketentuan PKS</i></button> --}}
           </div></center>

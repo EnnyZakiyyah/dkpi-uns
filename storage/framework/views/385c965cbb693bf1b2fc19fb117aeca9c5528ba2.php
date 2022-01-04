@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -38,12 +39,19 @@
                                 <p class="card-text">Akhir Masa Berlaku: <?php echo e($mitra->jangka_waktu_akhir); ?></p>
                                 <p class="card-text">Pejabat Penandatangan: <?php echo e($mitra->pejabat_penandatangan); ?></p>
                                 <br/>
-                                <p>download file</p>
-                                <form action="token/<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
+                                <p>Download File</p>
+                                <form action="token/<?php echo e($mitra->id); ?>" method="POST" class="row g-3">
                                     <?php echo csrf_field(); ?>
-                                    <input type="text" name='token' placeholder="input kode cth: 123456">
+                                    <div class="col-md-4">
+                                    <input type="text" name='token' class="form-control" placeholder="Input kode cth: 123456">
+                                    </div>
+                                    <div class="col-md-4">
                                     <button type="submit" class="btn btn-primary">submit</button>
-                                </form>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <a href="/home/mitra-cv" class="btn btn-secondary">Kembali</a>
+                                    </div>
+                                  </form>
                                 <?php if(Auth::check()): ?>
                                 <a href="/mitra/<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
                                 <form action="mitra/<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
@@ -52,7 +60,7 @@
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
                                 <?php endif; ?>
-                                <a href="/home/mitra-cv" class="btn btn-primary">Kembali</a>
+                               
                             </div>
                         </div>
             </div>
