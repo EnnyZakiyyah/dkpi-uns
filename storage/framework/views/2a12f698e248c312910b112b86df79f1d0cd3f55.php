@@ -58,6 +58,7 @@
                   <th scope="col" class="sort" data-sort="no">No</th>
                   <th scope="col" class="sort" data-sort="nim">Nama</th>
                   <th scope="col" class="sort" data-sort="nama">instansi</th>
+                  <th scope="col" class="sort" data-sort="nama">token</th>
                   <th scope="col" class="sort" data-sort="nama">MoU UNS</th>
                   <th scope="col" class="sort" data-sort="nama">MoU Mitra</th>
                   
@@ -74,6 +75,7 @@
                   <th scope="row"><?php echo e($mitras->firstItem() + $loop->index); ?></th>
                   <td><a href="/mitra/<?php echo e($mitra->id); ?>"><?php echo e($mitra->nama_instansi); ?></a></td>
                   <td><a href="/data/mitra/<?php echo e($mitra->instansi); ?>"><?php echo e($mitra->instansi); ?></a></td>
+                  <td><a href="/data/mitra/<?php echo e($mitra->token); ?>"><?php echo e($mitra->token); ?></a></td>
                   <td><?php echo e($mitra->no_mou_uns); ?></td>
                   <td><?php echo e($mitra->no_mou_mitra); ?></td>
                   <td><?php echo e(empty(strtotime($mitra->jangka_waktu_awal)) ? $mitra->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($mitra->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>

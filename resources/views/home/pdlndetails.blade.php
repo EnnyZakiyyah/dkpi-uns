@@ -47,7 +47,7 @@
                             <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
                             <br/>
                                 <p>Download File</p>
-                                <form action="token/{{ $pdln->id }}" method="POST" class="row g-3">
+                                <form action="token/{{ $pdln->id }}" method="POST" class="row g-3" enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-md-4">
                                       <input type="text" name='token' class="form-control"  placeholder="Input kode cth: 123456">

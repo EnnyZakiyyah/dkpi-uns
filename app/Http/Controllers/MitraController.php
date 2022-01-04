@@ -116,7 +116,7 @@ class MitraController extends Controller
      * @param  \App\Models\Mitra  $mitra
      * @return \Illuminate\Http\Response
      */
-    public function update($mitra)
+    public function update(Request $request, $mitra)
     {
         $validatedData = request()->validate([
             'instansi' => '',
@@ -131,6 +131,10 @@ class MitraController extends Controller
             'status_hidden' => '',
             'status' => ''
         ]);
+        if ($request->file('file_mou')){
+            $validatedData['file_mou'] = $request->file('file_mou')->store('file_mou');
+            }
+        // $validatedData['file_mou'] = $file_mou;
         Mitra::where('id', $mitra)->update($validatedData);
         return redirect('/mitra')->with('success', 'Data berhasil diubah!');
     }
