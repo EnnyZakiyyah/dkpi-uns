@@ -65,7 +65,7 @@
               <tbody class="list">
                 @foreach($active as $pengumuman)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $active->firstItem() + $loop->index }}</th>
                   <td>{{ $pengumuman->judul }}</td>
                   <td>{{ $pengumuman->pengumuman }}</td>
                   <td>{{ $pengumuman->berlaku }}</td>
@@ -76,7 +76,7 @@
                 @endforeach
                 @foreach($expired as $pengumuman)
                 <tr>
-                  <th scope="row">{{ $loop->iteration }}</th>
+                  <th scope="row">{{ $expired->firstItem() + $loop->index }}</th>
                   <td>{{ $pengumuman->judul }}</td>
                   <td>{{ $pengumuman->pengumuman }}</td>
                   <td>{{ $pengumuman->berlaku }}</td>

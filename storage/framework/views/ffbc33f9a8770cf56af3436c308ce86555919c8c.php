@@ -65,7 +65,7 @@
               <tbody class="list">
                 <?php $__currentLoopData = $active; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($active->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($pengumuman->judul); ?></td>
                   <td><?php echo e($pengumuman->pengumuman); ?></td>
                   <td><?php echo e($pengumuman->berlaku); ?></td>
@@ -76,7 +76,7 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php $__currentLoopData = $expired; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($expired->firstItem() + $loop->index); ?></th>
                   <td><?php echo e($pengumuman->judul); ?></td>
                   <td><?php echo e($pengumuman->pengumuman); ?></td>
                   <td><?php echo e($pengumuman->berlaku); ?></td>
