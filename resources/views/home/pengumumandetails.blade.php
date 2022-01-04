@@ -28,11 +28,11 @@
                               <p class="card-text">{{ $pengumuman->pengumuman }}</p>
                               {{-- <a href="/home/pengumumandetails/{{ $pengumuman->id }}">Selengkapnya</a> --}}
                              
-                                @if($pengumuman->link != 'null')
+                                @if($pengumuman->link != '')
                                 <a href="{{ $pengumuman->link }}">{{ $pengumuman->link }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> 
                                 @endif
                                 @if($pengumuman->file_download != '')
-                                <a href="/download-pengumuman/{{ $pengumuman->id }}" class="btn btn-warning">Download surat UNS</a>
+                                <a href="/download-pengumuman/{{ $pengumuman->id }}" class="btn btn-primary">Download surat UNS</a>
                                 @endif
                                   <a href="/home/pengumuman" class="btn btn-secondary">Kembali</a>
                                   
