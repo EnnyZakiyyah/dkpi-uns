@@ -69,6 +69,11 @@ Route::get('/home/pdln-mahasiswa', [HomeController::class, 'mahasiswa']);
 Route::get('/home/pdln-dosen', [HomeController::class, 'dosen']);
 Route::get('/home/pdln-pimpinan', [HomeController::class, 'pimpinan']);
 
+
+Route::get('/home/download/uns/{id}', [HomeController::class, 'uns']);
+Route::get('/home/download/belmawa/{id}', [HomeController::class, 'belmawa']);
+Route::get('/home/download/ktln/{id}', [HomeController::class, 'ktln']);
+
 Route::get('/download-mou', [LayananController::class, 'ketentuan_mou']);
 Route::get('/download-pks', [LayananController::class, 'ketentuan_pks']);
 

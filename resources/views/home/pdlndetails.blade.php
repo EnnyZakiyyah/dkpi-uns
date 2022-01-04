@@ -46,19 +46,38 @@
                             <p class="card-text">Nomor Ktln : {{ $pdln->ktln_kemensetneg }}</p>
                             <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
                             <br/>
+<<<<<<< Updated upstream
+                                <p>download file</p>
+                                <form action="token/{{ $pdln->id }}" method="POST" class="d-inline">
+=======
+                                @if($check == 'yes')
+                            @if($pdln->file_surat_uns != 'null')
+                            <a href="/home/download/uns/{{ $pdln->id }}" class="btn btn-warning">Download surat UNS</a>
+                            @endif
+                            @if($pdln->file_belmawa != 'null')
+                            <a href="/home/download/belmawa/{{ $pdln->id }}" class="btn btn-warning">Download surat belmawa</a>
+                            @endif
+                            @if($pdln->file_ktln != 'null')
+                            <a href="/home/download/ktln/{{ $pdln->id }}" class="btn btn-warning">Download surat ktln</a>
+                            @endif
+                            @else
                                 <p>Download File</p>
-                                <form action="token/{{ $pdln->id }}" method="POST" class="row g-3" enctype="multipart/form-data">
+                                <form action="token/{{ $pdln->id }}" method="POST" class="row g-3">
+>>>>>>> Stashed changes
                                     @csrf
-                                    <div class="col-md-4">
-                                      <input type="text" name='token' class="form-control"  placeholder="Input kode cth: 123456">
-                                    </div>
-                                    <div class="col-md-4">
+                                    <input type="text" name='token' placeholder="input kode cth: 123456">
                                     <button type="submit" class="btn btn-primary">submit</button>
+<<<<<<< Updated upstream
+                                </form>
+=======
                                     </div>
+                                </form>
+                                @endif
                                     <div class="col-md-4">
                                       <a href="/home/pdln-mahasiswa" class="btn btn-secondary">Kembali</a>
                                     </div>
-                                </form>
+
+>>>>>>> Stashed changes
                                 @if(Auth::check())
                                 <a href="{{ $pdln->id }}/edit" class="btn btn-primary">Edit</a>
                                 <form action="{{ $pdln->id }}" method="POST" class="d-inline">
@@ -67,7 +86,11 @@
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
                                 @endif
-                                
+<<<<<<< Updated upstream
+                                <a href="/home/pdln-mahasiswa" class="btn btn-primary">Kembali</a>
+=======
+
+>>>>>>> Stashed changes
                             </div>
                         </div>
             </div>

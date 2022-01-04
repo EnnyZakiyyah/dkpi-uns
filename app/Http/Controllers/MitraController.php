@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\MitraImport;
+use Carbon\Carbon;
 use App\Models\Mitra;
+use App\Imports\MitraImport;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 
 class MitraController extends Controller
@@ -15,6 +17,9 @@ class MitraController extends Controller
     {
         $status = ['status'=>'tidak berlaku'];
         $mitra = Mitra::where(['status'=>'berlaku', 'status_hidden'=> 'new'])->whereDate('jangka_waktu_akhir', '<=', today())->update($status);
+
+        // $remaining_days = Carbon::now()->diffInDays(Carbon::parse($this->$mitra->jangka_waktu_Akhir));
+
         return $mitra;
     }
     /**

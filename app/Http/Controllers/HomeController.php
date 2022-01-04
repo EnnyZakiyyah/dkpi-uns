@@ -60,6 +60,17 @@ class HomeController extends Controller
 
         return view('home.pdlndetails', [
             'title' => 'Details PDLN',
+            'check' => 'no',
+            'pdln' => $pdln
+        ]);
+    }
+    public function pdlnacc($id)
+    {
+        $pdln = Pdln::find($id);
+
+        return view('home.pdlndetails', [
+            'title' => 'Details PDLN',
+            'check' => 'yes',
             'pdln' => $pdln
         ]);
     }
@@ -114,13 +125,49 @@ class HomeController extends Controller
         $headers = [
             'Content-Type' => 'application/pdf',
          ];
-        Storage::download($check->file_surat_uns);
-        Storage::download($check->file_belmawa);
-        Storage::download($check->file_ktln);
-        return back();
+         return $this->pdlnacc($id);
+
+        // return back()->with('key', 'sukses');
+
+        // //  if($check->file_surat_uns != ''){
+        // return Storage::download($check->file_surat_uns);
+        // //  }
+        // //  if($check->file_belmawa != ''){
+        //     Storage::download($check->file_belmawa);
+        // //  }
+        // //  if($check->file_ktln != ''){
+        //     Storage::download($check->file_ktln);
+        // //  }
+        // // return back();
+        // // return $check;
         }else{
-             return back()->with('gagal', 'kode salah');
+             return back()->with('key', 'kode salah');
+
         }
+    }
+    public function uns($id)
+    {
+        $file = Pdln::find($id);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+         ];
+        return Storage::download($file->file_surat_uns);
+    }
+    public function belmawa($id)
+    {
+        $file = Pdln::find($id);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+         ];
+        return Storage::download($file->file_belmawa);
+    }
+    public function ktln($id)
+    {
+        $file = Pdln::find($id);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+         ];
+        return Storage::download($file->file_ktln);
     }
 
     public function layanan()
