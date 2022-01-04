@@ -1,7 +1,7 @@
 
 @extends('dashboard/layouts/main')
 
-@section('title', 'Tambah Pengumuman')
+@section('title', 'Edit Pengumuman')
 
 @section('container')
 
@@ -93,6 +93,7 @@
                         <div class="form-group ml-5 mr-5">
                             <label for="file_download">File Surat UNS</label>
                             <input type="file" class="form-control @error('file_download') is-invalid @enderror" id="file_download" placeholder="catatan" name="file_download" value="{{ old('file_download') }}">
+                            <a href="{{ asset('storage/' . $pengumuman->file_download) }}"></a>
                             @error('file_download')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -101,36 +102,25 @@
                         </div>
                         <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
-
-                    <!-- Card footer -->
-                    {{-- <div class="card-footer py-4">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div> --}}
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function previewPdf(){
+            const pdf = document.querySelector('#pdf');
+            const pdfPreview = document.querySelector('.pdf-preview');
+
+            pdfPreview.style.display = 'block';
+
+            const ofReader = new FileReader();
+            ofReader.readAsDataURL(pdf.files[0]);
+
+            ofReader.onload = function(ofREvent){
+                pdfPreview.src = ofReader.target.result;
+            }
+
+        }
+    </script>
     <!-- End Main content -->
     @endsection

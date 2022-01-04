@@ -28,16 +28,17 @@
                               <p class="card-text">{{ $pengumuman->pengumuman }}</p>
                               {{-- <a href="/home/pengumumandetails/{{ $pengumuman->id }}">Selengkapnya</a> --}}
                                 @if($pengumuman->link != 'null')
-                                <a class="btn btn-primary" type="button" href="/download-pengumuman/{{ $pengumuman->id }}"><i class="bi bi-download">&nbsp; Download File</i></a>
-                              @else
-                              <a href="{{ $pengumuman->link }}">{{ $pengumuman->link }}</a>
-                              @endif
+                                <a href="{{ $pengumuman->link }}">{{ $pengumuman->link }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+                                @endif
+                                  @if($pengumuman->file_download != 'null')
+                                  <a href="/download-pengumuman/{{ $pengumuman->id }}">Download File&nbsp;{{ $pengumuman->id }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                  @endif
+                                  <a href="/home/pengumuman" class="btn btn-secondary">Kembali</a>
                             </div>
                             <!-- garis -->
               {{-- <hr />
                             @endforeach --}}
                           </div>
-
 
 
         </div>

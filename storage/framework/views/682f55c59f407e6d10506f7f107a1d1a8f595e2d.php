@@ -1,7 +1,7 @@
 
 
 
-<?php $__env->startSection('title', 'Tambah Pengumuman'); ?>
+<?php $__env->startSection('title', 'Edit Pengumuman'); ?>
 
 <?php $__env->startSection('container'); ?>
 
@@ -157,6 +157,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="file_download" placeholder="catatan" name="file_download" value="<?php echo e(old('file_download')); ?>">
+                            <a href="<?php echo e(asset('storage/' . $pengumuman->file_download)); ?>"></a>
                             <?php $__errorArgs = ['file_download'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -173,13 +174,26 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
                     </form>
-
-                    <!-- Card footer -->
-                    
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function previewPdf(){
+            const pdf = document.querySelector('#pdf');
+            const pdfPreview = document.querySelector('.pdf-preview');
+
+            pdfPreview.style.display = 'block';
+
+            const ofReader = new FileReader();
+            ofReader.readAsDataURL(pdf.files[0]);
+
+            ofReader.onload = function(ofREvent){
+                pdfPreview.src = ofReader.target.result;
+            }
+
+        }
+    </script>
     <!-- End Main content -->
     <?php $__env->stopSection(); ?>
 
