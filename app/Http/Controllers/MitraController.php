@@ -15,12 +15,22 @@ class MitraController extends Controller
 {
     public function __construct()
     {
-        $status = ['status'=>'tidak berlaku'];
-        $mitra = Mitra::where(['status'=>'berlaku', 'status_hidden'=> 'new'])->whereDate('jangka_waktu_akhir', '<=', today())->update($status);
+        $mitra = Mitra::where('status_hidden','new')->get();
 
-        // $remaining_days = Carbon::now()->diffInDays(Carbon::parse($this->$mitra->jangka_waktu_Akhir));
+        foreach( $mitra as $mit){
 
-        return $mitra;
+        $days = Carbon::now()->diffInDays(Carbon::parse($mit->jangka_waktu_Akhir));
+            if($days == 0){
+                    $status = ['status'=>'tidak berlaku'];
+                    Mitra::where('id', $mit->id)->update($status);
+            }else if($days > 0){
+                    $status = ['status'=>'segera berakhir'];
+                    Mitra::where('id', $mit->id)->update($status);
+            }else if($days > 90){
+                    $status = ['status'=>'berlaku'];
+                    Mitra::where('id', $mit->id)->update($status);
+            }
+        }
     }
     /**
      * Display a listing of the resource.
@@ -29,12 +39,32 @@ class MitraController extends Controller
      */
     public function index()
     {
-        $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5)->withQueryString();
+        $mitra = Mitra::where('status_hidden','new')->get();
 
-        return view('mitra.index', [
-            'title' => 'Data Mitra',
-            'mitras' => $mitra
-        ]);
+        foreach( $mitra as $mit){
+
+        $days = Carbon::now()->diffInDays(Carbon::parse($mit->jangka_waktu_Akhir));
+            echo $mit->id;
+            echo $days;
+        //     if($days == 0){
+        //         $status = ['status'=>'tidak berlaku'];
+        //         Mitra::where('id', $mit->id)->update($status);
+        // }else if($days > 0){
+        //         $status = ['status'=>'segera berakhir'];
+        //         Mitra::where('id', $mit->id)->update($status);
+        // }else if($days > 90){
+        //         $status = ['status'=>'berlaku'];
+        //         Mitra::where('id', $mit->id)->update($status);
+        // }
+        }
+
+
+        // $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5)->withQueryString();
+
+        // return view('mitra.index', [
+        //     'title' => 'Data Mitra',
+        //     'mitras' => $mitra
+        // ]);
     }
 
     /**
