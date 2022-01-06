@@ -16,14 +16,14 @@ class MitraController extends Controller
     public function __construct()
     {
         $mitra = Mitra::where('status_hidden','new')->get();
-
         foreach( $mitra as $mit){
 
-        $days = Carbon::now()->diffInDays(Carbon::parse($mit->jangka_waktu_Akhir));
-            if($days == 0){
+           $date = Carbon::parse($mit->jangka_waktu_akhir);
+        $days = today()->diffInDays($date);
+            if($date < today()){
                     $status = ['status'=>'tidak berlaku'];
                     Mitra::where('id', $mit->id)->update($status);
-            }else if($days > 0){
+            }else if($days < 90){
                     $status = ['status'=>'segera berakhir'];
                     Mitra::where('id', $mit->id)->update($status);
             }else if($days > 90){
@@ -39,32 +39,13 @@ class MitraController extends Controller
      */
     public function index()
     {
-        $mitra = Mitra::where('status_hidden','new')->get();
 
-        foreach( $mitra as $mit){
+        $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5)->withQueryString();
 
-        $days = Carbon::now()->diffInDays(Carbon::parse($mit->jangka_waktu_Akhir));
-            echo $mit->id;
-            echo $days;
-        //     if($days == 0){
-        //         $status = ['status'=>'tidak berlaku'];
-        //         Mitra::where('id', $mit->id)->update($status);
-        // }else if($days > 0){
-        //         $status = ['status'=>'segera berakhir'];
-        //         Mitra::where('id', $mit->id)->update($status);
-        // }else if($days > 90){
-        //         $status = ['status'=>'berlaku'];
-        //         Mitra::where('id', $mit->id)->update($status);
-        // }
-        }
-
-
-        // $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5)->withQueryString();
-
-        // return view('mitra.index', [
-        //     'title' => 'Data Mitra',
-        //     'mitras' => $mitra
-        // ]);
+        return view('mitra.index', [
+            'title' => 'Data Mitra',
+            'mitras' => $mitra
+        ]);
     }
 
     /**
