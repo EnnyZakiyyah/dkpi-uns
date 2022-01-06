@@ -15,12 +15,22 @@ class MitraController extends Controller
 {
     public function __construct()
     {
-        $status = ['status'=>'tidak berlaku'];
-        $mitra = Mitra::where(['status'=>'berlaku', 'status_hidden'=> 'new'])->whereDate('jangka_waktu_akhir', '<=', today())->update($status);
+        $mitra = Mitra::where('status_hidden','new')->get();
+        foreach( $mitra as $mit){
 
-        // $remaining_days = Carbon::now()->diffInDays(Carbon::parse($this->$mitra->jangka_waktu_Akhir));
-
-        return $mitra;
+           $date = Carbon::parse($mit->jangka_waktu_akhir);
+        $days = today()->diffInDays($date);
+            if($date < today()){
+                    $status = ['status'=>'tidak berlaku'];
+                    Mitra::where('id', $mit->id)->update($status);
+            }else if($days < 90){
+                    $status = ['status'=>'segera berakhir'];
+                    Mitra::where('id', $mit->id)->update($status);
+            }else if($days > 90){
+                    $status = ['status'=>'berlaku'];
+                    Mitra::where('id', $mit->id)->update($status);
+            }
+        }
     }
     /**
      * Display a listing of the resource.
@@ -29,6 +39,7 @@ class MitraController extends Controller
      */
     public function index()
     {
+
         $mitra = Mitra::latest()->filter(request(['nama_instansi']))->paginate(5)->withQueryString();
 
         return view('mitra.index', [
