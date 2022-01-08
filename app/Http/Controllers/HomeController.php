@@ -67,13 +67,24 @@ class HomeController extends Controller
             'pdln' => $pdln
         ]);
     }
-    public function pdlnacc($id)
+    public function pdlntoken(Request $request, $id)
+    {
+        $code = $request->token;
+        $check = Pdln::find($id);
+
+        if($check->token == $code){
+         return $this->pdlnacc($id, $code);
+        }else{
+             return back()->with('key', 'kode salah');
+        }
+    }
+    public function pdlnacc($id, $code)
     {
         $pdln = Pdln::find($id);
 
         return view('home.pdlndetails', [
             'title' => 'Details PDLN',
-            'check' => 'yes',
+            'code' => $code,
             'pdln' => $pdln
         ]);
     }
@@ -119,34 +130,7 @@ class HomeController extends Controller
             return back()->with('gagal', 'kode salah');
         }
     }
-    public function pdlntoken(Request $request, $id)
-    {
-        $code = $request->token;
-        $check = Pdln::find($id);
 
-        if ($check->token == $code) {
-            $headers = [
-                'Content-Type' => 'application/pdf',
-            ];
-            return $this->pdlnacc($id);
-
-            // return back()->with('key', 'sukses');
-
-            // //  if($check->file_surat_uns != ''){
-            // return Storage::download($check->file_surat_uns);
-            // //  }
-            // //  if($check->file_belmawa != ''){
-            //     Storage::download($check->file_belmawa);
-            // //  }
-            // //  if($check->file_ktln != ''){
-            //     Storage::download($check->file_ktln);
-            // //  }
-            // // return back();
-            // // return $check;
-        } else {
-            return back()->with('key', 'kode salah');
-        }
-    }
     public function uns($id)
     {
         $file = Pdln::find($id);
