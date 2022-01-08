@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Layanan;
+use App\Models\Header;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -29,6 +30,7 @@ class HomeController extends Controller
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
         $berita = Berita::latest()->take(6)->paginate(3);
         $gallery = Gallery::latest()->take(9);
+        $headers = Header::latest()->take(6);
 
 
         return view('home.index', [
@@ -36,7 +38,8 @@ class HomeController extends Controller
             'pengumumans' => $pengumuman,
             'faqs' => $faq,
             'beritas' => $berita,
-            'galleries' => $gallery
+            'galleries' => $gallery,
+            'headers' => $headers
         ]);
     }
 
@@ -107,13 +110,13 @@ class HomeController extends Controller
         $code = $request->token;
         $check = Mitra::find($id);
 
-        if($check->token == $code){
-        $headers = [
-            'Content-Type' => 'application/pdf',
-         ];
-        return Storage::download($check->file_mou);
-        }else{
-             return back()->with('gagal', 'kode salah');
+        if ($check->token == $code) {
+            $headers = [
+                'Content-Type' => 'application/pdf',
+            ];
+            return Storage::download($check->file_mou);
+        } else {
+            return back()->with('gagal', 'kode salah');
         }
     }
     public function pdlntoken(Request $request, $id)
@@ -121,28 +124,27 @@ class HomeController extends Controller
         $code = $request->token;
         $check = Pdln::find($id);
 
-        if($check->token == $code){
-        $headers = [
-            'Content-Type' => 'application/pdf',
-         ];
-         return $this->pdlnacc($id);
+        if ($check->token == $code) {
+            $headers = [
+                'Content-Type' => 'application/pdf',
+            ];
+            return $this->pdlnacc($id);
 
-        // return back()->with('key', 'sukses');
+            // return back()->with('key', 'sukses');
 
-        // //  if($check->file_surat_uns != ''){
-        // return Storage::download($check->file_surat_uns);
-        // //  }
-        // //  if($check->file_belmawa != ''){
-        //     Storage::download($check->file_belmawa);
-        // //  }
-        // //  if($check->file_ktln != ''){
-        //     Storage::download($check->file_ktln);
-        // //  }
-        // // return back();
-        // // return $check;
-        }else{
-             return back()->with('key', 'kode salah');
-
+            // //  if($check->file_surat_uns != ''){
+            // return Storage::download($check->file_surat_uns);
+            // //  }
+            // //  if($check->file_belmawa != ''){
+            //     Storage::download($check->file_belmawa);
+            // //  }
+            // //  if($check->file_ktln != ''){
+            //     Storage::download($check->file_ktln);
+            // //  }
+            // // return back();
+            // // return $check;
+        } else {
+            return back()->with('key', 'kode salah');
         }
     }
     public function uns($id)
@@ -150,7 +152,7 @@ class HomeController extends Controller
         $file = Pdln::find($id);
         $headers = [
             'Content-Type' => 'application/pdf',
-         ];
+        ];
         return Storage::download($file->file_surat_uns);
     }
     public function belmawa($id)
@@ -158,7 +160,7 @@ class HomeController extends Controller
         $file = Pdln::find($id);
         $headers = [
             'Content-Type' => 'application/pdf',
-         ];
+        ];
         return Storage::download($file->file_belmawa);
     }
     public function ktln($id)
@@ -166,7 +168,7 @@ class HomeController extends Controller
         $file = Pdln::find($id);
         $headers = [
             'Content-Type' => 'application/pdf',
-         ];
+        ];
         return Storage::download($file->file_ktln);
     }
 
@@ -195,14 +197,13 @@ class HomeController extends Controller
         ]);
     }
 
-    public function pengumumandetails($id )
+    public function pengumumandetails($id)
     {
         $pengumuman = Pengumuman::find($id);
         return view('home.pengumumandetails', [
             'title' => 'Detail Pengumuman',
             'pengumuman' => $pengumuman
         ]);
-
     }
 
     public function berita()
@@ -211,6 +212,20 @@ class HomeController extends Controller
         return view('home.berita', [
             'title' => 'Berita',
             'beritas' => $berita
+        ]);
+    }
+
+    public function header()
+    {
+        // $faqs = Faq::get();
+        // return view('home.faq', [
+        //     'title' => 'FAQ',
+        //     'faqs' => $faqs
+        // ]);
+        $header = Header::get();
+        return view('home.header', [
+            'title' => 'Header',
+            'headers' => $header
         ]);
     }
 

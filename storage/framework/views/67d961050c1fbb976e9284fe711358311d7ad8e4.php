@@ -46,19 +46,29 @@
                             <p class="card-text">Nomor Ktln : <?php echo e($pdln->ktln_kemensetneg); ?></p>
                             <p class="card-text">Catatan Ktln : <?php echo e($pdln->catatan_setneg); ?></p>
                             <br/>
+                                <?php if($check == 'yes'): ?>
+                            <?php if($pdln->file_surat_uns != 'null'): ?>
+                            <a href="/home/download/uns/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat UNS</a>
+                            <?php endif; ?>
+                            <?php if($pdln->file_belmawa != 'null'): ?>
+                            <a href="/home/download/belmawa/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat belmawa</a>
+                            <?php endif; ?>
+                            <?php if($pdln->file_ktln != 'null'): ?>
+                            <a href="/home/download/ktln/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat ktln</a>
+                            <?php endif; ?>
+                            <?php else: ?>
                                 <p>Download File</p>
                                 <form action="token/<?php echo e($pdln->id); ?>" method="POST" class="row g-3">
                                     <?php echo csrf_field(); ?>
-                                    <div class="col-md-4">
-                                      <input type="text" name='token' class="form-control"  placeholder="Input kode cth: 123456">
-                                    </div>
-                                    <div class="col-md-4">
+                                    <input type="text" name='token' placeholder="input kode cth: 123456">
                                     <button type="submit" class="btn btn-primary">submit</button>
                                     </div>
+                                </form>
+                                <?php endif; ?>
                                     <div class="col-md-4">
                                       <a href="/home/pdln-mahasiswa" class="btn btn-secondary">Kembali</a>
                                     </div>
-                                </form>
+
                                 <?php if(Auth::check()): ?>
                                 <a href="<?php echo e($pdln->id); ?>/edit" class="btn btn-primary">Edit</a>
                                 <form action="<?php echo e($pdln->id); ?>" method="POST" class="d-inline">
@@ -67,7 +77,6 @@
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
                                 <?php endif; ?>
-                                
                             </div>
                         </div>
             </div>

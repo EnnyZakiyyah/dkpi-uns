@@ -95,7 +95,11 @@
                   <td><?php echo e(empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e(empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($cv->pejabat_penandatangan); ?></td>
-                  <td><?php echo e($cv->status); ?></td>
+                  <?php if($cv->status == 'berlaku'): ?>
+                  <td style="color: green"><?php echo e($cv->status); ?></td>
+                  <?php else: ?>
+                  <td style="color: red"><?php echo e($cv->status); ?></td>
+                  <?php endif; ?>
                   <td>
                     <a href="/home/mitra/<?php echo e($cv->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>

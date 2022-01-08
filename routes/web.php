@@ -18,6 +18,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PeringkatController;
 use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\DownloadFileController;
 use App\Models\Layanan;
 
@@ -109,6 +110,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/peringkat', PeringkatController::class);
     Route::resource('/faq', FaqController::class);
     Route::resource('/layanan', LayananController::class);
+    Route::resource('/header', HeaderController::class);
 
 
     Route::get('/data/pdln/{jenis}', [PdlnController::class, 'jenis']);

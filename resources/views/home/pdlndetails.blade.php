@@ -35,21 +35,17 @@
                             <h6 class="card-subtitle mb-3 text-muted">Kategori : {{ $pdln->jenis}}</h6>
                             <p class="card-text">Jumlah Orang : {{ $pdln->jumlah_orang }}</p>
                             <p class="card-text">Unit Kerja : {{ $pdln->unit_kerja }}</p>
-                            <p class="card-text">Tujuan : {{ $pdln->tujuan }}</p>
+                            <p class="card-text">Tujuan : {{ $pdln-> tujuan }}</p>
                             <p class="card-text">Negara : {{ $pdln->negara }}</p>
                             <p class="card-text">Awal : {{ date('d F, Y',strtotime($pdln->jangka_waktu_awal))}}</p>
                             <p class="card-text">Akhir : {{ $pdln->jangka_waktu_akhir }}</p>
-                            <p class="card-text">Nomor Surat UNS :{{ $pdln->surat_uns }}</p>
+                            <p class="card-text">Nomor Surat UNS : {{ $pdln->surat_uns }}</p>
                             <p class="card-text">Catatan UNS : {{ $pdln->catatan_uns }}</p>
                             <p class="card-text">Nomor Surat Belmawa : {{ $pdln->belmawa }}</p>
                             <p class="card-text">Catatan Belmawa : {{ $pdln->catatan_belmawa }}</p>
                             <p class="card-text">Nomor Ktln : {{ $pdln->ktln_kemensetneg }}</p>
                             <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
                             <br/>
-<<<<<<< Updated upstream
-                                <p>download file</p>
-                                <form action="token/{{ $pdln->id }}" method="POST" class="d-inline">
-=======
                                 @if($check == 'yes')
                             @if($pdln->file_surat_uns != 'null')
                             <a href="/home/download/uns/{{ $pdln->id }}" class="btn btn-warning">Download surat UNS</a>
@@ -63,13 +59,9 @@
                             @else
                                 <p>Download File</p>
                                 <form action="token/{{ $pdln->id }}" method="POST" class="row g-3">
->>>>>>> Stashed changes
                                     @csrf
                                     <input type="text" name='token' placeholder="input kode cth: 123456">
                                     <button type="submit" class="btn btn-primary">submit</button>
-<<<<<<< Updated upstream
-                                </form>
-=======
                                     </div>
                                 </form>
                                 @endif
@@ -77,7 +69,6 @@
                                       <a href="/home/pdln-mahasiswa" class="btn btn-secondary">Kembali</a>
                                     </div>
 
->>>>>>> Stashed changes
                                 @if(Auth::check())
                                 <a href="{{ $pdln->id }}/edit" class="btn btn-primary">Edit</a>
                                 <form action="{{ $pdln->id }}" method="POST" class="d-inline">
@@ -86,11 +77,6 @@
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
                                 @endif
-<<<<<<< Updated upstream
-                                <a href="/home/pdln-mahasiswa" class="btn btn-primary">Kembali</a>
-=======
-
->>>>>>> Stashed changes
                             </div>
                         </div>
             </div>

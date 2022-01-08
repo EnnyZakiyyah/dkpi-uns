@@ -95,7 +95,11 @@
                   <td>{{ empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y') }}</td>
                   <td>{{ empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $cv->pejabat_penandatangan }}</td>
-                  <td>{{ $cv->status }}</td>
+                  @if ($cv->status == 'berlaku')
+                  <td style="color: green">{{ $cv->status }}</td>
+                  @else
+                  <td style="color: red">{{ $cv->status }}</td>
+                  @endif
                   <td>
                     <a href="/home/mitra/{{ $cv->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())

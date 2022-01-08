@@ -121,6 +121,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link <?php echo e(($title === "Header") ? 'active' : ''); ?>" href="<?php echo e(url('/header')); ?>">
+                            <i class="ni ni-collection text-blue"></i>
+                            <span class="nav-link-text">Header</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link <?php echo e(($title === "Register Account") ? 'active' : ''); ?>" href="<?php echo e(url('/register')); ?>">
                             <i class="ni ni-circle-08 text-pink"></i>
                             <span class="nav-link-text">Register Account</span>
