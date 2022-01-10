@@ -97,7 +97,9 @@
                   <td>{{ $cv->pejabat_penandatangan }}</td>
                   @if ($cv->status == 'berlaku')
                   <td style="color: green">{{ $cv->status }}</td>
-                  @else
+                  @elseif ($cv->status == 'segera berakhir')
+                  <td style="color: yellow">{{ $cv->status }}</td>
+                  @else 
                   <td style="color: red">{{ $cv->status }}</td>
                   @endif
                   <td>

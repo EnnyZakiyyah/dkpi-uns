@@ -97,7 +97,9 @@
                   <td><?php echo e($cv->pejabat_penandatangan); ?></td>
                   <?php if($cv->status == 'berlaku'): ?>
                   <td style="color: green"><?php echo e($cv->status); ?></td>
-                  <?php else: ?>
+                  <?php elseif($cv->status == 'segera berakhir'): ?>
+                  <td style="color: yellow"><?php echo e($cv->status); ?></td>
+                  <?php else: ?> 
                   <td style="color: red"><?php echo e($cv->status); ?></td>
                   <?php endif; ?>
                   <td>

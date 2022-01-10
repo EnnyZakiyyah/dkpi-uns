@@ -46,11 +46,7 @@
                             <p class="card-text">Nomor Ktln : <?php echo e($pdln->ktln_kemensetneg); ?></p>
                             <p class="card-text">Catatan Ktln : <?php echo e($pdln->catatan_setneg); ?></p>
                             <br/>
-<<<<<<< HEAD
-                                <?php if($check == 'yes'): ?>
-=======
                                 <?php if($code == $pdln->token): ?>
->>>>>>> 783fd6cd29a7988c499d29bceec59afdaa754a79
                             <?php if($pdln->file_surat_uns != 'null'): ?>
                             <a href="/home/download/uns/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat UNS</a>
                             <?php endif; ?>
