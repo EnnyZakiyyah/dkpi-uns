@@ -264,46 +264,51 @@ class HomeController extends Controller
 
     public function yayasan()
     {
-        $yayasan = Mitra::latest()->where('instansi', 'yayasan')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
-        return view('home.mitra.yayasan', [
+        $mitra = Mitra::latest()->where('instansi', 'yayasan')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+        return view('home.mitra.mitra', [
+            'judul' => 'Data Mitra Yayasan/sekolah',
             'title' => 'Data Mitra',
-            'yayasans' => $yayasan
+            'mitras' => $mitra
         ]);
     }
     public function internasional()
     {
-        $internasional = Mitra::where('instansi', 'internasional')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+        $mitra = Mitra::where('instansi', 'internasional')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
-        return view('home.mitra.internasional', [
+        return view('home.mitra.mitra', [
+            'judul' => 'Data Mitra Internasional',
             'title' => 'Data Mitra',
-            'internasionals' => $internasional
+            'mitras' => $mitra
         ]);
     }
     public function cv()
     {
-        $cv = Mitra::where('instansi', 'cv')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+        $mitra = Mitra::where('instansi', 'cv')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
-        return view('home.mitra.cv', [
+        return view('home.mitra.mitra', [
+            'judul' => 'Data Mitra CV',
             'title' => 'Data Mitra',
-            'cvs' => $cv
+            'mitras' => $mitra
         ]);
     }
     public function jasaKeuangan()
     {
-        $jasaKeuangan = Mitra::where('instansi', 'jasaKeuangan')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
+        $mitra = Mitra::where('instansi', 'jasaKeuangan')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
-        return view('home.mitra.jasaKeuangan', [
+        return view('home.mitra.mitra', [
+            'judul' => 'Data Mitra Jasa Keuangan',
             'title' => 'Data Mitra',
-            'jasaKeuangans' => $jasaKeuangan
+            'mitras' => $mitra
         ]);
     }
     public function pemerintah()
     {
         $pemerintah = Mitra::where('instansi', 'pemerintah')->latest()->filter(request(['nama_instansi', 'pejabat_penandatangan', 'jangka_waktu_awal', 'jangka_waktu_akhir']))->paginate(5)->withQueryString();
 
-        return view('home.mitra.pemerintah', [
+        return view('home.mitra.mitra', [
+            'judul' => 'Data Mitra Pemerintah',
             'title' => 'Data Mitra',
-            'pemerintahs' => $pemerintah
+            'mitras' => $pemerintah
         ]);
     }
     public function mitradelete($id)
