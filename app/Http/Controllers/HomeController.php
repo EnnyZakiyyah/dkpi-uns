@@ -60,7 +60,7 @@ class HomeController extends Controller
 
         return view('home.pdlndetails', [
             'title' => 'Details PDLN',
-            'check' => 'no',
+            'code' => 'no',
             'pdln' => $pdln
         ]);
     }

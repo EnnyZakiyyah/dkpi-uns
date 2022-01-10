@@ -89,7 +89,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 // Route::get('/create',[PengaduanController::class, 'create']);
 Route::post('/pengaduan', [PengaduanController::class, 'store']);
-
+Route::resource('/header', HeaderController::class);
 
 
 
@@ -106,6 +106,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('/peringkat', PeringkatController::class);
     Route::resource('/faq', FaqController::class);
     Route::resource('/layanan', LayananController::class);
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 
     Route::get('/data/pdln/{jenis}', [PdlnController::class, 'jenis']);

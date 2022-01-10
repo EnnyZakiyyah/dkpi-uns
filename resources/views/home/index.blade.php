@@ -55,6 +55,7 @@
             </div> --}}
             <div class="carousel-inner">
               {{-- <div class="shadow p-3 mb-5 bg-blue rounded"> --}}
+<<<<<<< Updated upstream
               <div class="carousel-item active">
 
                 <img src="{{asset('assets/img/slider-01.jpeg')}}" class="d-block w-100" alt="..."></div>
@@ -63,12 +64,29 @@
                 <img src="{{asset('assets/img/slider-02.jpeg')}}" class="d-block w-100" alt="..."></div>
 
               <div class="carousel-item">
+=======
+
+                {{-- <div class="carousel-item active">
+
+                <img src="{{asset('assets/img/slider-01.jpeg')}}" class="d-block w-100" alt="..."></div> --}}
+
+              <div class="carousel-item">
+                <img src="{{asset('storage/'. $header->gambar )}}" class="d-block w-100" alt="...">
+              </div>
+
+              {{-- <div class="carousel-item">
+>>>>>>> Stashed changes
                <img src="{{asset('assets/img/slider-03.jpeg')}}" class="d-block w-100" alt="..."></div>
               <div class="carousel-item">
                <img src="{{asset('assets/img/slider-04.jpeg')}}" class="d-block w-100" alt="..."></div>
               <div class="carousel-item">
+<<<<<<< Updated upstream
                <img src="{{asset('assets/img/slider-05.jpeg')}}" class="d-block w-100" alt="..."></div>
               {{-- </div> --}}
+=======
+               <img src="{{asset('assets/img/slider-05.jpeg')}}" class="d-block w-100" alt="..."></div> --}}
+
+>>>>>>> Stashed changes
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -249,8 +267,8 @@
 
       </div>
     </section><!-- End Services Section -->
-    
-   
+
+
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="skills">
@@ -278,7 +296,7 @@
                 <!-- garis -->
               <hr />
             @endforeach
-         
+
           </div>
 
       </div>
@@ -322,5 +340,5 @@
           {{-- @include('contact.contact') --}}
     <!-- End Contact Section -->
 
-    
+
 @endsection

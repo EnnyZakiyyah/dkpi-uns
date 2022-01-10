@@ -115,9 +115,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo e(($title === "layanan") ? 'active' : ''); ?>" href="<?php echo e(url('/layanan')); ?>">
-                            <i class="ni ni-chat-round text-success"></i>
+                        <a class="nav-link <?php echo e(($title === "Layanan") ? 'active' : ''); ?>" href="<?php echo e(url('/layanan')); ?>">
+                            <i class="ni ni-single-copy-04 text-dark"></i>
                             <span class="nav-link-text">Layanan</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo e(($title === "Header") ? 'active' : ''); ?>" href="<?php echo e(url('/header')); ?>">
+                            <i class="ni ni-collection text-blue"></i>
+                            <span class="nav-link-text">Header</span>
                         </a>
                     </li>
                     <li class="nav-item">
