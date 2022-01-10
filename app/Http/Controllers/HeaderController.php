@@ -30,7 +30,6 @@ class HeaderController extends Controller
     {
         return view('header.create', [
             'title' => 'Header',
-            
         ]);
     }
 
