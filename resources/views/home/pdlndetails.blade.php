@@ -46,11 +46,7 @@
                             <p class="card-text">Nomor Ktln : {{ $pdln->ktln_kemensetneg }}</p>
                             <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
                             <br/>
-<<<<<<< HEAD
-                                @if($check == 'yes')
-=======
                                 @if($code == $pdln->token)
->>>>>>> 783fd6cd29a7988c499d29bceec59afdaa754a79
                             @if($pdln->file_surat_uns != 'null')
                             <a href="/home/download/uns/{{ $pdln->id }}" class="btn btn-warning">Download surat UNS</a>
                             @endif
