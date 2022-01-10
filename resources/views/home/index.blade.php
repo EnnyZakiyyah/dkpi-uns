@@ -52,14 +52,15 @@
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 3"></button>
-            </div> --}}@foreach($headers as $header)
+            </div> --}}
+           
             <div class="carousel-inner">
               {{-- <div class="shadow p-3 mb-5 bg-blue rounded"> --}}
                 
                 {{-- <div class="carousel-item active">
                
                 <img src="{{asset('assets/img/slider-01.jpeg')}}" class="d-block w-100" alt="..."></div> --}}
-
+                @foreach($headers as $header)
               <div class="carousel-item">
                 <img src="{{asset('storage/'. $header->gambar )}}" class="d-block w-100" alt="...">
               </div>
@@ -70,9 +71,9 @@
                <img src="{{asset('assets/img/slider-04.jpeg')}}" class="d-block w-100" alt="..."></div>
               <div class="carousel-item">
                <img src="{{asset('assets/img/slider-05.jpeg')}}" class="d-block w-100" alt="..."></div> --}}
-             
-            </div>
-            @endforeach
+           
+      
+            
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -81,7 +82,9 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
+            @endforeach
         </div>
+       
       </div>
 
     </div>

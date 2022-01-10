@@ -30,7 +30,7 @@ class HomeController extends Controller
         $pengumuman = Pengumuman::whereDate('berlaku', '>=', today())->get();
         $berita = Berita::latest()->take(6)->paginate(3);
         $gallery = Gallery::latest()->take(9);
-        $headers = Header::latest()->take(6);
+        $header = Header::latest()->get();
 
 
         return view('home.index', [
@@ -39,7 +39,7 @@ class HomeController extends Controller
             'faqs' => $faq,
             'beritas' => $berita,
             'galleries' => $gallery,
-            'headers' => $headers
+            'headers' => $header
         ]);
     }
 
@@ -72,10 +72,10 @@ class HomeController extends Controller
         $code = $request->token;
         $check = Pdln::find($id);
 
-        if($check->token == $code){
-         return $this->pdlnacc($id, $code);
-        }else{
-             return back()->with('key', 'kode salah');
+        if ($check->token == $code) {
+            return $this->pdlnacc($id, $code);
+        } else {
+            return back()->with('key', 'kode salah');
         }
     }
     public function pdlnacc($id, $code)
@@ -199,19 +199,19 @@ class HomeController extends Controller
         ]);
     }
 
-    public function header()
-    {
-        // $faqs = Faq::get();
-        // return view('home.faq', [
-        //     'title' => 'FAQ',
-        //     'faqs' => $faqs
-        // ]);
-        $header = Header::get();
-        return view('home.header', [
-            'title' => 'Header',
-            'headers' => $header
-        ]);
-    }
+    // public function header()
+    // {
+    //     // $faqs = Faq::get();
+    //     // return view('home.faq', [
+    //     //     'title' => 'FAQ',
+    //     //     'faqs' => $faqs
+    //     // ]);
+    //     $header = Header::get();
+    //     return view('home.header', [
+    //         'title' => 'Header',
+    //         'headers' => $header
+    //     ]);
+    // }
 
     public function beritadetails($id)
     {
@@ -224,7 +224,7 @@ class HomeController extends Controller
 
     public function galeri()
     {
-        $gallery =  Gallery::get();
+        $gallery = Header::get();
         return view('home.galeri.gambar', [
             'title' => 'Galeri',
             'galleries' => $gallery
@@ -385,5 +385,13 @@ class HomeController extends Controller
             // 'Content-Disposition' => 'inline; filename="'.$id.'"'
         ];
         return Storage::download($file->file_download);
+    }
+    public function headers()
+    {
+        $header = Header::latest()->get();
+        return view('home.header', [
+            'title' => 'header',
+            'headers' => $header
+        ]);
     }
 }
