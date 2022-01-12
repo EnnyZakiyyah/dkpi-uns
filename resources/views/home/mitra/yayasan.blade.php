@@ -98,7 +98,13 @@
                   <td>{{ $date = empty(strtotime( $yayasan->jangka_waktu_awal)) ? $yayasan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $date = empty(strtotime($yayasan->jangka_waktu_akhir)) ? $yayasan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $yayasan->pejabat_penandatangan }}</td>
-                  <td>{{ $yayasan->status }}</td>
+                  @if ($yayasan->status == 'berlaku' || $yayasan->status == 'Berlaku' )
+                  <td style="color: green">{{ $yayasan->status }}</td>
+                  @elseif ($yayasan->status == 'segera berakhir')
+                  <td style="color: yellow">{{ $yayasan->status }}</td>
+                  @else
+                  <td style="color: red">{{ $yayasan->status }}</td>
+                  @endif
                   <td>
                     <a href="/home/mitra/{{ $yayasan->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())

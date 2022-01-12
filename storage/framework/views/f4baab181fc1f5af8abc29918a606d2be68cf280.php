@@ -96,7 +96,13 @@
                   <td><?php echo e($date = empty(strtotime($jasaKeuangan->jangka_waktu_awal)) ? $jasaKeuangan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($jasaKeuangan->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($date = empty(strtotime($jasaKeuangan->jangka_waktu_akhir)) ? $jasaKeuangan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($jasaKeuangan->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($jasaKeuangan->pejabat_penandatangan); ?></td>
-                  <td><?php echo e($jasaKeuangan->status); ?></td>
+                  <?php if($jasaKeuangan->status == 'berlaku' || $jasaKeuangan->status == 'Berlaku' ): ?>
+                  <td style="color: green"><?php echo e($jasaKeuangan->status); ?></td>
+                  <?php elseif($jasaKeuangan->status == 'segera berakhir'): ?>
+                  <td style="color: yellow"><?php echo e($jasaKeuangan->status); ?></td>
+                  <?php else: ?>
+                  <td style="color: red"><?php echo e($jasaKeuangan->status); ?></td>
+                  <?php endif; ?>
                   <td>
                     <a href="/home/mitra/<?php echo e($jasaKeuangan->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>

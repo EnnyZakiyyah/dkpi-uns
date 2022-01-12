@@ -95,7 +95,13 @@
                   <td>{{ $date = empty(strtotime($pemerintah->jangka_waktu_awal)) ? $pemerintah->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($pemerintah->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $date = empty(strtotime($pemerintah->jangka_waktu_akhir)) ? $pemerintah->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($pemerintah->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $pemerintah->pejabat_penandatangan }}</td>
-                  <td>{{ $pemerintah->status }}</td>
+                  @if ($pemerintah->status == 'berlaku' || $pemerintah->status == 'Berlaku' )
+                  <td style="color: green">{{ $pemerintah->status }}</td>
+                  @elseif ($pemerintah->status == 'segera berakhir')
+                  <td style="color: yellow">{{ $pemerintah->status }}</td>
+                  @else
+                  <td style="color: red">{{ $pemerintah->status }}</td>
+                  @endif
                   <td>
                     <a href="/home/mitra/{{ $pemerintah->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())

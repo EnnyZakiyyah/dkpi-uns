@@ -95,7 +95,13 @@
                   <td><?php echo e($date = empty(strtotime($internasional->jangka_waktu_awal)) ? $internasional->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($internasional->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($date = empty(strtotime($internasional->jangka_waktu_akhir)) ? $internasional->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($internasional->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($internasional->pejabat_penandatangan); ?></td>
-                  <td><?php echo e($internasional->status); ?></td>
+                  <?php if($internasional->status == 'berlaku' || $internasional->status == 'Berlaku' ): ?>
+                  <td style="color: green"><?php echo e($internasional->status); ?></td>
+                  <?php elseif($internasional->status == 'segera berakhir'): ?>
+                  <td style="color: yellow"><?php echo e($internasional->status); ?></td>
+                  <?php else: ?>
+                  <td style="color: red"><?php echo e($internasional->status); ?></td>
+                  <?php endif; ?>
                   <td>
                     <a href="/home/mitra/<?php echo e($internasional->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>

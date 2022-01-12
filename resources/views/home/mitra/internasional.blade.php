@@ -95,7 +95,13 @@
                   <td>{{ $date = empty(strtotime($internasional->jangka_waktu_awal)) ? $internasional->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($internasional->jangka_waktu_awal)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $date = empty(strtotime($internasional->jangka_waktu_akhir)) ? $internasional->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($internasional->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $internasional->pejabat_penandatangan }}</td>
-                  <td>{{ $internasional->status }}</td>
+                  @if ($internasional->status == 'berlaku' || $internasional->status == 'Berlaku' )
+                  <td style="color: green">{{ $internasional->status }}</td>
+                  @elseif ($internasional->status == 'segera berakhir')
+                  <td style="color: yellow">{{ $internasional->status }}</td>
+                  @else
+                  <td style="color: red">{{ $internasional->status }}</td>
+                  @endif
                   <td>
                     <a href="/home/mitra/{{ $internasional->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     @if (Auth::check())

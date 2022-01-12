@@ -18,11 +18,7 @@
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-<<<<<<< HEAD:resources/views/home/mitra/mitra.blade.php
-            <a href="/home/mitra-cv" class="filter-active">CV/PT</a>
-=======
             <a class="filter-active" href="/home/mitra-cv">CV/PT</a>
->>>>>>> 9b6c104d3fe7c86a746a5232849b64b9e7b749f3:resources/views/home/mitra/cv.blade.php
             <a href="/home/mitra-yayasan">Sekolah/Yayasan</a>
             <a href="/home/mitra-internasional">Internasional</a>
             <a href="/home/mitra-jasaKeuangan">Jasa Keuangan</a>

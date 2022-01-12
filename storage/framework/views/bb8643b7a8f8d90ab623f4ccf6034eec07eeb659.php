@@ -95,11 +95,11 @@
                   <td><?php echo e(empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e(empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($cv->pejabat_penandatangan); ?></td>
-                  <?php if($cv->status == 'berlaku'): ?>
+                  <?php if($cv->status == 'berlaku' || $cv->status == 'Berlaku' ): ?>
                   <td style="color: green"><?php echo e($cv->status); ?></td>
                   <?php elseif($cv->status == 'segera berakhir'): ?>
                   <td style="color: yellow"><?php echo e($cv->status); ?></td>
-                  <?php else: ?> 
+                  <?php else: ?>
                   <td style="color: red"><?php echo e($cv->status); ?></td>
                   <?php endif; ?>
                   <td>
@@ -144,5 +144,6 @@
     
 
 <?php $__env->stopSection(); ?>
+
 
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/home/mitra/cv.blade.php ENDPATH**/ ?>

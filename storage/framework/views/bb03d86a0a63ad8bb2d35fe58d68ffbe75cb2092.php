@@ -98,7 +98,13 @@
                   <td><?php echo e($date = empty(strtotime( $yayasan->jangka_waktu_awal)) ? $yayasan->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($date = empty(strtotime($yayasan->jangka_waktu_akhir)) ? $yayasan->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($yayasan->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($yayasan->pejabat_penandatangan); ?></td>
-                  <td><?php echo e($yayasan->status); ?></td>
+                  <?php if($yayasan->status == 'berlaku' || $yayasan->status == 'Berlaku' ): ?>
+                  <td style="color: green"><?php echo e($yayasan->status); ?></td>
+                  <?php elseif($yayasan->status == 'segera berakhir'): ?>
+                  <td style="color: yellow"><?php echo e($yayasan->status); ?></td>
+                  <?php else: ?>
+                  <td style="color: red"><?php echo e($yayasan->status); ?></td>
+                  <?php endif; ?>
                   <td>
                     <a href="/home/mitra/<?php echo e($yayasan->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
