@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -47,7 +46,6 @@
                   Looks good!
                 </div>
               </div>
-              
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
                 <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="<?php echo e(request('jangka_waktu_akhir')); ?>">
@@ -55,7 +53,6 @@
                   Please provide a valid city.
                 </div>
               </div>
-              
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
                 <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="<?php echo e(request('pejabat_penandatangan')); ?>">
@@ -63,7 +60,6 @@
                   Please provide a valid city.
                 </div>
               </div>
-              
               <div class="col-12">
                 <button class="btn btn-warning" type="submit">Cari Data</button>
               </div>
@@ -98,7 +94,13 @@
                   <td><?php echo e(empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e(empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
                   <td><?php echo e($cv->pejabat_penandatangan); ?></td>
-                  <td><?php echo e($cv->status); ?></td>
+                  <?php if($cv->status == 'berlaku' || $cv->status == 'Berlaku' ): ?>
+                  <td style="color: green"><?php echo e($cv->status); ?></td>
+                  <?php elseif($cv->status == 'segera berakhir'): ?>
+                  <td style="color: yellow"><?php echo e($cv->status); ?></td>
+                  <?php else: ?>
+                  <td style="color: red"><?php echo e($cv->status); ?></td>
+                  <?php endif; ?>
                   <td>
                     <a href="/home/mitra/<?php echo e($cv->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
                     <?php if(Auth::check()): ?>
@@ -141,5 +143,6 @@
     
 
 <?php $__env->stopSection(); ?>
+
 
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\dkpi-uns\resources\views/home/mitra/cv.blade.php ENDPATH**/ ?>

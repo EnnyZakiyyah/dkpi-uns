@@ -12,13 +12,17 @@
 
 
         <div class="section-title">
-          <h2>{{ $judul }}</h2>
+          <h2>Mitra Kerja Sama</h2>
             <p>Data Mitra yang menjalin hubungan kerjasama dengan UNS dapat dilihat pada tabel berikut</p>
           {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+<<<<<<< HEAD:resources/views/home/mitra/mitra.blade.php
             <a href="/home/mitra-cv" class="filter-active">CV/PT</a>
+=======
+            <a class="filter-active" href="/home/mitra-cv">CV/PT</a>
+>>>>>>> 9b6c104d3fe7c86a746a5232849b64b9e7b749f3:resources/views/home/mitra/cv.blade.php
             <a href="/home/mitra-yayasan">Sekolah/Yayasan</a>
             <a href="/home/mitra-internasional">Internasional</a>
             <a href="/home/mitra-jasaKeuangan">Jasa Keuangan</a>
@@ -87,15 +91,15 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($mitras as $cv)
+                @foreach($cvs as $cv)
                 <tr>
-                  <th scope="row">{{ $mitras->firstItem() + $loop->index }}</th>
+                  <th scope="row">{{ $cvs->firstItem() + $loop->index }}</th>
                   <td>{{ $cv->nama_instansi }}</td>
                   <td>{{ $cv->ruang_lingkup }}</td>
                   <td>{{ empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y') }}</td>
                   <td>{{ empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
                   <td>{{ $cv->pejabat_penandatangan }}</td>
-                  @if ($cv->status == 'berlaku' || $cv->status == 'Berlaku')
+                  @if ($cv->status == 'berlaku' || $cv->status == 'Berlaku' )
                   <td style="color: green">{{ $cv->status }}</td>
                   @elseif ($cv->status == 'segera berakhir')
                   <td style="color: yellow">{{ $cv->status }}</td>
@@ -122,7 +126,7 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
-                  {{ $mitras->links() }}
+                  {{ $cvs->links() }}
                 </li>
               </ul>
             </nav>
@@ -145,3 +149,4 @@
     @endif --}}
 
 @endsection
+
