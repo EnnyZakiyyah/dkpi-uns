@@ -60,7 +60,7 @@ class LayananController extends Controller
     public function ketentuan_mou()
     {
         $id = 1;
-        $file = Layanan::find($id);
+        $file = Layanan::find(1);
         $headers = [
             'Content-Type' => 'application/pdf',
          ];

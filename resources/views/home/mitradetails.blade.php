@@ -44,16 +44,25 @@
                                     @csrf
                                     <input type="text" name='token' placeholder="input kode cth: 123456">
                                     <button type="submit" class="btn btn-primary">submit</button>
+                                    </div>
+                                    <div class="col-md-2">
+                                      <a href="/home/mitra-cv" class="btn btn-secondary">Kembali</a>
+                                    </div>
                                 </form>
-                                @if(Auth::check())
-                                <a href="/mitra/{{ $mitra->id }}/edit" class="btn btn-primary">Edit</a>
-                                <form action="mitra/{{ $mitra->id }}" method="POST" class="d-inline">
-                                    @method('delete')
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
-                                </form>
-                                @endif
-                                <a href="/home/mitra-cv" class="btn btn-primary">Kembali</a>
+                                  @if(Auth::check())
+                                  <div class="col-md-2">
+                                    <a href="/mitra/{{ $mitra->id }}/edit" class="btn btn-primary">Edit</a>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <form action="mitra/{{ $mitra->id }}" method="POST" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                                    </form>
+                                  @endif
+                                  </div>
+
+
                             </div>
                         </div>
             </div>
