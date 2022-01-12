@@ -60,10 +60,11 @@
                 {{-- <div class="carousel-item active">
                
                 <img src="{{asset('assets/img/slider-01.jpeg')}}" class="d-block w-100" alt="..."></div> --}}
-                @foreach($headers as $header)
-              <div class="carousel-item">
-                <img src="{{asset('storage/'. $header->gambar )}}" class="d-block w-100" alt="...">
-              </div>
+                @foreach($headers as $key => $header)
+            <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+              <img src="{{asset('storage/'. $header->gambar )}}" class="d-block w-100" alt="...">
+            </div>
+      @endforeach
         
               {{-- <div class="carousel-item">
                <img src="{{asset('assets/img/slider-03.jpeg')}}" class="d-block w-100" alt="..."></div>
@@ -82,7 +83,7 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-            @endforeach
+          
         </div>
        
       </div>

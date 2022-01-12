@@ -1,5 +1,5 @@
-@extends('layouts.main')
-@section('container')
+
+<?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
@@ -12,9 +12,9 @@
 
 
         <div class="section-title">
-          <h2>{{ $judul }}</h2>
+          <h2><?php echo e($judul); ?></h2>
             <p>Data Mitra yang menjalin hubungan kerjasama dengan UNS dapat dilihat pada tabel berikut</p>
-          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+          
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -35,28 +35,28 @@
             <form class="row g-3 needs-validation" action="/home/mitra-cv">
               <div class="col-md-6">
                 <label for="validationCustom01" class="form-label">Nama Instansi</label>
-                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="{{ request('nama_instansi') }}">
+                <input type="text" class="form-control" id="validationCustom01" name="nama_instansi" value="<?php echo e(request('nama_instansi')); ?>">
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="validationCustom02" class="form-label">Awal</label>
-                <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="{{ request('jangka_waktu_awal') }}">
+                <input type="text" class="form-control" id="validationCustom02" name="jangka_waktu_awal" value="<?php echo e(request('jangka_waktu_awal')); ?>">
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="validationCustom03" class="form-label">Akhir</label>
-                <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="{{ request('jangka_waktu_akhir') }}">
+                <input type="text" class="form-control" id="validationCustom03" name="jangka_waktu_akhir" value="<?php echo e(request('jangka_waktu_akhir')); ?>">
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
               </div>
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Pejabat Penandatangan</label>
-                <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="{{ request('pejabat_penandatangan') }}">
+                <input type="text" class="form-control" id="validationCustom03" name="pejabat_penandatangan" value="<?php echo e(request('pejabat_penandatangan')); ?>">
                 <div class="invalid-feedback">
                   Please provide a valid city.
                 </div>
@@ -87,34 +87,34 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($mitras as $cv)
+                <?php $__currentLoopData = $mitras; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cv): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row">{{ $mitras->firstItem() + $loop->index }}</th>
-                  <td>{{ $cv->nama_instansi }}</td>
-                  <td>{{ $cv->ruang_lingkup }}</td>
-                  <td>{{ empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y') }}</td>
-                  <td>{{ empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y'); }}</td>
-                  <td>{{ $cv->pejabat_penandatangan }}</td>
-                  @if ($cv->status == 'berlaku' || $cv->status == 'Berlaku')
-                  <td style="color: green">{{ $cv->status }}</td>
-                  @elseif ($cv->status == 'segera berakhir')
-                  <td style="color: yellow">{{ $cv->status }}</td>
-                  @else
-                  <td style="color: red">{{ $cv->status }}</td>
-                  @endif
+                  <th scope="row"><?php echo e($mitras->firstItem() + $loop->index); ?></th>
+                  <td><?php echo e($cv->nama_instansi); ?></td>
+                  <td><?php echo e($cv->ruang_lingkup); ?></td>
+                  <td><?php echo e(empty(strtotime($cv->jangka_waktu_awal)) ? $cv->jangka_waktu_awal : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_awal)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e(empty(strtotime($cv->jangka_waktu_akhir)) ? $cv->jangka_waktu_akhir : Carbon\Carbon::parse(date('Y-m-d', strtotime($cv->jangka_waktu_akhir)))->isoFormat('D MMMM Y')); ?></td>
+                  <td><?php echo e($cv->pejabat_penandatangan); ?></td>
+                  <?php if($cv->status == 'berlaku' || $cv->status == 'Berlaku'): ?>
+                  <td style="color: green"><?php echo e($cv->status); ?></td>
+                  <?php elseif($cv->status == 'segera berakhir'): ?>
+                  <td style="color: yellow"><?php echo e($cv->status); ?></td>
+                  <?php else: ?>
+                  <td style="color: red"><?php echo e($cv->status); ?></td>
+                  <?php endif; ?>
                   <td>
-                    <a href="/home/mitra/{{ $cv->id }}" class="badge bg-info"><span data-feather="eye">lihat</span></a>
-                    @if (Auth::check())
-                    <a href="/mitra/{{ $cv->id }}/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
-                    <form action="/mitra/{{ $cv->id }}/delete" method="POST" class="d-inline">
-                        @method('delete')
-                        @csrf
+                    <a href="/home/mitra/<?php echo e($cv->id); ?>" class="badge bg-info"><span data-feather="eye">lihat</span></a>
+                    <?php if(Auth::check()): ?>
+                    <a href="/mitra/<?php echo e($cv->id); ?>/edit" class="badge bg-warning"><span data-feather="eye">edit</span></a>
+                    <form action="/mitra/<?php echo e($cv->id); ?>/delete" method="POST" class="d-inline">
+                        <?php echo method_field('delete'); ?>
+                        <?php echo csrf_field(); ?>
                         <button type="submit" class="badge bg-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                     </form>
-                    @endif
+                    <?php endif; ?>
                 </td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               </tbody>
             </table>
 
@@ -122,7 +122,8 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item">
-                  {{ $mitras->links() }}
+                  <?php echo e($mitras->links()); ?>
+
                 </li>
               </ul>
             </nav>
@@ -140,8 +141,8 @@
 
     </div>
 
-    {{-- @else
-    <p class="text-center fs-4">No post found.</p>
-    @endif --}}
+    
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/home/mitra/mitra.blade.php ENDPATH**/ ?>

@@ -26,10 +26,11 @@
               
                 
                 
-                <?php $__currentLoopData = $headers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $header): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <div class="carousel-item">
-                <img src="<?php echo e(asset('storage/'. $header->gambar )); ?>" class="d-block w-100" alt="...">
-              </div>
+                <?php $__currentLoopData = $headers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $header): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="carousel-item <?php echo e($key == 0 ? 'active' : ''); ?>">
+              <img src="<?php echo e(asset('storage/'. $header->gambar )); ?>" class="d-block w-100" alt="...">
+            </div>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         
               
            
@@ -43,7 +44,7 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          
         </div>
        
       </div>
