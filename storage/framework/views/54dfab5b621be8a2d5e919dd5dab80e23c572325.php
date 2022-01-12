@@ -51,6 +51,7 @@
                                     <div class="col-md-2">
                                       <a href="/home/mitra-cv" class="btn btn-secondary">Kembali</a>
                                     </div>
+                                  </form>
                                   <?php if(Auth::check()): ?>
                                   <div class="col-md-2">
                                     <a href="/mitra/<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
@@ -63,8 +64,6 @@
                                     </form>
                                   <?php endif; ?>
                                   </div>
-                               
-                                </form>
                             </div>
                         </div>
             </div>

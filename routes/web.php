@@ -39,7 +39,6 @@ Route::get('/home/pdln', [HomeController::class, 'pdln']);
 Route::get('/home/mitra', [HomeController::class, 'mitra']);
 Route::get('/home/faq', [HomeController::class, 'faq']);
 Route::get('/home/berita', [HomeController::class, 'berita']);
-Route::get('/home/header', [HomeController::class, 'headers']);
 // Route::get('/home/berita/{slug}', [HomeController::class, 'show']);
 // Route::get('/home/berita{berita}', [HomeController::class, 'show']);
 Route::get('/home/galeri', [HomeController::class, 'galeri']);

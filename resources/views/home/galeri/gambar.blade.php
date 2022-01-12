@@ -18,11 +18,11 @@
               <a href="/home/galeri/video">Video</a>
               </ul>
               <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                @foreach ($headers as $header)
+                @foreach ($galleries as $galeri)
               <!-- CV/PT -->
               <div class="col-lg-6 col-md-6 portfolio-item filter-mou">
                 {{-- <div class="portfolio-img"><iframe {{ $galeri->gambar }} src="{{ $galeri->gambar }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> --}}
-                <div class="portfolio-img"><img src="{{asset('storage/'. $header->gambar )}}" class="img-fluid" alt="" {{asset('storage/'. $galeri->gambar )}} width="620" height="350"></div>
+                <div class="portfolio-img"><img src="{{asset('storage/'. $galeri->gambar )}}" class="img-fluid" alt="" {{asset('storage/'. $galeri->gambar )}} width="620" height="350"></div>
                 <div class="portfolio-info">
                   <h4>{{ $galeri->judul }}</h4>
                   <p>{!! $galeri->caption !!}</p>
