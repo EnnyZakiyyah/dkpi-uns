@@ -92,10 +92,14 @@
             </table>
           </div>
           <!-- Card footer -->
+          
+          
+
+          <!-- Card footer -->
           <div class="card-footer py-4">
             <nav aria-label="...">
-              <a href="<?php echo e('/mitra/create'); ?>" class="btn btn-primary">Tambah Data</a>
-              <ul class="pagination justify-content-end mb-0">
+              <a href="<?php echo e('/mitra/create'); ?>" class="btn btn-primary mb-3">Tambah Data</a>
+              <ul class="pagination flex-wrap justify-content-end mb-0">
                 <li class="page-item">
                   <?php echo e($mitras->links()); ?>
 
@@ -103,6 +107,8 @@
               </ul>
             </nav>
           </div>
+
+
         </div>
       </div>
     </div>

@@ -92,16 +92,31 @@
             </table>
           </div>
           <!-- Card footer -->
-          <div class="card-footer py-4">
+          {{-- <div class="card-footer py-4">
+            <a href="{{'/mitra/create'}}" class="btn btn-primary">Tambah Data</a>
             <nav aria-label="...">
-              <a href="{{'/mitra/create'}}" class="btn btn-primary">Tambah Data</a>
               <ul class="pagination justify-content-end mb-0">
                 <li class="page-item">
                   {{ $mitras->links() }}
                 </li>
               </ul>
             </nav>
+          </div> --}}
+          
+
+          <!-- Card footer -->
+          <div class="card-footer py-4">
+            <nav aria-label="...">
+              <a href="{{'/mitra/create'}}" class="btn btn-primary mb-3">Tambah Data</a>
+              <ul class="pagination flex-wrap justify-content-end mb-0">
+                <li class="page-item">
+                  {{ $mitras->links() }}
+                </li>
+              </ul>
+            </nav>
           </div>
+
+
         </div>
       </div>
     </div>

@@ -1,11 +1,8 @@
 @extends('layouts.main')
 @section('container')
-<!-- ======= Hero Section ======= -->
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <div class="box">
 
       <!-- ======= Portfolio Section ======= -->
+      <br>
       <section id="pdln" class="portfolio" style="background-color: #f3f5fa">
       <div class="container" data-aos="fade-up">
 
@@ -204,8 +201,5 @@
 
       </div>
     </section><!-- End Portfolio Section -->
-
-
-    </div>
 
 @endsection

@@ -56,9 +56,7 @@
 
                         <div class="form-group ml-5 mr-5">
                             <label for="pertanyaan"> Pertanyaan</label>
-                            <textarea  id="editor" type="hidden" name="pertanyaan" class="form-control  @error('pertanyaan') is-invalid @enderror" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="{{ old('pertanyaan', $faq->pertanyaan) }}">
-                                {{ $faq->pertanyaan }}
-                            </textarea>
+                            <input type="text" name="pertanyaan" class="form-control  @error('pertanyaan') is-invalid @enderror" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="{{ old('pertanyaan', $faq->pertanyaan) }}">
                             @error('pertanyaan')
                             <div class="invalid-feedback">
                                 {{ $message }}

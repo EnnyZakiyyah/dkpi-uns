@@ -35,9 +35,9 @@
                             <div class="swiper-slide">
                               @if($galeri->jenis == 'video')
                                 <center><iframe  width="650" height="370" src="{{ $galeri->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-                              @else{
+                              @else
                                <div class="portfolio-img"><img src="{{asset('storage/'. $galeri->gambar )}}" class="img-fluid" alt="" {{asset('storage/'. $galeri->gambar )}} width="620" height="350"></div>
-                              }
+                             
                               @endif
                             
                             </div>

@@ -28,6 +28,17 @@
   <!-- Template Main CSS File -->
   <link href="<?php echo e(asset('assets/css/style.css')); ?>" rel="stylesheet">
 
+  <!-- Template Paginate JS File -->
+  <script src="<?php echo e(asset('assets/js/responsive-paginate.js')); ?>"></script>">
+  <script src="<?php echo e(asset('assets/js/jquery-1.10.2.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/bootstrap.min.js')); ?>"></script>
+
+  <script>
+    $(document).ready(function () {
+        $(".pagination-sm").rPage();
+    });
+</script>
+
       
 
 
@@ -46,20 +57,19 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="/">DKPI-UNS</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     </div>
   </header><!-- End Header -->
 
+      <main id="main">
         <?php echo $__env->yieldContent('container'); ?>
-      </main><!-- End #main -->
 
     <!-- ======= Contact Section ======= -->
     <?php echo $__env->make('contact.contact', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    
+  </main><!-- End #main -->
+
  <!-- ======= Footer ======= -->
  <footer id="footer">
 
@@ -112,6 +122,18 @@
     </div>
   </div>
 
+  <div class="container footer-bottom clearfix">
+    <div class="copyright">
+      
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+      
+    </div>
+  </div>
 </footer><!-- End Footer -->
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -127,6 +149,8 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo e(asset('assets/js/main.js')); ?>"></script>
+
+  
 
 </body>
 

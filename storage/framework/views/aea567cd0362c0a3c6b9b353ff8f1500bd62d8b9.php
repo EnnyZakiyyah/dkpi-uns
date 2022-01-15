@@ -52,7 +52,7 @@
 
                         <div class="form-group ml-5 mr-5">
                             <label for="pertanyaan"> Pertanyaan</label>
-                            <textarea  id="editor" type="hidden" name="pertanyaan" class="form-control  <?php $__errorArgs = ['pertanyaan'];
+                            <input type="text" name="pertanyaan" class="form-control  <?php $__errorArgs = ['pertanyaan'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -60,8 +60,6 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="<?php echo e(old('pertanyaan')); ?>">
-
-                            </textarea>
                             <?php $__errorArgs = ['pertanyaan'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

@@ -334,7 +334,7 @@ class HomeController extends Controller
         $pimpinan = Pdln::where('jenis', 'pimpinan')->latest()->filter(request(['nama', 'jangka_waktu_awal', 'jangka_waktu_akhir', 'negara']))->paginate(5)->withQueryString();;
 
         return view('home.pdln.pimpinan', [
-            'title' => 'Data Mitra',
+            'title' => 'Data PDLN',
             'pimpinans' => $pimpinan
         ]);
     }

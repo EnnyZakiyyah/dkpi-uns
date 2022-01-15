@@ -1,11 +1,8 @@
 
 <?php $__env->startSection('container'); ?>
-<!-- ======= Hero Section ======= -->
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <div class="box">
 
       <!-- ======= Portfolio Section ======= -->
+      <br>
       <section id="pdln" class="portfolio" style="background-color: #f3f5fa">
       <div class="container" data-aos="fade-up">
 
@@ -16,7 +13,6 @@
           
         </div>
 
-                
 <div class="container">
   <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                     <a class="filter-active" href="/home/pdln-mahasiswa">Mahasiswa</a>
@@ -208,9 +204,6 @@
 
       </div>
     </section><!-- End Portfolio Section -->
-
-
-    </div>
 
 <?php $__env->stopSection(); ?>
 
