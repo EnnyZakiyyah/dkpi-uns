@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('container'); ?>
 <!-- ======= Hero Section ======= -->
 
@@ -40,27 +39,32 @@
                                 <p class="card-text">Pejabat Penandatangan: <?php echo e($mitra->pejabat_penandatangan); ?></p>
                                 <br/>
                                 <p>Download File</p>
-                                <form action="token/<?php echo e($mitra->id); ?>" method="POST" class="row g-3">
+                                <form action="token/<?php echo e($mitra->id); ?>" method="POST" class="row g-5">
                                     <?php echo csrf_field(); ?>
                                     <div class="col-md-4">
                                     <input type="text" name='token' class="form-control" placeholder="Input kode cth: 123456">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                     <button type="submit" class="btn btn-primary">submit</button>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                       <a href="/home/mitra-cv" class="btn btn-secondary">Kembali</a>
                                     </div>
-                                  </form>
-                                <?php if(Auth::check()): ?>
-                                <a href="/mitra/<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
-                                <form action="mitra/<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
-                                    <?php echo method_field('delete'); ?>
-                                    <?php echo csrf_field(); ?>
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
                                 </form>
-                                <?php endif; ?>
-                               
+                                  <?php if(Auth::check()): ?>
+                                  <div class="col-md-2">
+                                    <a href="/mitra/<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <form action="mitra/<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
+                                        <?php echo method_field('delete'); ?>
+                                        <?php echo csrf_field(); ?>
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                                    </form>
+                                  <?php endif; ?>
+                                  </div>
+
+
                             </div>
                         </div>
             </div>

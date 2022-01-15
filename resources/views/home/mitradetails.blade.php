@@ -58,9 +58,30 @@
                                 <form action="mitra/{{ $mitra->id }}" method="POST">
                                     @method('delete')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger"
-                                        onclick="return confirm('apakah anda yakin?')">Delete</button>
+                                    <div class="col-md-4">
+                                    <input type="text" name='token' class="form-control" placeholder="Input kode cth: 123456">
+                                    </div>
+                                    <div class="col-md-2">
+                                    <button type="submit" class="btn btn-primary">submit</button>
+                                    </div>
+                                    <div class="col-md-2">
+                                      <a href="/home/mitra-cv" class="btn btn-secondary">Kembali</a>
+                                    </div>
                                 </form>
+                                  @if(Auth::check())
+                                  <div class="col-md-2">
+                                    <a href="/mitra/{{ $mitra->id }}/edit" class="btn btn-primary">Edit</a>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <form action="mitra/{{ $mitra->id }}" method="POST" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                                    </form>
+                                  @endif
+                                  </div>
+
+
                             </div>
                             @endif
                         </form>

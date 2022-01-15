@@ -46,13 +46,13 @@ class LayananController extends Controller
         $id = 1;
         if ($request->file('mou')){
             $mou = $request->file('mou')->store('mou');
+            $validatedData['ketentuan_mou'] = $mou;
             }
         if ($request->file('pks')){
             $pks = $request->file('pks')->store('pks');
-            }
-
             $validatedData['ketentuan_pks'] = $pks;
-            $validatedData['ketentuan_mou'] = $mou;
+            }
+ 
             Layanan::where('id', $id)->update($validatedData);
 
             return redirect('/layanan')->with('success', 'Data berhasil diubah!');
@@ -60,7 +60,7 @@ class LayananController extends Controller
     public function ketentuan_mou()
     {
         $id = 1;
-        $file = Layanan::find($id);
+        $file = Layanan::find(1);
         $headers = [
             'Content-Type' => 'application/pdf',
          ];
