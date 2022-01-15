@@ -26,12 +26,12 @@
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/mitra"> Mitra</a></li>
-                                <li class="breadcrumb-item"><a href="/mitra/data/<?php echo e($mitra->instansi); ?>"><?php echo e($mitra->instansi); ?></a></li>
+                                <li class="breadcrumb-item"><a
+                                        href="/mitra/data/<?php echo e($mitra->instansi); ?>"><?php echo e($mitra->instansi); ?></a></li>
                                 <li class="breadcrumb-item active" aria-current="page"> <?php echo e($mitra->nama_instansi); ?></li>
                             </ol>
                         </nav>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -43,7 +43,8 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail Mitra</h3><h4 class="badge badge-info"><?php echo e($mitra->status); ?></h4>
+                        <h3 class="mb-0">Detail Mitra</h3>
+                        <h4 class="badge badge-info"><?php echo e($mitra->status); ?></h4>
                     </div>
 
                     <!-- body card -->
@@ -57,29 +58,23 @@
                             <p class="card-text">Awal Masa Berlaku: <?php echo e($mitra->jangka_waktu_awal); ?></p>
                             <p class="card-text">Akhir Masa Berlaku: <?php echo e($mitra->jangka_waktu_akhir); ?></p>
                             <p class="card-text">Pejabat Penandatangan: <?php echo e($mitra->pejabat_penandatangan); ?></p>
-                            <a href="download/mou/<?php echo e($mitra->id); ?>" class="btn btn-warning">Download File MoU</a>
-                            <a href="<?php echo e($mitra->id); ?>/edit" class="btn btn-primary">Edit</a>
+                            <a href="download/mou/<?php echo e($mitra->id); ?>" class="btn btn-warning mt-2">Download File MoU</a>
+                            <a href="<?php echo e($mitra->id); ?>/edit" class="btn btn-primary mt-2">Edit</a>
                             <form action="<?php echo e($mitra->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                                <button type="submit" class="btn btn-danger mt-2"
+                                    onclick="return confirm('apakah anda yakin?')">Delete</button>
                             </form>
-                            <a href="/mitra" class="card-link ml-5">Kembali</a>
+                            <a href="/mitra" class="card-link ml-5 mt-2">Kembali</a>
                         </div>
-                    </div>
-
-                    <!-- Card footer -->
-                    
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Main content -->
-    <?php $__env->stopSection(); ?>
+</div>
+<!-- End Main content -->
+<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('dashboard/layouts/main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/mitra/show.blade.php ENDPATH**/ ?>

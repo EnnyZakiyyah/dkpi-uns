@@ -93,9 +93,6 @@
           <nav aria-label="...">
             <a href="{{'/pengumuman/create'}}" class="btn btn-primary">Tambah Data</a>
             <ul class="pagination justify-content-end mb-0">
-              <li class="page-item">
-                {{-- {{ $pengumuman->links() }} --}}
-              </li>
             </ul>
           </nav>
         </div>

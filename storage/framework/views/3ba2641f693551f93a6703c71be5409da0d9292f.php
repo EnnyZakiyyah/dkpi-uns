@@ -15,7 +15,6 @@
         </div>
     </nav>
     <!-- Header -->
-    <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body">
@@ -26,20 +25,21 @@
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/pdln"> PDLN</a></li>
-                                <li class="breadcrumb-item"><a href="/data/<?php echo e($pdln->jenis); ?>"> <?php echo e($pdln->jenis); ?></a></li>
+                                <li class="breadcrumb-item"><a href="/data/<?php echo e($pdln->jenis); ?>"> <?php echo e($pdln->jenis); ?></a>
+                                </li>
                                 <li class="breadcrumb-item active" aria-current="page"><?php echo e($pdln->nama); ?></li>
                             </ol>
                         </nav>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
     <!-- Page content -->
     <?php
-        use Carbon\Carbon;
-        $today_date = Carbon::today()->isoFormat('D MMMM Y');
+    use Carbon\Carbon;
+    $today_date = Carbon::today()->isoFormat('D MMMM Y');
     ?>
     <div class="container-fluid mt--6">
         <div class="row">
@@ -47,7 +47,8 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail Data Pdln</h3><h4 class="badge badge-info"><?php echo e($pdln->status); ?></h4>
+                        <h3 class="mb-0">Detail Data Pdln</h3>
+                        <h4 class="badge badge-info"><?php echo e($pdln->status); ?></h4>
                     </div>
 
                     <!-- body card -->
@@ -67,39 +68,38 @@
                             <p class="card-text">Catatan Belmawa : <?php echo e($pdln->catatan_belmawa); ?></p>
                             <p class="card-text">Nomor Ktln : <?php echo e($pdln->ktln_kemensetneg); ?></p>
                             <p class="card-text">Catatan Ktln : <?php echo e($pdln->catatan_setneg); ?></p>
+                            <div class="row">
+                                <div class="col-md mt-2">
                             <?php if($pdln->file_surat_uns != 'null'): ?>
                             <a href="download/uns/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat UNS</a>
-                            <?php endif; ?>
+                            <?php endif; ?></div>
+                            <div class="col-md mt-2">
                             <?php if($pdln->file_belmawa != 'null'): ?>
-                            <a href="download/belmawa/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat belmawa</a>
-                            <?php endif; ?>
+                            <a href="download/belmawa/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat
+                                belmawa</a>
+                            <?php endif; ?></div>
+                            <div class="col-md mt-2">
                             <?php if($pdln->file_ktln != 'null'): ?>
                             <a href="download/ktln/<?php echo e($pdln->id); ?>" class="btn btn-warning">Download surat ktln</a>
-                            <?php endif; ?>
-                            
+                            <?php endif; ?></div>
+                        </div>
+                        <br>
                             <a href="<?php echo e($pdln->id); ?>/edit" class="btn btn-primary">Edit</a>
                             <form action="<?php echo e($pdln->id); ?>" method="POST" class="d-inline">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                                <button type="submit" class="btn btn-danger"
+                                    onclick="return confirm('apakah anda yakin?')">Delete</button>
                             </form>
                             <a href="/pdln" class="card-link ml-5">Kembali</a>
                         </div>
-                    </div>
-
-                    <!-- Card footer -->
-                    
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Main content -->
-    <?php $__env->stopSection(); ?>
-
+</div>
+<!-- End Main content -->
+<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('dashboard/layouts/main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\New folder (3)\dkpi-uns\resources\views/pdln/show.blade.php ENDPATH**/ ?>

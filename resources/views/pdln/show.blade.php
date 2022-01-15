@@ -15,7 +15,6 @@
         </div>
     </nav>
     <!-- Header -->
-    <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body">
@@ -26,23 +25,21 @@
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/pdln"> PDLN</a></li>
-                                <li class="breadcrumb-item"><a href="/data/{{ $pdln->jenis }}"> {{ $pdln->jenis }}</a></li>
+                                <li class="breadcrumb-item"><a href="/data/{{ $pdln->jenis }}"> {{ $pdln->jenis }}</a>
+                                </li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ $pdln->nama }}</li>
                             </ol>
                         </nav>
                     </div>
-                    {{-- <div class="col-lg-6 col-5 text-right">
-                        <a href="#" class="btn btn-sm btn-neutral">New</a>
-                        <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-                    </div> --}}
+
                 </div>
             </div>
         </div>
     </div>
     <!-- Page content -->
     @php
-        use Carbon\Carbon;
-        $today_date = Carbon::today()->isoFormat('D MMMM Y');
+    use Carbon\Carbon;
+    $today_date = Carbon::today()->isoFormat('D MMMM Y');
     @endphp
     <div class="container-fluid mt--6">
         <div class="row">
@@ -50,7 +47,8 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail Data Pdln</h3><h4 class="badge badge-info">{{ $pdln->status }}</h4>
+                        <h3 class="mb-0">Detail Data Pdln</h3>
+                        <h4 class="badge badge-info">{{ $pdln->status }}</h4>
                     </div>
 
                     <!-- body card -->
@@ -70,58 +68,36 @@
                             <p class="card-text">Catatan Belmawa : {{ $pdln->catatan_belmawa }}</p>
                             <p class="card-text">Nomor Ktln : {{ $pdln->ktln_kemensetneg }}</p>
                             <p class="card-text">Catatan Ktln : {{ $pdln->catatan_setneg }}</p>
+                            <div class="row">
+                                <div class="col-md mt-2">
                             @if($pdln->file_surat_uns != 'null')
                             <a href="download/uns/{{ $pdln->id }}" class="btn btn-warning">Download surat UNS</a>
-                            @endif
+                            @endif</div>
+                            <div class="col-md mt-2">
                             @if($pdln->file_belmawa != 'null')
-                            <a href="download/belmawa/{{ $pdln->id }}" class="btn btn-warning">Download surat belmawa</a>
-                            @endif
+                            <a href="download/belmawa/{{ $pdln->id }}" class="btn btn-warning">Download surat
+                                belmawa</a>
+                            @endif</div>
+                            <div class="col-md mt-2">
                             @if($pdln->file_ktln != 'null')
                             <a href="download/ktln/{{ $pdln->id }}" class="btn btn-warning">Download surat ktln</a>
-                            @endif
-                            {{-- <p class="card-text">{{ $file_uns }}</p>
-                            <p class="card-text" >{{ $file_ktln }}</p>
-                            <p class="card-text">{{ $file_belmawa }}</p> --}}
+                            @endif</div>
+                        </div>
+                        <br>
                             <a href="{{ $pdln->id }}/edit" class="btn btn-primary">Edit</a>
                             <form action="{{ $pdln->id }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                                <button type="submit" class="btn btn-danger"
+                                    onclick="return confirm('apakah anda yakin?')">Delete</button>
                             </form>
                             <a href="/pdln" class="card-link ml-5">Kembali</a>
                         </div>
-                    </div>
-
-                    <!-- Card footer -->
-                    {{-- <div class="card-footer py-4">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Next</span> --}}
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Main content -->
-    @endsection
-
+</div>
+<!-- End Main content -->
+@endsection

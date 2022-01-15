@@ -89,9 +89,9 @@ class PeringkatController extends Controller
     {
         $validatedData = $request->validate([
             'judul' => 'required',
-            'berita' => 'required',
+            'peringkat' => 'required',
             'link' => '',
-            'peringkat' => 'required'
+            'berita' => 'required'
         ]);
         Peringkat::where('id', $peringkat->id)->update($validatedData);
         return redirect('/peringkat');

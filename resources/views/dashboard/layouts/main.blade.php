@@ -33,11 +33,11 @@
   <link rel="stylesheet" href="{{asset('assets2/vendor/nucleo/css/nucleo.css')}}" type="text/css">
   <link rel="stylesheet" href="{{asset('assets2/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
   <!-- Page plugins -->
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+   {{-- <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> --}}
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset('assets2/css/argon.css?v=1.2.0')}}" type="text/css">
-{{-- editor berita --}}
+  {{-- editor berita --}}
   <link rel="stylesheet" type="text/css" href="/css/trix.css">
   <script type="text/javascript" src="/js/trix.js"></script>
 
@@ -135,12 +135,10 @@
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">
-
             </div>
         </div>
     </div>
 </nav>
-  <!-- Main content -->
   <!-- Main content -->
   <div class="main-content" id="panel">
     <!-- Topnav -->
@@ -161,8 +159,6 @@
                 </div>
               </div>
             </li>
-
-
           </ul>
           <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
             <li class="nav-item dropdown">
@@ -178,35 +174,29 @@
                         <div>
                           <span class="mb-0 text-sm  font-weight-bold">Admin</span>
                         </div>
-
                       </div>
                     </div>
                   </div>
-                  {{-- <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Admin</span>
-                  </div>
-                </div> --}}
+                </div>
               </a>
               <div class="dropdown-menu  dropdown-menu-right ">
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
-
                 <div class="dropdown-divider"></div>
-
                 <form action="/logout" method="POST" class="dropdown-item">
                     @csrf
                     <button type="submit" class="btn btn-danger">logout</button>
                 </form>
               </div>
-            {{-- </li> --}}
-          {{-- </ul> --}}
-        {{-- </div> --}}
-      {{-- </div> --}}
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
    @yield('container')
       <!-- Footer -->
-      <footer class="footer pt-5">
+      <footer class="footer pt-0">
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
             <div class="copyright text-center  text-lg-left  text-muted">

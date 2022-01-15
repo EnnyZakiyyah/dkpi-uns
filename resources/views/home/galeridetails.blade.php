@@ -1,80 +1,61 @@
 @extends('layouts.main')
 @section('container')
-<!-- ======= Hero Section ======= -->
 
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <div class="box">
-    <section id="layanan" class="portfolio">
-        <div class="container" data-aos="fade-up">
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs" style="background-color: #fff">
+    <div class="container">
 
-            <main id="main">
+        <ol>
+            <li><a href="/home/galeri">Galeri</a></li>
+            <li>{{ $galeri->judul }}</li>
+        </ol>
+        <h2 class="text-capitalize">Galeri {{ $galeri->judul }} Details</h2>
 
-                <!-- ======= Breadcrumbs ======= -->
-                <section id="breadcrumbs" class="breadcrumbs">
-                  <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
 
-                    <ol>
-                      <li><a href="/home/galeri">Galeri</a></li>
-                      <li>{{ $galeri->judul }}</li>
-                    </ol>
-                    <h2>Galeri Details</h2>
+<!-- ======= Galeri Details Section ======= -->
+<section id="portfolio-details" class="portfolio-details" style="background-color: #f3f5fa" >
+    <div class="container" ata-aos="fade-up">
+        <div class="row gy-4">
+            <div class="col-lg-8">
+                <div class="portfolio-details-slider swiper-container">
+                    <div class="swiper-wrapper align-items-center">
 
-                  </div>
-                </section><!-- End Breadcrumbs -->
+                        <div class="swiper-slide">
+                            @if($galeri->jenis == 'video')
+                            <center><iframe width="650" height="370" src="{{ $galeri->link }}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe></center>
+                            @else
+                            <div class="portfolio-img"><img src="{{asset('storage/'. $galeri->gambar )}}"
+                                    class="img-fluid" alt="" {{asset('storage/'. $galeri->gambar )}} width="620"
+                                    height="350"></div>
 
-                <!-- ======= Portfolio Details Section ======= -->
-                <section id="portfolio-details" class="portfolio-details">
-                  <div class="container">
-
-                    <div class="row gy-4">
-
-                      <div class="col-lg-8">
-                        <div class="portfolio-details-slider swiper-container">
-                          <div class="swiper-wrapper align-items-center">
-
-                            <div class="swiper-slide">
-                              @if($galeri->jenis == 'video')
-                                <center><iframe  width="650" height="370" src="{{ $galeri->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-                              @else
-                               <div class="portfolio-img"><img src="{{asset('storage/'. $galeri->gambar )}}" class="img-fluid" alt="" {{asset('storage/'. $galeri->gambar )}} width="620" height="350"></div>
-                             
-                              @endif
-                            
-                            </div>
-
-                          </div>
-                          <div class="swiper-pagination"></div>
+                            @endif
                         </div>
-                      </div>
-
-                      <div class="col-lg-4">
-                        <div class="portfolio-info">
-                          <h3>information</h3>
-                          <ul>
-                            <li><strong>Category</strong>Penandatanganan</li>
-                            <li><strong>Client</strong>: BSI</li>
-                            <li><strong>Project date</strong>: {{ $galeri->created_at }}</li>
-                            <li><strong>Project URL</strong>: <a href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a></li>
-                          </ul>
-                        </div>
-                        <div class="portfolio-description">
-                          <h2>{{ $galeri->judul }}</h2>
-                            {!! $galeri->caption !!}
-                        </div>
-                      </div>
 
                     </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
 
-                  </div>
-                </section><!-- End Portfolio Details Section -->
-
-              </main><!-- End #main -->
-
-        </div>
-  </div>
-</section><!-- End Skills Section -->
-</div>
-
-
-
+            <div class="col-lg-4">
+                <div class="portfolio-info" style="background-color: rgb(248, 248, 248)">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><strong>Date</strong>: {{ $galeri->created_at }}</li>
+                        <li><strong>Link</strong>: <a
+                                href="https://youtu.be/YHyO-N8OkSQ">https://youtu.be/YHyO-N8OkSQ</a></li>
+                    </ul>
+                </div>
+            </div>
+                <div class="portfolio-description">
+                    <h2 class="text-capitalize">{{ $galeri->judul }}</h2>
+                    {!! $galeri->caption !!}
+                </div>
+            </div>
+    </div>
+</section><!-- End Section -->
 @endsection

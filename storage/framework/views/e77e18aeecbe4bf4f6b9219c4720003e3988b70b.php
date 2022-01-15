@@ -1,76 +1,47 @@
 
 <?php $__env->startSection('container'); ?>
-<!-- ======= Hero Section ======= -->
+<?php $__currentLoopData = $berita; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <div class="box">
-    <section id="layanan" class="portfolio">
-        <div class="container" data-aos="fade-up">
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs" style="background-color: #fff">
+    <div class="container">
 
-            <main id="main">
-            
-            <?php $__currentLoopData = $berita; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <ol>
+            <li><a href="/home/berita">Berita</a></li>
+            <li>Berita Details</li>
+        </ol>
+        <h2 class="text-capitalize">Berita <?php echo e($berita->judul); ?> Details</h2>
 
-                <!-- ======= Breadcrumbs ======= -->
-                <section id="breadcrumbs" class="breadcrumbs">
-                  <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
 
-                    <ol>
-                      <li><a href="/home/berita">Berita</a></li>
-                      <li>Berita Details</li>
-                    </ol>
-                    <h2><?php echo e($berita->judul); ?></h2>
-
-                  </div>
-                </section><!-- End Breadcrumbs -->
-
-                <!-- ======= Portfolio Details Section ======= -->
-                <section id="portfolio-details" class="portfolio-details">
-                  <div class="container">
-
-                    <div class="row gy-4">
-
-                      <div class="col-lg-12">
-                        <div class="portfolio-details-slider swiper-container">
-                          <div class="swiper-wrapper align-items-center">
-
-                            <div class="swiper-slide">
-                                <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" alt="">
-                            </div>
-
-                            
-
-                          </div>
-                          <div class="swiper-pagination"></div>
+<section id="portfolio-details" class="portfolio-details" style="background-color: #f3f5fa">
+    <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
+            <div class="col-lg-12">
+                <div class="portfolio-details-slider swiper-container">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide">
+                            <img src="<?php echo e(asset('storage/'. $berita->gambar )); ?>" alt="">
                         </div>
-                      </div>
-
                     </div>
-                    <div class="col-lg-12">
-                      <div class="portfolio-description">
-                        <h2><?php echo e($berita->judul); ?></h2>
-
-                            
-                            <strong>dirilis</strong>&nbsp;: <?php echo e($berita->created_at); ?><br/>
-                            
-                            <p>
-                                <?php echo $berita->body; ?>
-
-                            </p>
-                      </div>
-                    </div>
-
-                  </div>
-                </section><!-- End Portfolio Details Section -->
-                
-              </main><!-- End #main -->
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
         </div>
-  </div>
-</section><!-- End Skills Section -->
-</div>
+        <div class="col-lg-12">
+            <div class="portfolio-description">
+                <h2 class="text-capitalize"><?php echo e($berita->judul); ?></h2>
+                <strong>Di Update</strong>&nbsp;: <?php echo e($berita->created_at); ?><br />
+                <p>
+                    <?php echo $berita->body; ?>
 
-
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+</section><!-- End Section -->
 
 <?php $__env->stopSection(); ?>
 

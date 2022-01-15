@@ -6575,6 +6575,13 @@ input[type='button'].btn-block
 
 .pagination
 {
+    /* display: flex;
+
+    padding-left: 0;
+
+    list-style: none;
+
+    border-radius: .375rem; */
     display: flex;
 
     padding-left: 0;
@@ -6582,6 +6589,8 @@ input[type='button'].btn-block
     list-style: none;
 
     border-radius: .375rem;
+
+    position: relative;
 }
 
 .page-link
@@ -6670,8 +6679,7 @@ input[type='button'].btn-block
     border-bottom-right-radius: .4375rem;
 }
 
-.pagination-sm .page-link
-{
+.pagination-sm .page-link {
     font-size: .875rem;
     line-height: 1.5;
 
@@ -26516,7 +26524,9 @@ table.dataTable tbody > tr.selected
 
 .card-calendar .card-header
 {
-    border-bottom: 0;
+    border-b
+    
+    ottom: 0;
 }
 
 .card-calendar table

@@ -19,7 +19,7 @@ class LayananController extends Controller
     public function index()
     {
         return view('layanan.index',[
-            'title' => 'Layanan'
+            'title' => 'layanan'
         ]);
     }
 

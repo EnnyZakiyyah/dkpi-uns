@@ -76,7 +76,7 @@
             <a href="/home/berita/" class="btn btn-outline-primary">Selengkapnya</a>
         </div>
     </div>
-</section><!-- End Team Section -->
+</section><!-- End Section -->
 
 <!-- ======= About Us Section ======= -->
 <section id="about" class="about">

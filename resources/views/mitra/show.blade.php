@@ -26,15 +26,12 @@
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="/dashboard"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/mitra"> Mitra</a></li>
-                                <li class="breadcrumb-item"><a href="/mitra/data/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></li>
+                                <li class="breadcrumb-item"><a
+                                        href="/mitra/data/{{ $mitra->instansi }}">{{ $mitra->instansi }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"> {{ $mitra->nama_instansi }}</li>
                             </ol>
                         </nav>
                     </div>
-                    {{-- <div class="col-lg-6 col-5 text-right">
-                        <a href="" class="btn btn-sm btn-neutral">New</a>
-                        <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -46,7 +43,8 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Detail Mitra</h3><h4 class="badge badge-info">{{ $mitra->status }}</h4>
+                        <h3 class="mb-0">Detail Mitra</h3>
+                        <h4 class="badge badge-info">{{ $mitra->status }}</h4>
                     </div>
 
                     <!-- body card -->
@@ -60,46 +58,21 @@
                             <p class="card-text">Awal Masa Berlaku: {{ $mitra->jangka_waktu_awal }}</p>
                             <p class="card-text">Akhir Masa Berlaku: {{ $mitra->jangka_waktu_akhir }}</p>
                             <p class="card-text">Pejabat Penandatangan: {{ $mitra->pejabat_penandatangan }}</p>
-                            <a href="download/mou/{{ $mitra->id }}" class="btn btn-warning">Download File MoU</a>
-                            <a href="{{ $mitra->id }}/edit" class="btn btn-primary">Edit</a>
+                            <a href="download/mou/{{ $mitra->id }}" class="btn btn-warning mt-2">Download File MoU</a>
+                            <a href="{{ $mitra->id }}/edit" class="btn btn-primary mt-2">Edit</a>
                             <form action="{{ $mitra->id }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?')">Delete</button>
+                                <button type="submit" class="btn btn-danger mt-2"
+                                    onclick="return confirm('apakah anda yakin?')">Delete</button>
                             </form>
-                            <a href="/mitra" class="card-link ml-5">Kembali</a>
+                            <a href="/mitra" class="card-link ml-5 mt-2">Kembali</a>
                         </div>
-                    </div>
-
-                    <!-- Card footer -->
-                    {{-- <div class="card-footer py-4">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Next</span> --}}
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Main content -->
-    @endsection
+</div>
+<!-- End Main content -->
+@endsection

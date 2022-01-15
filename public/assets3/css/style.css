@@ -186,7 +186,10 @@ h2 {
   font-size: 36px; }
 
 .main2 {
-  background: #37517e;
+  /* width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto; */
 }
 .clear {
   clear: both; }
