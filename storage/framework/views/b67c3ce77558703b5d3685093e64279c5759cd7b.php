@@ -11,15 +11,13 @@
         <div class="front">
             <img src="<?php echo e(asset('assets3/images/login.jpg')); ?>" alt="">
             <div class="text">
-                <span class="text-1">Every new friend is a <br> new adventure</span>
-                <span class="text-2">Let's get connected</span>
+                <span class="text-1">DKPI - UNS</span>
             </div>
         </div>
         <div class="back">
-            <img class="backImg" src="<?php echo e(asset('assets3/images/signup.jpg')); ?>" alt="">
+            <img class="backImg" src="<?php echo e(asset('assets3/images/login.jpg')); ?>" alt="">
             <div class="text">
-                <span class="text-1">Complete miles of journey <br> with one step</span>
-                <span class="text-2">Let's get started</span>
+                <span class="text-1">DKPI - UNS</span>
             </div>
         </div>
     </div>
