@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Pengumuman'); ?>
 <?php $__env->startSection('search'); ?>
 <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main" action="/pengumuman">
@@ -56,15 +54,18 @@
               <thead class="thead-light">
                 <tr>
                   <th scope="col" class="sort" data-sort="no">No</th>
+                  <th scope="col" class="sort" data-sort="no">Judul</th>
                   <th scope="col" class="sort" data-sort="nim">Pengumuman</th>
                   <th scope="col" class="sort" data-sort="nama">Berlaku Sampai</th>
                   <th scope="col" class="sort" data-sort="berlaku">Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
+                  Active
                 <?php $__currentLoopData = $active; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($active->firstItem() + $loop->index); ?></th>
+                  <td><?php echo e($pengumuman->judul); ?></td>
                   <td><?php echo e($pengumuman->pengumuman); ?></td>
                   <td><?php echo e($pengumuman->berlaku); ?></td>
                   <td>
@@ -72,9 +73,11 @@
                   </td>
                 </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                Expired
                 <?php $__currentLoopData = $expired; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <th scope="row"><?php echo e($loop->iteration); ?></th>
+                  <th scope="row"><?php echo e($expired->firstItem() + $loop->index); ?></th>
+                  <td><?php echo e($pengumuman->judul); ?></td>
                   <td><?php echo e($pengumuman->pengumuman); ?></td>
                   <td><?php echo e($pengumuman->berlaku); ?></td>
                   <td>
@@ -90,9 +93,6 @@
           <nav aria-label="...">
             <a href="<?php echo e('/pengumuman/create'); ?>" class="btn btn-primary">Tambah Data</a>
             <ul class="pagination justify-content-end mb-0">
-              <li class="page-item">
-                
-              </li>
             </ul>
           </nav>
         </div>

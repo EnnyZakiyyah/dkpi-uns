@@ -23,7 +23,7 @@
                 <br>
                 <br>
                 @if($pengumuman->file_download != '')
-                <a href="/download-pengumuman/{{ $pengumuman->id }}" class="btn btn-primary">Download surat UNS</a>
+                <a href="/download-pengumuman/{{ $pengumuman->id }}" class="btn btn-primary">Download</a>
                 @endif
                 <a href="/home/pengumuman" class="btn btn-secondary">Kembali</a>
             </div>

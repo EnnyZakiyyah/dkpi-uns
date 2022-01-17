@@ -46,8 +46,6 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">DKPI-UNS</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <?php echo $__env->make('partials.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 

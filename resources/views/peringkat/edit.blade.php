@@ -52,7 +52,8 @@
 
 
                     <!-- body card -->
-                    <div method="POST" action="/peringkat/{{ $peringkat->id }}" enctype="multipart/form-data>
+
+                    <form method="POST" action="/peringkat/{{ $peringkat->id }}">
                         @method('put')
                         @csrf
 
@@ -76,7 +77,7 @@
                         </div>
                         <div class="form-group ml-5 mr-5">
                             <label for="link"> Link Peringkat</label>
-                            <input id="link" type="text" name="link" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link peringkat" name="link" value="{{ old('link',$peringkat->link) }}">
+                            <input id="link" type="text" name="link" class="form-control  @error('link') is-invalid @enderror" id="link" placeholder="link peringkat" name="link" value="{{ old('link', $peringkat->link) }}">
                             @error('link')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -86,8 +87,8 @@
 
                         <div class="form-group ml-5 mr-5">
                             <label for="berita"> Berita Peringkat</label>
-                            <textarea  id="editor" type="hidden" name="berita" class="form-control  @error('berita') is-invalid @enderror" id="berita" placeholder="berita berita" name="berita" value="{{ old('berita') }}">
-                                    {{ $peringkat->berita }}
+                            <textarea  id="editor" type="hidden" name="berita" class="form-control  @error('berita') is-invalid @enderror" id="berita" placeholder="berita berita" name="berita" >
+                                    {{ old('berita', $peringkat->berita) }}
                             </textarea>
                             @error('berita')
                             <div class="invalid-feedback">

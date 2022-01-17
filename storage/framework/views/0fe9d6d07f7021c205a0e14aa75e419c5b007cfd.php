@@ -1,6 +1,3 @@
-
-
-
 <?php $__env->startSection('title', 'Edit peringkat'); ?>
 
 <?php $__env->startSection('container'); ?>
@@ -43,18 +40,19 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">edit peringkat</h3>
+                        <h3 class="mb-0">Edit Peringkat</h3>
                     </div>
                     
 
 
                     <!-- body card -->
+
                     <form method="POST" action="/peringkat/<?php echo e($peringkat->id); ?>">
                         <?php echo method_field('put'); ?>
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="judul"> judul</label>
+                            <label for="judul"> Judul</label>
                             <input type="textarea" class="form-control  <?php $__errorArgs = ['judul'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -78,7 +76,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="peringkat"> ganti peringkat</label>
+                            <label for="peringkat"> Ganti Peringkat</label>
                             <input id="peringkat" type="text" name="peringkat" class="form-control  <?php $__errorArgs = ['peringkat'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -102,7 +100,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group ml-5 mr-5">
-                            <label for="link"> link peringkat</label>
+                            <label for="link"> Link Peringkat</label>
                             <input id="link" type="text" name="link" class="form-control  <?php $__errorArgs = ['link'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -110,7 +108,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="link" placeholder="link peringkat" name="link" value="<?php echo e(old('link',$peringkat->link)); ?>">
+unset($__errorArgs, $__bag); ?>" id="link" placeholder="link peringkat" name="link" value="<?php echo e(old('link', $peringkat->link)); ?>">
                             <?php $__errorArgs = ['link'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -127,7 +125,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="form-group ml-5 mr-5">
-                            <label for="berita"> berita peringkat</label>
+                            <label for="berita"> Berita Peringkat</label>
                             <textarea  id="editor" type="hidden" name="berita" class="form-control  <?php $__errorArgs = ['berita'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -135,8 +133,8 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="berita" placeholder="berita berita" name="berita" value="<?php echo e(old('berita')); ?>">
-                                    <?php echo e($peringkat->berita); ?>
+unset($__errorArgs, $__bag); ?>" id="berita" placeholder="berita berita" name="berita" >
+                                    <?php echo e(old('berita', $peringkat->berita)); ?>
 
                             </textarea>
                             <?php $__errorArgs = ['berita'];
@@ -153,9 +151,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
-                        <button type="submit" class="btn btn-primary ml-5">Submit</button>
-                        <a href="/peringkat" class="card-link ml-5">Kembali</a>
+                        <button type="submit" class="btn btn-primary ml-5 mb-5">Submit</button>
+                    </div>
                     </form>
 
 
