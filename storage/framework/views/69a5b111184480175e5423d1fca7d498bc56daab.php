@@ -52,7 +52,7 @@
                             <h5 class="card-title">Nama Pengirim : <?php echo e($pengaduan->name); ?></h5>
                             <h6 class="card-subtitle mb-2 text-muted">Email Pengirim : <?php echo e($pengaduan->email); ?></h6>
                             <p class="card-text">Subject : <?php echo e($pengaduan->subject); ?></p>
-                            <p class="card-text">Tanggal : <?php echo e($pengaduan->pesan); ?></p>
+                            <p class="card-text">Pesan : <?php echo e($pengaduan->pesan); ?></p>
                             <p class="card-text">Dikirim Tgl : <?php echo e($pengaduan->created_at); ?></p>
                             
                             <form action="<?php echo e($pengaduan->id); ?>" method="POST" class="d-inline">

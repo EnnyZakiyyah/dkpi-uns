@@ -23,7 +23,6 @@ class ContactController extends Controller
             'pesan' => 'required'
         ]);
 
-
         $data = [
             'name' => $request->get('name'),
             'email' => $request->get('email'),

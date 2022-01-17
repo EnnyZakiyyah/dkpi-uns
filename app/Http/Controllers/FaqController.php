@@ -16,11 +16,10 @@ class FaqController extends Controller
     public function index()
     {
         $faq = Faq::filter(request(['pertanyaan']))->paginate(5)->withQueryString();;
-        return view('faq.index',[
+        return view('faq.index', [
             'title' => 'FAQ',
             'faqs' => $faq
         ]);
-
     }
 
     /**
@@ -30,7 +29,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        return view('faq.create',[
+        return view('faq.create', [
             'title' => 'FAQ'
         ]);
     }
@@ -45,8 +44,8 @@ class FaqController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'pertanyaan' => '',
-            'jawaban' => '',
+            'pertanyaan' => 'required',
+            'jawaban' => 'required',
             'link' => ''
         ]);
 
@@ -77,7 +76,7 @@ class FaqController extends Controller
     public function edit($faq)
     {
         $faq = Faq::find($faq);
-         return view('faq.edit', [
+        return view('faq.edit', [
             'title' => 'FAQ',
             'faq' => $faq
         ]);
@@ -90,7 +89,7 @@ class FaqController extends Controller
      * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$faq)
+    public function update(Request $request, $faq)
     {
         $validatedData = $request->validate([
             'pertanyaan' => '',
@@ -100,7 +99,6 @@ class FaqController extends Controller
 
         Faq::where('id', $faq)->update($validatedData);
         return redirect('/faq');
-
     }
 
     /**
@@ -114,6 +112,6 @@ class FaqController extends Controller
         Faq::destroy($faq);
 
         return redirect('/faq')
-        ->with('success', 'data berhasil dihapus');
+            ->with('success', 'data berhasil dihapus');
     }
 }
