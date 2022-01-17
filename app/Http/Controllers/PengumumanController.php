@@ -25,7 +25,7 @@ class PengumumanController extends Controller
         return view('pengumuman.index', [
             'title' => 'Pengumuman',
             'active' => $pengumuman,
-            'expired' => $expired
+            // 'expired' => $expired
         ]);
     }
 

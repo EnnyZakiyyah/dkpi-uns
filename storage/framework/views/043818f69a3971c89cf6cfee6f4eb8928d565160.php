@@ -61,7 +61,7 @@
                 </tr>
               </thead>
               <tbody class="list">
-                  Active
+                  
                 <?php $__currentLoopData = $active; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                   <th scope="row"><?php echo e($active->firstItem() + $loop->index); ?></th>
@@ -73,18 +73,8 @@
                   </td>
                 </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                Expired
-                <?php $__currentLoopData = $expired; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <tr>
-                  <th scope="row"><?php echo e($expired->firstItem() + $loop->index); ?></th>
-                  <td><?php echo e($pengumuman->judul); ?></td>
-                  <td><?php echo e($pengumuman->pengumuman); ?></td>
-                  <td><?php echo e($pengumuman->berlaku); ?></td>
-                  <td>
-                    <a href="/pengumuman/<?php echo e($pengumuman->id); ?>" class="badge badge-info">Detail</a>
-                  </td>
-                </tr>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                
+                
               </tbody>
             </table>
           </div>
@@ -94,6 +84,14 @@
             <a href="<?php echo e('/pengumuman/create'); ?>" class="btn btn-primary">Tambah Data</a>
             <ul class="pagination justify-content-end mb-0">
             </ul>
+            <div style="overflow-x:auto;">
+                <ul class="pagination pagination-sm">
+                    <li class="page-item">
+                        <?php echo e($active->links()); ?>
+
+                    </li>
+                </ul>
+            </div>
           </nav>
         </div>
         </div>

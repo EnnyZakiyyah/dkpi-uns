@@ -76,7 +76,7 @@
                 </tr>
                 @endforeach
                 {{-- Expired --}}
-                @foreach($expired as $pengumuman)
+                {{-- @foreach($expired as $pengumuman)
                 <tr>
                   <th scope="row">{{ $expired->firstItem() + $loop->index }}</th>
                   <td>{{ $pengumuman->judul }}</td>
@@ -86,7 +86,7 @@
                     <a href="/pengumuman/{{ $pengumuman->id }}" class="badge badge-info">Detail</a>
                   </td>
                 </tr>
-                @endforeach
+                @endforeach --}}
               </tbody>
             </table>
           </div>
@@ -96,6 +96,13 @@
             <a href="{{'/pengumuman/create'}}" class="btn btn-primary">Tambah Data</a>
             <ul class="pagination justify-content-end mb-0">
             </ul>
+            <div style="overflow-x:auto;">
+                <ul class="pagination pagination-sm">
+                    <li class="page-item">
+                        {{ $active->links() }}
+                    </li>
+                </ul>
+            </div>
           </nav>
         </div>
         </div>
